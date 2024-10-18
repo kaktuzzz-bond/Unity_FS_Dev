@@ -314,6 +314,12 @@
     <Reference Include="UnityEditor.iOS.Extensions">
       <HintPath>/Applications/Unity/2022.3.42f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="DemiEditor">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
@@ -326,8 +332,20 @@
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.collab-proxy@2.5.2/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.collab-proxy@2.5.2/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenProEditor">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.collab-proxy@2.5.2/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
@@ -335,44 +353,26 @@
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject-usage">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiEditor">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="DOTweenPro">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenProEditor">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+      <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/FSD_Main/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
