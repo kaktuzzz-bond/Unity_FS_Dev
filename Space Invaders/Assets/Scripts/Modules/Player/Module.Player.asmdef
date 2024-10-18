@@ -1,0 +1,16 @@
+{
+    "name": "Module.Player",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cc80923db7b1e45f3ab2eb4f638c147d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

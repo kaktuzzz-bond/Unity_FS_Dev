@@ -1,0 +1,2317 @@
+Unity Editor version:    2022.3.42f1 (2dcb6a0abc42)
+Branch:                  2022.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.0 (Build 24A335)
+Darwin version:          24.0.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        32768 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/2022.3.42f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+51268
+Successfully changed project path to: /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders
+/Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [140704485140096]  Target information:
+
+Player connection [140704485140096]  * "[IP] 10.0.1.10 [Port] 0 [Flags] 2 [Guid] 614702395 [EditorId] 614702395 [Version] 1048832 [Id] OSXEditor(0,iMac-Anton.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [140704485140096]  * "[IP] 10.0.1.12 [Port] 0 [Flags] 2 [Guid] 614702395 [EditorId] 614702395 [Version] 1048832 [Id] OSXEditor(0,iMac-Anton.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [140704485140096]  * "[IP] 10.14.0.2 [Port] 0 [Flags] 2 [Guid] 614702395 [EditorId] 614702395 [Version] 1048832 [Id] OSXEditor(0,iMac-Anton.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [140704485140096] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [140704485140096] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+Refreshing native plugins compatible for Editor in 30.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.42f1 (2dcb6a0abc42)
+[Subsystems] Discovering subsystems at path /Applications/Unity/2022.3.42f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+iMac preferred device: AMD Radeon Pro 5300 (high power)
+Metal devices available: 1
+0: AMD Radeon Pro 5300 (high power)
+Using device AMD Radeon Pro 5300 (high power)
+Initializing Metal device caps: AMD Radeon Pro 5300
+Initialize mono
+Mono path[0] = '/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/2022.3.42f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/2022.3.42f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56455
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/2022.3.42f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/2022.3.42f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /Applications/Unity/2022.3.42f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.005688 seconds.
+- Loaded All Assemblies, in  0.448 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 169 ms
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.667 seconds
+Domain Reload Profiling: 1115ms
+	BeginReloadAssembly (159ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (175ms)
+		LoadAssemblies (162ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (170ms)
+			TypeCache.Refresh (167ms)
+				TypeCache.ScanAssembly (153ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (667ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (617ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (447ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (119ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.693 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.865 seconds
+Domain Reload Profiling: 1559ms
+	BeginReloadAssembly (163ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (432ms)
+		LoadAssemblies (376ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (146ms)
+			TypeCache.Refresh (123ms)
+				TypeCache.ScanAssembly (103ms)
+			ScanForSourceGeneratedMonoScriptInfo (18ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (866ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (673ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (72ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (345ms)
+			ProcessInitializeOnLoadMethodAttributes (177ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launching external process: /Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
+Refreshing native plugins compatible for Editor in 4.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2482 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (47.2 KB). Loaded Objects now: 2959.
+Memory consumption went from 120.3 MB to 120.2 MB.
+Total: 6.544160 ms (FindLiveObjects: 0.206622 ms CreateObjectMapping: 0.145024 ms MarkObjects: 6.088708 ms  DeleteObjects: 0.103143 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: 16ba0791c4d4be6eab0054542ec1ca9d -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 35077cd43b9062b8a27b39c021967587 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Import Request.
+  Time since last request: 2227174.853569 seconds.
+  path: Assets/Scripts/Levels/LevelBackground.cs
+  artifactKey: Guid(b5377a5d4caa94482972174d0a74ac4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Levels/LevelBackground.cs using Guid(b5377a5d4caa94482972174d0a74ac4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '69cf05bc7668cd862bea5c2f7c686d6e') in 0.001869 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 341.334594 seconds.
+  path: Assets/Scripts/Levels/LevelBackground.cs
+  artifactKey: Guid(b5377a5d4caa94482972174d0a74ac4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Levels/LevelBackground.cs using Guid(b5377a5d4caa94482972174d0a74ac4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4486a2f187655f4947a6b73e15e020c1') in 0.092911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 126.739759 seconds.
+  path: Assets/Scripts/Levels/LevelBounds.cs
+  artifactKey: Guid(6a40dacbeba84ba1b55163e9b048081b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Levels/LevelBounds.cs using Guid(6a40dacbeba84ba1b55163e9b048081b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '72daba7e4a969c418feb4a9f6bb6b30b') in 0.000378 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 366.755958 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '62e6e2ebc63a734ad55f142909e1f429') in 0.003766 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 60.112200 seconds.
+  path: Assets/Scripts/Enemies/EnemyManager.cs
+  artifactKey: Guid(32dae85f8264479bac19d85418d92392) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Enemies/EnemyManager.cs using Guid(32dae85f8264479bac19d85418d92392) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f8d1a1489a728e6f17f31218e83b05a9') in 0.005259 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 59.090296 seconds.
+  path: Packages/com.unity.analytics/Editor/Analytics.asmdef
+  artifactKey: Guid(9811a7ba202944de58374f6369b5bceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.analytics/Editor/Analytics.asmdef using Guid(9811a7ba202944de58374f6369b5bceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '35304332aa06b680a895cbe994b4fa15') in 0.000413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.001257 seconds.
+  path: Packages/com.unity.ide.rider/Rider/Editor/com.unity.ide.rider.asmdef
+  artifactKey: Guid(d528c8c98d269ca44a06cd9624a03945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ide.rider/Rider/Editor/com.unity.ide.rider.asmdef using Guid(d528c8c98d269ca44a06cd9624a03945) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4e2ad02bae9a38a61c458b20d3b8a60f') in 0.000246 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.001098 seconds.
+  path: Packages/com.unity.timeline/DocCodeExamples/DocCodeExamples.asmdef
+  artifactKey: Guid(9550f6b9c1ac87345a996c43f204fb30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.timeline/DocCodeExamples/DocCodeExamples.asmdef using Guid(9550f6b9c1ac87345a996c43f204fb30) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6cc3f59a0ddd4ea5ec4181fede874391') in 0.000250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.002280 seconds.
+  path: Packages/com.unity.purchasing/Runtime/Common/Purchasing.Common.asmdef
+  artifactKey: Guid(7bb1ee73ebb9f114188944f67b1333d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/Common/Purchasing.Common.asmdef using Guid(7bb1ee73ebb9f114188944f67b1333d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6935b8db7314d80a30fb982eb94a7f8a') in 0.000261 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000655 seconds.
+  path: Packages/com.unity.2d.sprite/Tests/Editor/Unity.2D.Sprite.Package.EditorTests.asmdef
+  artifactKey: Guid(52648b72c7bef2040bf0cfa8dd0f74da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Tests/Editor/Unity.2D.Sprite.Package.EditorTests.asmdef using Guid(52648b72c7bef2040bf0cfa8dd0f74da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e47b917ed648242db78d35892a8ab79b') in 0.000229 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000589 seconds.
+  path: Packages/com.unity.2d.tilemap/Tests/Editor/Unity.2D.Tilemap.Package.EditorTests.asmdef
+  artifactKey: Guid(8ce1fc14411aade4b81c0e6dd86950be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.tilemap/Tests/Editor/Unity.2D.Tilemap.Package.EditorTests.asmdef using Guid(8ce1fc14411aade4b81c0e6dd86950be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2d2168d5f2b419d57d0728c63cf7642e') in 0.000265 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000678 seconds.
+  path: Packages/com.unity.ai.navigation/Editor/Unity.AI.Navigation.Editor.asmdef
+  artifactKey: Guid(86c9d8e67265f41469be06142c397d17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ai.navigation/Editor/Unity.AI.Navigation.Editor.asmdef using Guid(86c9d8e67265f41469be06142c397d17) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'aa3b0aa17871e1c6d7a2455563d0f155') in 0.000234 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000532 seconds.
+  path: Packages/com.unity.ai.navigation/Tests/Editor/Unity.AI.Navigation.Editor.Tests.asmdef
+  artifactKey: Guid(794824b4a8f003f47a92875e8342f790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ai.navigation/Tests/Editor/Unity.AI.Navigation.Editor.Tests.asmdef using Guid(794824b4a8f003f47a92875e8342f790) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'eccf793b7a9fa6673e05bb79dfe86724') in 0.000252 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000531 seconds.
+  path: Packages/com.unity.ai.navigation/Editor/Updater/Unity.AI.Navigation.Updater.asmdef
+  artifactKey: Guid(1664e92176d434ccd902c1705fefe682) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ai.navigation/Editor/Updater/Unity.AI.Navigation.Updater.asmdef using Guid(1664e92176d434ccd902c1705fefe682) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8c24b229c4620c0cdc76237e59450acd') in 0.000247 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Packages/com.unity.analytics/DataPrivacy/Unity.Analytics.DataPrivacy.asmdef
+  artifactKey: Guid(0fda7ebe61ab2164383d10e32efb9c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.analytics/DataPrivacy/Unity.Analytics.DataPrivacy.asmdef using Guid(0fda7ebe61ab2164383d10e32efb9c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '959d29d7830ed14c880b3f9c97477deb') in 0.000233 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000633 seconds.
+  path: Packages/com.unity.analytics/Tests/Editor/Unity.Analytics.StandardEvents.EditorTests.asmdef
+  artifactKey: Guid(adee0c1377ef8b2489060e152dd0d119) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.analytics/Tests/Editor/Unity.Analytics.StandardEvents.EditorTests.asmdef using Guid(adee0c1377ef8b2489060e152dd0d119) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '524a9c2196200b3fddaea7dd1ff61505') in 0.000244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Toolbar/Unity.CollabProxy.Editor.asmdef
+  artifactKey: Guid(17b36165d09634a48bf5a0e4bb27f4bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Toolbar/Unity.CollabProxy.Editor.asmdef using Guid(17b36165d09634a48bf5a0e4bb27f4bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '44c0fb5efcc80e070a59dd61c18e9de2') in 0.000212 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000113 seconds.
+  path: Packages/com.unity.ide.vscode/Editor/Unity.com.unity.vscode.Editor.asmdef
+  artifactKey: Guid(8b845b123ab418448a8be2935fa804e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ide.vscode/Editor/Unity.com.unity.vscode.Editor.asmdef using Guid(8b845b123ab418448a8be2935fa804e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c6222dff5eba1c07bada807aa1b8a16a') in 0.000207 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Unity.PlasticSCM.Editor.asmdef
+  artifactKey: Guid(4b84427fd7ace4b4cb623ef8a46124ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Unity.PlasticSCM.Editor.asmdef using Guid(4b84427fd7ace4b4cb623ef8a46124ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2f00678147f310a34122555ef7d57305') in 0.000202 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000676 seconds.
+  path: Packages/com.unity.services.analytics/Editor/Unity.Services.Analytics.Editor.asmdef
+  artifactKey: Guid(0e3c3eb7c9e204d9a971561df3498313) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.analytics/Editor/Unity.Services.Analytics.Editor.asmdef using Guid(0e3c3eb7c9e204d9a971561df3498313) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4931536e4a43776e5a6284b928976a85') in 0.000236 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000598 seconds.
+  path: Packages/com.unity.services.core/Runtime/Analytics/Unity.Services.Core.Analytics.asmdef
+  artifactKey: Guid(1104de264d522446f8274872ebf70b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Analytics/Unity.Services.Core.Analytics.asmdef using Guid(1104de264d522446f8274872ebf70b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bbf629fc2687858dd6a77701e31c62f7') in 0.000262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Packages/com.unity.services.core/Runtime/Configuration/Unity.Services.Core.Configuration.asmdef
+  artifactKey: Guid(4077802dea91b4b6d878b48b4160bd81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Configuration/Unity.Services.Core.Configuration.asmdef using Guid(4077802dea91b4b6d878b48b4160bd81) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e2d06f5d113e7cf0f5f520b0c705f186') in 0.000236 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Packages/com.unity.services.core/Runtime/Device/Unity.Services.Core.Device.asmdef
+  artifactKey: Guid(614c328814c3e4cb89d08dcc15048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Device/Unity.Services.Core.Device.asmdef using Guid(614c328814c3e4cb89d08dcc15048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4ae89ec8e38e5581daa9d080e7ea2e0b') in 0.000218 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000518 seconds.
+  path: Packages/com.unity.services.core/Runtime/Environments/Unity.Services.Core.Environments.asmdef
+  artifactKey: Guid(70ea675efa2644cef98c7ece24158333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Environments/Unity.Services.Core.Environments.asmdef using Guid(70ea675efa2644cef98c7ece24158333) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cf6975802462c1775ce8566c623ef05d') in 0.000236 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000527 seconds.
+  path: Packages/com.unity.services.core/Runtime/Environments/Internal/Unity.Services.Core.Environments.Internal.asmdef
+  artifactKey: Guid(93dfd405b987c45479315eb420601044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Environments/Internal/Unity.Services.Core.Environments.Internal.asmdef using Guid(93dfd405b987c45479315eb420601044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cc68d85ed77d69ae95ddb3c0c958452f') in 0.000214 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Packages/com.unity.services.core/Runtime/Core.Internal/Unity.Services.Core.Internal.asmdef
+  artifactKey: Guid(f82009cf854e040a18ebb38251781c58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Core.Internal/Unity.Services.Core.Internal.asmdef using Guid(f82009cf854e040a18ebb38251781c58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a0831d92c8b819484df632ef2fd4e1fb') in 0.000229 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000611 seconds.
+  path: Packages/com.unity.services.core/Runtime/Registration/Unity.Services.Core.Registration.asmdef
+  artifactKey: Guid(7a3effa9f908d4e8a88877e048cf05dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Registration/Unity.Services.Core.Registration.asmdef using Guid(7a3effa9f908d4e8a88877e048cf05dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '04cd931f387f8d413d204b04718ea325') in 0.000234 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000591 seconds.
+  path: Packages/com.unity.services.core/Runtime/Telemetry/Unity.Services.Core.Telemetry.asmdef
+  artifactKey: Guid(d8e56012c572e204692b3fe5183b7da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.services.core/Runtime/Telemetry/Unity.Services.Core.Telemetry.asmdef using Guid(d8e56012c572e204692b3fe5183b7da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0e4a037979c77e7744196a887cc2f4a4') in 0.000225 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000563 seconds.
+  path: Packages/com.unity.textmeshpro/Scripts/Runtime/Unity.TextMeshPro.asmdef
+  artifactKey: Guid(6055be8ebefd69e48b49212b09b47b2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.textmeshpro/Scripts/Runtime/Unity.TextMeshPro.asmdef using Guid(6055be8ebefd69e48b49212b09b47b2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd26879f615d7dc6f45a5395ecf06eda4') in 0.000239 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000594 seconds.
+  path: Packages/com.unity.textmeshpro/Tests/Editor/Unity.TextMeshPro.Editor.Tests.asmdef
+  artifactKey: Guid(656e461844099ae43a609ff6109b0877) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.textmeshpro/Tests/Editor/Unity.TextMeshPro.Editor.Tests.asmdef using Guid(656e461844099ae43a609ff6109b0877) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'db9aaa4a1d3ce1a639fb33b7f0d3d064') in 0.000228 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000614 seconds.
+  path: Packages/com.unity.timeline/Runtime/Unity.Timeline.asmdef
+  artifactKey: Guid(f06555f75b070af458a003d92f9efb00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.timeline/Runtime/Unity.Timeline.asmdef using Guid(f06555f75b070af458a003d92f9efb00) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6985c4339a11c6c1b94d9986a6195e51') in 0.000259 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000624 seconds.
+  path: Packages/com.unity.purchasing/Editor/UnityEditor.Purchasing.asmdef
+  artifactKey: Guid(e25a61468ff30f44fad56a6b40062363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Editor/UnityEditor.Purchasing.asmdef using Guid(e25a61468ff30f44fad56a6b40062363) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '146f22b6438b2c02ae51f30d80d5fe41') in 0.000238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000609 seconds.
+  path: Packages/com.unity.ugui/Editor/UnityEditor.UI.asmdef
+  artifactKey: Guid(343deaaf83e0cee4ca978e7df0b80d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ugui/Editor/UnityEditor.UI.asmdef using Guid(343deaaf83e0cee4ca978e7df0b80d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fc5790c11c718cd33d6ac060ce982691') in 0.000229 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000596 seconds.
+  path: Packages/com.unity.ads/Runtime/Advertisement/UnityEngine.Advertisements.asmdef
+  artifactKey: Guid(ff6de30450f3748908ff580f6ec64d9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ads/Runtime/Advertisement/UnityEngine.Advertisements.asmdef using Guid(ff6de30450f3748908ff580f6ec64d9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '823439089392d8bf1e0e3db99cf4ee2c') in 0.000213 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Packages/com.unity.ads/Editor/DevX/UnityEngine.Advertisements.DevX.Editor.asmdef
+  artifactKey: Guid(5aac751f83eaba6479e8f37173176ce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ads/Editor/DevX/UnityEngine.Advertisements.DevX.Editor.asmdef using Guid(5aac751f83eaba6479e8f37173176ce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '51147c831c525b4c34668218c441ea6f') in 0.000204 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Packages/com.unity.ads/Editor/UnityEngine.Advertisements.Editor.asmdef
+  artifactKey: Guid(eb51336d7912e41739bc491a768fa824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ads/Editor/UnityEngine.Advertisements.Editor.asmdef using Guid(eb51336d7912e41739bc491a768fa824) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8ffc0f288c7cec23258323a5d6a659b1') in 0.000202 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Packages/com.unity.ads/Tests/Editor/Advertisement/UnityEngine.Advertisements.Editor.Tests.asmdef
+  artifactKey: Guid(11d2bef2c8c1341e283cdbbebf87d91b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ads/Tests/Editor/Advertisement/UnityEngine.Advertisements.Editor.Tests.asmdef using Guid(11d2bef2c8c1341e283cdbbebf87d91b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5a6c67f1553c5906691a2d2f207da340') in 0.000224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000609 seconds.
+  path: Packages/com.unity.purchasing/Runtime/Purchasing/UnityEngine.Purchasing.asmdef
+  artifactKey: Guid(60bfecf5cb232594891bc622f40d6bed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/Purchasing/UnityEngine.Purchasing.asmdef using Guid(60bfecf5cb232594891bc622f40d6bed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e6df431593a55f680ccf685879f6dfad') in 0.000233 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000524 seconds.
+  path: Packages/com.unity.purchasing/Runtime/AppleCore/UnityEngine.Purchasing.AppleCore.asmdef
+  artifactKey: Guid(38106865282c8c64c93112192f9fe21b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/AppleCore/UnityEngine.Purchasing.AppleCore.asmdef using Guid(38106865282c8c64c93112192f9fe21b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b4b41ce46d3bd884d47790dcde267b86') in 0.000235 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000565 seconds.
+  path: Packages/com.unity.purchasing/Runtime/AppleMacosStub/UnityEngine.Purchasing.AppleMacosStub.asmdef
+  artifactKey: Guid(f6443094e1de2413e6ae58b07d0bf1e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/AppleMacosStub/UnityEngine.Purchasing.AppleMacosStub.asmdef using Guid(f6443094e1de2413e6ae58b07d0bf1e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c19513a9ee87216f334f4d20c32f376c') in 0.000223 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000510 seconds.
+  path: Packages/com.unity.purchasing/Runtime/Codeless/UnityEngine.Purchasing.Codeless.asmdef
+  artifactKey: Guid(059c931883a8a274690376c0592ea9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/Codeless/UnityEngine.Purchasing.Codeless.asmdef using Guid(059c931883a8a274690376c0592ea9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9b549fb87f6ee3032baca49fcd3faf47') in 0.000221 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000446 seconds.
+  path: Packages/com.unity.purchasing/Runtime/SecurityCore/UnityEngine.Purchasing.SecurityCore.asmdef
+  artifactKey: Guid(e63a64384cc3ef04cac761c1ce76e9c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/SecurityCore/UnityEngine.Purchasing.SecurityCore.asmdef using Guid(e63a64384cc3ef04cac761c1ce76e9c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '09121273af20721bc4c0547a2e8b3682') in 0.000225 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000564 seconds.
+  path: Packages/com.unity.purchasing/Runtime/Stores/UnityEngine.Purchasing.Stores.asmdef
+  artifactKey: Guid(08d1c582746949b40ba6a45cdb776bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/Stores/UnityEngine.Purchasing.Stores.asmdef using Guid(08d1c582746949b40ba6a45cdb776bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e5de6cf23523c2a3518d5488a0d891b7') in 0.000228 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000596 seconds.
+  path: Packages/com.unity.purchasing/Runtime/WinRTCore/UnityEngine.Purchasing.WinRTCore.asmdef
+  artifactKey: Guid(e0481cc7f70ec8c48994e207808fddef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.purchasing/Runtime/WinRTCore/UnityEngine.Purchasing.WinRTCore.asmdef using Guid(e0481cc7f70ec8c48994e207808fddef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '59704942657bd066f0b4f0b403de6609') in 0.000232 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000485 seconds.
+  path: Packages/com.unity.test-framework/UnityEngine.TestRunner/UnityEngine.TestRunner.asmdef
+  artifactKey: Guid(27619889b8ba8c24980f49ee34dbb44a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/UnityEngine.TestRunner.asmdef using Guid(27619889b8ba8c24980f49ee34dbb44a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3c3a29d223288cc6375f2e0c048c2d06') in 0.000240 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000536 seconds.
+  path: Packages/com.unity.ugui/Tests/Runtime/UnityEngine.UI.Tests.asmdef
+  artifactKey: Guid(e9745f6a32442194c8dc5a43e9ab86f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ugui/Tests/Runtime/UnityEngine.UI.Tests.asmdef using Guid(e9745f6a32442194c8dc5a43e9ab86f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '32f64debc4ed9731eda09e7d09e4eae6') in 0.000249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.200202 seconds.
+  path: Assets/Scripts/Player/Module.Player.asmdef
+  artifactKey: Guid(9ed998210c3474602a58aa3b50846627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Module.Player.asmdef using Guid(9ed998210c3474602a58aa3b50846627) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f9fd6607f497e0c442d0e1c6b7693b12') in 0.000844 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.617023 seconds.
+  path: Assets/Scripts/Player/Module.Player.asmdef
+  artifactKey: Guid(9ed998210c3474602a58aa3b50846627) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Player/Module.Player.asmdef using Guid(9ed998210c3474602a58aa3b50846627) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7d594bde319503996cd5ad5803b7d084') in 0.005628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 63.614685 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5f97dcc6cb4a1df1b4ae54d3c318a673') in 0.003761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 5.354052 seconds.
+  path: Assets/Scripts/Player/Module.Player.asmdef
+  artifactKey: Guid(9ed998210c3474602a58aa3b50846627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Module.Player.asmdef using Guid(9ed998210c3474602a58aa3b50846627) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f32ac523694d833579c9ada4d33fb884') in 0.000322 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.912221 seconds.
+  path: Assets/Scripts/Player/Module.Player.asmdef
+  artifactKey: Guid(9ed998210c3474602a58aa3b50846627) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Player/Module.Player.asmdef using Guid(9ed998210c3474602a58aa3b50846627) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1837679f8e673eba170cc0605d01ea1f') in 0.004628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 27.459295 seconds.
+  path: Assets/Scripts/Layers/PhysicsLayer.cs
+  artifactKey: Guid(4fea55b4c93d4c7488ec7e645ea3462b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Layers/PhysicsLayer.cs using Guid(4fea55b4c93d4c7488ec7e645ea3462b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c8098ed400a71bbf1503e1c3f0c350e6') in 0.000358 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 33.940888 seconds.
+  path: Assets/Scripts/PhysicsLayer.cs
+  artifactKey: Guid(4fea55b4c93d4c7488ec7e645ea3462b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/PhysicsLayer.cs using Guid(4fea55b4c93d4c7488ec7e645ea3462b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b876ca91a958642b7499758b5e52f55') in 0.004015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 103.099383 seconds.
+  path: Assets/Scripts/Player/Player.cs
+  artifactKey: Guid(558b312fd53c491ab69f3e55255aae3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Player.cs using Guid(558b312fd53c491ab69f3e55255aae3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a74a85410d6fb694b7f005627e90816a') in 0.000370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 50.549125 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0e18ccdcb3e4fe9d7737e34be73d02dd') in 0.000458 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 33.558558 seconds.
+  path: Assets/Scripts/PlayerInput
+  artifactKey: Guid(b353a0b9eaaf442cdb86e47fbfbe49e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerInput using Guid(b353a0b9eaaf442cdb86e47fbfbe49e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ac8eef2ff83171a0ff84f7e99e5648d5') in 0.000462 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.950977 seconds.
+  path: Assets/Scripts/PlayerInput
+  artifactKey: Guid(b353a0b9eaaf442cdb86e47fbfbe49e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/PlayerInput using Guid(b353a0b9eaaf442cdb86e47fbfbe49e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'aac31f836d0f5acf4fefc2af6bf41e45') in 0.004010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 76.854654 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7dd38888f053d62d67e320cf8c39d5ed') in 0.004706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.521267 seconds.
+  path: Assets/Scripts/PlayerInput/Playerinput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerInput/Playerinput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'aecdb9cce4ec98e231324a3fd697b926') in 0.000573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.576732 seconds.
+  path: Assets/Scripts/PlayerInput/Playerinput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/PlayerInput/Playerinput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff538b5d80788ae5f8fec9b59cdb4a6f') in 0.004347 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 76.664532 seconds.
+  path: Assets/Scripts/PlayerInput/PlayerInputObserver.cs
+  artifactKey: Guid(23764fb140dc47b08e9fe4dd5d7f42d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/PlayerInput/PlayerInputObserver.cs using Guid(23764fb140dc47b08e9fe4dd5d7f42d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c0d433ea95fedbff46228cd0b8dcd7eb') in 0.005098 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 497.327369 seconds.
+  path: Assets/Scripts/Gameplay
+  artifactKey: Guid(5b11a8b87e6a40b79e4779ec43e48b8c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay using Guid(5b11a8b87e6a40b79e4779ec43e48b8c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '46595b64a7a308c8b5b7ddfa53025582') in 0.009652 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 9.435559 seconds.
+  path: Assets/Scripts/Gameplay/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3260951b285f1fdba81bc4f28864bd34') in 0.005554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 20.264709 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5b7265b7bb0f4a5066601fb5c7809a0b') in 0.006233 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 235.152054 seconds.
+  path: Assets/Scripts/Enemies/Enemy.cs
+  artifactKey: Guid(e09a324f54d94d6e84681731f36566c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Enemies/Enemy.cs using Guid(e09a324f54d94d6e84681731f36566c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a63bf7661c47d25cbaf9ca7947812b63') in 0.004534 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 59.200121 seconds.
+  path: Assets/Scripts/Modules
+  artifactKey: Guid(4ac35532eb7d94f508e23a433fea4c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Modules using Guid(4ac35532eb7d94f508e23a433fea4c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2f7d939c9a1e2ac13c72e71bffa0477e') in 0.000703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.925058 seconds.
+  path: Assets/Scripts/Modules
+  artifactKey: Guid(4ac35532eb7d94f508e23a433fea4c29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules using Guid(4ac35532eb7d94f508e23a433fea4c29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7e460aebeb95829ec64b33e2741e5655') in 0.004461 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 5.118218 seconds.
+  path: Assets/Scripts/Modules/Player
+  artifactKey: Guid(ea13d090793c4d438ffeeb364e8021ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Player using Guid(ea13d090793c4d438ffeeb364e8021ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd1a23bdcf3d397a3c74514dc9dbf61f1') in 0.003220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000391 seconds.
+  path: Assets/Scripts/Modules/PlayerInput/PlayerInputObserver.cs
+  artifactKey: Guid(23764fb140dc47b08e9fe4dd5d7f42d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/PlayerInput/PlayerInputObserver.cs using Guid(23764fb140dc47b08e9fe4dd5d7f42d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '764e4cfb4eb9ee1953addabef575806e') in 0.005599 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/Scripts/Modules/PlayerInput/Playerinput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/PlayerInput/Playerinput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff59e9e64f67ef73e368194a0b75b4b3') in 0.004755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 7.392486 seconds.
+  path: Assets/Scripts/Modules/Layers
+  artifactKey: Guid(9970d5a185c147b092da86a249fa3bc6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Layers using Guid(9970d5a185c147b092da86a249fa3bc6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '99a5205bf993db4d6e21b830cf1fdc20') in 0.003363 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Scripts/Modules/Layers/Module.Layers.asmdef
+  artifactKey: Guid(cc80923db7b1e45f3ab2eb4f638c147d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Layers/Module.Layers.asmdef using Guid(cc80923db7b1e45f3ab2eb4f638c147d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'eed329e5fb5ec650daa8be73f850e96a') in 0.004143 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Scripts/Modules/Levels/Module.Levels.asmdef
+  artifactKey: Guid(f2556d4501d8c484fb1761f0dc97ae5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Levels/Module.Levels.asmdef using Guid(f2556d4501d8c484fb1761f0dc97ae5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dac4fd8d7a0661961a7cb2f27c82d07d') in 0.005018 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.292087 seconds.
+  path: Assets/Scripts/Modules/Bullets
+  artifactKey: Guid(0e246e1447724f508fd53a23b07dd667) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Bullets using Guid(0e246e1447724f508fd53a23b07dd667) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1b804f2e4c5a0bb134982c0fe480ff61') in 0.003335 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Scripts/Modules/Enemies/Enemy.cs
+  artifactKey: Guid(e09a324f54d94d6e84681731f36566c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Enemies/Enemy.cs using Guid(e09a324f54d94d6e84681731f36566c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7d605506af45a785a54405fa9728e2b4') in 0.004838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 49.594924 seconds.
+  path: Assets/Scripts/Gameplay/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f8526e5929d2ef24b6a2d9115e1d20af') in 0.004289 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Scripts/Modules/Enemies/Enemy.cs
+  artifactKey: Guid(e09a324f54d94d6e84681731f36566c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Enemies/Enemy.cs using Guid(e09a324f54d94d6e84681731f36566c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3639d31838f6b05c30bf092513c1b0d6') in 0.004678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Scripts/Modules/Player/Player.cs
+  artifactKey: Guid(558b312fd53c491ab69f3e55255aae3c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/Player/Player.cs using Guid(558b312fd53c491ab69f3e55255aae3c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e929c7189efaab127fdcdaca534e7ed6') in 0.005250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 9.068718 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b8e12d7b32c584608d4100374397c014') in 0.000376 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.568688 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '498e0197636229e9aeec926687b393a3') in 0.000804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.522448 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '95346a151920c6cae91c10e42c5d945d') in 0.004026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 45.614561 seconds.
+  path: Assets/Scripts/Gameplay/PlayerController.cs
+  artifactKey: Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/PlayerController.cs using Guid(c57ed31af8d94ec3b11df7e2b588d40f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ae77f1fb66aa5136b10bb1e60f4b9966') in 0.004510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 14.027943 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1556787be625a93dd915a299c78a8359') in 0.000683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.582558 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f182dffdd77805681f2221f0861952a4') in 0.006745 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 40.566449 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '02f0ee344622484de968577a06c089e6') in 0.003795 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 10.101248 seconds.
+  path: Assets/Scripts/Modules/PlayerInput/Module.Playerinput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Modules/PlayerInput/Module.Playerinput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f354c7ee24d73eb0584e71a82bb0c8ea') in 0.000395 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.563368 seconds.
+  path: Assets/Scripts/Modules/PlayerInput/Module.Playerinput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/PlayerInput/Module.Playerinput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ea179f3f6bd26bbbd76a9a70cde0138b') in 0.004893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 18.448963 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '18cfd969a4526bdd6efe54401a1ebb23') in 0.000334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.063419 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '46f42868eebdd2aa777a9df372b0068e') in 0.000454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.908143 seconds.
+  path: Assets/Scripts/Gameplay/Gameplay.asmdef
+  artifactKey: Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Gameplay/Gameplay.asmdef using Guid(36af46d4483644869e5a38c850fda28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff3fcdef21000d5d3eb51176c5cbd630') in 0.003711 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 7.766328 seconds.
+  path: Assets/Scripts/Modules/PlayerInput/Module.PlayerInput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Modules/PlayerInput/Module.PlayerInput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3e4015c556885009ee5c6e41d21dda51') in 0.000369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.555788 seconds.
+  path: Assets/Scripts/Modules/PlayerInput/Module.PlayerInput.asmdef
+  artifactKey: Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Modules/PlayerInput/Module.PlayerInput.asmdef using Guid(bf7ea2640af554dfb894dea17ff13abe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4609f257e6921869aedef077d6eefc19') in 0.004475 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.537 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.451 seconds
+Domain Reload Profiling: 1989ms
+	BeginReloadAssembly (167ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (290ms)
+		LoadAssemblies (343ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (25ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1452ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (676ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (85ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (90ms)
+			ProcessInitializeOnLoadAttributes (329ms)
+			ProcessInitializeOnLoadMethodAttributes (166ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 6.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2461 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (27.4 KB). Loaded Objects now: 2962.
+Memory consumption went from 125.0 MB to 124.9 MB.
+Total: 6.786985 ms (FindLiveObjects: 0.207824 ms CreateObjectMapping: 0.158889 ms MarkObjects: 6.317427 ms  DeleteObjects: 0.101893 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: a1e5c8c92cec0714a7740227693cea50 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.460 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.224 seconds
+Domain Reload Profiling: 1683ms
+	BeginReloadAssembly (155ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (230ms)
+		LoadAssemblies (290ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1224ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (771ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (98ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (378ms)
+			ProcessInitializeOnLoadMethodAttributes (192ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 9.04 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2965.
+Memory consumption went from 133.5 MB to 133.5 MB.
+Total: 6.642192 ms (FindLiveObjects: 0.216730 ms CreateObjectMapping: 0.186534 ms MarkObjects: 6.194147 ms  DeleteObjects: 0.043796 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: a1e5c8c92cec0714a7740227693cea50 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.548 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.416 seconds
+Domain Reload Profiling: 1964ms
+	BeginReloadAssembly (162ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (311ms)
+		LoadAssemblies (360ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (27ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1416ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (678ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (82ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (334ms)
+			ProcessInitializeOnLoadMethodAttributes (165ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 5.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (26.9 KB). Loaded Objects now: 2968.
+Memory consumption went from 141.8 MB to 141.8 MB.
+Total: 6.233072 ms (FindLiveObjects: 0.197650 ms CreateObjectMapping: 0.158246 ms MarkObjects: 5.837985 ms  DeleteObjects: 0.038477 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: a1e5c8c92cec0714a7740227693cea50 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.590 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.112 seconds
+Domain Reload Profiling: 1701ms
+	BeginReloadAssembly (246ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (16ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (76ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (241ms)
+		LoadAssemblies (310ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1112ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (655ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (80ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (90ms)
+			ProcessInitializeOnLoadAttributes (320ms)
+			ProcessInitializeOnLoadMethodAttributes (161ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 5.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2971.
+Memory consumption went from 150.1 MB to 150.1 MB.
+Total: 6.118890 ms (FindLiveObjects: 0.191866 ms CreateObjectMapping: 0.154291 ms MarkObjects: 5.734299 ms  DeleteObjects: 0.037631 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: d4c6d1a5e0fe8129091361514ae95df6 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: 1cee34e25c4bf23522c2ee16def7a8ec -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.522 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.452 seconds
+Domain Reload Profiling: 1974ms
+	BeginReloadAssembly (152ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (292ms)
+		LoadAssemblies (346ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1453ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (682ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (88ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (330ms)
+			ProcessInitializeOnLoadMethodAttributes (165ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 6.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2974.
+Memory consumption went from 158.5 MB to 158.4 MB.
+Total: 5.987361 ms (FindLiveObjects: 0.192483 ms CreateObjectMapping: 0.151682 ms MarkObjects: 5.608834 ms  DeleteObjects: 0.033540 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.460 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.621 seconds
+Domain Reload Profiling: 2081ms
+	BeginReloadAssembly (151ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (233ms)
+		LoadAssemblies (291ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1621ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (801ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (89ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (122ms)
+			ProcessInitializeOnLoadAttributes (396ms)
+			ProcessInitializeOnLoadMethodAttributes (187ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 7.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2977.
+Memory consumption went from 166.8 MB to 166.8 MB.
+Total: 7.116563 ms (FindLiveObjects: 0.218062 ms CreateObjectMapping: 0.228657 ms MarkObjects: 6.614619 ms  DeleteObjects: 0.054207 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.535 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.631 seconds
+Domain Reload Profiling: 2144ms
+	BeginReloadAssembly (153ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (47ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (280ms)
+		LoadAssemblies (341ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1632ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (790ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (88ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (97ms)
+			ProcessInitializeOnLoadAttributes (406ms)
+			ProcessInitializeOnLoadMethodAttributes (194ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 8.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2980.
+Memory consumption went from 175.1 MB to 175.1 MB.
+Total: 6.603649 ms (FindLiveObjects: 0.218312 ms CreateObjectMapping: 0.189815 ms MarkObjects: 6.149470 ms  DeleteObjects: 0.045250 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+[usbmuxd] Attached: 69765 ba979540ac69ec0dfe69e561d780a69db0107f3c
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.610 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.485 seconds
+Domain Reload Profiling: 2095ms
+	BeginReloadAssembly (179ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (52ms)
+	RebuildCommonClasses (72ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (309ms)
+		LoadAssemblies (379ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1486ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (687ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (92ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (86ms)
+			ProcessInitializeOnLoadAttributes (337ms)
+			ProcessInitializeOnLoadMethodAttributes (166ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 6.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2983.
+Memory consumption went from 183.4 MB to 183.4 MB.
+Total: 6.250090 ms (FindLiveObjects: 0.200630 ms CreateObjectMapping: 0.166279 ms MarkObjects: 5.847136 ms  DeleteObjects: 0.035442 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.539 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.428 seconds
+Domain Reload Profiling: 1967ms
+	BeginReloadAssembly (156ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (306ms)
+		LoadAssemblies (357ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (25ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1429ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (681ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (87ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (91ms)
+			ProcessInitializeOnLoadAttributes (329ms)
+			ProcessInitializeOnLoadMethodAttributes (167ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 6.84 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 2986.
+Memory consumption went from 191.7 MB to 191.7 MB.
+Total: 6.135898 ms (FindLiveObjects: 0.202190 ms CreateObjectMapping: 0.187935 ms MarkObjects: 5.706065 ms  DeleteObjects: 0.039074 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.588 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.736 seconds
+Domain Reload Profiling: 2323ms
+	BeginReloadAssembly (152ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (329ms)
+		LoadAssemblies (388ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1736ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (797ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (93ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (110ms)
+			ProcessInitializeOnLoadAttributes (396ms)
+			ProcessInitializeOnLoadMethodAttributes (191ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 7.85 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (26.9 KB). Loaded Objects now: 2989.
+Memory consumption went from 200.0 MB to 200.0 MB.
+Total: 6.863280 ms (FindLiveObjects: 0.287266 ms CreateObjectMapping: 0.191379 ms MarkObjects: 6.332021 ms  DeleteObjects: 0.051786 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
+========================================================================
+Received Import Request.
+  Time since last request: 2855.136565 seconds.
+  path: Assets/Prefabs/Character.prefab
+  artifactKey: Guid(9699e7e809fd44b2bbf3d30c951ecbd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Character.prefab using Guid(9699e7e809fd44b2bbf3d30c951ecbd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a43094f501c536cb326770978d7eb6c3') in 0.251165 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Prepare
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Caller must complete domain reload
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.451 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Enemies' already exists (Assets/Scripts/Modules/Enemies/Module.Enemies.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Modules/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Layers' already exists (Assets/Scripts/Layers/Module.Layers.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Modules/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Levels' already exists (Assets/Scripts/Levels/Module.Levels.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Modules/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Bullets' already exists (Assets/Scripts/Bullets/Module.Bullets.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Player/Module.Player.asmdef)
+Assembly with name 'Module.Player' already exists (Assets/Scripts/Modules/Player/Module.Player.asmdef)
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.245 seconds
+Domain Reload Profiling: 1696ms
+	BeginReloadAssembly (147ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (229ms)
+		LoadAssemblies (281ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1245ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (764ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (112ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (355ms)
+			ProcessInitializeOnLoadMethodAttributes (192ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 7.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2461 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3000.
+Memory consumption went from 208.9 MB to 208.9 MB.
+Total: 7.181105 ms (FindLiveObjects: 0.199668 ms CreateObjectMapping: 0.166690 ms MarkObjects: 6.771686 ms  DeleteObjects: 0.042146 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: ceee877ad22d854b7b7c0631b36a731f -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/precompiled-assembly-types:Module.Player: d033a505a54eb6448c634710f8b4cb28 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 7926e945b5a89e6306ab36292576cd99 -> 
+  custom:scripting/precompiled-assembly-types:Playerinput: 41231d69c17248e692ac43b6e3b5d9d4 -> 
+  custom:scripting/precompiled-assembly-types:Module.Bullets: b7fb6b930b2e641a6243a609670761ee -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 35a630803c4c38bb1aca54a4083157f3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Levels: b410ab7a46958b9a0d19521ddb4cfda9 -> 37524c5f1af67a501230aedf949c6aba
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/precompiled-assembly-types:Gameplay: 5a5b65d3a6e7b9e5cdcad8b7c458f6e0 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: ef9137aea129f72ae480f78a6f1e992a -> 
+  custom:scripting/monoscript/fileName/PlayerInputObserver.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/InputListener.cs: c3e413fb9bfe8601d49e5c3a7ce13641 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: fe1a73898ed2a3c08b1f8fa23f41ccc9 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: 664835eb7749ff6c1ddc2c1a05ac5274 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: 16a5f20530a2901ff5a5f433fbf43a36 -> c8da915ce1f2e18a8e89cb6764e9ee67
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 306bed8b13b5c0cb23e622ea2ae4d211 -> ed5010878641bef22813f7d7e79a10d9
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 81fe4cc40c58c32d6871f7220c46c5c8 -> 
+  custom:scripting/monoscript/fileName/PlayerInputListener.cs: c17a0d3e0255d1be591919273be152b7 -> 
+  custom:scripting/monoscript/fileName/Params.cs:  -> f9dd6390c98a969f199429d2457d04f4
