@@ -1,0 +1,2 @@
+Temp/ScriptUpdater/597538683/1361214859_BulletFactory.cs => Assets/Scripts/Gameplay/BulletFactory.cs
+Temp/ScriptUpdater/597538683/274084784_BulletManager.cs => Assets/Scripts/Gameplay/BulletManager.cs

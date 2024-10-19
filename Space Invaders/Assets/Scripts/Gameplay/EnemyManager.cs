@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Modules.Enemies;
-using Modules.Layers;
 using Modules.Player;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -30,8 +29,8 @@ namespace Gameplay
         [SerializeField]
         private Enemy prefab;
         
-        [SerializeField]
-        private BulletManager _bulletSystem;
+        // [SerializeField]
+        // private BulletManager _bulletSystem;
         
         private readonly HashSet<Enemy> m_activeEnemies = new();
         private readonly Queue<Enemy> enemyPool = new();
@@ -74,29 +73,29 @@ namespace Gameplay
 
         private void FixedUpdate()
         {
-            foreach (Enemy enemy in m_activeEnemies.ToArray())
-            {
-                if (enemy.health <= 0)
-                {
-                    enemy.OnFire -= this.OnFire;
-                    enemy.transform.SetParent(this.container);
-
-                    m_activeEnemies.Remove(enemy);
-                    this.enemyPool.Enqueue(enemy);
-                }
-            }
+            // foreach (Enemy enemy in m_activeEnemies.ToArray())
+            // {
+            //     if (enemy.health <= 0)
+            //     {
+            //         enemy.OnFire -= this.OnFire;
+            //         enemy.transform.SetParent(this.container);
+            //
+            //         m_activeEnemies.Remove(enemy);
+            //         this.enemyPool.Enqueue(enemy);
+            //     }
+            // }
         }
 
         private void OnFire(Vector2 position, Vector2 direction)
         {
-            _bulletSystem.SpawnBullet(
-                position,
-                Color.red,
-                (int) PhysicsLayer.EnemyBullet,
-                1,
-                false,
-                direction * 2
-            );
+            // _bulletSystem.SpawnBullet(
+            //     position,
+            //     Color.red,
+            //     (int) PhysicsLayer.EnemyBullet,
+            //     1,
+            //     false,
+            //     direction * 2
+            // );
         }
 
         private Transform RandomPoint(Transform[] points)

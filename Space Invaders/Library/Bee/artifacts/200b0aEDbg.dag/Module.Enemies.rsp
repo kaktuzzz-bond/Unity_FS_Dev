@@ -345,7 +345,10 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Scripts/Modules/Enemies/Enemy.cs"
+"Assets/Scripts/Modules/Units/Bullet.cs"
+"Assets/Scripts/Modules/Units/Enemy.cs"
+"Assets/Scripts/Modules/Units/Player.cs"
+"Assets/Scripts/Modules/Units/UnitBase.cs"
 -langversion:9.0
 /deterministic
 /optimize-

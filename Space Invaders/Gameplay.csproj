@@ -45,8 +45,9 @@
     <Analyzer Include="/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Gameplay/ObjectPool.cs" />
     <Compile Include="Assets/Scripts/Gameplay/EnemyManager.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/BulletManager.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/BulletFactory.cs" />
     <Compile Include="Assets/Scripts/Gameplay/PlayerController.cs" />
     <None Include="Assets/Scripts/Gameplay/Gameplay.asmdef" />
     <Reference Include="UnityEngine">
@@ -726,17 +727,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Module.Player.csproj">
-      <Project>{7d22564a-d2a4-cb6e-b54e-634d6e9542ce}</Project>
-      <Name>Module.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="Module.Layers.csproj">
       <Project>{13d71dbf-b2ca-372a-8a4a-74057fa6c98b}</Project>
       <Name>Module.Layers</Name>
-    </ProjectReference>
-    <ProjectReference Include="Module.Bullets.csproj">
-      <Project>{c5594480-c786-037e-c026-1d9484f4d549}</Project>
-      <Name>Module.Bullets</Name>
     </ProjectReference>
     <ProjectReference Include="Module.Enemies.csproj">
       <Project>{d490a815-ba97-6d08-75c3-fbf3a13c2754}</Project>

@@ -9,7 +9,8 @@ namespace Gameplay
     {
         [SerializeField] private Player character;
 
-        [SerializeField] private BulletManager bulletManager;
+        //[SerializeField] private BulletManager bulletManager;
+        [SerializeField] private BulletFactory bulletFactory;
 
         [SerializeField] private InputListener inputListener;
 
@@ -18,6 +19,7 @@ namespace Gameplay
 
         private void Awake()
         {
+            bulletFactory.Initialize(10);
             this.character.OnHealthEmpty += _ => Time.timeScale = 0;
         }
 
@@ -33,7 +35,7 @@ namespace Gameplay
 
         private void OnFirePressedHandler()
         {
-            character.Fire();
+            character.Attack();
         }
 
         private void OnLeftPressedHandler()
@@ -49,14 +51,7 @@ namespace Gameplay
 
         private void SpawnBullet(Transform firePoint)
         {
-            bulletManager.SpawnBullet(
-                firePoint.position,
-                Color.blue,
-                (int)PhysicsLayer.PlayerBullet,
-                1,
-                true,
-                firePoint.rotation * Vector3.up * 3
-            );
+            bulletFactory.SpawnPlayerBullet(firePoint.position, firePoint.rotation * Vector3.up * 3, 1);
         }
 
         private void OnDisable()
