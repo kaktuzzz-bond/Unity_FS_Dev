@@ -45,14 +45,8 @@
     <Analyzer Include="/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Modules/Units/Bullet.cs" />
-    <Compile Include="Assets/Scripts/Modules/Units/ObjectPool.cs" />
-    <Compile Include="Assets/Scripts/Modules/Units/SpaceshipBase.cs" />
-    <Compile Include="Assets/Scripts/Modules/Units/Data.cs" />
-    <Compile Include="Assets/Scripts/Modules/Units/BulletFactory.cs" />
-    <Compile Include="Assets/Scripts/Modules/Units/Player.cs" />
-    <Compile Include="Assets/Scripts/Modules/Units/Enemy.cs" />
-    <None Include="Assets/Scripts/Modules/Units/Module.Enemies.asmdef" />
+    <Compile Include="Assets/Scripts/Modules/Pooping/ObjectPool.cs" />
+    <None Include="Assets/Scripts/Modules/Pooping/Module.Pooling.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

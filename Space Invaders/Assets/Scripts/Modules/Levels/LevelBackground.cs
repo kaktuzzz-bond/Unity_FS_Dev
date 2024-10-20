@@ -4,42 +4,29 @@ namespace Modules.Levels
 {
     public sealed class LevelBackground : MonoBehaviour
     {
-        [SerializeField]
-        private float startPositionY = 19;
-        [SerializeField]
-        private float endPositionY = -38;
-        [SerializeField]
-        private float movingSpeedY = 5;
-        
-        private float positionX;
-        private float positionZ;
+        [SerializeField] private float height;
+        [SerializeField] private float movingSpeedY;
 
-        private Transform myTransform;
+        private float movementY;
 
-        private void Awake()
+        private bool _isMoving;
+
+        public void Initialize()
         {
-            this.myTransform = this.transform;
-            var position = this.myTransform.position;
-            this.positionX = position.x;
-            this.positionZ = position.z;
+            _isMoving = true;
         }
+       
 
-        private void FixedUpdate()
+        private void Update()
         {
-            if (this.myTransform.position.y <= this.endPositionY)
-            {
-                this.myTransform.position = new Vector3(
-                    this.positionX,
-                    this.startPositionY,
-                    this.positionZ
-                );
-            }
+            if (!_isMoving) return;
 
-            this.myTransform.position -= new Vector3(
-                this.positionX,
-                this.movingSpeedY * Time.fixedDeltaTime,
-                this.positionZ
-            );
+            transform.Translate(Vector3.down * movingSpeedY * Time.deltaTime);
+
+            if (transform.position.y <= - height)
+            {
+                transform.position = new Vector3(transform.position.x, height, transform.position.z);
+            }
         }
     }
 }
