@@ -6,12 +6,12 @@ namespace Gameplay
 {
     public class SpaceshipFactory : MonoBehaviour
     {
-        
         [SerializeField] private Player playerPrefab;
         [SerializeField] private Enemy enemyPrefab;
         [SerializeField] private Transform playerParent;
         [SerializeField] private Transform enemyParent;
 
+        [SerializeField] private int poolSize = 7;
         [SerializeField] private int playerHealth = 5;
         [SerializeField] private int enemyHealth = 3;
         [SerializeField] private float playerSpeed = 5f;
@@ -21,24 +21,27 @@ namespace Gameplay
         private ObjectPool<SpaceshipBase> _playerPool;
         private BulletFactory _bulletFactory;
 
-        public void Initialize(int enemyPoolCapacity, BulletFactory bulletFactory)
+        public void Initialize(BulletFactory bulletFactory)
         {
-            _enemyPool = new ObjectPool<SpaceshipBase>(enemyPrefab, enemyParent, enemyPoolCapacity);
+            _enemyPool = new ObjectPool<SpaceshipBase>(enemyPrefab, enemyParent, poolSize);
             _playerPool = new ObjectPool<SpaceshipBase>(playerPrefab, playerParent, 1);
             _bulletFactory = bulletFactory;
         }
 
-        public SpaceshipBase SpawnPlayer() =>
-            SetupSpaceship(_playerPool.Spawn(), playerParent.position, playerHealth, playerSpeed, playerParent,
+        public SpaceshipBase SpawnPlayer()
+        {
+            var item = SetupSpaceship(_playerPool.Spawn(), playerParent.position, playerHealth, playerSpeed,
+                playerParent,
                 Data.Tags.PlayerTag, Data.Layers.PlayerSpaceshipLayer);
+            return item.SetActionOnHealthEmpty(() => _playerPool.Despawn(item));
+        }
 
-        public SpaceshipBase SpawnEnemy(Vector2 at) =>
-            SetupSpaceship(_enemyPool.Spawn(), at, enemyHealth, enemySpeed, enemyParent, Data.Tags.EnemyTag,
+        public SpaceshipBase SpawnEnemy(Vector2 at)
+        {
+            var item = SetupSpaceship(_enemyPool.Spawn(), at, enemyHealth, enemySpeed, enemyParent, Data.Tags.EnemyTag,
                 Data.Layers.EnemySpaceshipLayer);
-
-        public SpaceshipBase SpawnEnemy() =>
-            SetupSpaceship(_enemyPool.Spawn(), Vector2.zero, enemyHealth, enemySpeed, enemyParent, Data.Tags.EnemyTag,
-                Data.Layers.EnemySpaceshipLayer);
+            return item.SetActionOnHealthEmpty(() => _enemyPool.Despawn(item));
+        }
 
         private SpaceshipBase SetupSpaceship(SpaceshipBase spaceship, Vector2 position, int health, float speed,
             Transform parent, string unitTag, int physicsLayer)

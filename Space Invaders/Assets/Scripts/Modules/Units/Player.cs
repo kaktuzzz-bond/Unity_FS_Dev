@@ -7,7 +7,7 @@ namespace Modules.Units
     {
         public override void Attack()
         {
-            bulletFactory.SpawnPlayerBullet(firePoint.position, firePoint.rotation * Vector3.up * 3, 1);
+            bulletFactory.SpawnPlayerBullet(firePoint.position, firePoint.rotation * Vector3.up * 3);
         }
     }
 }

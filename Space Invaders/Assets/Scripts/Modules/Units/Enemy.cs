@@ -5,8 +5,6 @@ namespace Modules.Units
 {
     public sealed class Enemy : SpaceshipBase
     {
-        //public delegate void FireHandler(Vector2 position, Vector2 direction);
-        
         [SerializeField]
         private float countdown;
         
@@ -41,11 +39,10 @@ namespace Modules.Units
             _currentTime -= Time.fixedDeltaTime;
             if (_currentTime <= 0)
             {
-                Vector2 startPosition = this.firePoint.position;
-                Vector2 vector = (Vector2) target.transform.position - startPosition;
-                Vector2 direction = vector.normalized;
+                Vector2 startPosition = firePoint.position;
+                var velocity = ((Vector2) target.transform.position - startPosition).normalized;
                 
-                bulletFactory.SpawnEnemyBullet(startPosition, direction, 1);
+                bulletFactory.SpawnEnemyBullet(startPosition, velocity);
                     
                 _currentTime += countdown;
             }

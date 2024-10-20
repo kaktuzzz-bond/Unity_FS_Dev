@@ -7582,3 +7582,1200 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
   custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
   custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.499 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.487 seconds
+Domain Reload Profiling: 1985ms
+	BeginReloadAssembly (166ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (60ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (248ms)
+		LoadAssemblies (296ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (7ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1487ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (656ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (82ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (335ms)
+			ProcessInitializeOnLoadMethodAttributes (169ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 6.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2477 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3215.
+Memory consumption went from 0.75 GB to 0.75 GB.
+Total: 6.750020 ms (FindLiveObjects: 0.223713 ms CreateObjectMapping: 0.161660 ms MarkObjects: 6.324349 ms  DeleteObjects: 0.039427 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 6154596bd562c9f4a336f32996160e7f -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5a3f74bff56c1feff0efc9bdc9cf164e -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.501 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.427 seconds
+Domain Reload Profiling: 1929ms
+	BeginReloadAssembly (161ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (261ms)
+		LoadAssemblies (310ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (27ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1428ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (678ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (99ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (332ms)
+			ProcessInitializeOnLoadMethodAttributes (174ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 7.01 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2477 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3218.
+Memory consumption went from 0.76 GB to 0.76 GB.
+Total: 6.156489 ms (FindLiveObjects: 0.224030 ms CreateObjectMapping: 0.152163 ms MarkObjects: 5.741577 ms  DeleteObjects: 0.037959 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5a3f74bff56c1feff0efc9bdc9cf164e -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.430 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.428 seconds
+Domain Reload Profiling: 1858ms
+	BeginReloadAssembly (155ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (197ms)
+		LoadAssemblies (255ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1428ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (760ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (101ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (371ms)
+			ProcessInitializeOnLoadMethodAttributes (207ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 7.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2477 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.1 KB). Loaded Objects now: 3221.
+Memory consumption went from 0.76 GB to 0.76 GB.
+Total: 6.958561 ms (FindLiveObjects: 0.289633 ms CreateObjectMapping: 0.210224 ms MarkObjects: 6.418907 ms  DeleteObjects: 0.038741 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5a3f74bff56c1feff0efc9bdc9cf164e -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+[usbmuxd] Detached: 73383 00008101-000574C40200801E
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.459 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.586 seconds
+Domain Reload Profiling: 2045ms
+	BeginReloadAssembly (154ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (55ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (225ms)
+		LoadAssemblies (277ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1586ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (773ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (90ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (70ms)
+			ProcessInitializeOnLoadAttributes (385ms)
+			ProcessInitializeOnLoadMethodAttributes (222ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 7.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2477 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.1 KB). Loaded Objects now: 3224.
+Memory consumption went from 0.77 GB to 0.77 GB.
+Total: 7.034635 ms (FindLiveObjects: 0.277886 ms CreateObjectMapping: 0.179899 ms MarkObjects: 6.528589 ms  DeleteObjects: 0.047225 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5a3f74bff56c1feff0efc9bdc9cf164e -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.492 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.445 seconds
+Domain Reload Profiling: 1937ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (253ms)
+		LoadAssemblies (303ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1446ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (644ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (81ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (324ms)
+			ProcessInitializeOnLoadMethodAttributes (170ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 8.98 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 16 unused Assets / (28.6 KB). Loaded Objects now: 3224.
+Memory consumption went from 0.78 GB to 0.78 GB.
+Total: 7.990340 ms (FindLiveObjects: 0.256245 ms CreateObjectMapping: 0.202778 ms MarkObjects: 7.463691 ms  DeleteObjects: 0.066453 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: a2fdd3445ff453af3ee5f69fb6477817 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.499 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.293 seconds
+Domain Reload Profiling: 1792ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (261ms)
+		LoadAssemblies (297ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (27ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (10ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1293ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (757ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (106ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (378ms)
+			ProcessInitializeOnLoadMethodAttributes (184ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 5.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3227.
+Memory consumption went from 0.79 GB to 0.79 GB.
+Total: 8.088384 ms (FindLiveObjects: 0.302762 ms CreateObjectMapping: 0.187850 ms MarkObjects: 7.527611 ms  DeleteObjects: 0.069169 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: a2fdd3445ff453af3ee5f69fb6477817 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.473 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.068 seconds
+Domain Reload Profiling: 1541ms
+	BeginReloadAssembly (156ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (236ms)
+		LoadAssemblies (281ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1069ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (649ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (85ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (327ms)
+			ProcessInitializeOnLoadMethodAttributes (167ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 7.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3230.
+Memory consumption went from 0.80 GB to 0.80 GB.
+Total: 6.572159 ms (FindLiveObjects: 0.304097 ms CreateObjectMapping: 0.190194 ms MarkObjects: 6.033693 ms  DeleteObjects: 0.043020 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: a2fdd3445ff453af3ee5f69fb6477817 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.456 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.174 seconds
+Domain Reload Profiling: 1631ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (53ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (221ms)
+		LoadAssemblies (279ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1175ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (740ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (83ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (380ms)
+			ProcessInitializeOnLoadMethodAttributes (199ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 8.18 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3233.
+Memory consumption went from 0.80 GB to 0.80 GB.
+Total: 7.051986 ms (FindLiveObjects: 0.275530 ms CreateObjectMapping: 0.232792 ms MarkObjects: 6.502458 ms  DeleteObjects: 0.040232 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: a2fdd3445ff453af3ee5f69fb6477817 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.471 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.597 seconds
+Domain Reload Profiling: 2068ms
+	BeginReloadAssembly (159ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (52ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (234ms)
+		LoadAssemblies (294ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1598ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (769ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (89ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (387ms)
+			ProcessInitializeOnLoadMethodAttributes (213ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 9.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3236.
+Memory consumption went from 0.81 GB to 0.81 GB.
+Total: 7.272353 ms (FindLiveObjects: 0.339785 ms CreateObjectMapping: 0.224072 ms MarkObjects: 6.668738 ms  DeleteObjects: 0.038943 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: a2fdd3445ff453af3ee5f69fb6477817 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.505 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.431 seconds
+Domain Reload Profiling: 1936ms
+	BeginReloadAssembly (164ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (58ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (241ms)
+		LoadAssemblies (290ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1432ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (662ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (82ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (337ms)
+			ProcessInitializeOnLoadMethodAttributes (171ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 7.74 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3239.
+Memory consumption went from 0.82 GB to 0.82 GB.
+Total: 7.373919 ms (FindLiveObjects: 0.357546 ms CreateObjectMapping: 0.226943 ms MarkObjects: 6.737646 ms  DeleteObjects: 0.050751 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: 352177eac520e21b4a2c217961ab04eb -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 77d90b35c834770b4bb2d2a062507cec -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.506 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.456 seconds
+Domain Reload Profiling: 1962ms
+	BeginReloadAssembly (160ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (268ms)
+		LoadAssemblies (308ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (35ms)
+			TypeCache.Refresh (16ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (10ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1456ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (669ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (89ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (337ms)
+			ProcessInitializeOnLoadMethodAttributes (170ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 6.79 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3242.
+Memory consumption went from 0.83 GB to 0.83 GB.
+Total: 6.376555 ms (FindLiveObjects: 0.294691 ms CreateObjectMapping: 0.170159 ms MarkObjects: 5.860625 ms  DeleteObjects: 0.049990 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: de09269126fb53ce0b17b5025cb81599 -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 039753862cc434d2fa7c243003e1b48f -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.479 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.466 seconds
+Domain Reload Profiling: 1944ms
+	BeginReloadAssembly (160ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (239ms)
+		LoadAssemblies (290ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1467ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (665ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (82ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (63ms)
+			ProcessInitializeOnLoadAttributes (336ms)
+			ProcessInitializeOnLoadMethodAttributes (178ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 7.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.1 KB). Loaded Objects now: 3245.
+Memory consumption went from 0.84 GB to 0.84 GB.
+Total: 6.590360 ms (FindLiveObjects: 0.229376 ms CreateObjectMapping: 0.150091 ms MarkObjects: 6.150598 ms  DeleteObjects: 0.059317 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: de09269126fb53ce0b17b5025cb81599 -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 3bf729dbe05379180e8ad3ddb247c819 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.492 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.452 seconds
+Domain Reload Profiling: 1944ms
+	BeginReloadAssembly (162ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (247ms)
+		LoadAssemblies (300ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1453ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (658ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (79ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (340ms)
+			ProcessInitializeOnLoadMethodAttributes (168ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 6.83 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2474 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.0 KB). Loaded Objects now: 3248.
+Memory consumption went from 0.84 GB to 0.84 GB.
+Total: 6.546863 ms (FindLiveObjects: 0.299887 ms CreateObjectMapping: 0.204884 ms MarkObjects: 5.987891 ms  DeleteObjects: 0.053338 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/precompiled-assembly-types:Module.Enemies: de09269126fb53ce0b17b5025cb81599 -> ac71b08110c2688d9827819f1eb0da82
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/monoscript/fileName/EnemyManager.cs: 91f06ea86b259bf5e9bc30813d8f251d -> 
+  custom:scripting/monoscript/fileName/Data.cs: 0d4d511d011737e801a1b38e75c89458 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: 21ade924daf7e6eb33dc4f2b3eac6060 -> 
+  custom:scripting/monoscript/fileName/BattleManager.cs: 56cb6671a66b87738f44948effa5e5ab -> 64223b1e47337e917a2b6b0e37c87f37
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/EnemyFactory.cs: c9d48960a1c584985888173dbd64bc24 -> 7e1d6c55a88285066a2b5dac506bd69f
+  custom:scripting/monoscript/fileName/SpaceshipFactory.cs: 1f6223e6f9baa994ce3a6ca9ee362416 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 2b89813997630da21ea5206d09a95ff0 -> 541636299f933f6c114c762a68870505
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/monoscript/fileName/BulletFactory.cs: ddfe2097dcb902dbbfaa759c0ab0df35 -> bae8ee504010b5c4cdea7475c932073f
+  custom:scripting/monoscript/fileName/UIController.cs: d3607e71305118428d85f26f503e584f -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/EnemyController.cs: 374e69e7828afdff4695d54f237572f2 -> fe1713ebcb3d2fe550e51ea3a1f80c41
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/PlayerController.cs: 95a5aac1fcf5ee74425bdb8c00a7760f -> 
+  custom:scripting/monoscript/fileName/Utils.cs: f9ac8a5a3ac2d14608c05f48f64793dc -> 40c528c300bfc0733192292a788cb076
+  custom:scripting/monoscript/fileName/Bullet.cs: 060f9a77adddf04fa49c3eeba0f6c30d -> 7964e822cddce463ff67eb5de5c419a8
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/BattleSceneManager.cs: 29432cfe4ff925ef7daf5884dea42074 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Player.cs: a0d3c81026e8c7dc405a1ffc2ce2f55f -> 2ec31ff15a5bebaf9e586e6f954e678e
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LevelBounds.cs: e45f81378906caab4d84f54c06454d56 -> a787317bcdb1255e76373ba3bad726a5
+  custom:scripting/monoscript/fileName/LevelBackground.cs: 6a1a0b86826f00f7a13bf4f602ecd019 -> 61bc142b2b8d0d93a494e19ebbe067f5
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 3bf729dbe05379180e8ad3ddb247c819 -> 
+  custom:scripting/monoscript/fileName/SpaceshipBase.cs: 7c07ea64c7b4a2adf9b3fa55e670a198 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/BulletManager.cs: 3abbd4be0b7cb6c4b44269d7847e4e39 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 716086397f6fce3cf59561531ac052e5 -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/precompiled-assembly-types:Gameplay:  -> 98665e4acdd97ee9404f8d33253ef0a3
+  custom:scripting/precompiled-assembly-types:Module.Layers:  -> b4bbe29e218e10bb7850668c011ddbb7

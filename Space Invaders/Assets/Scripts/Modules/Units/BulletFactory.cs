@@ -7,24 +7,27 @@ namespace Modules.Units
     {
         [SerializeField] private Bullet prefab;
         [SerializeField] private Transform parent;
-
+        [SerializeField] private int poolSize = 10;
+        [SerializeField] private int playerBulletDamage = 1;
+        [SerializeField] private int enemyBulletDamage = 1;
+        
         private ObjectPool<Bullet> _bulletPool;
 
-        public void Initialize(int capacity)
+        public void Initialize()
         {
-            _bulletPool = new ObjectPool<Bullet>(prefab, parent, capacity);
+            _bulletPool = new ObjectPool<Bullet>(prefab, parent, poolSize);
         }
 
-        public void SpawnPlayerBullet(Vector2 position, Vector2 velocity, int damage) =>
+        public void SpawnPlayerBullet(Vector2 position, Vector2 velocity) =>
             SpawnBullet(position,
                 velocity,
-                damage,
+                playerBulletDamage,
                 Data.Colors.PlayerBulletColor,
                 Data.Layers.PlayerBulletLayer,
                 Data.Tags.EnemyTag);
 
-        public void SpawnEnemyBullet(Vector2 position, Vector2 velocity, int damage) =>
-            SpawnBullet(position, velocity, damage,
+        public void SpawnEnemyBullet(Vector2 position, Vector2 velocity) =>
+            SpawnBullet(position, velocity, enemyBulletDamage,
                 Data.Colors.EnemyBulletColor,
                 Data.Layers.EnemyBulletLayer,
                 Data.Tags.PlayerTag);

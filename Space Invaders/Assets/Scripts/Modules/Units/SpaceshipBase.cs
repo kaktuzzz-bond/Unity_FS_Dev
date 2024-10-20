@@ -7,8 +7,8 @@ namespace Modules.Enemies
 {
     public abstract class SpaceshipBase : MonoBehaviour
     {
-        public event Action<SpaceshipBase> OnHealthEmpty;
-
+        public event Action OnHealthEmpty;
+        
         [SerializeField] protected Transform firePoint;
         [SerializeField] protected new Rigidbody2D rigidbody;
 
@@ -18,6 +18,7 @@ namespace Modules.Enemies
 
         private int _health;
         private float _speed;
+        private Action _onHealthEmpty;
 
 
         public virtual void Move(Vector2 direction)
@@ -36,7 +37,8 @@ namespace Modules.Enemies
             if (_health > 0) return;
 
             _health = 0;
-            OnHealthEmpty?.Invoke(this);
+            OnHealthEmpty?.Invoke();
+            _onHealthEmpty?.Invoke();
         }
 
         public SpaceshipBase SetBulletFactory(BulletFactory factory)
@@ -97,6 +99,13 @@ namespace Modules.Enemies
         public SpaceshipBase SetPhysicsLayer(int physicsLayer)
         {
             gameObject.layer = physicsLayer;
+            return this;
+        }
+        
+        public SpaceshipBase SetActionOnHealthEmpty(Action action)
+        {
+            action += () => SetActive(false);
+            _onHealthEmpty = action;
             return this;
         }
     }
