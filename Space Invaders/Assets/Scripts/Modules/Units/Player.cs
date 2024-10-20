@@ -1,30 +1,13 @@
-using System;
 using Modules.Enemies;
 using UnityEngine;
 
-namespace Modules.Player
+namespace Modules.Units
 {
-    public sealed class Player : UnitBase
+    public sealed class Player : SpaceshipBase
     {
-        //public Action<Player, int> OnHealthChanged;
-        public Action<Player> OnHealthEmpty;
-        public event Action<Transform> OnBulletRequired;
-
-        private bool _isFireMode;
-        
         public override void Attack()
         {
-            OnBulletRequired?.Invoke(firePoint);
-            //_isFireMode = true;
+            bulletFactory.SpawnPlayerBullet(firePoint.position, firePoint.rotation * Vector3.up * 3, 1);
         }
-
-        // private void FixedUpdate()
-        // {
-        //     if (!_isFireMode) return;
-        //
-        //     OnBulletRequired?.Invoke(firePoint);
-        //
-        //     _isFireMode = false;
-        // }
     }
 }

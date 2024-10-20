@@ -1,58 +1,75 @@
-using Modules.Layers;
-using Modules.Player;
+using System.Collections;
+using Modules.Enemies;
 using Modules.PlayerInput;
+using Modules.Units;
 using UnityEngine;
 
 namespace Gameplay
 {
     public sealed class BattleManager : MonoBehaviour
     {
-        [SerializeField] private Player player;
+        [SerializeField] private Transform[] spawnPositions;
+        [SerializeField] private Transform[] attackPositions;
 
-        //[SerializeField] private BulletManager bulletManager;
         [SerializeField] private BulletFactory bulletFactory;
         [SerializeField] private SpaceshipFactory spaceshipFactory;
 
         [SerializeField] private InputListener inputListener;
 
-       
-        private float moveDirection;
+        [SerializeField] private int bulletPoolSize = 10;
+        [SerializeField] private int spaceshipPoolSize = 7;
+
+        private SpaceshipBase _player;
 
         private void Awake()
         {
-            bulletFactory.Initialize(10);
-            player.OnHealthEmpty += _ => Time.timeScale = 0;
+            bulletFactory.Initialize(bulletPoolSize);
+            spaceshipFactory.Initialize(spaceshipPoolSize, bulletFactory);
+            _player = spaceshipFactory.SpawnPlayer();
+
+            _player.OnHealthEmpty += _ => Time.timeScale = 0;
         }
 
+        private void Start()
+        {
+            StartCoroutine(SpawnEnemyCoroutine());
+        }
 
         private void OnEnable()
         {
             inputListener.OnFirePressed += OnFirePressedHandler;
             inputListener.OnLeftPressed += OnLeftPressedHandler;
             inputListener.OnRightPressed += OnRightPressedHandler;
-
-            player.OnBulletRequired += SpawnBullet;
         }
 
         private void OnFirePressedHandler()
         {
-            player.Attack();
+            _player.Attack();
         }
 
         private void OnLeftPressedHandler()
         {
-            player.Move(Vector2.left);
+            _player.Move(Vector2.left);
         }
 
         private void OnRightPressedHandler()
         {
-            player.Move(Vector2.right);
+            _player.Move(Vector2.right);
         }
 
-
-        private void SpawnBullet(Transform firePoint)
+        private IEnumerator SpawnEnemyCoroutine()
         {
-            bulletFactory.SpawnPlayerBullet(firePoint.position, firePoint.rotation * Vector3.up * 3, 1);
+            while (true)
+            {
+                yield return new WaitForSeconds(Random.Range(1, 2));
+
+                var spawnPosition = Utils.GetRandomFrom(spawnPositions).position;
+                var attackPosition = Utils.GetRandomFrom(attackPositions);
+
+                spaceshipFactory.SpawnEnemy(spawnPosition)
+                    .SetDestination(attackPosition.position)
+                    .SetTarget(_player.transform);
+            }
         }
 
         private void OnDisable()
@@ -60,8 +77,6 @@ namespace Gameplay
             inputListener.OnFirePressed -= OnFirePressedHandler;
             inputListener.OnLeftPressed -= OnLeftPressedHandler;
             inputListener.OnRightPressed -= OnRightPressedHandler;
-            
-            player.OnBulletRequired -= SpawnBullet;
         }
     }
 }

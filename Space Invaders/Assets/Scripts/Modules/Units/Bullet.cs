@@ -69,14 +69,15 @@ namespace Modules.Units
             _onHit = action;
             return this;
         }
-        
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (!collision.gameObject.TryGetComponent(out UnitBase unit)) return;
-
-            if (!unit.CompareTag(_targetTag)) return;
+            if (collision.gameObject.TryGetComponent(out SpaceshipBase unit) &&
+                unit.CompareTag(_targetTag))
+            {
+                unit.TakeDamage(_damage);
+            }
             
-            unit.TakeDamage(_damage);
             _onHit?.Invoke();
         }
     }

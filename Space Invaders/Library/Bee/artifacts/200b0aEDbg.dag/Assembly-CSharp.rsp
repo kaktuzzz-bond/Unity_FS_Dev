@@ -335,11 +335,9 @@
 -r:"Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Analytics.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.Enemies.ref.dll"
--r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.Layers.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.Levels.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Playerinput.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Purchasing.Common.ref.dll"
--r:"Library/Bee/artifacts/200b0aEDbg.dag/SourceCode.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.2D.Tilemap.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll"
@@ -374,11 +372,10 @@
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Gameplay/BattleManager.cs"
 "Assets/Scripts/Gameplay/BattleSceneManager.cs"
-"Assets/Scripts/Gameplay/BulletFactory.cs"
 "Assets/Scripts/Gameplay/EnemyController.cs"
 "Assets/Scripts/Gameplay/GameManager.cs"
-"Assets/Scripts/Gameplay/ObjectPool.cs"
 "Assets/Scripts/Gameplay/SpaceshipFactory.cs"
+"Assets/Scripts/Gameplay/Utils.cs"
 -langversion:9.0
 /deterministic
 /optimize-

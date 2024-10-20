@@ -48,10 +48,9 @@
     <Compile Include="Assets/Scripts/Gameplay/BattleSceneManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/BattleManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/SpaceshipFactory.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/ObjectPool.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/BulletFactory.cs" />
     <Compile Include="Assets/Scripts/Gameplay/EnemyController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/GameManager.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Utils.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
@@ -821,14 +820,6 @@
     <ProjectReference Include="Module.Enemies.csproj">
       <Project>{d490a815-ba97-6d08-75c3-fbf3a13c2754}</Project>
       <Name>Module.Enemies</Name>
-    </ProjectReference>
-    <ProjectReference Include="SourceCode.csproj">
-      <Project>{406ec267-6c8d-67a7-1ad2-7564f2537bdc}</Project>
-      <Name>SourceCode</Name>
-    </ProjectReference>
-    <ProjectReference Include="Module.Layers.csproj">
-      <Project>{13d71dbf-b2ca-372a-8a4a-74057fa6c98b}</Project>
-      <Name>Module.Layers</Name>
     </ProjectReference>
     <ProjectReference Include="Module.Levels.csproj">
       <Project>{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}</Project>
