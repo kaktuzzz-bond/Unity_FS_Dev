@@ -1,35 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Enemies", "Module.Enemies.csproj", "{d490a815-ba97-6d08-75c3-fbf3a13c2754}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Levels", "Module.Levels.csproj", "{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCode", "SourceCode.csproj", "{406ec267-6c8d-67a7-1ad2-7564f2537bdc}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gameplay", "Gameplay.csproj", "{46f9d885-e5de-434f-81f3-46347c4438bf}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Levels", "Module.Levels.csproj", "{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Layers", "Module.Layers.csproj", "{13d71dbf-b2ca-372a-8a4a-74057fa6c98b}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playerinput", "Playerinput.csproj", "{d05a037d-0973-a874-4baa-421dfffa2af8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d490a815-ba97-6d08-75c3-fbf3a13c2754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d490a815-ba97-6d08-75c3-fbf3a13c2754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{406ec267-6c8d-67a7-1ad2-7564f2537bdc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{406ec267-6c8d-67a7-1ad2-7564f2537bdc}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46f9d885-e5de-434f-81f3-46347c4438bf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46f9d885-e5de-434f-81f3-46347c4438bf}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13d71dbf-b2ca-372a-8a4a-74057fa6c98b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13d71dbf-b2ca-372a-8a4a-74057fa6c98b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d05a037d-0973-a874-4baa-421dfffa2af8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d05a037d-0973-a874-4baa-421dfffa2af8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

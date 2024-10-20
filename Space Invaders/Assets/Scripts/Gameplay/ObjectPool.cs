@@ -19,16 +19,16 @@ namespace Gameplay
 
             for (var i = 0; i < capacity; i++)
             {
-                _pool.Enqueue(GetNewInstance());
+                var item = GetNewInstance();
+                item.gameObject.SetActive(false);
+                _pool.Enqueue(item);
             }
         }
 
-        public T Spawn()
-        {
-            return _pool.TryPeek(out T item)
+        public T Spawn() =>
+            _pool.TryPeek(out T item)
                 ? _pool.Dequeue()
                 : GetNewInstance();
-        }
 
 
         public void Despawn(T item)

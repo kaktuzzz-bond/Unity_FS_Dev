@@ -1,12 +1,14 @@
+using System;
+using Modules.Enemies;
 using UnityEngine;
 
-namespace Modules.Enemies
+namespace Modules.Units
 {
     public sealed class Enemy : UnitBase
     {
-        public delegate void FireHandler(Vector2 position, Vector2 direction);
+        //public delegate void FireHandler(Vector2 position, Vector2 direction);
         
-        public event FireHandler OnFire;
+        public event Action<Vector2,Vector2> OnFire;
         
         [SerializeField]
         private float countdown;
@@ -18,7 +20,7 @@ namespace Modules.Enemies
 
         public void Reset()
         {
-            this._currentTime = this.countdown;
+            _currentTime = countdown;
         }
 
         public void SetTarget(Transform target)
@@ -27,22 +29,21 @@ namespace Modules.Enemies
         }
         public void SetDestination(Vector2 endPoint)
         {
-            this._destination = endPoint;
-            this._isPointReached = false;
+            _destination = endPoint;
+            _isPointReached = false;
         }
 
         public override void Move(Vector2 direction)
         {
-            Vector2 vector = this._destination - (Vector2) this.transform.position;
+            var vector = _destination - (Vector2) transform.position;
+            
             if (vector.magnitude <= 0.25f)
             {
-                this._isPointReached = true;
+               _isPointReached = true;
                 return;
             }
 
-            Vector2 dir = vector.normalized * Time.fixedDeltaTime;
-            Vector2 nextPosition = rigidbody.position + dir * speed;
-            rigidbody.MovePosition(nextPosition);
+            base.Move(vector.normalized);
         }
 
         public override void Attack()

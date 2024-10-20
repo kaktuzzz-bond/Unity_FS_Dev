@@ -1,7 +1,4 @@
-using System;
-using Modules.Enemies;
 using Modules.Levels;
-using Modules.Player;
 using Modules.Units;
 using UnityEngine;
 
@@ -22,7 +19,7 @@ namespace Gameplay
         private Color _playerBulletColor = Color.blue;
 
         private ObjectPool<Bullet> _bulletPool;
-
+        
         public void Initialize(int capacity)
         {
             _bulletPool = new ObjectPool<Bullet>(prefab, parent, capacity);
