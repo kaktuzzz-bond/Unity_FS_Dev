@@ -6,8 +6,8 @@ namespace Modules.Factories
 {
     public class SpaceshipFactory
     {
-        private readonly Player _playerPrefab;
-        private readonly Enemy _enemyPrefab;
+        private readonly PlayerSpaceship playerSpaceshipPrefab;
+        private readonly EnemySpaceship enemySpaceshipPrefab;
         private readonly Transform _playerParent;
         private readonly Transform _enemyParent;
         private readonly BulletFactory _bulletFactory;
@@ -23,15 +23,16 @@ namespace Modules.Factories
         private ObjectPool<SpaceshipBase> _playerPool;
         private SpaceshipBase _player;
 
-        public SpaceshipFactory(Player playerPrefab, Enemy enemyPrefab, Transform playerParent, Transform enemyParent,
+        public SpaceshipFactory(PlayerSpaceship playerSpaceshipPrefab, EnemySpaceship enemySpaceshipPrefab,
+            Transform playerParent, Transform enemyParent,
             BulletFactory bulletFactory)
         {
-            _playerPrefab = playerPrefab;
-            _enemyPrefab = enemyPrefab;
+            this.playerSpaceshipPrefab = playerSpaceshipPrefab;
+            this.enemySpaceshipPrefab = enemySpaceshipPrefab;
             _playerParent = playerParent;
             _enemyParent = enemyParent;
-            _enemyPool = new ObjectPool<SpaceshipBase>(_enemyPrefab, _enemyParent, PoolSize);
-            _playerPool = new ObjectPool<SpaceshipBase>(_playerPrefab, _playerParent, 1);
+            _enemyPool = new ObjectPool<SpaceshipBase>(this.enemySpaceshipPrefab, _enemyParent, PoolSize);
+            _playerPool = new ObjectPool<SpaceshipBase>(this.playerSpaceshipPrefab, _playerParent, 1);
             _bulletFactory = bulletFactory;
         }
 

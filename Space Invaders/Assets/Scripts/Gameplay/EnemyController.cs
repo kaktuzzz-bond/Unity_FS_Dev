@@ -1,5 +1,7 @@
 using System.Collections;
-using Extensions;
+using System.Collections.Generic;
+using System.Linq;
+using Modules.Extensions;
 using Modules.Factories;
 using Modules.Spaceships;
 using UnityEngine;
@@ -13,18 +15,20 @@ namespace Gameplay
 
         private const float MinSpawnDelay = 1f;
         private const float MaxSpawnDelay = 2f;
-        
+        private const int MaxActiveEnemies = 4;
+
+        private readonly HashSet<SpaceshipBase> _enemies = new();
         private SpaceshipFactory _spaceshipFactory;
         private SpaceshipBase _player;
         private bool _isSpawning;
 
-        public void Initialize( SpaceshipFactory spaceshipFactory, SpaceshipBase player)
+        public void Initialize(SpaceshipFactory spaceshipFactory, SpaceshipBase player)
         {
             _spaceshipFactory = spaceshipFactory;
             _player = player;
 
             _isSpawning = true;
-            
+
             StartCoroutine(SpawnEnemyRoutine());
         }
 
@@ -34,7 +38,12 @@ namespace Gameplay
             {
                 yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
 
-                SpawnEnemy();
+                var activeCount = _enemies.Count(x => x.gameObject.activeSelf);
+
+                if (activeCount <= MaxActiveEnemies)
+                {
+                    SpawnEnemy();
+                }
             }
         }
 
@@ -43,9 +52,11 @@ namespace Gameplay
             var spawnPosition = spawnPositions.GetRandomItem().position;
             var attackPosition = attackPositions.GetRandomItem().position;
 
-            _spaceshipFactory.SpawnEnemy(spawnPosition)
+            var unit = _spaceshipFactory.SpawnEnemy(spawnPosition)
                 .SetDestination(attackPosition)
                 .SetTarget(_player.transform);
+
+            _enemies.Add(unit);
         }
     }
 }

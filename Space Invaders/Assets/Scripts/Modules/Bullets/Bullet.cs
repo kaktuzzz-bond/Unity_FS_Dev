@@ -15,6 +15,18 @@ namespace Modules.Bullets
         private Vector2 _velocity;
         private Action _onHit;
 
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.TryGetComponent(out SpaceshipBase unit) &&
+                unit.CompareTag(_targetTag))
+            {
+                unit.TakeDamage(_damage);
+            }
+
+            _onHit?.Invoke();
+        }
+
         public Bullet SetDamage(int damage)
         {
             _damage = damage;
@@ -56,24 +68,13 @@ namespace Modules.Bullets
             gameObject.SetActive(isActive);
             return this;
         }
-        
+
 
         public Bullet SetActionOnHit(Action action)
         {
             action += () => SetActive(false);
             _onHit = action;
             return this;
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.TryGetComponent(out SpaceshipBase unit) &&
-                unit.CompareTag(_targetTag))
-            {
-                unit.TakeDamage(_damage);
-            }
-            
-            _onHit?.Invoke();
         }
     }
 }

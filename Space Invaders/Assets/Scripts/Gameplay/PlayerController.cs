@@ -20,29 +20,18 @@ namespace Gameplay
             _inputListener.OnFirePressed += OnFirePressedHandler;
             _inputListener.OnLeftPressed += OnLeftPressedHandler;
             _inputListener.OnRightPressed += OnRightPressedHandler;
-            
+
             Player = _spaceshipFactory.SpawnPlayer();
         }
 
-        private void OnEnable()
-        {
-           
-        }
-
-        private void OnFirePressedHandler()
-        {
+        private void OnFirePressedHandler() => 
             Player.Attack();
-        }
 
-        private void OnLeftPressedHandler()
-        {
+        private void OnLeftPressedHandler() => 
             Player.Move(Vector2.left);
-        }
 
-        private void OnRightPressedHandler()
-        {
+        private void OnRightPressedHandler() => 
             Player.Move(Vector2.right);
-        }
 
         private void OnDestroy()
         {

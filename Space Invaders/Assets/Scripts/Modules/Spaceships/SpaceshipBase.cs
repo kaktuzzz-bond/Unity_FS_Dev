@@ -11,7 +11,6 @@ namespace Modules.Spaceships
         [SerializeField] protected Transform firePoint;
         [SerializeField] protected new Rigidbody2D rigidbody;
 
-        //protected BulletFactory bulletFactory;
         protected Transform target;
         protected Vector2 destination;
 
@@ -48,11 +47,6 @@ namespace Modules.Spaceships
             _onHealthEmpty?.Invoke();
         }
 
-        // public SpaceshipBase SetBulletFactory(BulletFactory factory)
-        // {
-        //     bulletFactory = factory;
-        //     return this;
-        // }
 
         public SpaceshipBase SetTarget(Transform newTarget)
         {

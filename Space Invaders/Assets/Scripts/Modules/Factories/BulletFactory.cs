@@ -20,7 +20,6 @@ namespace Modules.Factories
             _parent = parent;
             _bulletPool = new ObjectPool<Bullet>(_prefab, _parent, PoolSize);
         }
-        
 
         public void SpawnPlayerBullet(Vector2 position, Vector2 velocity) =>
             SpawnBullet(position,

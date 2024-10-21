@@ -9,7 +9,7 @@ namespace Modules.PlayerInput
         public event Action OnRightPressed;
         public event Action OnFirePressed;
 
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 OnFirePressed?.Invoke();
