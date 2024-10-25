@@ -45,10 +45,9 @@
     <Analyzer Include="/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Modules/Spaceships/PlayerSpaceship.cs" />
-    <Compile Include="Assets/Scripts/Modules/Spaceships/EnemySpaceship.cs" />
-    <Compile Include="Assets/Scripts/Modules/Spaceships/SpaceshipBase.cs" />
-    <None Include="Assets/Scripts/Modules/Spaceships/Module.Spaceships.asmdef" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/EnemySpaceship.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipBase.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/PlayerSpaceship.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
