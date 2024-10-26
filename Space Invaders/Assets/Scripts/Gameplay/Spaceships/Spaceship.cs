@@ -1,6 +1,6 @@
 using System;
-using Gameplay.Bullets;
 using Gameplay.Spaceships.Components;
+using Gameplay.Weapon;
 using Modules.Pooling;
 using UnityEngine;
 

@@ -349,11 +349,8 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Scripts/Gameplay/Bullets/Bullet.cs"
-"Assets/Scripts/Gameplay/Bullets/BulletSpawner.cs"
-"Assets/Scripts/Gameplay/Bullets/IWeapon.cs"
 "Assets/Scripts/Gameplay/Management/EnemyAI.cs"
-"Assets/Scripts/Gameplay/Management/GameManager.cs"
+"Assets/Scripts/Gameplay/Management/GameCycle.cs"
 "Assets/Scripts/Gameplay/Management/PlayerController.cs"
 "Assets/Scripts/Gameplay/Management/PlayerService.cs"
 "Assets/Scripts/Gameplay/Spaceships/Components/AttackComponent.cs"
@@ -364,6 +361,9 @@
 "Assets/Scripts/Gameplay/Spaceships/Components/MoveComponent.cs"
 "Assets/Scripts/Gameplay/Spaceships/Spaceship.cs"
 "Assets/Scripts/Gameplay/Spaceships/SpaceshipSpawner.cs"
+"Assets/Scripts/Gameplay/Weapon/Bullet.cs"
+"Assets/Scripts/Gameplay/Weapon/BulletSpawner.cs"
+"Assets/Scripts/Gameplay/Weapon/IWeapon.cs"
 -langversion:9.0
 /deterministic
 /optimize-

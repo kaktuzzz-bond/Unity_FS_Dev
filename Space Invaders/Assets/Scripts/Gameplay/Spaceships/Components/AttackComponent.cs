@@ -1,4 +1,4 @@
-using Gameplay.Bullets;
+using Gameplay.Weapon;
 using UnityEngine;
 
 namespace Gameplay.Spaceships.Components

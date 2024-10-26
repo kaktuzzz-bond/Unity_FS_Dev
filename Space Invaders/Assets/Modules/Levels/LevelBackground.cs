@@ -12,7 +12,7 @@ namespace Modules.Levels
 
         private bool _isMoving;
 
-        private void Awake()
+        public void StartMoving()
         {
             _isMoving = true;
         }

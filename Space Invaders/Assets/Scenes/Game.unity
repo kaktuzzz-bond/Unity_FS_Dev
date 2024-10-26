@@ -687,6 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceshipSpawner: {fileID: 886418143}
+  gameCycle: {fileID: 485371871}
 --- !u!1 &887858962
 GameObject:
   m_ObjectHideFlags: 0
