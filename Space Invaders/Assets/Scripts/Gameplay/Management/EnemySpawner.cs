@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay.Management
 {
-    public class EnemyAI : MonoBehaviour
+    public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private Transform[] spawnPositions;
         [SerializeField] private Transform[] attackPositions;
@@ -18,9 +17,9 @@ namespace Gameplay.Management
         [SerializeField] private SpaceshipSpawner spaceshipSpawner;
         [SerializeField] private PlayerService playerService;
 
-        private const float MinSpawnDelay = 1f;
-        private const float MaxSpawnDelay = 2f;
-        private const int MaxActiveEnemies = 4;
+        [SerializeField] private float minSpawnDelay = 1f;
+        [SerializeField] private float maxSpawnDelay = 2f;
+        [SerializeField] private int maxActiveEnemies = 4;
 
         private readonly HashSet<Spaceship> _enemies = new();
         private bool _isSpawning;
@@ -37,11 +36,11 @@ namespace Gameplay.Management
         {
             while (_isSpawning)
             {
-                yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
-
+                yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
+                
                 var activeCount = _enemies.Count(x => x.gameObject.activeSelf);
 
-                if (activeCount <= MaxActiveEnemies)
+                if (activeCount <= maxActiveEnemies)
                 {
                     SpawnEnemy();
                 }
@@ -56,13 +55,13 @@ namespace Gameplay.Management
                 .SetTarget(playerService.Player.transform)
                 .SetActive(true);
 
-            if (spaceship.TryGetComponent(out EnemyDriverComponent driver))
+            if (spaceship.TryGetComponent(out EnemyAIComponent driver))
             {
                 var attackPosition = attackPositions.GetRandomItem().position;
                 driver.SetAttackPosition(attackPosition);
             }
 
-            _enemies.Add(spaceship);
+            _enemies.Add(spaceship); 
         }
     }
 }

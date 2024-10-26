@@ -26,14 +26,12 @@ namespace Gameplay.Weapon
             set => gameObject.SetActive(value);
         }
 
-      
-
+        
         private void Awake()
         {
             SetLayerMask();
         }
-
-
+        
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.TryGetComponent(out Spaceship unit))
@@ -43,17 +41,13 @@ namespace Gameplay.Weapon
 
             OnRelease?.Invoke(this);
         }
-
-      
+        
         public void SetReleaseAction(Action<Bullet> action)
         {
             OnRelease = action;
         }
-     
-
+        
         private void SetLayerMask() =>
             gameObject.layer = collisionDataComponent.CollisionLayer;
-
-      
     }
 }

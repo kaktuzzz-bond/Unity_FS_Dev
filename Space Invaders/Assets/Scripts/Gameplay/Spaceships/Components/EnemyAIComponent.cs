@@ -1,16 +1,14 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Gameplay.Spaceships.Components
 {
-    public class EnemyDriverComponent : MonoBehaviour
+    public class EnemyAIComponent : MonoBehaviour
     {
         [SerializeField] private Spaceship spaceship;
         [SerializeField] private float attackInterval = 1f;
 
         private Vector2 _attackPosition;
-        private Coroutine _attackRoutine;
         private bool _isOnAttackPosition;
 
         private void OnEnable()
@@ -18,7 +16,7 @@ namespace Gameplay.Spaceships.Components
             spaceship.OnDied += Stop;
         }
 
-        private void Stop(Spaceship obj)
+        private void Stop()
         {
             _isOnAttackPosition = false;
         }
@@ -30,7 +28,7 @@ namespace Gameplay.Spaceships.Components
             if (direction.magnitude <= 0.25f)
             {
                 _isOnAttackPosition = true;
-                _attackRoutine = StartCoroutine(AttackRoutine());
+                StartCoroutine(AttackRoutine());
                 return;
             }
 

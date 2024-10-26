@@ -8,7 +8,6 @@ namespace Gameplay.Spaceships
     {
         [SerializeField] private BulletSpawner bulletSpawner;
 
-
         public Spaceship Create()
         {
             var spaceship = Spawn();

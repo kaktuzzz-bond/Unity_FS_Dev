@@ -309,6 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 485371872}
+  - component: {fileID: 485371873}
   - component: {fileID: 485371871}
   m_Layer: 0
   m_Name: '[Game Management]'
@@ -329,8 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57ed31af8d94ec3b11df7e2b588d40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAI: {fileID: 229640306}
   playerService: {fileID: 886418146}
+  playerStateObserver: {fileID: 485371873}
+  enemyAI: {fileID: 229640306}
   levelBackground: {fileID: 325757864}
 --- !u!4 &485371872
 Transform:
@@ -349,6 +351,20 @@ Transform:
   - {fileID: 886418141}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485371873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485371868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d44bd4b48e843fa8232fbee972c4259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCycle: {fileID: 485371871}
+  playerService: {fileID: 886418146}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceshipSpawner: {fileID: 886418143}
-  gameCycle: {fileID: 485371871}
 --- !u!1 &887858962
 GameObject:
   m_ObjectHideFlags: 0

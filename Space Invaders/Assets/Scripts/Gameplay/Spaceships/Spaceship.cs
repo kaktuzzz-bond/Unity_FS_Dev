@@ -6,13 +6,13 @@ using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    public class Spaceship : MonoBehaviour, IPoolReleasable<Spaceship>
+    public sealed class Spaceship : MonoBehaviour, IPoolReleasable<Spaceship>
     {
-        public event Action<Spaceship> OnDied;
-        [SerializeField] protected MoveComponent moveComponent;
-        [SerializeField] protected HealthComponent healthComponent;
-        [SerializeField] protected AttackComponent attackComponent;
-        [SerializeField] protected CollisionDataComponent collisionDataComponent;
+        public event Action OnDied;
+        [SerializeField] private MoveComponent moveComponent;
+        [SerializeField] private HealthComponent healthComponent;
+        [SerializeField] private AttackComponent attackComponent;
+        [SerializeField] private CollisionDataComponent collisionDataComponent;
 
 
         public Action<Spaceship> OnRelease { get; set; }
@@ -46,8 +46,7 @@ namespace Gameplay.Spaceships
         {
             OnRelease = action;
         }
-
-
+        
         public Spaceship SetWeapon(IWeapon weapon)
         {
             attackComponent.SetWeapon(weapon);
@@ -68,7 +67,7 @@ namespace Gameplay.Spaceships
 
         private void Despawn()
         {
-            OnDied?.Invoke(this);
+            OnDied?.Invoke();
             OnRelease.Invoke(this);
         }
 

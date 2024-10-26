@@ -48,14 +48,15 @@
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/CollisionDataComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/DamageComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/EnemySpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/PlayerStateObserver.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/PlayerService.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/MoveComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Weapon/IWeapon.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/AttackComponent.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/EnemyAIComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipSpawner.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Weapon/Bullet.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Management/EnemyAI.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/EnemyDriverComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Weapon/BulletSpawner.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/GameCycle.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/HealthComponent.cs" />
