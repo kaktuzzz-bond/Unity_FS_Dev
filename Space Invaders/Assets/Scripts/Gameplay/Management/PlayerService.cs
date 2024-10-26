@@ -9,7 +9,7 @@ namespace Gameplay.Management
 
         [SerializeField] private SpaceshipSpawner spaceshipSpawner;
 
-        private void Start() => 
+        public void SpawnPlayer() => 
             Player ??= spaceshipSpawner.Create();
 
         public void Attack() => 

@@ -1,48 +1,52 @@
 using System;
 using Gameplay.Bullets;
 using Gameplay.Spaceships.Components;
+using Modules.Pooling;
 using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    public class Spaceship : MonoBehaviour
+    public class Spaceship : MonoBehaviour, IPoolReleasable<Spaceship>
     {
-        public event Action OnHealthEmpty;
-
+        public event Action<Spaceship> OnDied;
         [SerializeField] protected MoveComponent moveComponent;
         [SerializeField] protected HealthComponent healthComponent;
         [SerializeField] protected AttackComponent attackComponent;
         [SerializeField] protected CollisionDataComponent collisionDataComponent;
 
-        protected Vector2 destination;
 
-        private Action _onHealthEmpty;
+        public Action<Spaceship> OnRelease { get; set; }
 
         private void Awake()
         {
             SetLayerMask();
         }
 
-
-        public virtual void Move(Vector2 direction)
+        private void OnEnable()
         {
+            healthComponent.OnHealthEmpty += Despawn;
+        }
+
+        private void OnDisable()
+        {
+            healthComponent.OnHealthEmpty -= Despawn;
+        }
+
+        public void Move(Vector2 direction) =>
             moveComponent.Move(direction);
-        }
 
-        public void Attack()
-        {
+        public void Attack() =>
             attackComponent.Attack();
-        }
 
-        public void TakeDamage(int damage)
-        {
+        public void TakeDamage(int damage) =>
             healthComponent.TakeDamage(damage);
+
+
+        public void SetReleaseAction(Action<Spaceship> action)
+        {
+            OnRelease = action;
         }
 
-        public virtual void OnDespawn()
-        {
-            OnHealthEmpty?.Invoke();
-        }
 
         public Spaceship SetWeapon(IWeapon weapon)
         {
@@ -56,25 +60,17 @@ namespace Gameplay.Spaceships
             return this;
         }
 
-        public Spaceship SetDestination(Vector2 targetPosition)
-        {
-            destination = targetPosition;
-            return this;
-        }
-
-        public Spaceship SetPositionAndRotation(Vector3 position, Quaternion rotation)
-        {
-            transform.SetPositionAndRotation(position, rotation);
-            return this;
-        }
-
-
         public Spaceship SetActive(bool makeActive)
         {
             gameObject.SetActive(makeActive);
             return this;
         }
 
+        private void Despawn()
+        {
+            OnDied?.Invoke(this);
+            OnRelease.Invoke(this);
+        }
 
         private void SetLayerMask() =>
             gameObject.layer = collisionDataComponent.CollisionLayer;

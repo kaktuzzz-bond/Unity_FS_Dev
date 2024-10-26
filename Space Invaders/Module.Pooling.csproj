@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Modules/Pooling/ObjectPool.cs" />
+    <Compile Include="Assets/Modules/Pooling/IPoolReleasable.cs" />
     <Compile Include="Assets/Modules/Pooling/Spawner.cs" />
     <None Include="Assets/Modules/Pooling/Module.Pooling.asmdef" />
     <Reference Include="UnityEngine">

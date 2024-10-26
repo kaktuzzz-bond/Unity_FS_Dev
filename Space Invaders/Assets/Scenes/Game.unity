@@ -235,6 +235,7 @@ MonoBehaviour:
   - {fileID: 78117031}
   - {fileID: 883274640}
   spaceshipSpawner: {fileID: 229640307}
+  playerService: {fileID: 886418146}
 --- !u!114 &229640307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57ed31af8d94ec3b11df7e2b588d40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController: {fileID: 229640306}
+  enemyAI: {fileID: 229640306}
+  playerService: {fileID: 886418146}
   levelBackground: {fileID: 325757864}
 --- !u!4 &485371872
 Transform:

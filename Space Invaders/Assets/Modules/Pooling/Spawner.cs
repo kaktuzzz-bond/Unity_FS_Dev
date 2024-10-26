@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Modules.Pooling
 {
-    public abstract class Spawner<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class Spawner<T> : MonoBehaviour where T : MonoBehaviour, IPoolReleasable<T>
     {
         [SerializeField] protected T prefab;
         [SerializeField] protected Transform parent;

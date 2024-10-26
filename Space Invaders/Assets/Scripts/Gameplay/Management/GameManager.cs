@@ -7,14 +7,9 @@ namespace Gameplay.Management
 {
     public sealed class GameManager : MonoBehaviour
     {
-        [SerializeField] private EnemyController enemyController;
+        [SerializeField] private EnemyAI enemyAI;
+        [SerializeField] private PlayerService playerService;
         [SerializeField] private LevelBackground levelBackground;
-
-     
-        private void OnEnable()
-        {
-            //playerManager.Player.OnHealthEmpty += GameOver;
-        }
 
 
         private void Start()
@@ -25,7 +20,10 @@ namespace Gameplay.Management
         private void StartGame()
         {
             Debug.Log("GAME STARTED");
-            levelBackground.Initialize();
+            
+            playerService.SpawnPlayer();
+            enemyAI.StartSpawning();
+
             Time.timeScale = 1;
         }
 
@@ -37,7 +35,7 @@ namespace Gameplay.Management
 
         private void OnDisable()
         {
-           // playerManager.Player.OnHealthEmpty -= GameOver;
+            // playerManager.Player.OnHealthEmpty -= GameOver;
         }
     }
 }

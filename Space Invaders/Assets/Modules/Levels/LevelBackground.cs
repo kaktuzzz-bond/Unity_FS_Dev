@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Modules.Levels
@@ -11,11 +12,11 @@ namespace Modules.Levels
 
         private bool _isMoving;
 
-        public void Initialize()
+        private void Awake()
         {
             _isMoving = true;
         }
-       
+
 
         private void Update()
         {
@@ -23,7 +24,7 @@ namespace Modules.Levels
 
             transform.Translate(Vector3.down * movingSpeedY * Time.deltaTime);
 
-            if (transform.position.y <= - height)
+            if (transform.position.y <= -height)
             {
                 transform.position = new Vector3(transform.position.x, height, transform.position.z);
             }

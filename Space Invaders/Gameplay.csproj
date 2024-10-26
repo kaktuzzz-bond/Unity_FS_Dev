@@ -51,15 +51,15 @@
     <Compile Include="Assets/Scripts/Gameplay/Bullets/BulletSpawner.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/PlayerService.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/MoveComponent.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/EnemySpaceship.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/AttackComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipSpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/EnemyAI.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/EnemyDriverComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Bullets/Bullet.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Bullets/IWeapon.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/GameManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/HealthComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Spaceship.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Management/EnemyController.cs" />
     <None Include="Assets/Scripts/Gameplay/Gameplay.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
