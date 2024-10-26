@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 229640308}
   - component: {fileID: 229640306}
   - component: {fileID: 229640307}
+  - component: {fileID: 229640309}
   m_Layer: 0
   m_Name: '[Enemies]'
   m_TagString: Untagged
@@ -248,8 +249,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6799125967610205483, guid: 5c9221267a9d54b339e970fa63728bda, type: 3}
   parent: {fileID: 1683128698}
-  poolSize: 7
-  bulletSpawner: {fileID: 0}
+  poolSize: 5
+  bulletSpawner: {fileID: 229640309}
 --- !u!4 &229640308
 Transform:
   m_ObjectHideFlags: 0
@@ -265,6 +266,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 485371872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229640309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229640305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175733d7a2ff47daab73a8360db434a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 201757604187811891, guid: 16e4de1167d484818b4834989bedafee, type: 3}
+  parent: {fileID: 1290949509}
+  poolSize: 10
 --- !u!114 &325757864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8603521045051267470, guid: ee92a05647bb7401d800d96e31b7c5ba,
