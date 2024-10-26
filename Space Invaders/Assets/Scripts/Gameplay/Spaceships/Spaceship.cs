@@ -49,6 +49,7 @@ namespace Gameplay.Spaceships
             attackComponent.SetWeapon(weapon);
             return this;
         }
+
         public Spaceship SetTarget(Transform target)
         {
             attackComponent.SetTarget(target);

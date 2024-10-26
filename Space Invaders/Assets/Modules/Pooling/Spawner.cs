@@ -18,6 +18,8 @@ namespace Modules.Pooling
         protected T Spawn()
         {
             var item = pool.Spawn();
+            
+            item.transform.position = parent.position;
 
             return item;
         }

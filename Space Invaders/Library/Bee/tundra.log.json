@@ -597,6 +597,12 @@
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"MovedFromExtractorCombine Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.Purchasing.dll.mvfrm","enqueuedNodeIndex":482,"enqueueingNodeAnnotation":"Csc Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.Purchasing.dll (+2 others)","enqueueingNodeIndex":479}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"WriteText Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.Purchasing.dll.mvfrm.rsp","enqueuedNodeIndex":481,"enqueueingNodeAnnotation":"MovedFromExtractorCombine Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.Purchasing.dll.mvfrm","enqueueingNodeIndex":482}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles Library/ScriptAssemblies/UnityEditor.Purchasing.pdb","enqueuedNodeIndex":598,"enqueueingNodeAnnotation":"ScriptAssemblies","enqueueingNodeIndex":6}
-{"msg":"previousInputSignatureMightBeIncorrect","annotation":"Csc Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.dll (+2 others)","index":258}
+{"msg":"nodeRetryBuild","annotation":"Csc Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.dll (+2 others)","index":258}
 {"msg":"runNodeAction","annotation":"Csc Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.dll (+2 others)","displayName":"Csc Gameplay","index":258}
 {"msg":"noderesult","processed_node_count":594,"number_of_nodes_ever_queued":598,"annotation":"Csc Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.dll (+2 others)","index":258,"exitcode":0,"outputfile":"Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.dll"}
+{"msg":"inputSignatureChanged","annotation":"CopyFiles Library/ScriptAssemblies/Gameplay.pdb","index":534,"changes":[{"key":"FileList","value":["Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.pdb"],"oldvalue":[],"dependency":"explicit"}]}
+{"msg":"inputSignatureChanged","annotation":"CopyFiles Library/ScriptAssemblies/Gameplay.dll","index":533,"changes":[{"key":"FileList","value":["Library/Bee/artifacts/200b0aEDbg.dag/Gameplay.dll"],"oldvalue":[],"dependency":"explicit"}]}
+{"msg":"runNodeAction","annotation":"CopyFiles Library/ScriptAssemblies/Gameplay.pdb","displayName":"Copying Gameplay.pdb","index":534}
+{"msg":"runNodeAction","annotation":"CopyFiles Library/ScriptAssemblies/Gameplay.dll","displayName":"Copying Gameplay.dll","index":533}
+{"msg":"noderesult","processed_node_count":595,"number_of_nodes_ever_queued":598,"annotation":"CopyFiles Library/ScriptAssemblies/Gameplay.pdb","index":534,"exitcode":0,"outputfile":"Library/ScriptAssemblies/Gameplay.pdb"}
+{"msg":"noderesult","processed_node_count":596,"number_of_nodes_ever_queued":598,"annotation":"CopyFiles Library/ScriptAssemblies/Gameplay.dll","index":533,"exitcode":0,"outputfile":"Library/ScriptAssemblies/Gameplay.dll"}

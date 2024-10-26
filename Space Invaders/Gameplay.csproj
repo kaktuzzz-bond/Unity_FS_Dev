@@ -47,12 +47,13 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/CollisionDataComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/DamageComponent.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Bullets/BulletSpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/PlayerService.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/MoveComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/EnemySpaceship.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/AttackComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipSpawner.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Management/PlayerManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Bullets/Bullet.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Bullets/IWeapon.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/GameManager.cs" />

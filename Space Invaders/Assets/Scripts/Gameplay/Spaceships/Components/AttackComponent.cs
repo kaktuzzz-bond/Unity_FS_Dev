@@ -1,6 +1,4 @@
-using System;
 using Gameplay.Bullets;
-using Modules.Pooling;
 using UnityEngine;
 
 namespace Gameplay.Spaceships.Components
@@ -8,7 +6,6 @@ namespace Gameplay.Spaceships.Components
     public class AttackComponent : MonoBehaviour
     {
         [SerializeField] private Transform firePoint;
-
         [SerializeField] private float bulletSpeed = 3;
 
         private Transform _target;

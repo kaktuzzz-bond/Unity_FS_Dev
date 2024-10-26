@@ -246,12 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca30b9e169f41ecb0632882a7661ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipPrefab: {fileID: 6799125967610205483, guid: 5c9221267a9d54b339e970fa63728bda,
-    type: 3}
-  spaceshipParent: {fileID: 1683128698}
-  bulletParent: {fileID: 1290949509}
-  bulletSpawner: {fileID: 0}
+  prefab: {fileID: 6799125967610205483, guid: 5c9221267a9d54b339e970fa63728bda, type: 3}
+  parent: {fileID: 1683128698}
   poolSize: 7
+  bulletSpawner: {fileID: 0}
 --- !u!4 &229640308
 Transform:
   m_ObjectHideFlags: 0
@@ -574,9 +572,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 886418141}
-  - component: {fileID: 886418144}
+  - component: {fileID: 886418146}
   - component: {fileID: 886418143}
   - component: {fileID: 886418145}
+  - component: {fileID: 886418144}
   - component: {fileID: 886418142}
   m_Layer: 0
   m_Name: '[Player]'
@@ -624,12 +623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca30b9e169f41ecb0632882a7661ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipPrefab: {fileID: 6799125967610205483, guid: 9699e7e809fd44b2bbf3d30c951ecbd2,
-    type: 3}
-  spaceshipParent: {fileID: 1477153357}
-  bulletParent: {fileID: 1290949509}
-  bulletSpawner: {fileID: 886418145}
+  prefab: {fileID: 6799125967610205483, guid: 9699e7e809fd44b2bbf3d30c951ecbd2, type: 3}
+  parent: {fileID: 1477153357}
   poolSize: 1
+  bulletSpawner: {fileID: 886418145}
 --- !u!114 &886418144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,8 +639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffa4f6bd49c4b0db8889abd370a8126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipSpawner: {fileID: 886418143}
   inputAdapter: {fileID: 886418142}
+  playerService: {fileID: 886418146}
 --- !u!114 &886418145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,6 +656,19 @@ MonoBehaviour:
   prefab: {fileID: 201757604187811891, guid: 5fe72886874b4e445b06cf777ca4920d, type: 3}
   parent: {fileID: 1290949509}
   poolSize: 10
+--- !u!114 &886418146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886418140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae84f3316f5a4f21be6bf48a25e26620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceshipSpawner: {fileID: 886418143}
 --- !u!1 &887858962
 GameObject:
   m_ObjectHideFlags: 0

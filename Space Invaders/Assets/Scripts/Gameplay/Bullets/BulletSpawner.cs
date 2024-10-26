@@ -7,11 +7,10 @@ namespace Gameplay.Bullets
     {
         public void Fire(Vector2 position, Vector2 velocity)
         {
-            var b = Spawn(position)
-                //.SetActive(false)
-                .SetParentPool(pool)
-                .SetActive(true)
-                .SetVelocity(velocity);
+            var bullet = Spawn(position);
+            bullet.SetReleaseAction(pool.Despawn);
+            bullet.Activity = true;
+            bullet.Velocity = velocity;
         }
     }
 }
