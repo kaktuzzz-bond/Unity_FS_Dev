@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    public sealed class EnemySpaceship : SpaceshipBase
+    public sealed class EnemySpaceship : Spaceship
     {
         [SerializeField] private float attackInterval = 1f;
 

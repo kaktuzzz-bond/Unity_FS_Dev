@@ -247,8 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57ed31af8d94ec3b11df7e2b588d40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputListener: {fileID: 485371870}
-  playerController: {fileID: 485371877}
   enemyController: {fileID: 485371875}
   factoryController: {fileID: 485371876}
   levelBackground: {fileID: 325757864}
@@ -312,8 +310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 201757604187811891, guid: 5fe72886874b4e445b06cf777ca4920d,
     type: 3}
-  playerPrefab: {fileID: 6799125967610205483, guid: 9699e7e809fd44b2bbf3d30c951ecbd2,
-    type: 3}
   enemyPrefab: {fileID: 102605417607457000, guid: 87fe189881a524806800482ac8eaaa83,
     type: 3}
   bulletParent: {fileID: 1290949509}
@@ -331,6 +327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffa4f6bd49c4b0db8889abd370a8126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpaceshipPrefab: {fileID: 6799125967610205483, guid: 9699e7e809fd44b2bbf3d30c951ecbd2,
+    type: 3}
+  playerParent: {fileID: 1477153357}
+  health: 5
+  speed: 5
+  inputAdapter: {fileID: 485371870}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

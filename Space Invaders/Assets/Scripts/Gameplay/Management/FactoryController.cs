@@ -1,5 +1,4 @@
 using Gameplay.Bullets;
-using Gameplay.Factories;
 using Gameplay.Spaceships;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ namespace Gameplay.Management
         [Header("Prefabs")]
         [SerializeField] private Bullet bulletPrefab;
 
-        [SerializeField] private PlayerSpaceship playerPrefab;
+        //[SerializeField] private PlayerSpaceship playerPrefab;
 
         [SerializeField] private EnemySpaceship enemyPrefab;
 
@@ -25,10 +24,10 @@ namespace Gameplay.Management
 
         public void Initialize()
         {
-            _bulletFactory = new BulletFactory(bulletPrefab, bulletParent);
-            SpaceshipFactory =
-                new SpaceshipFactory(playerPrefab, enemyPrefab, playerParent, enemyParent,
-                    _bulletFactory);
+            // _bulletFactory = new BulletFactory(bulletPrefab, bulletParent);
+            // SpaceshipFactory =
+            //     new SpaceshipFactory(playerPrefab, enemyPrefab, playerParent, enemyParent,
+            //         _bulletFactory);
         }
     }
 }

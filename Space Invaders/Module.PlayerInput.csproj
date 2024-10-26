@@ -45,7 +45,7 @@
     <Analyzer Include="/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Modules/PlayerInput/InputListener.cs" />
+    <Compile Include="Assets/Modules/PlayerInput/InputAdapter.cs" />
     <None Include="Assets/Modules/PlayerInput/Module.PlayerInput.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -1,5 +1,6 @@
 using System;
 using Gameplay.Spaceships;
+using Gameplay.Spaceships.Components;
 using UnityEngine;
 
 namespace Gameplay.Bullets
@@ -7,37 +8,32 @@ namespace Gameplay.Bullets
     public sealed class Bullet : MonoBehaviour
     {
         [SerializeField] private new Rigidbody2D rigidbody2D;
-
         [SerializeField] private SpriteRenderer spriteRenderer;
 
+        [SerializeField] private DamageComponent damageComponent;
+        [SerializeField] private CollisionDataComponent collisionDataComponent;
+
+
         private string _targetTag;
-        private int _damage;
         private Vector2 _velocity;
         private Action _onHit;
 
+        private void Awake()
+        {
+            gameObject.layer = collisionDataComponent.layerMask;
+        }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out SpaceshipBase unit) &&
+            if (collision.gameObject.TryGetComponent(out Spaceship unit) &&
                 unit.CompareTag(_targetTag))
             {
-                unit.TakeDamage(_damage);
+                unit.TakeDamage(damageComponent.Damage);
             }
 
             _onHit?.Invoke();
         }
 
-        public Bullet SetDamage(int damage)
-        {
-            _damage = damage;
-            return this;
-        }
-
-        public Bullet SetColor(Color color)
-        {
-            spriteRenderer.color = color;
-            return this;
-        }
 
         public Bullet SetTargetTag(string targetTag)
         {
@@ -45,11 +41,6 @@ namespace Gameplay.Bullets
             return this;
         }
 
-        public Bullet SetPhysicsLayer(int physicsLayer)
-        {
-            gameObject.layer = physicsLayer;
-            return this;
-        }
 
         public Bullet SetVelocity(Vector2 velocity)
         {

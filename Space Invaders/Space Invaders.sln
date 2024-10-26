@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Pooling", "Module.Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Levels", "Module.Levels.csproj", "{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.PlayerInput", "Module.PlayerInput.csproj", "{ebb728f3-cb1b-3ef8-de7b-47e46700337d}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Extensions", "Module.Extensions.csproj", "{0f58bd44-3505-9f50-4443-a51acc16c444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.PlayerInput", "Module.PlayerInput.csproj", "{ebb728f3-cb1b-3ef8-de7b-47e46700337d}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}"
 EndProject
@@ -26,10 +26,10 @@ Global
 		{3603424c-3f07-3edf-f46a-bd2737946da9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ebb728f3-cb1b-3ef8-de7b-47e46700337d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ebb728f3-cb1b-3ef8-de7b-47e46700337d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0f58bd44-3505-9f50-4443-a51acc16c444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0f58bd44-3505-9f50-4443-a51acc16c444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ebb728f3-cb1b-3ef8-de7b-47e46700337d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ebb728f3-cb1b-3ef8-de7b-47e46700337d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{406ec267-6c8d-67a7-1ad2-7564f2537bdc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

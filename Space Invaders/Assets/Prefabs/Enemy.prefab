@@ -50,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3195880656587174614}
   rigidbody: {fileID: 659620479434099170}
-  countdown: 1
+  config: {fileID: 11400000, guid: 9e1ac3079486c46499f789aa61864603, type: 2}
+  attackInterval: 1
 --- !u!212 &7936085547460007407
 SpriteRenderer:
   m_ObjectHideFlags: 0

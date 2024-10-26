@@ -1,13 +1,12 @@
 using Modules.Levels;
 using Modules.PlayerInput;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Management
 {
     public sealed class GameManager : MonoBehaviour
     {
-        [SerializeField] private InputListener inputListener;
-        [SerializeField] private PlayerController playerController;
         [SerializeField] private EnemyController enemyController;
         [SerializeField] private FactoryController factoryController;
         [SerializeField] private LevelBackground levelBackground;
@@ -15,13 +14,13 @@ namespace Gameplay.Management
         private void Awake()
         {
             factoryController.Initialize();
-            playerController.Initialize(factoryController.SpaceshipFactory, inputListener);
-            enemyController.Initialize(factoryController.SpaceshipFactory, playerController.Player);
+          
+            //enemyController.Initialize(factoryController.SpaceshipFactory, playerManager.Player);
         }
 
         private void OnEnable()
         {
-            playerController.Player.OnHealthEmpty += GameOver;
+            //playerManager.Player.OnHealthEmpty += GameOver;
         }
 
 
@@ -45,7 +44,7 @@ namespace Gameplay.Management
 
         private void OnDisable()
         {
-            playerController.Player.OnHealthEmpty -= GameOver;
+           // playerManager.Player.OnHealthEmpty -= GameOver;
         }
     }
 }

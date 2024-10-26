@@ -45,17 +45,24 @@
     <Analyzer Include="/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Gameplay/Factories/SpaceshipFactory.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/CollisionDataComponent.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/DamageComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/FactoryController.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Management/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/MoveComponent.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/EnemySpaceship.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Factories/BulletFactory.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Bullets/BulletData.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/AttackComponent.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Bullets/BulletFactory.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipSpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipFactory.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipData.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/PlayerManager.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Bullets/Bullet.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Factories/FactoryData.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/GameManager.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipBase.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/PlayerSpaceship.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Components/HealthComponent.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Spaceship.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Management/EnemyController.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/FactoryData.cs" />
     <None Include="Assets/Scripts/Gameplay/Gameplay.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
