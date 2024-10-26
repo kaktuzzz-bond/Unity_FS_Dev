@@ -1,6 +1,7 @@
 using System;
 using Gameplay.Spaceships;
 using Gameplay.Spaceships.Components;
+using Modules.Pooling;
 using UnityEngine;
 
 namespace Gameplay.Bullets
@@ -12,36 +13,32 @@ namespace Gameplay.Bullets
 
         [SerializeField] private DamageComponent damageComponent;
         [SerializeField] private CollisionDataComponent collisionDataComponent;
-
-
-        private string _targetTag;
+        
         private Vector2 _velocity;
-        private Action _onHit;
-
+        private ObjectPool<Bullet> _parentPool;
+        private Transform _parent;
         private void Awake()
         {
-            gameObject.layer = collisionDataComponent.layerMask;
+            SetLayerMask();
         }
+
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out Spaceship unit) &&
-                unit.CompareTag(_targetTag))
+            if (collision.gameObject.TryGetComponent(out Spaceship unit))
             {
                 unit.TakeDamage(damageComponent.Damage);
             }
 
-            _onHit?.Invoke();
+            ReturnToPool();
         }
 
-
-        public Bullet SetTargetTag(string targetTag)
+        public Bullet SetParent(Transform parent)
         {
-            _targetTag = targetTag;
+            _parent = parent;
             return this;
         }
-
-
+      
         public Bullet SetVelocity(Vector2 velocity)
         {
             rigidbody2D.velocity = velocity;
@@ -60,12 +57,21 @@ namespace Gameplay.Bullets
             return this;
         }
 
-
-        public Bullet SetActionOnHit(Action action)
+        public Bullet SetParentPool(ObjectPool<Bullet> parentPool)
         {
-            action += () => SetActive(false);
-            _onHit = action;
+            _parentPool = parentPool;
             return this;
+        }
+
+        private void ReturnToPool()
+        {
+            _parentPool.Despawn(this);
+            SetActive(false);
+        }
+
+        private void SetLayerMask()
+        {
+            gameObject.layer = collisionDataComponent.CollisionLayer;
         }
     }
 }

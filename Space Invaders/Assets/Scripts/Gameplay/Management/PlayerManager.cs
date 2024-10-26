@@ -1,6 +1,8 @@
+using Gameplay.Bullets;
 using Gameplay.Spaceships;
 using Modules.PlayerInput;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Management
 {
@@ -8,21 +10,14 @@ namespace Gameplay.Management
     {
         public Spaceship Player { get; private set; }
 
-        [SerializeField] private Spaceship playerSpaceshipPrefab;
-        [SerializeField] private Transform playerParent;
-        [SerializeField] private int health = 5;
-        [SerializeField] private float speed = 5f;
+        [SerializeField] private SpaceshipSpawner spaceshipSpawner;
+      
+        [SerializeField] private InputAdapter inputAdapter;
 
-        [SerializeField] InputAdapter inputAdapter;
 
-        private SpaceshipSpawner _spaceshipSpawner;
-
-        private void Awake()
+        private void Start()
         {
-            _spaceshipSpawner = new SpaceshipSpawner(playerSpaceshipPrefab, playerParent, health, speed,
-                FactoryData.Tags.PlayerTag, FactoryData.Layers.PlayerSpaceshipLayer);
-
-            Player = _spaceshipSpawner.Spawn(playerParent.position);
+            Player ??= spaceshipSpawner.Spawn();
         }
 
         private void OnEnable()

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Modules/Pooling/ObjectPool.cs" />
+    <Compile Include="Assets/Modules/Pooling/Spawner.cs" />
     <None Include="Assets/Modules/Pooling/Module.Pooling.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

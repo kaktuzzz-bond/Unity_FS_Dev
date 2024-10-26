@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Gameplay.Spaceships;
 using Modules.Extensions;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Gameplay.Management
 {
@@ -12,18 +15,23 @@ namespace Gameplay.Management
         [SerializeField] private Transform[] spawnPositions;
         [SerializeField] private Transform[] attackPositions;
 
+        [SerializeField] private SpaceshipSpawner spaceshipSpawner;
+
         private const float MinSpawnDelay = 1f;
         private const float MaxSpawnDelay = 2f;
         private const int MaxActiveEnemies = 4;
 
         private readonly HashSet<Spaceship> _enemies = new();
-        private SpaceshipFactory _spaceshipFactory;
         private Spaceship _player;
         private bool _isSpawning;
 
-        public void Initialize(SpaceshipFactory spaceshipFactory, Spaceship player)
+
+        private void Awake()
         {
-            _spaceshipFactory = spaceshipFactory;
+        }
+
+        public void Initialize(Spaceship player)
+        {
             _player = player;
 
             _isSpawning = true;

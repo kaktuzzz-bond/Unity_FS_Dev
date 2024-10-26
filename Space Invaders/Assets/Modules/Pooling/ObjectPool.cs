@@ -20,8 +20,7 @@ namespace Modules.Pooling
             for (var i = 0; i < capacity; i++)
             {
                 var item = GetNewInstance();
-                item.gameObject.SetActive(false);
-                _pool.Enqueue(item);
+               Despawn(item);
             }
         }
 
@@ -29,10 +28,10 @@ namespace Modules.Pooling
             _pool.TryPeek(out T item)
                 ? _pool.Dequeue()
                 : GetNewInstance();
-
-
+        
         public void Despawn(T item)
         {
+            item.gameObject.SetActive(false);
             _pool.Enqueue(item);
         }
 

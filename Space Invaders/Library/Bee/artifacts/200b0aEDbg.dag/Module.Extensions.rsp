@@ -346,6 +346,7 @@
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Modules/Extensions/GetRandomItemExtension.cs"
+"Assets/Modules/Extensions/LayerMaskToIntExtension.cs"
 -langversion:9.0
 /deterministic
 /optimize-

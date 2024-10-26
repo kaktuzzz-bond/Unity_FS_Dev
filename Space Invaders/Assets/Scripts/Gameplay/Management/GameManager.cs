@@ -8,16 +8,9 @@ namespace Gameplay.Management
     public sealed class GameManager : MonoBehaviour
     {
         [SerializeField] private EnemyController enemyController;
-        [SerializeField] private FactoryController factoryController;
         [SerializeField] private LevelBackground levelBackground;
 
-        private void Awake()
-        {
-            factoryController.Initialize();
-          
-            //enemyController.Initialize(factoryController.SpaceshipFactory, playerManager.Player);
-        }
-
+     
         private void OnEnable()
         {
             //playerManager.Player.OnHealthEmpty += GameOver;
