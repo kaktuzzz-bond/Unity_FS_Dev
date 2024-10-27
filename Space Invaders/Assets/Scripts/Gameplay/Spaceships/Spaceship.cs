@@ -20,6 +20,7 @@ namespace Gameplay.Spaceships
         private void Awake()
         {
             SetLayerMask();
+            healthComponent.ResetHealth();
         }
 
         private void OnEnable()
@@ -69,6 +70,7 @@ namespace Gameplay.Spaceships
         {
             OnDied?.Invoke();
             OnRelease.Invoke(this);
+            healthComponent.ResetHealth();
         }
 
         private void SetLayerMask() =>

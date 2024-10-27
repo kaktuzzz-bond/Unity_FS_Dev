@@ -9,13 +9,11 @@ namespace Gameplay.Spaceships.Components
         [SerializeField] private int maxHealth;
         [SerializeField] private int startHealth;
 
-        private int _health;
+        [SerializeField] private int _health;
 
 
-        private void Awake()
-        {
+        public void ResetHealth() => 
             SetHealth(startHealth);
-        }
 
 
         public void TakeDamage(int damage)
