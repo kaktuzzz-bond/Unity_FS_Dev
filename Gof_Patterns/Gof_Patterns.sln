@@ -1,15 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Visitor", "GoF.Visitor.csproj", "{cfd85b28-bd7e-7699-7f68-1a08083a82ff}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Prototype", "GoF.Prototype.csproj", "{76cf61fd-40ab-810d-fb66-64a3edfc34ce}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Bridge", "GoF.Bridge.csproj", "{49e789e0-f42c-3558-a02d-b2b5ebfc3393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.State", "GoF.State.csproj", "{24eb6da3-1d06-7a06-ef4e-44e979a29081}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.FactoryMethod", "GoF.FactoryMethod.csproj", "{8516008a-aabc-daa8-6e57-c7ad953db7a0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Adapter", "GoF.Adapter.csproj", "{5cedba76-c069-32b4-d611-f1634366676b}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Composite", "GoF.Composite.csproj", "{83503c53-39fe-7d02-4884-f6acabeda83d}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Facade", "GoF.Facade.csproj", "{066cf34e-16c4-f31c-627a-f0896cd771cd}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Decorator", "GoF.Decorator.csproj", "{ba28fcf2-27b1-ed14-9932-77e25abbf41d}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gof.Lightweight", "Gof.Lightweight.csproj", "{6b492e94-47f4-a98d-81eb-d7c14efa7aee}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Builder", "GoF.Builder.csproj", "{6bd42fef-4919-e03f-6af9-5d3232420dc6}"
 EndProject
@@ -18,16 +28,26 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{cfd85b28-bd7e-7699-7f68-1a08083a82ff}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cfd85b28-bd7e-7699-7f68-1a08083a82ff}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76cf61fd-40ab-810d-fb66-64a3edfc34ce}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76cf61fd-40ab-810d-fb66-64a3edfc34ce}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49e789e0-f42c-3558-a02d-b2b5ebfc3393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49e789e0-f42c-3558-a02d-b2b5ebfc3393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24eb6da3-1d06-7a06-ef4e-44e979a29081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24eb6da3-1d06-7a06-ef4e-44e979a29081}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8516008a-aabc-daa8-6e57-c7ad953db7a0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8516008a-aabc-daa8-6e57-c7ad953db7a0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5cedba76-c069-32b4-d611-f1634366676b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5cedba76-c069-32b4-d611-f1634366676b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83503c53-39fe-7d02-4884-f6acabeda83d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83503c53-39fe-7d02-4884-f6acabeda83d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{066cf34e-16c4-f31c-627a-f0896cd771cd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{066cf34e-16c4-f31c-627a-f0896cd771cd}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ba28fcf2-27b1-ed14-9932-77e25abbf41d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ba28fcf2-27b1-ed14-9932-77e25abbf41d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6b492e94-47f4-a98d-81eb-d7c14efa7aee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6b492e94-47f4-a98d-81eb-d7c14efa7aee}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6bd42fef-4919-e03f-6af9-5d3232420dc6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6bd42fef-4919-e03f-6af9-5d3232420dc6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
