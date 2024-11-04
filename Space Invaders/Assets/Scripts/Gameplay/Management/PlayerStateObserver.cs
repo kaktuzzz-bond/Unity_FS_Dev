@@ -9,12 +9,12 @@ namespace Gameplay.Management
 
         public void StartObserving()
         {
-            playerService.Player.OnDied += gameCycle.GameOver;
+            //playerService.Player.OnDied += gameCycle.GameOver;
         }
         
         private void OnDestroy()
         {
-            playerService.Player.OnDied -= gameCycle.GameOver;
+            //playerService.Player.OnDied -= gameCycle.GameOver;
         }
     }
 }

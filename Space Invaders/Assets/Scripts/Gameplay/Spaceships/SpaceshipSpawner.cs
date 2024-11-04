@@ -4,30 +4,16 @@ using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    public class SpaceshipSpawner : Spawner<Spaceship>
+    public class SpaceshipSpawner : ObjectPool<Spaceship>
     {
-        [SerializeField] private BulletSpawner bulletSpawner;
-
-        public Spaceship Create()
+        protected override void OnCreate(Spaceship item)
         {
-            var spaceship = Spawn();
-
-            return SetupSpaceship(spaceship);
+            item.OnDied += Return;
         }
 
-        public Spaceship Create(Vector2 position)
+        protected override void OnReturn(Spaceship item)
         {
-            var spaceship = Spawn(position);
-
-            return SetupSpaceship(spaceship);
-        }
-
-        private Spaceship SetupSpaceship(Spaceship spaceship)
-        {
-            spaceship.SetReleaseAction(pool.Despawn);
-            spaceship.SetWeapon(bulletSpawner)
-                .SetActive(true);
-            return spaceship;
+            item.OnDied -= Return;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Gameplay.Spaceships.Components
 
         private void OnEnable()
         {
-            spaceship.OnDied += Stop;
+            //spaceship.OnDied += Stop;
         }
 
         private void Stop()

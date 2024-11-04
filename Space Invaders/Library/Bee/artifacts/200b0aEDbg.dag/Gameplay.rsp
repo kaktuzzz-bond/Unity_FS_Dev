@@ -360,10 +360,14 @@
 "Assets/Scripts/Gameplay/Spaceships/Components/EnemyAIComponent.cs"
 "Assets/Scripts/Gameplay/Spaceships/Components/HealthComponent.cs"
 "Assets/Scripts/Gameplay/Spaceships/Components/MoveComponent.cs"
+"Assets/Scripts/Gameplay/Spaceships/Configs/Parameters.cs"
+"Assets/Scripts/Gameplay/Spaceships/Configs/SpaceshipConfig.cs"
+"Assets/Scripts/Gameplay/Spaceships/Configs/WeaponConfig.cs"
 "Assets/Scripts/Gameplay/Spaceships/Spaceship.cs"
 "Assets/Scripts/Gameplay/Spaceships/SpaceshipSpawner.cs"
 "Assets/Scripts/Gameplay/Weapon/Bullet.cs"
 "Assets/Scripts/Gameplay/Weapon/BulletSpawner.cs"
+"Assets/Scripts/Gameplay/Weapon/BulletTuner.cs"
 "Assets/Scripts/Gameplay/Weapon/IWeapon.cs"
 -langversion:9.0
 /deterministic

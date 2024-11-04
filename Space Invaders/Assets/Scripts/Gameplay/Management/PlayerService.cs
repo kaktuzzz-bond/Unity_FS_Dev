@@ -11,7 +11,7 @@ namespace Gameplay.Management
 
         public void SpawnPlayer()
         {
-            Player ??= spaceshipSpawner.Create();
+            Player ??= spaceshipSpawner.Rent();
         }
 
         public void Attack() =>

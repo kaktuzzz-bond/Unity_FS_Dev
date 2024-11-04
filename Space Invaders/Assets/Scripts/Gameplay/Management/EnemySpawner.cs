@@ -51,7 +51,7 @@ namespace Gameplay.Management
         {
             var spawnPosition = spawnPositions.GetRandomItem().position;
             
-            var spaceship = spaceshipSpawner.Create(spawnPosition)
+            var spaceship = spaceshipSpawner.Rent(spawnPosition,Quaternion.identity)
                 .SetTarget(playerService.Player.transform)
                 .SetActive(true);
 

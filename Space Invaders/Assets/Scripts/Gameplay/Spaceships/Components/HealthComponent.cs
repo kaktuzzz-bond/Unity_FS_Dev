@@ -3,17 +3,22 @@ using UnityEngine;
 
 namespace Gameplay.Spaceships.Components
 {
-    public class HealthComponent : MonoBehaviour
+    public class HealthComponent
     {
         public event Action OnHealthEmpty;
-        [SerializeField] private int maxHealth;
-        [SerializeField] private int startHealth;
+        private readonly int _maxHealth;
+        private readonly int _startHealth;
 
-        [SerializeField] private int _health;
+        private int _health;
 
+        public HealthComponent(int maxHealth, int startHealth)
+        {
+            _maxHealth = maxHealth;
+            _startHealth = startHealth;
+        }
 
         public void ResetHealth() => 
-            SetHealth(startHealth);
+            SetHealth(_startHealth);
 
 
         public void TakeDamage(int damage)
@@ -26,7 +31,7 @@ namespace Gameplay.Spaceships.Components
 
         private void SetHealth(int health)
         {
-            _health = Mathf.Clamp(health, 0, maxHealth);
+            _health = Mathf.Clamp(health, 0, _maxHealth);
         }
     }
 }

@@ -3,39 +3,81 @@ using UnityEngine;
 
 namespace Modules.Pooling
 {
-    public class ObjectPool<T> where T : MonoBehaviour
+    public abstract class ObjectPool<T> : MonoBehaviour where T : Component
     {
-        private readonly T _prefab;
-        private readonly Transform _parent;
-        private readonly int _capacity;
+        [SerializeField] private T prefab;
+        [SerializeField] private Transform parent;
+        [SerializeField] private int poolCapacity;
 
         private readonly Queue<T> _pool = new();
-
-        public ObjectPool(T prefab, Transform parent, int capacity = 4)
+        
+        private void Awake()
         {
-            _prefab = prefab;
-            _parent = parent;
-            _capacity = capacity;
+            FillPool(poolCapacity);
+        }
 
+        private void FillPool(int capacity)
+        {
             for (var i = 0; i < capacity; i++)
             {
                 var item = GetNewInstance();
-               Despawn(item);
+                Return(item);
             }
         }
 
-        public T Spawn() =>
-            _pool.TryPeek(out T item)
-                ? _pool.Dequeue()
-                : GetNewInstance();
-        
-        public void Despawn(T item)
+        public T Rent()
         {
+            if (!_pool.TryDequeue(out var item))
+            {
+                item = GetNewInstance();
+                OnCreate(item);
+            }
+
+            item.gameObject.SetActive(true);
+            OnRent(item);
+
+            return item;
+        }
+
+        public T Rent(Vector2 position, Quaternion rotation)
+        {
+            if (!_pool.TryDequeue(out var item))
+            {
+                item = GetNewInstance();
+                OnCreate(item);
+            }
+
+            item.transform.SetPositionAndRotation(position, rotation);
+            item.gameObject.SetActive(true);
+            OnRent(item);
+
+            return item;
+        }
+
+        public void Return(T item)
+        {
+            if (_pool.Contains(item)) return;
+
+            OnReturn(item);
+
             item.gameObject.SetActive(false);
             _pool.Enqueue(item);
         }
 
+
+        protected virtual void OnCreate(T item)
+        {
+        }
+
+        protected virtual void OnRent(T item)
+        {
+        }
+
+        protected virtual void OnReturn(T item)
+        {
+        }
+
         private T GetNewInstance() =>
-            Object.Instantiate(_prefab, _parent);
+            Instantiate(prefab, parent);
     }
 }

@@ -6,32 +6,29 @@ namespace Gameplay.Spaceships.Components
     public class AttackComponent : MonoBehaviour
     {
         [SerializeField] private Transform firePoint;
+        [SerializeField] private BulletSpawner weapon;
         [SerializeField] private float bulletSpeed = 3;
 
         private Transform _target;
-        private IWeapon _weapon;
+      
 
         public void Attack()
         {
-            if (_weapon == null)
+            if (weapon == null)
             {
                 Debug.LogWarning("::WEAPON:: IS NOT LOADED");
                 return;
             }
 
             var velocity = GetBulletVelocity();
-            _weapon.Fire(firePoint.position, velocity);
+            weapon.Fire(firePoint.position, velocity);
         }
 
         public void SetTarget(Transform target)
         {
             _target = target;
         }
-
-        public void SetWeapon(IWeapon weapon)
-        {
-            _weapon = weapon;
-        }
+        
 
         private Vector2 GetBulletVelocity()
         {

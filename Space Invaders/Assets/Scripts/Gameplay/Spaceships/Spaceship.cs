@@ -1,22 +1,18 @@
 using System;
 using Gameplay.Spaceships.Components;
-using Gameplay.Weapon;
-using Modules.Pooling;
 using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    public sealed class Spaceship : MonoBehaviour, IPoolReleasable<Spaceship>
+    public sealed class Spaceship : MonoBehaviour
     {
-        public event Action OnDied;
+        public event Action<Spaceship> OnDied;
         [SerializeField] private MoveComponent moveComponent;
         [SerializeField] private HealthComponent healthComponent;
         [SerializeField] private AttackComponent attackComponent;
         [SerializeField] private CollisionDataComponent collisionDataComponent;
 
-
-        public Action<Spaceship> OnRelease { get; set; }
-
+        //spaceship config ADD
         private void Awake()
         {
             SetLayerMask();
@@ -41,18 +37,7 @@ namespace Gameplay.Spaceships
 
         public void TakeDamage(int damage) =>
             healthComponent.TakeDamage(damage);
-
-
-        public void SetReleaseAction(Action<Spaceship> action)
-        {
-            OnRelease = action;
-        }
         
-        public Spaceship SetWeapon(IWeapon weapon)
-        {
-            attackComponent.SetWeapon(weapon);
-            return this;
-        }
 
         public Spaceship SetTarget(Transform target)
         {
@@ -68,8 +53,7 @@ namespace Gameplay.Spaceships
 
         private void Despawn()
         {
-            OnDied?.Invoke();
-            OnRelease.Invoke(this);
+            OnDied?.Invoke(this);
             healthComponent.ResetHealth();
         }
 
