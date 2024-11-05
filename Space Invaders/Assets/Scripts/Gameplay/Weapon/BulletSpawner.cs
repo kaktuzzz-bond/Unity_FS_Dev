@@ -1,9 +1,11 @@
 using Modules.Pooling;
+using Modules.Pooling.Scripts;
+using Modules.Pooling.Scripts.Remove;
 using UnityEngine;
 
 namespace Gameplay.Weapon
 {
-    public class BulletSpawner : ObjectPool<Bullet>
+    public class BulletSpawner : MonobehaviourObjectPool<Bullet>
     {
         [SerializeField] private BulletTuner bulletTuner;
 

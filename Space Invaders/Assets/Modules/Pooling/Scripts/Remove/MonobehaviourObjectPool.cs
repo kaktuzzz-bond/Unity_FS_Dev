@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.Pooling
+namespace Modules.Pooling.Scripts.Remove
 {
-    public abstract class ObjectPool<T> : MonoBehaviour where T : Component
+    public abstract class MonobehaviourObjectPool<T> : MonoBehaviour where T : Component
     {
         [SerializeField] private T prefab;
         [SerializeField] private Transform parent;

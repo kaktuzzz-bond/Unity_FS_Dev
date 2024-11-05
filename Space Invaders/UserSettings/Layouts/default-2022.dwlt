@@ -15,13 +15,13 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 156
-    y: 60
+    y: 58
     width: 2401
     height: 1489
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 321}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -109,17 +109,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 6}
-  - {fileID: 16}
+  - {fileID: 14}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
     width: 2401
     height: 1439
-  m_MinSize: {x: 500, y: 150}
-  m_MaxSize: {x: 40480, y: 24288}
+  m_MinSize: {x: 400, y: 150}
+  m_MaxSize: {x: 32384, y: 24288}
   vertical: 1
-  controlID: 18
+  controlID: 40
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -136,17 +136,17 @@ MonoBehaviour:
   m_Children:
   - {fileID: 7}
   - {fileID: 12}
-  - {fileID: 15}
+  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
     width: 2401
     height: 1259
-  m_MinSize: {x: 500, y: 100}
-  m_MaxSize: {x: 40480, y: 16192}
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 19
+  controlID: 41
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 42
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 21
+  controlID: 43
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -221,9 +221,9 @@ MonoBehaviour:
     height: 848
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &10
@@ -247,9 +247,9 @@ MonoBehaviour:
     height: 848
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &11
@@ -273,9 +273,9 @@ MonoBehaviour:
     height: 411
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 19}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &12
@@ -287,78 +287,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 13}
-  - {fileID: 14}
+  m_Children: []
   m_Position:
     serializedVersion: 2
     x: 908
     y: 0
     width: 972.5
     height: 1259
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-  controlID: 137
-  draggingID: 0
---- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 430
-    height: 1259
-  m_MinSize: {x: 202, y: 221}
+  m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 430
-    y: 0
-    width: 542.5
-    height: 1259
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 27}
-  m_Panes:
-  - {fileID: 22}
+  - {fileID: 19}
   - {fileID: 21}
-  - {fileID: 27}
-  m_Selected: 2
-  m_LastSelected: 0
---- !u!114 &15
+  - {fileID: 20}
+  - {fileID: 26}
+  - {fileID: 15}
+  m_Selected: 4
+  m_LastSelected: 3
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,12 +329,12 @@ MonoBehaviour:
     height: 1259
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 23}
+  m_ActualView: {fileID: 22}
   m_Panes:
-  - {fileID: 23}
+  - {fileID: 22}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &16
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,14 +355,374 @@ MonoBehaviour:
     height: 180
   m_MinSize: {x: 100, y: 121}
   m_MaxSize: {x: 4000, y: 4021}
-  m_ActualView: {fileID: 24}
+  m_ActualView: {fileID: 23}
   m_Panes:
+  - {fileID: 23}
   - {fileID: 24}
   - {fileID: 25}
-  - {fileID: 26}
   m_Selected: 0
   m_LastSelected: 2
---- !u!114 &17
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1064
+    y: 88
+    width: 970.5
+    height: 1238
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 1128
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 876
+    - 292
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 1168
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 0}
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 15}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[LP][suite]'
+      name: LP
+      fullName: LP
+      resultStatus: 1
+      duration: 0.1176921
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1004
+      uniqueId: '[Model.Pooling.Tests.dll][suite]'
+      name: Model.Pooling.Tests.dll
+      fullName: /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders/Library/ScriptAssemblies/Model.Pooling.Tests.dll
+      resultStatus: 1
+      duration: 0.080635
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[LP][suite]'
+    - id: 1005
+      uniqueId: Model.Pooling.Tests.dll/[Modules][suite]
+      name: Modules
+      fullName: Modules
+      resultStatus: 1
+      duration: 0.0799601
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1004
+      parentUniqueId: '[Model.Pooling.Tests.dll][suite]'
+    - id: 1006
+      uniqueId: Model.Pooling.Tests.dll/Modules/[Pooling][suite]
+      name: Pooling
+      fullName: Modules.Pooling
+      resultStatus: 1
+      duration: 0.0762752
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1005
+      parentUniqueId: Model.Pooling.Tests.dll/[Modules][suite]
+    - id: 1007
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/[Model.Pooling.Tests][Modules.Pooling.Tests][suite]
+      name: Tests
+      fullName: Modules.Pooling.Tests
+      resultStatus: 1
+      duration: 0.0724224
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/[Pooling][suite]
+    - id: 1001
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
+      name: ObjectPoolTests
+      fullName: Modules.Pooling.Tests.ObjectPoolTests
+      resultStatus: 1
+      duration: 0.0680399
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1007
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/[Model.Pooling.Tests][Modules.Pooling.Tests][suite]
+    - id: 1008
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.Count_OnRentAndReleaseItem_ResultShouldBeTrue]
+      name: Count_OnRentAndReleaseItem_ResultShouldBeTrue
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.Count_OnRentAndReleaseItem_ResultShouldBeTrue
+      resultStatus: 1
+      duration: 0.0154845
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
+    - id: 1003
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
+      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems
+      resultStatus: 1
+      duration: 0.030444
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1001
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
+    - id: 1002
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)]
+      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)
+      resultStatus: 1
+      duration: 0.0080332
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
+    - id: 1003
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)]
+      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)
+      resultStatus: 1
+      duration: 0.000276
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
+    - id: 1004
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)]
+      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)
+      resultStatus: 1
+      duration: 0.0001797
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
+    - id: 1006
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException]
+      name: ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException
+      resultStatus: 1
+      duration: 0.0050304
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
+    - id: 1004
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItem_ShouldBeNotNull]
+      name: ObjectPool_RentItem_ShouldBeNotNull
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItem_ShouldBeNotNull
+      resultStatus: 1
+      duration: 0.0005943
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
+    - id: 1003
+      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero]
+      name: ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero
+      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero
+      resultStatus: 1
+      duration: 0.0018977
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
+    m_ResultText: Pooling (0.076s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: c73e7c23
+      m_LastClickedID: 595345095
+      m_ExpandedIDs: d18ab496b57aec9c7a1e2fab78617cb91a9dd0ec601a9506c73e7c2356af16287cd19f7fffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,7 +744,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 156
-    y: 90
+    y: 88
     width: 393
     height: 827
   m_SerializedDataModeController:
@@ -458,7 +768,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Gameplay/Spaceships/Configs
+    - Assets/Scripts/Gameplay/Spaceships/Components
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -474,7 +784,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a8340000
     m_LastClickedID: 13480
-    m_ExpandedIDs: 00000000825700008457000086570000885700008a5700008c5700008e57000090570000925700009457000096570000985700009a5700009c5700009e570000a0570000a2570000a4570000a6570000a8570000aa570000ac570000ae570000b0570000
+    m_ExpandedIDs: 00000000de560000e0560000e2560000e4560000e6560000e8560000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,7 +812,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 53.998657}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000825700008457000086570000885700008a5700008c5700008e57000090570000925700009457000096570000985700009a5700009c5700009e570000a0570000a2570000a4570000a6570000a8570000aa570000ac570000ae570000b0570000
+    m_ExpandedIDs: ffffffff00000000de560000e0560000e2560000e4560000e6560000e8560000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700004c57000086570000b2570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -518,7 +828,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 12}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -558,7 +868,7 @@ MonoBehaviour:
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 110
---- !u!114 &18
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,7 +890,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 550
-    y: 90
+    y: 88
     width: 512
     height: 827
   m_SerializedDataModeController:
@@ -596,9 +906,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b8550000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4af9ffff
+      m_ExpandedIDs: 069cffff749dffff8e9effff049fffff7a9fffff7aa0ffffaaa2ffff36a4ffffd0a5ffff60a7ffff48a8ffff30a9ffffc0aaffffa8abffff10adffff7caeffff44afffff0cb0ffff78b1ffff3eb2ffff5ab4ffff8cb6ffff48b7ffff4ab9ffffdabaffff3cbcffff06beffff5abfffff08c0ffff3ac1ffff02c3ffff28c4ffff4ec5ffff74c6fffff2c6ffff74c7ffff86c8ffffc2c9ffff0acbffff5eccffff26ceffff36cfffffb6cffffffad0ffff34d2ffff50d3ffff8ad4ffffc4d5fffffed6ffff90d7fffffad7ffff64d8fffff6d8ffff5cdaffff82dbffffe4ddffff50deffff6adfffff7ce0ffff90e1ffffb6e2ffffb6e3ffff2ae4ffff50e5ffffd2e5fffffce7ffff1ae9fffffce9ffff02eeffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -622,7 +932,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4802d49e8ef31467fb7787a6a7120aff
---- !u!114 &19
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,7 +954,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 156
-    y: 938
+    y: 936
     width: 907
     height: 390
   m_SerializedDataModeController:
@@ -657,7 +967,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &20
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -679,8 +989,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1064
-    y: 90
-    width: 428
+    y: 88
+    width: 970.5
     height: 1238
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1210,7 +1520,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &21
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1283,7 +1593,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &22
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1345,7 +1655,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
---- !u!114 &23
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1367,7 +1677,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 2036.5
-    y: 90
+    y: 88
     width: 519.5
     height: 1238
   m_SerializedDataModeController:
@@ -1393,7 +1703,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &24
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1415,7 +1725,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 156
-    y: 1349
+    y: 1347
     width: 2401
     height: 159
   m_SerializedDataModeController:
@@ -1431,7 +1741,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: 31790
---- !u!114 &25
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2403,7 +2713,7 @@ MonoBehaviour:
       data:
         m_SortAscending: 0
         m_SortedColumn: -1
---- !u!114 &26
+--- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2447,7 +2757,7 @@ MonoBehaviour:
   m_SequencePath:
     m_SelectionRoot: 0
     m_SubElements: []
---- !u!114 &27
+--- !u!114 &26
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2468,9 +2778,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1494
-    y: 90
-    width: 540.5
+    x: 1064
+    y: 88
+    width: 970.5
     height: 1238
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2526,23 +2836,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 540.5
+      width: 970.5
       height: 1217
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 270.25, y: 608.5}
+    m_Translation: {x: 485.25, y: 608.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -270.25
+      x: -485.25
       y: -608.5
-      width: 540.5
+      width: 970.5
       height: 1217
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1081, y: 2476}
+  m_LastWindowPixelSize: {x: 1941, y: 2476}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000100000000000000
