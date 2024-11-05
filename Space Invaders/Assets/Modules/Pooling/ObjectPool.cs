@@ -54,7 +54,7 @@ namespace Modules.Pooling
             return item;
         }
 
-        public void Return(T item)
+        protected void Return(T item)
         {
             if (_pool.Contains(item)) return;
 
