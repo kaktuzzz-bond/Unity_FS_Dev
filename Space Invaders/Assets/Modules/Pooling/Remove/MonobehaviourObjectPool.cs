@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.Pooling.Scripts.Remove
+namespace Modules.Pooling.Remove
 {
     public abstract class MonobehaviourObjectPool<T> : MonoBehaviour where T : Component
     {

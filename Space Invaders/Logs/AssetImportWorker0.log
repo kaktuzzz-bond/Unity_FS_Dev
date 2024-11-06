@@ -2709,3 +2709,338 @@ Start importing Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef usin
  -> (artifact id: '148fb03b6fc8c1c7da0a36de09e150e2') in 0.001728 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.Pooling.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.ComponentPool.Tests/Modules.ComponentPool.Tests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.EditTests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.Tests.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.MonoBehaviour.Fakes.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.Fakes.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Tests/EditMode/Modules.Spaceship.Tests/Module.Spaceships.Tests.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Modules/Spaceships/Tests/Module.Spaceships.Tests.asmdef)
+ArgumentException: An item with the same key has already been added. Key: 7319344e2b3244428b602cda97bba559
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (TSource[] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00029] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00051] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector) [0x00000] in <d858330b72074e379bd4579acacf4927>:0 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilder.Initialize (System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00046] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs:85 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilderFactory.GetOrCreate (System.String projectPath, System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00038] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilderFactory.cs:54 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.GetAssemblyGraphBuilder () [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:168 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.SetAllScripts (System.String[] allScripts) [0x0000d] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:176 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface.SetAllScripts (System.String[] allScripts) [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs:79 
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs Line: 85)
+
+Caller must complete domain reload
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.Pooling.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.ComponentPool.Tests/Modules.ComponentPool.Tests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.EditTests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.Tests.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.MonoBehaviour.Fakes.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.Fakes.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Tests/EditMode/Modules.Spaceship.Tests/Module.Spaceships.Tests.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Modules/Spaceships/Tests/Module.Spaceships.Tests.asmdef)
+ArgumentException: An item with the same key has already been added. Key: 7319344e2b3244428b602cda97bba559
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (TSource[] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00029] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00051] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector) [0x00000] in <d858330b72074e379bd4579acacf4927>:0 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilder.Initialize (System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00046] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs:85 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilderFactory.GetOrCreate (System.String projectPath, System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00038] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilderFactory.cs:54 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.GetAssemblyGraphBuilder () [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:168 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.SetAllScripts (System.String[] allScripts) [0x0000d] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:176 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface.SetAllScripts (System.String[] allScripts) [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs:79 
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs Line: 85)
+
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.561 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.Pooling.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.ComponentPool.Tests/Modules.ComponentPool.Tests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.EditTests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.Tests.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.MonoBehaviour.Fakes.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.Fakes.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Tests/EditMode/Modules.Spaceship.Tests/Module.Spaceships.Tests.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Modules/Spaceships/Tests/Module.Spaceships.Tests.asmdef)
+ArgumentException: An item with the same key has already been added. Key: 7319344e2b3244428b602cda97bba559
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (TSource[] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00029] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00051] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector) [0x00000] in <d858330b72074e379bd4579acacf4927>:0 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilder.Initialize (System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00046] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs:85 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilderFactory.GetOrCreate (System.String projectPath, System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00038] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilderFactory.cs:54 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.GetAssemblyGraphBuilder () [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:168 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.SetAllScripts (System.String[] allScripts) [0x0000d] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:176 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface.SetAllScripts (System.String[] allScripts) [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs:79 
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs Line: 85)
+
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.550 seconds
+Domain Reload Profiling: 2111ms
+	BeginReloadAssembly (171ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (55ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (292ms)
+		LoadAssemblies (360ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1551ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (667ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (82ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (327ms)
+			ProcessInitializeOnLoadMethodAttributes (181ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 7.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2489 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.1 KB). Loaded Objects now: 3055.
+Memory consumption went from 299.7 MB to 299.6 MB.
+Total: 7.170151 ms (FindLiveObjects: 0.325575 ms CreateObjectMapping: 0.208516 ms MarkObjects: 6.593323 ms  DeleteObjects: 0.041261 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/precompiled-assembly-types:Modules.Spaceships: cacb4a23deb4f1cc32646e219e42cb72 -> 
+  custom:scripting/monoscript/fileName/SpaceshipTests.cs: 590adc9876f3bc9e629d2ee6cc73bb30 -> 
+  custom:scripting/monoscript/fileName/ObjectPoolMock.cs: f7cbe9f3954d266b2213fae95546820f -> 
+  custom:scripting/monoscript/fileName/PoolableSpawner.cs: 47574d2afa9cad67ef951736dc7ece08 -> 
+  custom:scripting/precompiled-assembly-types:Modules.Pooling.Tests: bb8a284c5de1331fdf5eb303af8e4022 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/MoveComponent.cs: 6e60a56415b2c0517e95afacb73382d1 -> 0f77e2abba1706dc629580cf92f0d063
+  custom:scripting/monoscript/fileName/HealthComponent.cs: eb1bb835dac402bc3099536243f9f42a -> bda7db2609901ba185e1540f99425d45
+  custom:scripting/precompiled-assembly-types:PlayMode.Fakes: 53136f203ea1df5241679937282806e3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Spaceships.Tests: 7d4d2c0584cc330405f30bc36e1cc272 -> 
+  custom:scripting/monoscript/fileName/FakePoolableSpawnerInheritor.cs: 7daa87d0c5e0e428f48789a35f1efe60 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/PoolSpawner.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/ComponentPoolTests.cs: 8d4773dd791644b346d4d4fe7b706bfb -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/FakeComponentPool.cs: cc22e3c1a31c636978dc64344d96c642 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: 1a9ba105ba3e1f060bf88e6608c612b2 -> 96b93c9bc167182da6f5790f4b02be49
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/IComponentPool.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Modules.Pooling: ae6c73c11502fc2e4b0cf446d5875db9 -> 10b57f50a7922cadb7dd7d693bf2e84d
+  custom:scripting/monoscript/fileName/PoolableSpawnerTests.cs: 33aeae3aae9f3ad8442ef403b3845459 -> 
+  custom:scripting/monoscript/fileName/MonoBehaviourStub.cs: e1b594329580316d34e1497c26185d95 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/precompiled-assembly-types:Module.Spaceships:  -> cacb4a23deb4f1cc32646e219e42cb72
+========================================================================
+Received Import Request.
+  Time since last request: 284.992214 seconds.
+  path: Assets/Modules/Pooling/Scripts/ComponentPool.cs
+  artifactKey: Guid(65f9fa084cc247558a545e19281a94df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modules/Pooling/Scripts/ComponentPool.cs using Guid(65f9fa084cc247558a545e19281a94df) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '20222c945352d3b252604109bddbcbbb') in 0.001407 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.Pooling.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.ComponentPool.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.Pooling' already exists (Assets/Modules/Pooling/Scripts/Modules.Pooling.asmdef)
+Assembly with name 'Modules.Pooling' already exists (Assets/Modules/Pooling/Modules.Pooling.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.EditTests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.Tests.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.MonoBehaviour.Fakes.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.Fakes.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Tests/EditMode/Modules.Spaceship.Tests/Module.Spaceships.Tests.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Modules/Spaceships/Tests/Module.Spaceships.Tests.asmdef)
+ArgumentException: An item with the same key has already been added. Key: 7319344e2b3244428b602cda97bba559
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (TSource[] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00029] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00051] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector) [0x00000] in <d858330b72074e379bd4579acacf4927>:0 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilder.Initialize (System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00046] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs:85 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilderFactory.GetOrCreate (System.String projectPath, System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00038] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilderFactory.cs:54 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.GetAssemblyGraphBuilder () [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:168 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.SetAllScripts (System.String[] allScripts) [0x0000d] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:176 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface.SetAllScripts (System.String[] allScripts) [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs:79 
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs Line: 85)
+
+Caller must complete domain reload
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.Pooling.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.ComponentPool.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.Pooling' already exists (Assets/Modules/Pooling/Scripts/Modules.Pooling.asmdef)
+Assembly with name 'Modules.Pooling' already exists (Assets/Modules/Pooling/Modules.Pooling.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.EditTests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.Tests.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.MonoBehaviour.Fakes.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.Fakes.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Tests/EditMode/Modules.Spaceship.Tests/Module.Spaceships.Tests.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Modules/Spaceships/Tests/Module.Spaceships.Tests.asmdef)
+ArgumentException: An item with the same key has already been added. Key: 7319344e2b3244428b602cda97bba559
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (TSource[] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00029] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00051] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector) [0x00000] in <d858330b72074e379bd4579acacf4927>:0 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilder.Initialize (System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00046] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs:85 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilderFactory.GetOrCreate (System.String projectPath, System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00038] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilderFactory.cs:54 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.GetAssemblyGraphBuilder () [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:168 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.SetAllScripts (System.String[] allScripts) [0x0000d] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:176 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface.SetAllScripts (System.String[] allScripts) [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs:79 
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs Line: 85)
+
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.521 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.Pooling.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.ComponentPool.Tests' already exists (Assets/Tests/PlayMode/Modules.ComponentPool.Tests/Modules.ComponentPool.Tests.asmdef)
+Assembly with name 'Modules.Pooling' already exists (Assets/Modules/Pooling/Scripts/Modules.Pooling.asmdef)
+Assembly with name 'Modules.Pooling' already exists (Assets/Modules/Pooling/Modules.Pooling.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.EditTests.asmdef)
+Folder 'Assets/Tests/EditMode/Modules.Pooling.Tests/' contains multiple assembly definition files (Assets/Tests/EditMode/Modules.Pooling.Tests/Modules.Pooling.Tests.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.MonoBehaviour.Fakes.asmdef)
+Folder 'Assets/Tests/PlayMode/Fakes/' contains multiple assembly definition files (Assets/Tests/PlayMode/Fakes/PlayMode.Fakes.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Modules.Spaceships.asmdef)
+Folder 'Assets/Modules/Spaceships/Scripts/' contains multiple assembly definition files (Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Tests/EditMode/Modules.Spaceship.Tests/Module.Spaceships.Tests.asmdef)
+Assembly with name 'Module.Spaceships.Tests' already exists (Assets/Modules/Spaceships/Tests/Module.Spaceships.Tests.asmdef)
+ArgumentException: An item with the same key has already been added. Key: 7319344e2b3244428b602cda97bba559
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <606c2e0a56af495988c860a4ac613e74>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (TSource[] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00029] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00051] in <d858330b72074e379bd4579acacf4927>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Func`2[T,TResult] elementSelector) [0x00000] in <d858330b72074e379bd4579acacf4927>:0 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilder.Initialize (System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00046] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs:85 
+  at UnityEditor.Scripting.ScriptCompilation.AssemblyGraphBuilderFactory.GetOrCreate (System.String projectPath, System.Collections.Generic.IReadOnlyCollection`1[T] assemblies, System.Collections.Generic.IReadOnlyCollection`1[T] customScriptAssemblyReferences) [0x00038] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilderFactory.cs:54 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.GetAssemblyGraphBuilder () [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:168 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilation.SetAllScripts (System.String[] allScripts) [0x0000d] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilation.cs:176 
+  at UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface.SetAllScripts (System.String[] allScripts) [0x00001] in /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs:79 
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Scripting/ScriptCompilation/AssemblyGraphBuilder.cs Line: 85)
+
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.561 seconds
+Domain Reload Profiling: 2082ms
+	BeginReloadAssembly (162ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (282ms)
+		LoadAssemblies (338ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1562ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (711ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (84ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (359ms)
+			ProcessInitializeOnLoadMethodAttributes (189ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 7.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2489 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (27.1 KB). Loaded Objects now: 3058.
+Memory consumption went from 308.1 MB to 308.1 MB.
+Total: 7.920254 ms (FindLiveObjects: 0.204185 ms CreateObjectMapping: 0.200468 ms MarkObjects: 7.453504 ms  DeleteObjects: 0.060897 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:scripting/precompiled-assembly-types:Modules.Spaceships: cacb4a23deb4f1cc32646e219e42cb72 -> 
+  custom:scripting/monoscript/fileName/SpaceshipTests.cs: 590adc9876f3bc9e629d2ee6cc73bb30 -> 
+  custom:scripting/monoscript/fileName/ObjectPoolMock.cs: f7cbe9f3954d266b2213fae95546820f -> 
+  custom:scripting/monoscript/fileName/PoolableSpawner.cs: f2b5090ca0ef19fa0f9c8303a8d41614 -> 
+  custom:scripting/precompiled-assembly-types:Modules.Pooling.Tests: bb8a284c5de1331fdf5eb303af8e4022 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/MoveComponent.cs: 6e60a56415b2c0517e95afacb73382d1 -> 0f77e2abba1706dc629580cf92f0d063
+  custom:scripting/monoscript/fileName/HealthComponent.cs: eb1bb835dac402bc3099536243f9f42a -> bda7db2609901ba185e1540f99425d45
+  custom:scripting/precompiled-assembly-types:PlayMode.Fakes: 53136f203ea1df5241679937282806e3 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:scripting/precompiled-assembly-types:Module.Spaceships.Tests: 7d4d2c0584cc330405f30bc36e1cc272 -> 
+  custom:scripting/monoscript/fileName/ComponentPool.cs: 8f6297df34271fdb1ce2d9607ec6261d -> 90647cc400823b41df847a6cbfc29026
+  custom:scripting/monoscript/fileName/FakePoolableSpawnerInheritor.cs: 7daa87d0c5e0e428f48789a35f1efe60 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/PoolSpawner.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/ComponentPoolTests.cs: 8d4773dd791644b346d4d4fe7b706bfb -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/FakeComponentPool.cs: cc22e3c1a31c636978dc64344d96c642 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: 1a9ba105ba3e1f060bf88e6608c612b2 -> 96b93c9bc167182da6f5790f4b02be49
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/IComponentPool.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/MonobehaviourObjectPool.cs: 8f6297df34271fdb1ce2d9607ec6261d -> 90647cc400823b41df847a6cbfc29026
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Modules.Pooling: b70851d97a9c915a8fe0dad1c11d767e -> 10b57f50a7922cadb7dd7d693bf2e84d
+  custom:scripting/monoscript/fileName/PoolableSpawnerTests.cs: 33aeae3aae9f3ad8442ef403b3845459 -> 
+  custom:scripting/monoscript/fileName/MonoBehaviourStub.cs: e1b594329580316d34e1497c26185d95 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/precompiled-assembly-types:Module.Spaceships:  -> cacb4a23deb4f1cc32646e219e42cb72

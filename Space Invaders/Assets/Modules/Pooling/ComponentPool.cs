@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.Pooling.Scripts
+namespace Modules.Pooling
 {
     public sealed class ComponentPool<T> where T : Component
     {

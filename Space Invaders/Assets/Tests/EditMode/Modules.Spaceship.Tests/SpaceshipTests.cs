@@ -1,11 +1,7 @@
-using Modules.Spaceships.Scripts;
 using Modules.Spaceships.Scripts.Components;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.Pool;
 
-
-namespace Modules.Spaceships.Tests
+namespace Tests.EditMode.Modules.Spaceship.Tests
 {
     
     public class SpaceshipTests

@@ -1,6 +1,5 @@
 using Modules.Pooling;
-using Modules.Pooling.Scripts;
-using Modules.Pooling.Scripts.Remove;
+using Modules.Pooling.Remove;
 using UnityEngine;
 
 namespace Gameplay.Weapon

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Modules.Pooling.Scripts
+namespace Modules.Pooling
 {
     public abstract class PoolableSpawner<T> : MonoBehaviour where T : Component
     {

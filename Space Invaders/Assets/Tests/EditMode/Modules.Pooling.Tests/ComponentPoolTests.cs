@@ -1,5 +1,5 @@
 using System;
-using Modules.Pooling.Scripts;
+using Modules.Pooling;
 using NUnit.Framework;
 using Tests.PlayMode.Fakes;
 using UnityEngine;
