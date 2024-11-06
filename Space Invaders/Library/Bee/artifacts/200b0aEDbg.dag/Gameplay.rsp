@@ -344,7 +344,7 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.Extensions.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.Levels.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.PlayerInput.ref.dll"
--r:"Library/Bee/artifacts/200b0aEDbg.dag/Module.Pooling.ref.dll"
+-r:"Library/Bee/artifacts/200b0aEDbg.dag/Modules.Pooling.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/2022.3.42f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"

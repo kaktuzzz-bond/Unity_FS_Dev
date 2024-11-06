@@ -755,9 +755,9 @@
       <Project>{ebb728f3-cb1b-3ef8-de7b-47e46700337d}</Project>
       <Name>Module.PlayerInput</Name>
     </ProjectReference>
-    <ProjectReference Include="Module.Pooling.csproj">
-      <Project>{3603424c-3f07-3edf-f46a-bd2737946da9}</Project>
-      <Name>Module.Pooling</Name>
+    <ProjectReference Include="Modules.Pooling.csproj">
+      <Project>{1c8f7c85-fdce-badf-94a5-f441f030d126}</Project>
+      <Name>Modules.Pooling</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

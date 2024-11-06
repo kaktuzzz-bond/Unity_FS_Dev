@@ -48,7 +48,7 @@
     <Compile Include="Assets/Modules/Spaceships/Scripts/Components/MoveComponent.cs" />
     <Compile Include="Assets/Modules/Spaceships/Scripts/Components/HealthComponent.cs" />
     <Compile Include="Assets/Modules/Spaceships/Scripts/Bullet.cs" />
-    <None Include="Assets/Modules/Spaceships/Scripts/Module.Spaceships.asmdef" />
+    <None Include="Assets\Modules\Spaceships\Scripts\Modules.Spaceships.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -1,21 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Spaceships", "Module.Spaceships.csproj", "{1252ef2d-b13e-ab03-edd9-76d7a1155dee}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Spaceships", "Modules.Spaceships.csproj", "{6d0ea55a-7bc4-d3a7-3ab4-49591c8b0ebb}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gameplay", "Gameplay.csproj", "{46f9d885-e5de-434f-81f3-46347c4438bf}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Spaceships.Tests", "Module.Spaceships.Tests.csproj", "{ff5616f2-7a2e-3521-8c7e-8cf12c394faf}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayMode.Fakes", "PlayMode.Fakes.csproj", "{f9c91c03-6334-7152-a5d4-23d4491c6624}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Levels", "Module.Levels.csproj", "{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Pooling.Tests", "Model.Pooling.Tests.csproj", "{2da8b034-437c-ade2-7f6f-cad8d5ac5f44}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Extensions", "Module.Extensions.csproj", "{0f58bd44-3505-9f50-4443-a51acc16c444}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Pooling", "Module.Pooling.csproj", "{3603424c-3f07-3edf-f46a-bd2737946da9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Pooling", "Modules.Pooling.csproj", "{1c8f7c85-fdce-badf-94a5-f441f030d126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayMode", "PlayMode.csproj", "{18b8f6ff-7597-b9c7-3d58-2a5d69fc0b54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Spaceships.Tests", "Module.Spaceships.Tests.csproj", "{ff5616f2-7a2e-3521-8c7e-8cf12c394faf}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Pooling.Tests", "Modules.Pooling.Tests.csproj", "{6f63785c-670b-ecee-4e7d-6687f473c064}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.PlayerInput", "Module.PlayerInput.csproj", "{ebb728f3-cb1b-3ef8-de7b-47e46700337d}"
 EndProject
@@ -28,22 +28,22 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1252ef2d-b13e-ab03-edd9-76d7a1155dee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1252ef2d-b13e-ab03-edd9-76d7a1155dee}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6d0ea55a-7bc4-d3a7-3ab4-49591c8b0ebb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6d0ea55a-7bc4-d3a7-3ab4-49591c8b0ebb}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46f9d885-e5de-434f-81f3-46347c4438bf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{46f9d885-e5de-434f-81f3-46347c4438bf}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ff5616f2-7a2e-3521-8c7e-8cf12c394faf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ff5616f2-7a2e-3521-8c7e-8cf12c394faf}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f9c91c03-6334-7152-a5d4-23d4491c6624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f9c91c03-6334-7152-a5d4-23d4491c6624}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2da8b034-437c-ade2-7f6f-cad8d5ac5f44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2da8b034-437c-ade2-7f6f-cad8d5ac5f44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0f58bd44-3505-9f50-4443-a51acc16c444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0f58bd44-3505-9f50-4443-a51acc16c444}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3603424c-3f07-3edf-f46a-bd2737946da9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3603424c-3f07-3edf-f46a-bd2737946da9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18b8f6ff-7597-b9c7-3d58-2a5d69fc0b54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18b8f6ff-7597-b9c7-3d58-2a5d69fc0b54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1c8f7c85-fdce-badf-94a5-f441f030d126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1c8f7c85-fdce-badf-94a5-f441f030d126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ff5616f2-7a2e-3521-8c7e-8cf12c394faf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ff5616f2-7a2e-3521-8c7e-8cf12c394faf}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6f63785c-670b-ecee-4e7d-6687f473c064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6f63785c-670b-ecee-4e7d-6687f473c064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ebb728f3-cb1b-3ef8-de7b-47e46700337d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ebb728f3-cb1b-3ef8-de7b-47e46700337d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2e8424a5-8ae6-c1e4-63c8-71d08ef500fa}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

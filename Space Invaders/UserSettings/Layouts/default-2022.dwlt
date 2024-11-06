@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 156
-    y: 58
-    width: 2401
+    x: 215
+    y: 97
+    width: 2018
     height: 1489
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -44,7 +44,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2401
+    width: 2018
     height: 1489
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -69,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2401
+    width: 2018
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 1469
-    width: 2401
+    width: 2018
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -114,12 +114,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 2401
+    width: 2018
     height: 1439
   m_MinSize: {x: 400, y: 150}
   m_MaxSize: {x: 32384, y: 24288}
   vertical: 1
-  controlID: 40
+  controlID: 153
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -141,12 +141,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2401
+    width: 2018
     height: 1259
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 41
+  controlID: 154
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -167,12 +167,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 908
+    width: 952
     height: 1259
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 42
+  controlID: 67
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -193,12 +193,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 908
+    width: 952
     height: 848
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 43
+  controlID: 68
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -217,7 +217,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 394
+    width: 592
     height: 848
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -241,12 +241,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 394
+    x: 592
     y: 0
-    width: 514
+    width: 360
     height: 848
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -269,10 +269,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 848
-    width: 908
+    width: 952
     height: 411
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -293,12 +293,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 908
+    x: 952
     y: 0
-    width: 972.5
+    width: 527
     height: 1259
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 19}
@@ -323,12 +323,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1880.5
+    x: 1479
     y: 0
-    width: 520.5
+    width: 539
     height: 1259
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -351,10 +351,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 1259
-    width: 2401
+    width: 2018
     height: 180
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -382,9 +382,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1064
-    y: 88
-    width: 970.5
+    x: 1167
+    y: 127
+    width: 525
     height: 1238
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 1128
+    ID: 193
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -422,15 +422,31 @@ MonoBehaviour:
     oldSplitSize: 0
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
-    m_Window: {fileID: 0}
-    m_NewResultList: []
+    m_Window: {fileID: 15}
+    m_NewResultList:
+    - id: 1017
+      uniqueId: '[LP][suite]'
+      name: LP
+      fullName: LP
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
     m_ResultText: 
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 
+      m_ExpandedIDs: 601a9506ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -454,7 +470,8 @@ MonoBehaviour:
       NotRunHidden: 0
       m_SearchString: 
       selectedCategoryMask: 0
-      availableCategories: []
+      availableCategories:
+      - Uncategorized
     m_SelectedOption: 0
   m_EditModeTestListGUI:
     m_Window: {fileID: 15}
@@ -464,7 +481,7 @@ MonoBehaviour:
       name: LP
       fullName: LP
       resultStatus: 1
-      duration: 0.1176921
+      duration: 0.2419025
       messages: 
       output: 
       stacktrace: 
@@ -480,7 +497,7 @@ MonoBehaviour:
       name: Model.Pooling.Tests.dll
       fullName: /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders/Library/ScriptAssemblies/Model.Pooling.Tests.dll
       resultStatus: 1
-      duration: 0.080635
+      duration: 0.1884138
       messages: 
       output: 
       stacktrace: 
@@ -496,7 +513,7 @@ MonoBehaviour:
       name: Modules
       fullName: Modules
       resultStatus: 1
-      duration: 0.0799601
+      duration: 0.187415
       messages: 
       output: 
       stacktrace: 
@@ -512,7 +529,7 @@ MonoBehaviour:
       name: Pooling
       fullName: Modules.Pooling
       resultStatus: 1
-      duration: 0.0762752
+      duration: 0.1837531
       messages: 
       output: 
       stacktrace: 
@@ -528,7 +545,7 @@ MonoBehaviour:
       name: Tests
       fullName: Modules.Pooling.Tests
       resultStatus: 1
-      duration: 0.0724224
+      duration: 0.1796538
       messages: 
       output: 
       stacktrace: 
@@ -544,7 +561,7 @@ MonoBehaviour:
       name: ObjectPoolTests
       fullName: Modules.Pooling.Tests.ObjectPoolTests
       resultStatus: 1
-      duration: 0.0680399
+      duration: 0.1398296
       messages: 
       output: 
       stacktrace: 
@@ -560,7 +577,7 @@ MonoBehaviour:
       name: Count_OnRentAndReleaseItem_ResultShouldBeTrue
       fullName: Modules.Pooling.Tests.ObjectPoolTests.Count_OnRentAndReleaseItem_ResultShouldBeTrue
       resultStatus: 1
-      duration: 0.0154845
+      duration: 0.0159511
       messages: 
       output: 
       stacktrace: 
@@ -577,7 +594,7 @@ MonoBehaviour:
       name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems
       resultStatus: 1
-      duration: 0.030444
+      duration: 0.0673203
       messages: 
       output: 
       stacktrace: 
@@ -593,9 +610,11 @@ MonoBehaviour:
       name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)
       resultStatus: 1
-      duration: 0.0080332
+      duration: 0.0166558
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -610,9 +629,11 @@ MonoBehaviour:
       name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)
       resultStatus: 1
-      duration: 0.000276
+      duration: 0.0011036
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -627,9 +648,11 @@ MonoBehaviour:
       name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)
       resultStatus: 1
-      duration: 0.0001797
+      duration: 0.0011383
       messages: 
-      output: 
+      output: '1
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -639,14 +662,16 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1005
       parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
-    - id: 1006
+    - id: 1005
       uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException]
       name: ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException
       resultStatus: 1
-      duration: 0.0050304
+      duration: 0.0055727
       messages: 
-      output: 
+      output: '2
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -661,9 +686,11 @@ MonoBehaviour:
       name: ObjectPool_RentItem_ShouldBeNotNull
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItem_ShouldBeNotNull
       resultStatus: 1
-      duration: 0.0005943
+      duration: 0.001364
       messages: 
-      output: 
+      output: '3
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -678,7 +705,7 @@ MonoBehaviour:
       name: ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero
       fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero
       resultStatus: 1
-      duration: 0.0018977
+      duration: 0.0028664
       messages: 
       output: 
       stacktrace: 
@@ -690,13 +717,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-    m_ResultText: Pooling (0.076s)
+    m_ResultText: Pooling (0.184s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: c73e7c23
       m_LastClickedID: 595345095
-      m_ExpandedIDs: d18ab496b57aec9c7a1e2fab78617cb91a9dd0ec601a9506c73e7c2356af16287cd19f7fffffff7f
+      m_ExpandedIDs: d18ab496b57aec9c7a1e2fab78617cb92de7f6e5601a9506c73e7c2356af16287cd19f7fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -743,9 +770,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 156
-    y: 88
-    width: 393
+    x: 215
+    y: 127
+    width: 591
     height: 827
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -768,7 +795,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Gameplay/Spaceships/Components
+    - Assets/Modules/Spaceships/Tests
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -784,7 +811,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a8340000
     m_LastClickedID: 13480
-    m_ExpandedIDs: 00000000de560000e0560000e2560000e4560000e6560000e8560000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c570000
+    m_ExpandedIDs: 00000000e2560000e4560000e6560000e8560000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700000e57000010570000125700001457000016570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -809,26 +836,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 53.998657}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000de560000e0560000e2560000e4560000e6560000e8560000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700004c57000086570000b2570000
+    m_ExpandedIDs: ffffffff00000000e2560000e4560000e6560000ea560000ec560000ee560000f0560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700000e570000105700001257000014570000165700009257000096570000be5f0000c25f0000c65f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: NewAssemblyReference
+      m_OriginalName: NewAssemblyReference
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 24638
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 9}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -889,9 +916,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 550
-    y: 88
-    width: 512
+    x: 807
+    y: 127
+    width: 358
     height: 827
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -906,9 +933,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 24600000
       m_LastClickedID: 0
-      m_ExpandedIDs: 069cffff749dffff8e9effff049fffff7a9fffff7aa0ffffaaa2ffff36a4ffffd0a5ffff60a7ffff48a8ffff30a9ffffc0aaffffa8abffff10adffff7caeffff44afffff0cb0ffff78b1ffff3eb2ffff5ab4ffff8cb6ffff48b7ffff4ab9ffffdabaffff3cbcffff06beffff5abfffff08c0ffff3ac1ffff02c3ffff28c4ffff4ec5ffff74c6fffff2c6ffff74c7ffff86c8ffffc2c9ffff0acbffff5eccffff26ceffff36cfffffb6cffffffad0ffff34d2ffff50d3ffff8ad4ffffc4d5fffffed6ffff90d7fffffad7ffff64d8fffff6d8ffff5cdaffff82dbffffe4ddffff50deffff6adfffff7ce0ffff90e1ffffb6e2ffffb6e3ffff2ae4ffff50e5ffffd2e5fffffce7ffff1ae9fffffce9ffff02eeffff24fbffff
+      m_ExpandedIDs: 24e5ffffd8e8ffff20ebffff9cecffff46eeffffc2eeffffdcf0ffff04f5ffff0cf7fffffafaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -953,9 +980,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 156
-    y: 936
-    width: 907
+    x: 215
+    y: 975
+    width: 951
     height: 390
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1676,9 +1703,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2036.5
-    y: 88
-    width: 519.5
+    x: 1694
+    y: 127
+    width: 538
     height: 1238
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1724,9 +1751,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 156
-    y: 1347
-    width: 2401
+    x: 215
+    y: 1386
+    width: 2018
     height: 159
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2778,9 +2805,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1064
-    y: 88
-    width: 970.5
+    x: 1167
+    y: 127
+    width: 525
     height: 1238
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2836,23 +2863,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 970.5
+      width: 525
       height: 1217
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 485.25, y: 608.5}
+    m_Scale: {x: 0.9722222, y: 0.9722222}
+    m_Translation: {x: 262.5, y: 608.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -485.25
-      y: -608.5
-      width: 970.5
-      height: 1217
+      x: -270
+      y: -625.88574
+      width: 540
+      height: 1251.7715
     m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1941, y: 2476}
+  m_defaultScale: 0.9722222
+  m_LastWindowPixelSize: {x: 1050, y: 2476}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000100000000000000
