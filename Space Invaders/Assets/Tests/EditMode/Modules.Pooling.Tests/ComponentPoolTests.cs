@@ -18,9 +18,10 @@ namespace Tests.EditMode.Modules.Pooling.Tests
         }
 
         [Test]
-        public void Count_OnRentAndReleaseItem_ResultShouldBeTrue()
+        public void ComponentPool_OnRentAndReleaseItem_ResultShouldBeTrue()
         {
-            var startCount = 3;
+            const int startCount = 3;
+            
             var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, startCount);
 
             var item = pool.Rent();
@@ -33,26 +34,39 @@ namespace Tests.EditMode.Modules.Pooling.Tests
 
             Assert.IsTrue(rentSuccess, "Rent should be true.");
             Assert.IsTrue(returnSuccess, "Return should be true.");
+            Assert.IsTrue(pool.Count == startCount, "Count should be the same.");
+            Assert.IsFalse(item.gameObject.activeSelf, "Returned item should be deactivated.");
         }
-       
 
         [Test]
-        public void ObjectPool_RentItem_ShouldBeNotNull()
+        public void ComponentPool_OnReturnNull_ThrowArgumentNullException()
+        {
+            var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, 3);
+
+            Assert.That(() => pool.Return(null), Throws.ArgumentNullException);
+        }
+
+        [Test]
+        public void ComponentPool_RentItem_NotNull()
         {
             var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, 3);
 
             var item = pool.Rent();
 
             Assert.IsNotNull(item, "Item should not be null.");
+            Assert.IsTrue(item.gameObject.activeSelf, "Item should be active.");
         }
 
-
-      
+        [Test]
+        public void ComponentPool_InitializeWitheNullDelegate_ThrowArgumentNullException()
+        {
+            Assert.That(() => _ = new ComponentPool<MonoBehaviourStub>(null, 3), Throws.ArgumentNullException);
+        }
 
         [TestCase(3, 3)]
         [TestCase(-3, 0)]
         [TestCase(0, 0)]
-        public void ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(int poolCapacity, int expectedCount)
+        public void ComponentPool_Initialize_NotNullAndFilledByItems(int poolCapacity, int expectedCount)
         {
             var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, poolCapacity);
 
