@@ -1,6 +1,6 @@
 using System;
-using Modules.Spaceships.Scripts.Components;
 using NUnit.Framework;
+using Tests.EditMode.Modules.Spaceship.Tests.ComponentTests;
 
 namespace Tests.EditMode.Modules.Spaceship.Tests
 {
