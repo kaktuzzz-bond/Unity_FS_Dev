@@ -1,63 +1,77 @@
 using System;
-using Gameplay.Spaceships.Components;
+using Gameplay.Spaceships.Weapon;
+using Modules.Extensions;
+using Modules.Spaceships.Health;
+using Modules.Spaceships.Movement;
+using Modules.Spaceships.Weapon;
 using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    public sealed class Spaceship : MonoBehaviour
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class Spaceship : MonoBehaviour
     {
-        public event Action<Spaceship> OnDied;
-        [SerializeField] private MoveComponent moveComponent;
-        [SerializeField] private HealthComponent healthComponent;
-        [SerializeField] private AttackComponent attackComponent;
-        [SerializeField] private CollisionDataComponent collisionDataComponent;
+        public event Action<Spaceship> OnDeath;
+        public event Action<Vector2, Vector2> OnFire;
 
-        //spaceship config ADD
+        [SerializeField] private SpaceshipConfig config;
+        [SerializeField] private Transform firePoint;
+
+        private IHealthService _healthService;
+        private IMoveService _moveService;
+        private IWeaponService _weaponService;
+
+
         private void Awake()
         {
-            SetLayerMask();
-            healthComponent.ResetHealth();
+            _healthService = new HealthService(config.maxHealth, config.startHealth);
+            _moveService = new Rigidbody2DMover(GetComponent<Rigidbody2D>(), config.speed);
+            gameObject.layer = config.layerMask.LayerMaskToInt();
+        }
+
+        public void SetWeapon(BulletSpawner bulletSpawner)
+        {
+            _weaponService = new BulletWeapon(firePoint, bulletSpawner);
         }
 
         private void OnEnable()
         {
-            healthComponent.OnHealthEmpty += Despawn;
+            _healthService.OnDied += Die;
+        }
+
+        public void Reset()
+        {
+            _healthService.ResetHealth();
+        }
+
+        public void Move(Vector2 direction)
+        {
+            _moveService.Move(direction);
+        }
+
+        public void Attack()
+        {
+            _weaponService.Attack(Vector2.up);
+        }
+
+        public void Attack(Vector2 direction)
+        {
+            _weaponService.Attack(direction);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            _healthService.TakeDamage(damage);
+        }
+
+        private void Die()
+        {
+            OnDeath?.Invoke(this);
         }
 
         private void OnDisable()
         {
-            healthComponent.OnHealthEmpty -= Despawn;
+            _healthService.OnDied -= Die;
         }
-
-        public void Move(Vector2 direction) =>
-            moveComponent.Move(direction);
-
-        public void Attack() =>
-            attackComponent.Attack();
-
-        public void TakeDamage(int damage) =>
-            healthComponent.TakeDamage(damage);
-        
-
-        public Spaceship SetTarget(Transform target)
-        {
-            attackComponent.SetTarget(target);
-            return this;
-        }
-
-        public Spaceship SetActive(bool makeActive)
-        {
-            gameObject.SetActive(makeActive);
-            return this;
-        }
-
-        private void Despawn()
-        {
-            OnDied?.Invoke(this);
-            healthComponent.ResetHealth();
-        }
-
-        private void SetLayerMask() =>
-            gameObject.layer = collisionDataComponent.CollisionLayer;
     }
 }

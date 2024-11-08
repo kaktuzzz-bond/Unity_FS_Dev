@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab31d17a0dc44859545d965a38e190f, type: 3}
+  m_Script: {fileID: 11500000, guid: e9b8ca83530c45799dee703fa817bf4d, type: 3}
   m_Name: PlayerSpaceshipConfig
   m_EditorClassIdentifier: 
-  movement:
-    speed: 3
-  health:
-    maxHealth: 5
-    startHealth: 5
-  weaponConfig: {fileID: 11400000, guid: 332d130e843d44b98a6eff06daf8414c, type: 2}
+  maxHealth: 5
+  startHealth: 5
+  speed: 5
   layerMask:
     serializedVersion: 2
     m_Bits: 1024

@@ -1,0 +1,19 @@
+{
+    "name": "zGameplay",
+    "rootNamespace": "",
+    "references": [
+        "GUID:41c0ab14e0ed4c97b597b5f0270deeb0",
+        "GUID:f2556d4501d8c484fb1761f0dc97ae5b",
+        "GUID:bf7ea2640af554dfb894dea17ff13abe",
+        "GUID:32330100213244df8961c491055c70aa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

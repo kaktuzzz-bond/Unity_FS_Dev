@@ -8,23 +8,98 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 1325
+    y: 432
+    width: 1181
+    height: 678
+  m_ShowMode: 0
+  m_Title: Package Manager
+  m_RootView: {fileID: 4}
+  m_MinSize: {x: 800, y: 271}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 215
-    y: 97
+    x: 89
+    y: 58
     width: 2018
     height: 1489
   m_ShowMode: 4
-  m_Title: Inspector
-  m_RootView: {fileID: 2}
+  m_Title: Project
+  m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
---- !u!114 &2
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: PackageManagerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1181
+    height: 678
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1181
+    height: 678
+  m_MinSize: {x: 800, y: 271}
+  m_MaxSize: {x: 4000, y: 4021}
+  vertical: 0
+  controlID: 1536
+  draggingID: 0
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,9 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 3}
-  - {fileID: 5}
-  - {fileID: 4}
+  - {fileID: 6}
+  - {fileID: 8}
+  - {fileID: 7}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -52,7 +127,7 @@ MonoBehaviour:
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &3
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &4
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,85 +170,6 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 6}
-  - {fileID: 14}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 2018
-    height: 1439
-  m_MinSize: {x: 400, y: 150}
-  m_MaxSize: {x: 32384, y: 24288}
-  vertical: 1
-  controlID: 153
-  draggingID: 0
---- !u!114 &6
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 7}
-  - {fileID: 12}
-  - {fileID: 13}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 2018
-    height: 1259
-  m_MinSize: {x: 400, y: 100}
-  m_MaxSize: {x: 32384, y: 16192}
-  vertical: 0
-  controlID: 154
-  draggingID: 0
---- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 8}
-  - {fileID: 11}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 952
-    height: 1259
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-  controlID: 67
-  draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,7 +184,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 9}
+  - {fileID: 17}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 2018
+    height: 1439
+  m_MinSize: {x: 400, y: 150}
+  m_MaxSize: {x: 32384, y: 24288}
+  vertical: 1
+  controlID: 173
+  draggingID: 0
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
   - {fileID: 10}
+  - {fileID: 15}
+  - {fileID: 16}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2018
+    height: 1259
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 168
+  draggingID: 0
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 11}
+  - {fileID: 14}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 952
+    height: 1259
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 106
+  draggingID: 0
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 12}
+  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -198,9 +273,9 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 68
+  controlID: 83
   draggingID: 0
---- !u!114 &9
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,12 +296,12 @@ MonoBehaviour:
     height: 848
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &10
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,14 +320,14 @@ MonoBehaviour:
     y: 0
     width: 360
     height: 848
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 21}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &11
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,14 +346,14 @@ MonoBehaviour:
     y: 848
     width: 952
     height: 411
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 22}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 22}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &12
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,16 +374,16 @@ MonoBehaviour:
     height: 1259
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 19}
   m_Panes:
+  - {fileID: 23}
+  - {fileID: 25}
+  - {fileID: 24}
+  - {fileID: 30}
   - {fileID: 19}
-  - {fileID: 21}
-  - {fileID: 20}
-  - {fileID: 26}
-  - {fileID: 15}
   m_Selected: 4
   m_LastSelected: 3
---- !u!114 &13
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,14 +402,14 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 1259
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 26}
   m_Panes:
-  - {fileID: 22}
+  - {fileID: 26}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &14
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,16 +428,51 @@ MonoBehaviour:
     y: 1259
     width: 2018
     height: 180
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 23}
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_ActualView: {fileID: 27}
   m_Panes:
-  - {fileID: 23}
-  - {fileID: 24}
-  - {fileID: 25}
+  - {fileID: 27}
+  - {fileID: 28}
+  - {fileID: 29}
   m_Selected: 0
   m_LastSelected: 2
---- !u!114 &15
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Package Manager
+    m_Image: {fileID: 5076950121296946556, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1325
+    y: 432
+    width: 1181
+    height: 657
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -382,8 +492,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1167
-    y: 127
+    x: 1041
+    y: 88
     width: 525
     height: 1238
   m_SerializedDataModeController:
@@ -397,7 +507,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 193
+    ID: 207
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -422,7 +532,7 @@ MonoBehaviour:
     oldSplitSize: 0
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
-    m_Window: {fileID: 15}
+    m_Window: {fileID: 19}
     m_NewResultList:
     - id: 1017
       uniqueId: '[LP][suite]'
@@ -474,14 +584,14 @@ MonoBehaviour:
       - Uncategorized
     m_SelectedOption: 0
   m_EditModeTestListGUI:
-    m_Window: {fileID: 15}
+    m_Window: {fileID: 19}
     m_NewResultList:
     - id: 1000
       uniqueId: '[LP][suite]'
       name: LP
       fullName: LP
       resultStatus: 1
-      duration: 0.2419025
+      duration: 0.1964159
       messages: 
       output: 
       stacktrace: 
@@ -492,12 +602,259 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1004
-      uniqueId: '[Model.Pooling.Tests.dll][suite]'
-      name: Model.Pooling.Tests.dll
-      fullName: /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders/Library/ScriptAssemblies/Model.Pooling.Tests.dll
+    - id: 1016
+      uniqueId: '[Modules.Pooling.Tests.dll][suite]'
+      name: Modules.Pooling.Tests.dll
+      fullName: /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders/Library/ScriptAssemblies/Modules.Pooling.Tests.dll
       resultStatus: 1
-      duration: 0.1884138
+      duration: 0.0636224
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1002
+      parentUniqueId: '[LP][suite]'
+    - id: 1017
+      uniqueId: Modules.Pooling.Tests.dll/[Tests][suite]
+      name: Tests
+      fullName: Tests
+      resultStatus: 1
+      duration: 0.0628674
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1016
+      parentUniqueId: '[Modules.Pooling.Tests.dll][suite]'
+    - id: 1018
+      uniqueId: Modules.Pooling.Tests.dll/Tests/[EditMode][suite]
+      name: EditMode
+      fullName: Tests.EditMode
+      resultStatus: 1
+      duration: 0.0594872
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: Modules.Pooling.Tests.dll/[Tests][suite]
+    - id: 1019
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/[Modules][suite]
+      name: Modules
+      fullName: Tests.EditMode.Modules
+      resultStatus: 1
+      duration: 0.0558495
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1018
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/[EditMode][suite]
+    - id: 1020
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/[Pooling][suite]
+      name: Pooling
+      fullName: Tests.EditMode.Modules.Pooling
+      resultStatus: 1
+      duration: 0.0520827
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1019
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/[Modules][suite]
+    - id: 1021
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests][suite]
+      name: Tests
+      fullName: Tests.EditMode.Modules.Pooling.Tests
+      resultStatus: 1
+      duration: 0.0486871
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1020
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/[Pooling][suite]
+    - id: 1009
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests][suite]
+      name: ComponentPoolTests
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests
+      resultStatus: 1
+      duration: 0.0443673
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1021
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests][suite]
+    - id: 1023
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems][suite]
+      name: ComponentPool_Initialize_NotNullAndFilledByItems
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems
+      resultStatus: 1
+      duration: 0.0284018
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1016
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests][suite]
+    - id: 1020
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/ComponentPool_Initialize_NotNullAndFilledByItems/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems(3,3)]
+      name: ComponentPool_Initialize_NotNullAndFilledByItems(3,3)
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems(3,3)
+      resultStatus: 1
+      duration: 0.0194311
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1023
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems][suite]
+    - id: 1021
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/ComponentPool_Initialize_NotNullAndFilledByItems/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems(-3,0)]
+      name: ComponentPool_Initialize_NotNullAndFilledByItems(-3,0)
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems(-3,0)
+      resultStatus: 1
+      duration: 0.0001878
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1023
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems][suite]
+    - id: 1022
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/ComponentPool_Initialize_NotNullAndFilledByItems/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems(0,0)]
+      name: ComponentPool_Initialize_NotNullAndFilledByItems(0,0)
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems(0,0)
+      resultStatus: 1
+      duration: 0.0001123
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1023
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_Initialize_NotNullAndFilledByItems][suite]
+    - id: 1019
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_InitializeWitheNullDelegate_ThrowArgumentNullException]
+      name: ComponentPool_InitializeWitheNullDelegate_ThrowArgumentNullException
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_InitializeWitheNullDelegate_ThrowArgumentNullException
+      resultStatus: 1
+      duration: 0.0041615
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests][suite]
+    - id: 1017
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_OnRentAndReleaseItem_ResultShouldBeTrue]
+      name: ComponentPool_OnRentAndReleaseItem_ResultShouldBeTrue
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_OnRentAndReleaseItem_ResultShouldBeTrue
+      resultStatus: 1
+      duration: 0.0012432
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests][suite]
+    - id: 1018
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_OnReturnNull_ThrowArgumentNullException]
+      name: ComponentPool_OnReturnNull_ThrowArgumentNullException
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_OnReturnNull_ThrowArgumentNullException
+      resultStatus: 1
+      duration: 0.0007152
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests][suite]
+    - id: 1018
+      uniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/ComponentPoolTests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_RentItem_NotNull]
+      name: ComponentPool_RentItem_NotNull
+      fullName: Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests.ComponentPool_RentItem_NotNull
+      resultStatus: 1
+      duration: 0.000436
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: Modules.Pooling.Tests.dll/Tests/EditMode/Modules/Pooling/Tests/[Modules.Pooling.Tests][Tests.EditMode.Modules.Pooling.Tests.ComponentPoolTests][suite]
+    - id: 1024
+      uniqueId: '[Modules.Spaceships.Tests.dll][suite]'
+      name: Modules.Spaceships.Tests.dll
+      fullName: /Users/antonbandarenka/UnityProjects/Unity_FS_Dev/Space Invaders/Library/ScriptAssemblies/Modules.Spaceships.Tests.dll
+      resultStatus: 1
+      duration: 0.0926252
       messages: 
       output: 
       stacktrace: 
@@ -508,44 +865,12 @@ MonoBehaviour:
       categories: []
       parentId: 1000
       parentUniqueId: '[LP][suite]'
-    - id: 1005
-      uniqueId: Model.Pooling.Tests.dll/[Modules][suite]
-      name: Modules
-      fullName: Modules
-      resultStatus: 1
-      duration: 0.187415
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1004
-      parentUniqueId: '[Model.Pooling.Tests.dll][suite]'
-    - id: 1006
-      uniqueId: Model.Pooling.Tests.dll/Modules/[Pooling][suite]
-      name: Pooling
-      fullName: Modules.Pooling
-      resultStatus: 1
-      duration: 0.1837531
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1005
-      parentUniqueId: Model.Pooling.Tests.dll/[Modules][suite]
-    - id: 1007
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/[Model.Pooling.Tests][Modules.Pooling.Tests][suite]
+    - id: 1025
+      uniqueId: Modules.Spaceships.Tests.dll/[Tests][suite]
       name: Tests
-      fullName: Modules.Pooling.Tests
+      fullName: Tests
       resultStatus: 1
-      duration: 0.1796538
+      duration: 0.0714159
       messages: 
       output: 
       stacktrace: 
@@ -554,14 +879,14 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1006
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/[Pooling][suite]
-    - id: 1001
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-      name: ObjectPoolTests
-      fullName: Modules.Pooling.Tests.ObjectPoolTests
+      parentId: 1024
+      parentUniqueId: '[Modules.Spaceships.Tests.dll][suite]'
+    - id: 1026
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/[EditMode][suite]
+      name: EditMode
+      fullName: Tests.EditMode
       resultStatus: 1
-      duration: 0.1398296
+      duration: 0.0598806
       messages: 
       output: 
       stacktrace: 
@@ -570,31 +895,14 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1007
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/[Model.Pooling.Tests][Modules.Pooling.Tests][suite]
-    - id: 1008
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.Count_OnRentAndReleaseItem_ResultShouldBeTrue]
-      name: Count_OnRentAndReleaseItem_ResultShouldBeTrue
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.Count_OnRentAndReleaseItem_ResultShouldBeTrue
+      parentId: 1025
+      parentUniqueId: Modules.Spaceships.Tests.dll/[Tests][suite]
+    - id: 1027
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/[Modules][suite]
+      name: Modules
+      fullName: Tests.EditMode.Modules
       resultStatus: 1
-      duration: 0.0159511
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-    - id: 1003
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
-      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems
-      resultStatus: 1
-      duration: 0.0673203
+      duration: 0.0560442
       messages: 
       output: 
       stacktrace: 
@@ -603,109 +911,94 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1001
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-    - id: 1002
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)]
-      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(3,3)
+      parentId: 1026
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/[EditMode][suite]
+    - id: 1028
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/[Spaceship][suite]
+      name: Spaceship
+      fullName: Tests.EditMode.Modules.Spaceship
       resultStatus: 1
-      duration: 0.0166558
+      duration: 0.0523009
       messages: 
-      output: '1
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
-    - id: 1003
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)]
-      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(-3,0)
+      isSuite: 1
+      categories: []
+      parentId: 1027
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/[Modules][suite]
+    - id: 1046
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/[Tests][suite]
+      name: Tests
+      fullName: Tests.EditMode.Modules.Spaceship.Tests
       resultStatus: 1
-      duration: 0.0011036
+      duration: 0.0487452
       messages: 
-      output: '1
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
-    - id: 1004
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)]
-      name: ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems(0,0)
+      isSuite: 1
+      categories: []
+      parentId: 1045
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/[Spaceship][suite]
+    - id: 1047
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests][suite]
+      name: ComponentTests
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests
       resultStatus: 1
-      duration: 0.0011383
+      duration: 0.0381455
       messages: 
-      output: '1
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_Initialize_ShouldBeNotNullAndFilledByItems][suite]
-    - id: 1005
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException]
-      name: ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_InitializeWithNullPrefabArgument_ShouldThrowArgumentNullException
+      isSuite: 1
+      categories: []
+      parentId: 1046
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/[Tests][suite]
+    - id: 1018
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+      name: HealthServiceTests
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests
       resultStatus: 1
-      duration: 0.0055727
+      duration: 0.0216749
       messages: 
-      output: '2
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-    - id: 1004
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItem_ShouldBeNotNull]
-      name: ObjectPool_RentItem_ShouldBeNotNull
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItem_ShouldBeNotNull
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests][suite]
+    - id: 1027
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue][suite]
+      name: HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue
       resultStatus: 1
-      duration: 0.001364
+      duration: 0.00584
       messages: 
-      output: '3
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-    - id: 1003
-      uniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/ObjectPoolTests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero]
-      name: ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero
-      fullName: Modules.Pooling.Tests.ObjectPoolTests.ObjectPool_RentItemWithNullParent_ShouldUseVector3_Zero
+      isSuite: 1
+      categories: []
+      parentId: 1018
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+    - id: 1024
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(5,2,2)]
+      name: HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(5,2,2)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(5,2,2)
       resultStatus: 1
-      duration: 0.0028664
+      duration: 0.0008843
       messages: 
       output: 
       stacktrace: 
@@ -715,15 +1008,333 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1001
-      parentUniqueId: Model.Pooling.Tests.dll/Modules/Pooling/Tests/[Model.Pooling.Tests][Modules.Pooling.Tests.ObjectPoolTests][suite]
-    m_ResultText: Pooling (0.184s)
+      parentId: 1027
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue][suite]
+    - id: 1025
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(2,5,2)]
+      name: HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(2,5,2)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(2,5,2)
+      resultStatus: 1
+      duration: 0.0000812
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue][suite]
+    - id: 1026
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(2,-5,2)]
+      name: HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(2,-5,2)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue(2,-5,2)
+      resultStatus: 1
+      duration: 0.0000792
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ConstructorInitialization_HealthValueShouldBeBetweenZeroAndMaxValue][suite]
+    - id: 1023
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_Initialization_ShouldBeNotNull]
+      name: HealthComponent_Initialization_ShouldBeNotNull
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_Initialization_ShouldBeNotNull
+      resultStatus: 1
+      duration: 0.0002033
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1018
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+    - id: 1028
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_InitializeWithNegativeMaxHealth_ThrowOutOfRangeException]
+      name: HealthComponent_InitializeWithNegativeMaxHealth_ThrowOutOfRangeException
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_InitializeWithNegativeMaxHealth_ThrowOutOfRangeException
+      resultStatus: 1
+      duration: 0.0007213
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1018
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+    - id: 1031
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased][suite]
+      name: HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased
+      resultStatus: 1
+      duration: 0.0051972
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1018
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+    - id: 1029
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased(3,1,2)]
+      name: HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased(3,1,2)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased(3,1,2)
+      resultStatus: 1
+      duration: 0.000356
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased][suite]
+    - id: 1030
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased(3,5,0)]
+      name: HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased(3,5,0)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased(3,5,0)
+      resultStatus: 1
+      duration: 0.000082
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveDamage_CurrentHealthShouldBeDecreased][suite]
+    - id: 1032
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveFatalDamage_OnDiedEventShouldBeInvoked]
+      name: HealthComponent_ReceiveFatalDamage_OnDiedEventShouldBeInvoked
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.HealthComponent_ReceiveFatalDamage_OnDiedEventShouldBeInvoked
+      resultStatus: 1
+      duration: 0.0003822
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1018
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+    - id: 1022
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth][suite]
+      name: Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth
+      resultStatus: 1
+      duration: 0.0047541
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1018
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests][suite]
+    - id: 1019
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,6,5)]
+      name: Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,6,5)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,6,5)
+      resultStatus: 1
+      duration: 0.000272
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth][suite]
+    - id: 1020
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,-1,5)]
+      name: Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,-1,5)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,-1,5)
+      resultStatus: 1
+      duration: 0.0001613
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth][suite]
+    - id: 1021
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,3,3)]
+      name: Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,3,3)
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth(5,3,3)
+      resultStatus: 1
+      duration: 0.0000985
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/HealthServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.HealthServiceTests.Restore_FullRestoreHealth_CurrentHealthIsEqualToMaxHealth][suite]
+    - id: 1033
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests][suite]
+      name: MoveComponentTests
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests
+      resultStatus: 1
+      duration: 0.0073906
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1047
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests][suite]
+    - id: 1035
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/MoveComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests.Move_ChangeTargetPosition_TargetPositionShouldBeChanged]
+      name: Move_ChangeTargetPosition_TargetPositionShouldBeChanged
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests.Move_ChangeTargetPosition_TargetPositionShouldBeChanged
+      resultStatus: 1
+      duration: 0.0025954
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1033
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests][suite]
+    - id: 1034
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/MoveComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests.MoveComponent_Initialization_ShouldNotBeNull]
+      name: MoveComponent_Initialization_ShouldNotBeNull
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests.MoveComponent_Initialization_ShouldNotBeNull
+      resultStatus: 1
+      duration: 0.0002577
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1033
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.MoveComponentTests][suite]
+    - id: 1036
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.WeaponServiceTests][suite]
+      name: WeaponServiceTests
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.WeaponServiceTests
+      resultStatus: 1
+      duration: 0.0045363
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1044
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests][suite]
+    - id: 1037
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/WeaponServiceTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.WeaponServiceTests.WeaponComponent_Initialization_NotNull]
+      name: WeaponComponent_Initialization_NotNull
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.WeaponServiceTests.WeaponComponent_Initialization_NotNull
+      resultStatus: 1
+      duration: 0.000239
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1036
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/ComponentTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.ComponentTests.WeaponServiceTests][suite]
+    - id: 1016
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.SpaceshipTests][suite]
+      name: SpaceshipTests
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.SpaceshipTests
+      resultStatus: 1
+      duration: 0.0065851
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1029
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests][suite]
+    - id: 1017
+      uniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/SpaceshipTests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.SpaceshipTests.Spaceship_Initialization_ShouldBeNotNull]
+      name: Spaceship_Initialization_ShouldBeNotNull
+      fullName: Tests.EditMode.Modules.Spaceship.Tests.SpaceshipTests.Spaceship_Initialization_ShouldBeNotNull
+      resultStatus: 1
+      duration: 0.0002883
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: Modules.Spaceships.Tests.dll/Tests/EditMode/Modules/Spaceship/Tests/[Modules.Spaceships.Tests][Tests.EditMode.Modules.Spaceship.Tests.SpaceshipTests][suite]
+    m_ResultText: LP (0.196s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c73e7c23
-      m_LastClickedID: 595345095
-      m_ExpandedIDs: d18ab496b57aec9c7a1e2fab78617cb92de7f6e5601a9506c73e7c2356af16287cd19f7fffffff7f
+      m_SelectedIDs: 601a9506
+      m_LastClickedID: 110434912
+      m_ExpandedIDs: 6e019580671e9394a607c494d18ab496b57aec9c4a6ca7aa7a1e2fabeba17bab6a27cfb63bbbdfb6205956b878617cb95e03cec32de7f6e5bb8d33ebca4214ff601a9506c896ff18273a061dc73e7c2356af1628448eb8368f27a13aa2ce8241fe27704f1c3115606b241e6ff05f6170907c6e717cd19f7fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -749,7 +1360,7 @@ MonoBehaviour:
       selectedCategoryMask: 0
       availableCategories:
       - Uncategorized
---- !u!114 &16
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -770,8 +1381,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 215
-    y: 127
+    x: 89
+    y: 88
     width: 591
     height: 827
   m_SerializedDataModeController:
@@ -794,8 +1405,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Modules/Spaceships/Tests
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -811,7 +1421,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a8340000
     m_LastClickedID: 13480
-    m_ExpandedIDs: 00000000e2560000e4560000e6560000e8560000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700000e57000010570000125700001457000016570000
+    m_ExpandedIDs: 00000000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700000e57000010570000125700001457000016570000185700001a5700001c5700001e57000020570000225700002457000026570000285700002a570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -839,23 +1449,23 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000e2560000e4560000e6560000ea560000ec560000ee560000f0560000f6560000f8560000fa560000fc560000fe56000000570000025700000457000006570000085700000a5700000c5700000e570000105700001257000014570000165700009257000096570000be5f0000c25f0000c65f0000
+    m_ExpandedIDs: ffffffff00000000ea560000ec560000ee560000f0560000f2560000f4560000f6560000f856000000570000025700000457000006570000085700000a5700000c5700000e570000105700001257000016570000185700001a5700001c5700001e570000205700002257000026570000285700002a5700006e57000080570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: NewAssemblyReference
-      m_OriginalName: NewAssemblyReference
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 24638
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 12}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -883,7 +1493,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -895,7 +1505,7 @@ MonoBehaviour:
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 110
---- !u!114 &17
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -916,8 +1526,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 807
-    y: 127
+    x: 681
+    y: 88
     width: 358
     height: 827
   m_SerializedDataModeController:
@@ -933,9 +1543,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 24600000
+      m_SelectedIDs: 8ee1ffff
       m_LastClickedID: 0
-      m_ExpandedIDs: 24e5ffffd8e8ffff20ebffff9cecffff46eeffffc2eeffffdcf0ffff04f5ffff0cf7fffffafaffff
+      m_ExpandedIDs: b0e6ffffcaecffff94edffff98eeffff6cefffff70f0ffff54f7ffff38f8ffff3cf9ffff06faffffe2faffff465c0000ea5d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -959,7 +1569,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4802d49e8ef31467fb7787a6a7120aff
---- !u!114 &18
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -980,8 +1590,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 215
-    y: 975
+    x: 89
+    y: 936
     width: 951
     height: 390
   m_SerializedDataModeController:
@@ -994,7 +1604,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &19
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1547,7 +2157,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &20
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1620,7 +2230,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &21
+--- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1682,7 +2292,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
---- !u!114 &22
+--- !u!114 &26
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1703,8 +2313,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1694
-    y: 127
+    x: 1568
+    y: 88
     width: 538
     height: 1238
   m_SerializedDataModeController:
@@ -1730,7 +2340,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &23
+--- !u!114 &27
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1751,8 +2361,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 215
-    y: 1386
+    x: 89
+    y: 1347
     width: 2018
     height: 159
   m_SerializedDataModeController:
@@ -1767,8 +2377,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 31790
---- !u!114 &24
+  m_LastSelectedObjectID: 23608
+--- !u!114 &28
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2740,7 +3350,7 @@ MonoBehaviour:
       data:
         m_SortAscending: 0
         m_SortedColumn: -1
---- !u!114 &25
+--- !u!114 &29
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2784,7 +3394,7 @@ MonoBehaviour:
   m_SequencePath:
     m_SelectionRoot: 0
     m_SubElements: []
---- !u!114 &26
+--- !u!114 &30
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}

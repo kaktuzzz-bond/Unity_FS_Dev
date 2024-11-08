@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Assets/Modules/Extensions/LayerMaskToIntExtension.cs" />
     <Compile Include="Assets/Modules/Extensions/GetRandomItemExtension.cs" />
-    <None Include="Assets/Modules/Extensions/Module.Extensions.asmdef" />
+    <None Include="Assets\Modules\Extensions\Modules.Extensions.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -4,25 +4,26 @@ using NUnit.Framework;
 using Tests.PlayMode.Fakes;
 using UnityEngine;
 
+
 namespace Tests.EditMode.Modules.Pooling.Tests
 {
     [TestFixture]
     public class ComponentPoolTests
     {
-        private Func<MonoBehaviourStub> _creatCallback;
-
+        private Func<MonoStub> _creatCallback;
+        
         [SetUp]
         public void Setup()
         {
-            _creatCallback = () => new GameObject().AddComponent<MonoBehaviourStub>();
+            _creatCallback = () => new GameObject().AddComponent<MonoStub>();
         }
 
         [Test]
         public void ComponentPool_OnRentAndReleaseItem_ResultShouldBeTrue()
         {
             const int startCount = 3;
-            
-            var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, startCount);
+
+            var pool = new ComponentPool<MonoStub>(_creatCallback, startCount);
 
             var item = pool.Rent();
 
@@ -41,7 +42,7 @@ namespace Tests.EditMode.Modules.Pooling.Tests
         [Test]
         public void ComponentPool_OnReturnNull_ThrowArgumentNullException()
         {
-            var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, 3);
+            var pool = new ComponentPool<MonoStub>(_creatCallback, 3);
 
             Assert.That(() => pool.Return(null), Throws.ArgumentNullException);
         }
@@ -49,7 +50,7 @@ namespace Tests.EditMode.Modules.Pooling.Tests
         [Test]
         public void ComponentPool_RentItem_NotNull()
         {
-            var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, 3);
+            var pool = new ComponentPool<MonoStub>(_creatCallback, 3);
 
             var item = pool.Rent();
 
@@ -60,7 +61,7 @@ namespace Tests.EditMode.Modules.Pooling.Tests
         [Test]
         public void ComponentPool_InitializeWitheNullDelegate_ThrowArgumentNullException()
         {
-            Assert.That(() => _ = new ComponentPool<MonoBehaviourStub>(null, 3), Throws.ArgumentNullException);
+            Assert.That(() => _ = new ComponentPool<MonoStub>(null, 3), Throws.ArgumentNullException);
         }
 
         [TestCase(3, 3)]
@@ -68,12 +69,15 @@ namespace Tests.EditMode.Modules.Pooling.Tests
         [TestCase(0, 0)]
         public void ComponentPool_Initialize_NotNullAndFilledByItems(int poolCapacity, int expectedCount)
         {
-            var pool = new ComponentPool<MonoBehaviourStub>(_creatCallback, poolCapacity);
+            var pool = new ComponentPool<MonoStub>(_creatCallback, poolCapacity);
 
             Assert.IsNotNull(pool, "Object pool should not be null.");
 
             Assert.That(pool.Count, Is.EqualTo(expectedCount),
                 "Object pool count should be equal the poolCapacity value.");
         }
+        
     }
+    
+    
 }
