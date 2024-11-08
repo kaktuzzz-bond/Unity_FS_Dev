@@ -46,14 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Gameplay/Player/PlayerController.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Weapon/BulletSpawner.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipConfig.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Weapon/BulletWeapon.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Weapon/BulletConfig.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Weapon/Bullet.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Player/PlayerService.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/Spaceships/Weapon/Bullet.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Weapon/BulletWeapon.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/EnemySpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Weapon/BulletSpawner.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Spaceship.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Weapon/BulletConfig.cs" />
     <None Include="Assets/Scripts/Gameplay/Gameplay.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

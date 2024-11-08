@@ -355,10 +355,10 @@
 "Assets/Scripts/Gameplay/Spaceships/EnemySpawner.cs"
 "Assets/Scripts/Gameplay/Spaceships/Spaceship.cs"
 "Assets/Scripts/Gameplay/Spaceships/SpaceshipConfig.cs"
-"Assets/Scripts/Gameplay/Spaceships/Weapon/Bullet.cs"
-"Assets/Scripts/Gameplay/Spaceships/Weapon/BulletConfig.cs"
-"Assets/Scripts/Gameplay/Spaceships/Weapon/BulletSpawner.cs"
-"Assets/Scripts/Gameplay/Spaceships/Weapon/BulletWeapon.cs"
+"Assets/Scripts/Gameplay/Weapon/Bullet.cs"
+"Assets/Scripts/Gameplay/Weapon/BulletConfig.cs"
+"Assets/Scripts/Gameplay/Weapon/BulletSpawner.cs"
+"Assets/Scripts/Gameplay/Weapon/BulletWeapon.cs"
 -langversion:9.0
 /deterministic
 /optimize-

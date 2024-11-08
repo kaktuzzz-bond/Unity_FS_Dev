@@ -41,9 +41,7 @@ namespace Modules.InputSystem
 
         private void OnAttackPressed(InputAction.CallbackContext ctx)
         {
-
             OnFirePressed?.Invoke();
-            Debug.Log("Fire Pressed");
         }
 
 

@@ -1,5 +1,5 @@
 using System;
-using Gameplay.Spaceships.Weapon;
+using Gameplay.Weapon;
 using Modules.Extensions;
 using Modules.Spaceships.Health;
 using Modules.Spaceships.Movement;
@@ -12,7 +12,6 @@ namespace Gameplay.Spaceships
     public class Spaceship : MonoBehaviour
     {
         public event Action<Spaceship> OnDeath;
-        public event Action<Vector2, Vector2> OnFire;
 
         [SerializeField] private SpaceshipConfig config;
         [SerializeField] private Transform firePoint;
@@ -51,7 +50,7 @@ namespace Gameplay.Spaceships
 
         public void Attack()
         {
-            _weaponService.Attack(Vector2.up);
+            Attack(Vector2.up);
         }
 
         public void Attack(Vector2 direction)

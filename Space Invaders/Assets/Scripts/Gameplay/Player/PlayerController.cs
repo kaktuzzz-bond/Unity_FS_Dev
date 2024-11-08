@@ -11,25 +11,15 @@ namespace Gameplay.Player
 
         private void OnEnable()
         {
-            inputAdapter.OnFirePressed += OnAttack;
-            inputAdapter.OnMove += OnMove;
-        }
-
-        private void OnAttack()
-        {
-            playerService.PlayerSpaceship.Attack();
-        }
-
-        private void OnMove(Vector2 direction)
-        {
-            playerService.PlayerSpaceship.Move(direction);
+            inputAdapter.OnFirePressed += playerService.PlayerSpaceship.Attack;
+            inputAdapter.OnMove += playerService.PlayerSpaceship.Move;
         }
 
 
         private void OnDisable()
         {
-            inputAdapter.OnFirePressed -= OnAttack;
-            inputAdapter.OnMove -= OnMove;
+            inputAdapter.OnFirePressed -= playerService.PlayerSpaceship.Attack;
+            inputAdapter.OnMove -= playerService.PlayerSpaceship.Move;
         }
     }
 }

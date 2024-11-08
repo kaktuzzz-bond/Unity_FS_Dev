@@ -1,6 +1,6 @@
 using System;
 using Gameplay.Spaceships;
-using Gameplay.Spaceships.Weapon;
+using Gameplay.Weapon;
 using UnityEngine;
 
 namespace Gameplay.Player
