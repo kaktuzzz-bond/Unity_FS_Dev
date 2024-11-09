@@ -27,8 +27,12 @@ namespace Inventories
         // }
         public Inventory(in int width, in int height)
         {
+            if (width < 0 || height < 0 || (width == 0 && height == 0))
+                throw new ArgumentException("Invalid size exception");
+
             Width = width;
             Height = height;
+
             for (var y = 0; y < Height; y++)
             {
                 for (var x = 0; x < Width; x++)
@@ -45,7 +49,7 @@ namespace Inventories
             params KeyValuePair<Item, Vector2Int>[] items
         ) : this(width, height)
         {
-            if(items == null)
+            if (items == null)
                 throw new ArgumentException(nameof(items));
         }
 
@@ -55,7 +59,7 @@ namespace Inventories
             params Item[] items
         ) : this(width, height)
         {
-            if(items == null)
+            if (items == null)
                 throw new ArgumentException(nameof(items));
         }
 
@@ -65,7 +69,7 @@ namespace Inventories
             in IEnumerable<KeyValuePair<Item, Vector2Int>> items
         ) : this(width, height)
         {
-            if(items == null)
+            if (items == null)
                 throw new ArgumentException(nameof(items));
         }
 
@@ -75,7 +79,7 @@ namespace Inventories
             in IEnumerable<Item> items
         ) : this(width, height)
         {
-            if(items == null)
+            if (items == null)
                 throw new ArgumentException(nameof(items));
         }
 
