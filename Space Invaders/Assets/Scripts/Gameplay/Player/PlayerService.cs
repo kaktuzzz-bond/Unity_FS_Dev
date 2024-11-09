@@ -8,33 +8,42 @@ namespace Gameplay.Player
     public class PlayerService : MonoBehaviour
     {
         public event Action OnPlayerDeath;
-        [SerializeField] private Spaceship prefab;
-        [SerializeField] private Transform parent;
+        public Spaceship PlayerSpaceship { get; private set; }
+
+        [SerializeField] private SpaceshipConfig spaceshipConfig;
         [SerializeField] private BulletSpawner bulletSpawner;
-
-        public Spaceship PlayerSpaceship => _player;
-
-        private Spaceship _player;
+        [SerializeField] private PlayerCreator playerCreator;
 
         private void Awake()
         {
-            _player = Instantiate(prefab, parent);
-            _player.SetWeapon(bulletSpawner);
+            PlayerSpaceship = playerCreator.Create(spaceshipConfig, bulletSpawner);
+            PlayerSpaceship.OnActivate();
         }
 
         private void OnEnable()
         {
-            _player.OnDeath += OnPlayerDeathHandler;
+            PlayerSpaceship.OnDeath += OnPlayerDeathHandler;
+        }
+
+        public void Move(Vector2 direction)
+        {
+            PlayerSpaceship.Move(direction);
+        }
+
+        public void Attack()
+        {
+            PlayerSpaceship.Attack(Vector2.up);
         }
 
         private void OnPlayerDeathHandler(Spaceship spaceship)
         {
             OnPlayerDeath?.Invoke();
+            PlayerSpaceship.OnDeactivate();
         }
 
         private void OnDisable()
         {
-            _player.OnDeath -= OnPlayerDeathHandler;
+            PlayerSpaceship.OnDeath -= OnPlayerDeathHandler;
         }
     }
 }

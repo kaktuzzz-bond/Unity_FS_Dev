@@ -1,61 +1,45 @@
 using System;
+using Gameplay.Spaceships.Strategy;
 using Gameplay.Weapon;
-using Modules.Extensions;
 using Modules.Spaceships.Health;
-using Modules.Spaceships.Movement;
-using Modules.Spaceships.Weapon;
 using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     public class Spaceship : MonoBehaviour
     {
         public event Action<Spaceship> OnDeath;
 
-        [SerializeField] private SpaceshipConfig config;
         [SerializeField] private Transform firePoint;
+        [SerializeField] private new Rigidbody2D rigidbody2D;
 
         private IHealthService _healthService;
-        private IMoveService _moveService;
-        private IWeaponService _weaponService;
+        private IAIStrategy _moveStrategy;
+        private IAIStrategy _attackStrategy;
 
 
-        private void Awake()
+        public void Construct(SpaceshipConfig config, BulletSpawner bulletSpawner)
         {
-            _healthService = new HealthService(config.maxHealth, config.startHealth);
-            _moveService = new Rigidbody2DMover(GetComponent<Rigidbody2D>(), config.speed);
-            gameObject.layer = config.layerMask.LayerMaskToInt();
+            _healthService = config.HealthService;
+            _moveStrategy = new MoveStrategy(rigidbody2D, config.Speed);
+            _attackStrategy = new AttackStrategy(firePoint, bulletSpawner);
+            gameObject.layer = config.CollisionLayer;
         }
 
-        public void SetWeapon(BulletSpawner bulletSpawner)
+        public void OnActivate()
         {
-            _weaponService = new BulletWeapon(firePoint, bulletSpawner);
-        }
-
-        private void OnEnable()
-        {
-            _healthService.OnDied += Die;
-        }
-
-        public void Reset()
-        {
+            _healthService.OnHealthEmpty += Die;
             _healthService.ResetHealth();
         }
 
         public void Move(Vector2 direction)
         {
-            _moveService.Move(direction);
-        }
-
-        public void Attack()
-        {
-            Attack(Vector2.up);
+            _moveStrategy.Update(direction);
         }
 
         public void Attack(Vector2 direction)
         {
-            _weaponService.Attack(direction);
+            _attackStrategy.Update(direction);
         }
 
         public void TakeDamage(int damage)
@@ -63,14 +47,15 @@ namespace Gameplay.Spaceships
             _healthService.TakeDamage(damage);
         }
 
+
+        public void OnDeactivate()
+        {
+            _healthService.OnHealthEmpty -= Die;
+        }
+
         private void Die()
         {
             OnDeath?.Invoke(this);
-        }
-
-        private void OnDisable()
-        {
-            _healthService.OnDied -= Die;
         }
     }
 }

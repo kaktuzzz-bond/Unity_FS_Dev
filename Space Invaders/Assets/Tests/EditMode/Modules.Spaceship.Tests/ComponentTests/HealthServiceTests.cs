@@ -65,7 +65,7 @@ namespace Tests.EditMode.Modules.Spaceship.Tests.ComponentTests
 
             var count = 0;
 
-            healthComponent.OnDied += () => count++;
+            healthComponent.OnHealthEmpty += () => count++;
 
             var expectedResult = 1;
 

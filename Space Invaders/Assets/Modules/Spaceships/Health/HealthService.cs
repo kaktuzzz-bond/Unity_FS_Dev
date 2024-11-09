@@ -4,7 +4,7 @@ namespace Modules.Spaceships.Health
 {
     public class HealthService : IHealthService
     {
-        public event Action OnDied;
+        public event Action OnHealthEmpty;
         public int CurrentHealth { get; private set; }
         private readonly int _maxHealth;
 
@@ -34,7 +34,7 @@ namespace Modules.Spaceships.Health
             if (CurrentHealth > 0) return;
 
             CurrentHealth = 0;
-            OnDied?.Invoke();
+            OnHealthEmpty?.Invoke();
         }
     }
 }

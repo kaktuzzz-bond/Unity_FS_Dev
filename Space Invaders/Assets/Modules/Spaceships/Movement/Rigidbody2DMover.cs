@@ -6,8 +6,7 @@ namespace Modules.Spaceships.Movement
     {
         private readonly Rigidbody2D _rigidbody;
         public Vector2 TargetPosition { get; private set; }
-
-        private readonly IMoveService _mover;
+        
         private readonly float _speed;
 
         public Rigidbody2DMover(Rigidbody2D rigidbody2D, float speed)
