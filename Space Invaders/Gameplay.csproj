@@ -46,10 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Gameplay/Enemy/SpaceshipSpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Enemy/EnemySpawnSettings.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Spaceships/ISpaceship.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Player/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Strategy/MoveStrategy.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/SpaceshipConfig.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Enemy/EnemyAI.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Weapon/Bullet.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/TimeScaler.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Player/PlayerService.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Player/PlayerCreator.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Enemy/EnemyService.cs" />
@@ -57,6 +61,7 @@
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Strategy/IAIStrategy.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Strategy/AttackStrategy.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Weapon/BulletSpawner.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/Management/GameCycle.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Spaceships/Spaceship.cs" />
     <Compile Include="Assets/Scripts/Gameplay/Weapon/BulletConfig.cs" />
     <None Include="Assets/Scripts/Gameplay/Gameplay.asmdef" />
@@ -752,6 +757,10 @@
     <ProjectReference Include="Modules.Extensions.csproj">
       <Project>{887adc27-7c7d-e373-d8ea-3cdd74e047a4}</Project>
       <Name>Modules.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="Module.Levels.csproj">
+      <Project>{9ec7abd1-6e1f-65f1-fe7d-03f38b3ec4c2}</Project>
+      <Name>Module.Levels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

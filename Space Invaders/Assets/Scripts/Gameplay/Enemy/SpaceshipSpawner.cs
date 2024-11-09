@@ -1,5 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Gameplay.Spaceships;
 using Gameplay.Weapon;
+using Modules.Extensions;
 using Modules.Pooling;
 using UnityEngine;
 
@@ -7,8 +11,9 @@ namespace Gameplay.Enemy
 {
     public class SpaceshipSpawner : PooledSpawner<Spaceship>
     {
-        [SerializeField] private BulletSpawner bulletSpawner;
         [SerializeField] private SpaceshipConfig spaceshipConfig;
+        [SerializeField] private BulletSpawner bulletSpawner;
+       
 
         protected override void OnCreate(Spaceship item)
         {

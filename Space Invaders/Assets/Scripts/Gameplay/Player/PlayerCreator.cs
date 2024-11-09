@@ -9,7 +9,7 @@ namespace Gameplay.Player
         [SerializeField] private Spaceship prefab;
         [SerializeField] private Transform parent;
 
-        public Spaceship Create(SpaceshipConfig spaceshipConfig, BulletSpawner bulletSpawner)
+        public ISpaceship Create(SpaceshipConfig spaceshipConfig, BulletSpawner bulletSpawner)
         {
             var spaceship = Instantiate(prefab, parent);
             spaceship.Construct(spaceshipConfig, bulletSpawner);

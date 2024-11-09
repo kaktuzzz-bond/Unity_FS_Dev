@@ -1,8 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Gameplay.Player;
-using Gameplay.Spaceships;
 using Modules.Extensions;
 using UnityEngine;
 
@@ -10,19 +6,12 @@ namespace Gameplay.Enemy
 {
     public class EnemyService : MonoBehaviour
     {
+        [SerializeField] private EnemySpawnSettings spawnSettings;
         [SerializeField] private Transform[] spawnPositions;
-        [SerializeField] private Transform[] attackPositions;
-
-        [SerializeField] private PlayerService playerService;
         [SerializeField] private SpaceshipSpawner enemySpawner;
-
-        [SerializeField] private float minSpawnDelay = 1f;
-        [SerializeField] private float maxSpawnDelay = 2f;
-        [SerializeField] private int maxActiveEnemies = 4;
-
-        private readonly HashSet<Spaceship> _enemies = new();
+        [SerializeField] private EnemyAI enemyAI;
+        
         private bool _isSpawning;
-
 
         public void StartSpawning()
         {
@@ -30,17 +19,16 @@ namespace Gameplay.Enemy
             StartCoroutine(SpawnEnemyRoutine());
         }
 
-
         private IEnumerator SpawnEnemyRoutine()
         {
             while (_isSpawning)
             {
-                yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
-
-                var activeCount = _enemies.Count(x => x.gameObject.activeSelf);
-
-                if (activeCount <= maxActiveEnemies)
+                var delay = Random.Range(spawnSettings.minSpawnDelay, spawnSettings.maxSpawnDelay);
+                yield return new WaitForSeconds(delay);
+                
+                if (enemyAI.EnemyCount < spawnSettings.maxActiveEnemies)
                 {
+                    Debug.Log($"Enemy Count: {enemyAI.EnemyCount} <= {spawnSettings.maxActiveEnemies}");
                     SpawnEnemy();
                 }
             }
@@ -50,6 +38,10 @@ namespace Gameplay.Enemy
         {
             var spawnPosition = spawnPositions.GetRandomItem().position;
 
+            var spaceship = enemySpawner.Rent();
+            spaceship.SetPositionAndRotation(spawnPosition, Quaternion.identity);
+            enemyAI.AddEnemy(spaceship);
+            
             // var spaceship = spaceshipSpawner.Rent(spawnPosition,Quaternion.identity)
             //     .SetTarget(playerService.Player.transform)
             //     .SetActive(true);

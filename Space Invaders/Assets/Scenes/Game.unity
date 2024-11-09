@@ -193,6 +193,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 229640308}
+  - component: {fileID: 229640311}
+  - component: {fileID: 229640312}
   - component: {fileID: 229640310}
   - component: {fileID: 229640309}
   m_Layer: 0
@@ -248,8 +250,58 @@ MonoBehaviour:
   prefab: {fileID: 1878006212899956770, guid: 5c9221267a9d54b339e970fa63728bda, type: 3}
   parent: {fileID: 1683128698}
   poolSize: 5
-  bulletSpawner: {fileID: 229640309}
   spaceshipConfig: {fileID: 11400000, guid: 56e954a41d8584324aa6644d4ba9d731, type: 2}
+  bulletSpawner: {fileID: 229640309}
+--- !u!114 &229640311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229640305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54ef5ebcf0048eb8fd4ea62b83e27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSettings:
+    minSpawnDelay: 1
+    maxSpawnDelay: 2
+    maxActiveEnemies: 5
+  spawnPositions:
+  - {fileID: 5098186055898699330}
+  - {fileID: 3822857799868723767}
+  - {fileID: 6359635304368030436}
+  - {fileID: 2272249728968689581}
+  - {fileID: 5689270860486713316}
+  - {fileID: 106235378999874491}
+  enemySpawner: {fileID: 229640310}
+  enemyAI: {fileID: 229640312}
+--- !u!114 &229640312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229640305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9e161a77ad4c08a4f6a23695c64647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerService: {fileID: 886418142}
+  attackPositions:
+  - {fileID: 8569045085939387605}
+  - {fileID: 9088267052445128325}
+  - {fileID: 713232402740842374}
+  - {fileID: 8300918414904818790}
+  - {fileID: 7532812219450273526}
+  - {fileID: 1536551911}
+  - {fileID: 196756141}
+  - {fileID: 1049219808}
+  - {fileID: 1549378007}
+  - {fileID: 78117031}
+  - {fileID: 883274640}
 --- !u!4 &325757865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6564159922729118933, guid: ee92a05647bb7401d800d96e31b7c5ba,
@@ -265,6 +317,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 485371872}
+  - component: {fileID: 485371873}
+  - component: {fileID: 485371874}
   m_Layer: 0
   m_Name: '[Game Management]'
   m_TagString: Untagged
@@ -289,6 +343,34 @@ Transform:
   - {fileID: 886418141}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485371873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485371868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aaf5840f8364e7e8fe107698a3c3b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerService: {fileID: 886418142}
+  enemyService: {fileID: 229640311}
+  levelBackground: {fileID: 2044854382}
+--- !u!114 &485371874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485371868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faac54cf0d054aed8df5a9d3e9fb56a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCycle: {fileID: 485371873}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1402,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1337844002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2044854382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8603521045051267470, guid: ee92a05647bb7401d800d96e31b7c5ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1054539019}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5377a5d4caa94482972174d0a74ac4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &106235378999874491
 Transform:
   m_ObjectHideFlags: 0

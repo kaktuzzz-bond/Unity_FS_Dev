@@ -38,7 +38,7 @@ namespace Gameplay.Weapon
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out Spaceship unit))
+            if (collision.gameObject.TryGetComponent(out ISpaceship unit))
             {
                 unit.TakeDamage(_config.damage);
             }

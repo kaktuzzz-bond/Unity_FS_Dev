@@ -8,22 +8,19 @@ namespace Gameplay.Player
     public class PlayerService : MonoBehaviour
     {
         public event Action OnPlayerDeath;
-        public Spaceship PlayerSpaceship { get; private set; }
+        public ISpaceship PlayerSpaceship { get; private set; }
 
         [SerializeField] private SpaceshipConfig spaceshipConfig;
         [SerializeField] private BulletSpawner bulletSpawner;
         [SerializeField] private PlayerCreator playerCreator;
 
-        private void Awake()
+        public void AddPlayer()
         {
             PlayerSpaceship = playerCreator.Create(spaceshipConfig, bulletSpawner);
             PlayerSpaceship.OnActivate();
-        }
-
-        private void OnEnable()
-        {
             PlayerSpaceship.OnDeath += OnPlayerDeathHandler;
         }
+
 
         public void Move(Vector2 direction)
         {
@@ -35,14 +32,10 @@ namespace Gameplay.Player
             PlayerSpaceship.Attack(Vector2.up);
         }
 
-        private void OnPlayerDeathHandler(Spaceship spaceship)
+        private void OnPlayerDeathHandler(ISpaceship spaceship)
         {
             OnPlayerDeath?.Invoke();
             PlayerSpaceship.OnDeactivate();
-        }
-
-        private void OnDisable()
-        {
             PlayerSpaceship.OnDeath -= OnPlayerDeathHandler;
         }
     }
