@@ -45,6 +45,8 @@ namespace Inventories
             params KeyValuePair<Item, Vector2Int>[] items
         ) : this(width, height)
         {
+            if(items == null)
+                throw new ArgumentException(nameof(items));
         }
 
         public Inventory(
@@ -53,6 +55,8 @@ namespace Inventories
             params Item[] items
         ) : this(width, height)
         {
+            if(items == null)
+                throw new ArgumentException(nameof(items));
         }
 
         public Inventory(
@@ -61,6 +65,8 @@ namespace Inventories
             in IEnumerable<KeyValuePair<Item, Vector2Int>> items
         ) : this(width, height)
         {
+            if(items == null)
+                throw new ArgumentException(nameof(items));
         }
 
         public Inventory(
@@ -69,6 +75,8 @@ namespace Inventories
             in IEnumerable<Item> items
         ) : this(width, height)
         {
+            if(items == null)
+                throw new ArgumentException(nameof(items));
         }
 
         /// <summary>
