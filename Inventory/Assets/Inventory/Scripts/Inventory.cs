@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Inventories
@@ -12,40 +13,63 @@ namespace Inventories
         public event Action<Item, Vector2Int> OnMoved;
         public event Action OnCleared;
 
-        public int Width => throw new NotImplementedException();
-        public int Height => throw new NotImplementedException();
-        public int Count => throw new NotImplementedException();
+        public int Width { get; }
 
-        public Inventory(in int width, in int height) =>
-            throw new NotImplementedException();
+        public int Height { get; }
+
+        public int Count => _items.Count(pair => pair.Value != null);
+
+        private readonly Dictionary<Vector2Int, Item> _items = new();
+
+        // private void Counter()
+        // {
+        //     int counter = _items.Count(pair => pair.Value == null);
+        // }
+        public Inventory(in int width, in int height)
+        {
+            Width = width;
+            Height = height;
+            for (var y = 0; y < Height; y++)
+            {
+                for (var x = 0; x < Width; x++)
+                {
+                    var key = new Vector2Int(x, y);
+                    _items.Add(key, null);
+                }
+            }
+        }
 
         public Inventory(
             in int width,
             in int height,
             params KeyValuePair<Item, Vector2Int>[] items
-        ) : this(width, height) =>
-            throw new NotImplementedException();
+        ) : this(width, height)
+        {
+        }
 
         public Inventory(
             in int width,
             in int height,
             params Item[] items
-        ) : this(width, height) =>
-            throw new NotImplementedException();
+        ) : this(width, height)
+        {
+        }
 
         public Inventory(
             in int width,
             in int height,
             in IEnumerable<KeyValuePair<Item, Vector2Int>> items
-        ) : this(width, height) =>
-            throw new NotImplementedException();
+        ) : this(width, height)
+        {
+        }
 
         public Inventory(
             in int width,
             in int height,
             in IEnumerable<Item> items
-        ) : this(width, height) =>
-            throw new NotImplementedException();
+        ) : this(width, height)
+        {
+        }
 
         /// <summary>
         /// Checks for adding an item on a specified position
@@ -107,11 +131,17 @@ namespace Inventories
         /// <summary>
         /// Checks if the a position is free
         /// </summary>
-        public bool IsFree(in Vector2Int position) =>
-            throw new NotImplementedException();
+        public bool IsFree(in Vector2Int position)
+        {
+            _items.TryGetValue(position, out var item);
+            return item == null;
+        }
 
-        public bool IsFree(in int x, in int y) =>
-            throw new NotImplementedException();
+        public bool IsFree(in int x, in int y)
+        {
+            var key = new Vector2Int(x, y);
+            return IsFree(key);
+        }
 
         /// <summary>
         /// Removes a specified item if exists
@@ -176,10 +206,10 @@ namespace Inventories
         public void CopyTo(in Item[,] matrix) =>
             throw new NotImplementedException();
 
-        public IEnumerator<Item> GetEnumerator() => 
+        public IEnumerator<Item> GetEnumerator() =>
             throw new NotImplementedException();
 
-        IEnumerator IEnumerable.GetEnumerator() => 
+        IEnumerator IEnumerable.GetEnumerator() =>
             throw new NotImplementedException();
     }
 }
