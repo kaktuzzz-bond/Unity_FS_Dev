@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Codice.CM.Common.Purge;
 using UnityEngine;
 
 namespace Inventories
@@ -56,6 +55,11 @@ namespace Inventories
         {
             if (items == null)
                 throw new ArgumentException(nameof(items));
+
+            foreach (var item in items)
+            {
+                AddItem(item);
+            }
         }
 
         public Inventory(
@@ -80,6 +84,11 @@ namespace Inventories
         {
             if (items == null)
                 throw new ArgumentException(nameof(items));
+
+            foreach (var item in items)
+            {
+                AddItem(item);
+            }
         }
 
 
@@ -95,7 +104,9 @@ namespace Inventories
         {
             if (IsNull(item)) return false;
 
-            if (!_grid.TryAddItem(item, posX, posY)) return false;
+            var position = new Vector2Int(posX, posY);
+
+            if (!_grid.TryAddItem(item.Size, position)) return false;
 
             if (Contains(item)) return false;
 
@@ -129,9 +140,10 @@ namespace Inventories
         /// </summary>
         public bool AddItem(in Item item)
         {
-            // 1 - Ask if we can add the item
-            // 2 - add the item if possible
-            throw new NotImplementedException();
+            if (!CanAddItem(item)) return false;
+
+            return FindFreePosition(item, out var freePosition) &&
+                   AddItem(item, freePosition);
         }
 
         /// <summary>
@@ -141,35 +153,35 @@ namespace Inventories
         {
             if (IsNull(item)) return false;
 
-            // 1 - find free position
-            // 2 - return true if possible
-            throw new NotImplementedException();
+            return FindFreePosition(item, out var freePosition) &&
+                   CanAddItem(item, freePosition);
         }
 
         /// <summary>
         /// Returns a free position for a specified item
         /// </summary>
-        public bool FindFreePosition(in Item item, out Vector2Int freePosition) =>
-            throw new NotImplementedException();
+        public bool FindFreePosition(in Item item, out Vector2Int freePosition)
+        {
+            return FindFreePosition(item.Size, out freePosition);
+        }
 
         public bool FindFreePosition(in Vector2Int size, out Vector2Int freePosition)
         {
-            
-            throw new NotImplementedException();
+            return _grid.FindFreePosition(size, out freePosition);
         }
 
-        public bool FindFreePosition(in int sizeX, int sizeY, out Vector2Int freePosition) =>
-            throw new NotImplementedException();
+        public bool FindFreePosition(in int sizeX, int sizeY, out Vector2Int freePosition)
+        {
+            var size = new Vector2Int(sizeX, sizeY);
+            return FindFreePosition(size, out freePosition);
+        }
 
         /// <summary>
         /// Checks if a specified item exists
         /// </summary>
         public bool Contains(in Item item)
         {
-            if (IsNull(item))
-                throw new ArgumentNullException(nameof(item));
-
-            return _items.ContainsKey(item);
+            return !IsNull(item) && _items.ContainsKey(item);
         }
 
         /// <summary>
@@ -182,13 +194,13 @@ namespace Inventories
             !IsFree(x, y);
 
         /// <summary>
-        /// Checks if the a position is free
+        /// Checks if a position is free
         /// </summary>
         public bool IsFree(in Vector2Int position) =>
-            _grid[position] == null;
+            _grid.IsFree(position);
 
         public bool IsFree(in int x, in int y) =>
-            _grid[x, y] == null;
+            _grid.IsFree(x, y);
 
         /// <summary>
         /// Removes a specified item if exists
@@ -196,6 +208,7 @@ namespace Inventories
         public bool RemoveItem(in Item item)
         {
             if (IsNull(item)) return false;
+            
             if (!_items.TryGetValue(item, out var pos)) return false;
 
             OnRemoved?.Invoke(item, pos);
@@ -206,7 +219,14 @@ namespace Inventories
         public bool RemoveItem(in Item item, out Vector2Int position)
         {
             position = default;
-            return RemoveItem(item);
+            
+            if (IsNull(item)) return false;
+            
+            if (!_items.TryGetValue(item, out position)) return false;
+
+            OnRemoved?.Invoke(item, position);
+
+            return _items.Remove(item);
         }
 
         /// <summary>
@@ -238,14 +258,17 @@ namespace Inventories
         /// </summary>
         public void Clear()
         {
+            _items.Clear();
             OnCleared?.Invoke();
         }
 
         /// <summary>
         /// Returns a count of items with a specified name
         /// </summary>
-        public int GetItemCount(string name) =>
-            throw new NotImplementedException();
+        public int GetItemCount(string name)
+        {
+            return this.Count(x => x.Name == name);
+        }
 
         /// <summary>
         /// Moves a specified item at target position if exists
@@ -254,7 +277,7 @@ namespace Inventories
             throw new NotImplementedException();
 
         /// <summary>
-        /// Reorganizes a inventory space so that the free area is uniform
+        /// Reorganizes an inventory space so that the free area is uniform
         /// </summary>
         public void ReorganizeSpace() =>
             throw new NotImplementedException();
@@ -262,8 +285,10 @@ namespace Inventories
         /// <summary>
         /// Copies inventory items to a specified matrix
         /// </summary>
-        public void CopyTo(in Item[,] matrix) =>
-            throw new NotImplementedException();
+        public void CopyTo(in Item[,] matrix)
+        {
+            _grid.CopyTo(matrix);
+        }
 
 
         public IEnumerator<Item> GetEnumerator()

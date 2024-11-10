@@ -23,24 +23,31 @@ namespace Inventories
             _inventory.OnCleared += ClearGrid;
         }
 
-        public Item this[int x, int y]
+
+        public bool FindFreePosition(Vector2Int size, out Vector2Int freePosition)
         {
-            get => _grid[x, y];
-            private set => _grid[x, y] = value;
+            for (var y = 0; y < _grid.GetLength(1); y++)
+            for (var x = 0; x < _grid.GetLength(0); x++)
+            {
+                if (!IsFree(x, y))
+                    continue;
+
+                freePosition = new Vector2Int(x, y);
+
+                if (TryAddItem(size, freePosition))
+                    return true;
+            }
+            
+            freePosition = default;
+            
+            return false;
         }
 
-        public Item this[Vector2Int pos] =>
-            _grid[pos.x, pos.y];
-
-
-        /// <summary>
-        /// Checks for adding an item on a specified position
-        /// </summary>
-        public bool TryAddItem(Item item, Vector2Int position)
+        public bool TryAddItem(Vector2Int size, Vector2Int position)
         {
             if (!IsStartPositionValid(position)) return false;
 
-            var end = position + item.Size;
+            var end = position + size;
 
             if (IsIndexOutOfRange(end)) return false;
 
@@ -54,14 +61,10 @@ namespace Inventories
             return true;
         }
 
-
-        public bool TryAddItem(Item item, int posX, int posY)
+        public void CopyTo(in Item[,] matrix)
         {
-            var pos = new Vector2Int(posX, posY);
-
-            return TryAddItem(item, pos);
+            Array.Copy(_grid, matrix, _grid.Length);
         }
-
 
         private void AddItem(Item item, Vector2Int position)
         {
@@ -105,6 +108,12 @@ namespace Inventories
             }
         }
 
+        public bool IsFree(in int x, in int y) =>
+            _grid[x, y] == null;
+
+        public bool IsFree(in Vector2Int position) =>
+            IsFree(position.x, position.y);
+
         public void Dispose()
         {
             _inventory.OnAdded -= AddItem;
@@ -120,6 +129,5 @@ namespace Inventories
         private bool IsIndexOutOfRange(Vector2Int position) =>
             position.x > _inventory.Width ||
             position.y > _inventory.Height;
-        
     }
 }
