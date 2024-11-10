@@ -102,7 +102,7 @@ namespace Inventories
 
         public bool CanAddItem(in Item item, in int posX, in int posY)
         {
-            if (IsNull(item)) return false;
+            if (!IsValidItem(item)) return false;
 
             var position = new Vector2Int(posX, posY);
 
@@ -142,6 +142,7 @@ namespace Inventories
         {
             if (!CanAddItem(item)) return false;
 
+
             return FindFreePosition(item, out var freePosition) &&
                    AddItem(item, freePosition);
         }
@@ -151,7 +152,7 @@ namespace Inventories
         /// </summary>
         public bool CanAddItem(in Item item)
         {
-            if (IsNull(item)) return false;
+            if (!IsValidItem(item)) return false;
 
             return FindFreePosition(item, out var freePosition) &&
                    CanAddItem(item, freePosition);
@@ -181,7 +182,7 @@ namespace Inventories
         /// </summary>
         public bool Contains(in Item item)
         {
-            return !IsNull(item) && _items.ContainsKey(item);
+            return IsValidItem(item) && _items.ContainsKey(item);
         }
 
         /// <summary>
@@ -207,7 +208,7 @@ namespace Inventories
         /// </summary>
         public bool RemoveItem(in Item item)
         {
-            if (IsNull(item)) return false;
+            if (!IsValidItem(item)) return false;
 
             if (!_items.TryGetValue(item, out var pos)) return false;
 
@@ -220,7 +221,7 @@ namespace Inventories
         {
             position = default;
 
-            if (IsNull(item)) return false;
+            if (!IsValidItem(item)) return false;
 
             if (!_items.TryGetValue(item, out position)) return false;
 
@@ -260,18 +261,18 @@ namespace Inventories
         public Vector2Int[] GetPositions(in Item item)
         {
             return TryGetPositions(item, out var positions)
-                ? positions 
+                ? positions
                 : Array.Empty<Vector2Int>();
         }
 
         public bool TryGetPositions(in Item item, out Vector2Int[] positions)
         {
             positions = default;
-            if(IsNull(item)) return false;
+            if (!IsValidItem(item)) return false;
             if (!Contains(item)) return false;
-            
+
             positions = _grid.GetPositions(item);
-            
+
             return true;
         }
 
@@ -332,7 +333,18 @@ namespace Inventories
             return GetEnumerator();
         }
 
-        private bool IsNull(Item item) =>
-            item == null;
+        // private bool IsNull(Item item) =>
+        //     item == null;
+
+
+        private bool IsValidItem(in Item item)
+        {
+            if (item == null) return false;
+
+            if (item.Size.x <= 0 || item.Size.y <= 0)
+                throw new ArgumentException("Invalid size exception");
+            
+            return true;
+        }
     }
 }
