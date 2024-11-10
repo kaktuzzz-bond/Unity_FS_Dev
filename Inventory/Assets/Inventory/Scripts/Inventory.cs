@@ -168,7 +168,9 @@ namespace Inventories
 
         public bool FindFreePosition(in Vector2Int size, out Vector2Int freePosition)
         {
-            return _grid.FindFreePosition(size, out freePosition);
+            freePosition = default;
+            return IsValidSize(size) &&
+                   _grid.FindFreePosition(size, out freePosition);
         }
 
         public bool FindFreePosition(in int sizeX, int sizeY, out Vector2Int freePosition)
@@ -281,7 +283,10 @@ namespace Inventories
         /// </summary>
         public void Clear()
         {
+            if (Count == 0) return;
+
             _items.Clear();
+
             OnCleared?.Invoke();
         }
 
@@ -339,12 +344,20 @@ namespace Inventories
 
         private bool IsValidItem(in Item item)
         {
-            if (item == null) return false;
+            return item != null && IsValidSize(item.Size);
+        }
 
-            if (item.Size.x <= 0 || item.Size.y <= 0)
+        private bool IsValidSize(Vector2Int size)
+        {
+            if (size.x <= 0 || size.y <= 0)
                 throw new ArgumentException("Invalid size exception");
-            
+
             return true;
         }
+
+        // private bool IsValidPosition(in Vector2Int position)
+        // {
+        //     
+        // }
     }
 }
