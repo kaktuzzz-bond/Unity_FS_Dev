@@ -208,7 +208,7 @@ namespace Inventories
         public bool RemoveItem(in Item item)
         {
             if (IsNull(item)) return false;
-            
+
             if (!_items.TryGetValue(item, out var pos)) return false;
 
             OnRemoved?.Invoke(item, pos);
@@ -219,9 +219,9 @@ namespace Inventories
         public bool RemoveItem(in Item item, out Vector2Int position)
         {
             position = default;
-            
+
             if (IsNull(item)) return false;
-            
+
             if (!_items.TryGetValue(item, out position)) return false;
 
             OnRemoved?.Invoke(item, position);
@@ -232,17 +232,27 @@ namespace Inventories
         /// <summary>
         /// Returns an item at specified position 
         /// </summary>
-        public Item GetItem(in Vector2Int position) =>
-            throw new NotImplementedException();
+        public Item GetItem(in Vector2Int position)
+        {
+            return TryGetItem(position, out var item) ? item : null;
+        }
 
-        public Item GetItem(in int x, in int y) =>
-            throw new NotImplementedException();
+        public Item GetItem(in int x, in int y)
+        {
+            var position = new Vector2Int(x, y);
+            return GetItem(position);
+        }
 
-        public bool TryGetItem(in Vector2Int position, out Item item) =>
-            throw new NotImplementedException();
+        public bool TryGetItem(in Vector2Int position, out Item item)
+        {
+            return _grid.TryGetItem(position, out item);
+        }
 
-        public bool TryGetItem(in int x, in int y, out Item item) =>
-            throw new NotImplementedException();
+        public bool TryGetItem(in int x, in int y, out Item item)
+        {
+            var position = new Vector2Int(x, y);
+            return TryGetItem(position, out item);
+        }
 
         /// <summary>
         /// Returns matrix positions of a specified item 

@@ -23,6 +23,15 @@ namespace Inventories
             _inventory.OnCleared += ClearGrid;
         }
 
+        
+
+        public bool TryGetItem(Vector2Int position, out Item item)
+        {
+            item = null;
+            if (IsIndexOutOfRange(position)) return false;
+            item = _grid[position.x, position.y];
+            return item != null;
+        }
 
         public bool FindFreePosition(Vector2Int size, out Vector2Int freePosition)
         {
@@ -37,9 +46,9 @@ namespace Inventories
                 if (TryAddItem(size, freePosition))
                     return true;
             }
-            
+
             freePosition = default;
-            
+
             return false;
         }
 
