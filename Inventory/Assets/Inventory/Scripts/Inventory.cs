@@ -243,7 +243,16 @@ namespace Inventories
         public Item GetItem(in int x, in int y)
         {
             var position = new Vector2Int(x, y);
-            return GetItem(position);
+
+            if (!IsStartPositionValid(position))
+                throw new IndexOutOfRangeException("Invalid position.");
+
+            var item = GetItem(position);
+
+            if (item == null)
+                throw new NullReferenceException("Item is null.");
+
+            return item;
         }
 
         public bool TryGetItem(in Vector2Int position, out Item item)
@@ -262,6 +271,13 @@ namespace Inventories
         /// </summary>
         public Vector2Int[] GetPositions(in Item item)
         {
+            if (item == null)
+                throw new NullReferenceException("Item is null.");
+
+            if (!Contains(item))
+                throw new KeyNotFoundException("Item not found.");
+
+
             return TryGetPositions(item, out var positions)
                 ? positions
                 : Array.Empty<Vector2Int>();
@@ -355,9 +371,8 @@ namespace Inventories
             return true;
         }
 
-        // private bool IsValidPosition(in Vector2Int position)
-        // {
-        //     
-        // }
+        private bool IsStartPositionValid(Vector2Int position) =>
+            position.x >= 0 && position.x < Width &&
+            position.y >= 0 && position.y < Height;
     }
 }

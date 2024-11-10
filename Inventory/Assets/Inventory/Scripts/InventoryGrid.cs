@@ -42,8 +42,11 @@ namespace Inventories
         public bool TryGetItem(Vector2Int position, out Item item)
         {
             item = null;
+
             if (!IsStartPositionValid(position)) return false;
+
             item = _grid[position.x, position.y];
+
             return item != null;
         }
 
@@ -145,7 +148,7 @@ namespace Inventories
             _inventory.OnCleared -= ClearGrid;
         }
 
-        
+
         private bool IsStartPositionValid(Vector2Int position) =>
             position.x >= 0 && position.x < _inventory.Width &&
             position.y >= 0 && position.y < _inventory.Height;
