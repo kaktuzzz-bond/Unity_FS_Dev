@@ -257,11 +257,23 @@ namespace Inventories
         /// <summary>
         /// Returns matrix positions of a specified item 
         /// </summary>
-        public Vector2Int[] GetPositions(in Item item) =>
-            throw new NotImplementedException();
+        public Vector2Int[] GetPositions(in Item item)
+        {
+            return TryGetPositions(item, out var positions)
+                ? positions 
+                : Array.Empty<Vector2Int>();
+        }
 
-        public bool TryGetPositions(in Item item, out Vector2Int[] positions) =>
-            throw new NotImplementedException();
+        public bool TryGetPositions(in Item item, out Vector2Int[] positions)
+        {
+            positions = default;
+            if(IsNull(item)) return false;
+            if (!Contains(item)) return false;
+            
+            positions = _grid.GetPositions(item);
+            
+            return true;
+        }
 
         /// <summary>
         /// Clears all inventory items

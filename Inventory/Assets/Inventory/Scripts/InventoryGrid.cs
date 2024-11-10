@@ -23,7 +23,21 @@ namespace Inventories
             _inventory.OnCleared += ClearGrid;
         }
 
-        
+
+        public Vector2Int[] GetPositions(in Item item)
+        {
+            var positions = new List<Vector2Int>();
+            for (var x = 0; x < _grid.GetLength(0); x++)
+            for (var y = 0; y < _grid.GetLength(1); y++)
+            {
+                if (ReferenceEquals(_grid[x, y], item))
+                {
+                    positions.Add(new Vector2Int(x, y));
+                }
+            }
+
+            return positions.ToArray();
+        }
 
         public bool TryGetItem(Vector2Int position, out Item item)
         {
