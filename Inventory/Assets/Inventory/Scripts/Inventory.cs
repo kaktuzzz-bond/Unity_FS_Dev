@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Codice.CM.Common.Purge;
 using UnityEngine;
 
 namespace Inventories
@@ -17,14 +18,11 @@ namespace Inventories
 
         public int Height { get; }
 
-        public int Count => _items.Count(pair => pair.Value != null);
+        public int Count => _items.Count;
 
-        private readonly Dictionary<Vector2Int, Item> _items = new();
+        private readonly Dictionary<Item, Vector2Int> _items = new();
+        private readonly InventoryGrid _grid;
 
-        // private void Counter()
-        // {
-        //     int counter = _items.Count(pair => pair.Value == null);
-        // }
         public Inventory(in int width, in int height)
         {
             if (width < 0 || height < 0 || (width == 0 && height == 0))
@@ -32,15 +30,7 @@ namespace Inventories
 
             Width = width;
             Height = height;
-
-            for (var y = 0; y < Height; y++)
-            {
-                for (var x = 0; x < Width; x++)
-                {
-                    var key = new Vector2Int(x, y);
-                    _items.Add(key, null);
-                }
-            }
+            _grid = new InventoryGrid(this);
         }
 
         public Inventory(
@@ -51,6 +41,11 @@ namespace Inventories
         {
             if (items == null)
                 throw new ArgumentException(nameof(items));
+
+            foreach (var pair in items)
+            {
+                AddItem(pair.Key, pair.Value);
+            }
         }
 
         public Inventory(
@@ -71,6 +66,10 @@ namespace Inventories
         {
             if (items == null)
                 throw new ArgumentException(nameof(items));
+            foreach (var pair in items)
+            {
+                AddItem(pair.Key, pair.Value);
+            }
         }
 
         public Inventory(
@@ -83,35 +82,69 @@ namespace Inventories
                 throw new ArgumentException(nameof(items));
         }
 
+
         /// <summary>
         /// Checks for adding an item on a specified position
         /// </summary>
-        public bool CanAddItem(in Item item, in Vector2Int position) =>
-            throw new NotImplementedException();
+        public bool CanAddItem(in Item item, in Vector2Int position)
+        {
+            return CanAddItem(item, position.x, position.y);
+        }
 
-        public bool CanAddItem(in Item item, in int posX, in int posY) =>
-            throw new NotImplementedException();
+        public bool CanAddItem(in Item item, in int posX, in int posY)
+        {
+            if (IsNull(item)) return false;
+
+            if (!_grid.TryAddItem(item, posX, posY)) return false;
+
+            if (Contains(item)) return false;
+
+            return true;
+        }
+
 
         /// <summary>
         /// Adds an item on a specified position if not exists
         /// </summary>
-        public bool AddItem(in Item item, in Vector2Int position) =>
-            throw new NotImplementedException();
+        public bool AddItem(in Item item, in Vector2Int position)
+        {
+            if (!CanAddItem(item, position)) return false;
 
-        public bool AddItem(in Item item, in int posX, in int posY) =>
-            throw new NotImplementedException();
+            if (!_items.TryAdd(item, position)) return false;
 
-        /// <summary>
-        /// Checks for adding an item on a free position
-        /// </summary>
-        public bool CanAddItem(in Item item) =>
-            throw new NotImplementedException();
+            OnAdded?.Invoke(item, position);
+
+            return true;
+        }
+
+        public bool AddItem(in Item item, in int posX, in int posY)
+        {
+            var position = new Vector2Int(posX, posY);
+
+            return AddItem(item, position);
+        }
 
         /// <summary>
         /// Adds an item on a free position
         /// </summary>
-        public bool AddItem(in Item item) =>
+        public bool AddItem(in Item item)
+        {
+            // 1 - Ask if we can add the item
+            // 2 - add the item if possible
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Checks for adding an item on a free position
+        /// </summary>
+        public bool CanAddItem(in Item item)
+        {
+            if (IsNull(item)) return false;
+
+            // 1 - find free position
+            // 2 - return true if possible
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Returns a free position for a specified item
@@ -119,8 +152,11 @@ namespace Inventories
         public bool FindFreePosition(in Item item, out Vector2Int freePosition) =>
             throw new NotImplementedException();
 
-        public bool FindFreePosition(in Vector2Int size, out Vector2Int freePosition) =>
+        public bool FindFreePosition(in Vector2Int size, out Vector2Int freePosition)
+        {
+            
             throw new NotImplementedException();
+        }
 
         public bool FindFreePosition(in int sizeX, int sizeY, out Vector2Int freePosition) =>
             throw new NotImplementedException();
@@ -128,41 +164,50 @@ namespace Inventories
         /// <summary>
         /// Checks if a specified item exists
         /// </summary>
-        public bool Contains(in Item item) =>
-            throw new NotImplementedException();
+        public bool Contains(in Item item)
+        {
+            if (IsNull(item))
+                throw new ArgumentNullException(nameof(item));
+
+            return _items.ContainsKey(item);
+        }
 
         /// <summary>
         /// Checks if a specified position is occupied
         /// </summary>
         public bool IsOccupied(in Vector2Int position) =>
-            throw new NotImplementedException();
+            !IsFree(position);
 
         public bool IsOccupied(in int x, in int y) =>
-            throw new NotImplementedException();
+            !IsFree(x, y);
 
         /// <summary>
         /// Checks if the a position is free
         /// </summary>
-        public bool IsFree(in Vector2Int position)
-        {
-            _items.TryGetValue(position, out var item);
-            return item == null;
-        }
+        public bool IsFree(in Vector2Int position) =>
+            _grid[position] == null;
 
-        public bool IsFree(in int x, in int y)
-        {
-            var key = new Vector2Int(x, y);
-            return IsFree(key);
-        }
+        public bool IsFree(in int x, in int y) =>
+            _grid[x, y] == null;
 
         /// <summary>
         /// Removes a specified item if exists
         /// </summary>
-        public bool RemoveItem(in Item item) =>
-            throw new NotImplementedException();
+        public bool RemoveItem(in Item item)
+        {
+            if (IsNull(item)) return false;
+            if (!_items.TryGetValue(item, out var pos)) return false;
 
-        public bool RemoveItem(in Item item, out Vector2Int position) =>
-            throw new NotImplementedException();
+            OnRemoved?.Invoke(item, pos);
+
+            return _items.Remove(item);
+        }
+
+        public bool RemoveItem(in Item item, out Vector2Int position)
+        {
+            position = default;
+            return RemoveItem(item);
+        }
 
         /// <summary>
         /// Returns an item at specified position 
@@ -191,8 +236,10 @@ namespace Inventories
         /// <summary>
         /// Clears all inventory items
         /// </summary>
-        public void Clear() =>
-            throw new NotImplementedException();
+        public void Clear()
+        {
+            OnCleared?.Invoke();
+        }
 
         /// <summary>
         /// Returns a count of items with a specified name
@@ -218,10 +265,27 @@ namespace Inventories
         public void CopyTo(in Item[,] matrix) =>
             throw new NotImplementedException();
 
-        public IEnumerator<Item> GetEnumerator() =>
-            throw new NotImplementedException();
 
-        IEnumerator IEnumerable.GetEnumerator() =>
-            throw new NotImplementedException();
+        public IEnumerator<Item> GetEnumerator()
+        {
+            var enumerator = _items.GetEnumerator();
+
+            var items = new List<Item>();
+
+            while (enumerator.MoveNext())
+            {
+                items.Add(enumerator.Current.Key);
+            }
+
+            return items.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private bool IsNull(Item item) =>
+            item == null;
     }
 }
