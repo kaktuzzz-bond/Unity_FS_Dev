@@ -8,25 +8,18 @@ namespace Inventories
 {
     public sealed class InventoryGrid
     {
-        private readonly Inventory _inventory;
+        //private readonly Inventory _inventory;
         private readonly Item[,] _grid;
         private readonly int _width;
         private readonly int _height;
 
 
-        public InventoryGrid(Inventory inventory)
+        public InventoryGrid(int width, int height)
         {
-            _inventory = inventory;
-            
-            _width = inventory.Width;
-            _height = inventory.Height;
-            
-            _grid = new Item[_width, _height];
+            _width = width;
+            _height = height;
 
-            _inventory.OnAdded += AddItem;
-            _inventory.OnRemoved += RemoveItem;
-            _inventory.OnMoved += MoveItem;
-            _inventory.OnCleared += ClearGrid;
+            _grid = new Item[_width, _height];
         }
 
 
@@ -81,7 +74,7 @@ namespace Inventories
 
             var end = position + size;
 
-            if (IsIndexOutOfRange(end)) return false;
+            if (IsSizeOutsideGrid(end)) return false;
 
             for (var y = position.y; y < end.y; y++)
             for (var x = position.x; x < end.x; x++)
@@ -98,7 +91,7 @@ namespace Inventories
             Array.Copy(_grid, matrix, _grid.Length);
         }
 
-        private void AddItem(Item item, Vector2Int position)
+        public void AddItem(Item item, Vector2Int position)
         {
             var start = position;
             var end = position + item.Size;
@@ -112,7 +105,7 @@ namespace Inventories
             }
         }
 
-        private void RemoveItem(Item item, Vector2Int position)
+        public void RemoveItem(Item item, Vector2Int position)
         {
             var start = position;
             var end = position + item.Size;
@@ -124,12 +117,12 @@ namespace Inventories
             }
         }
 
-        private void MoveItem(Item item, Vector2Int position)
+        public void MoveItem(Item item, Vector2Int position)
         {
             throw new NotImplementedException();
         }
 
-        private void ClearGrid()
+        public void ClearGrid()
         {
             for (var y = 0; y < _grid.GetLength(1); y++)
             {
@@ -146,20 +139,12 @@ namespace Inventories
         public bool IsFree(in Vector2Int position) =>
             IsFree(position.x, position.y);
 
-        public void Dispose()
-        {
-            _inventory.OnAdded -= AddItem;
-            _inventory.OnRemoved -= RemoveItem;
-            _inventory.OnMoved -= MoveItem;
-            _inventory.OnCleared -= ClearGrid;
-        }
-
 
         private bool IsStartPositionValid(Vector2Int position) =>
             position.x >= 0 && position.x < _width &&
             position.y >= 0 && position.y < _height;
 
-        private bool IsIndexOutOfRange(Vector2Int position) =>
+        private bool IsSizeOutsideGrid(Vector2Int position) =>
             position.x > _width ||
             position.y > _height;
     }

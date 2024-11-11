@@ -21,6 +21,7 @@ namespace Inventories
 
         private readonly Dictionary<Item, Vector2Int> _items = new();
         private readonly InventoryGrid _grid;
+        private readonly InventoryController _controller;
 
         public Inventory(in int width, in int height)
         {
@@ -29,7 +30,8 @@ namespace Inventories
 
             Width = width;
             Height = height;
-            _grid = new InventoryGrid(this);
+            _grid = new InventoryGrid(Width, Height);
+            _controller = new InventoryController(this, _grid);
         }
 
         public Inventory(
