@@ -10,12 +10,18 @@ namespace Inventories
     {
         private readonly Inventory _inventory;
         private readonly Item[,] _grid;
+        private readonly int _width;
+        private readonly int _height;
 
 
         public InventoryGrid(Inventory inventory)
         {
             _inventory = inventory;
-            _grid = new Item[inventory.Width, inventory.Height];
+            
+            _width = inventory.Width;
+            _height = inventory.Height;
+            
+            _grid = new Item[_width, _height];
 
             _inventory.OnAdded += AddItem;
             _inventory.OnRemoved += RemoveItem;
@@ -150,11 +156,11 @@ namespace Inventories
 
 
         private bool IsStartPositionValid(Vector2Int position) =>
-            position.x >= 0 && position.x < _inventory.Width &&
-            position.y >= 0 && position.y < _inventory.Height;
+            position.x >= 0 && position.x < _width &&
+            position.y >= 0 && position.y < _height;
 
         private bool IsIndexOutOfRange(Vector2Int position) =>
-            position.x > _inventory.Width ||
-            position.y > _inventory.Height;
+            position.x > _width ||
+            position.y > _height;
     }
 }
