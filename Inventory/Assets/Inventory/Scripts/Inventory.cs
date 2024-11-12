@@ -114,7 +114,12 @@ namespace Inventories
 
         private bool TryAddItem(Vector2Int start, Vector2Int size)
         {
+            if (!IsPositionValid(start)) return false;
+            if (!IsSizeValid(size)) return false;
+
             var end = start + size;
+
+            if (!IsPositionValid(end - Vector2Int.one)) return false;
 
             for (var y = start.y; y < end.y; y++)
             for (var x = start.x; x < end.x; x++)
@@ -194,6 +199,8 @@ namespace Inventories
         {
             freePosition = default;
 
+            if (!IsSizeValid(size)) return false;
+
             for (var y = 0; y < Height; y++)
             for (var x = 0; x < Width; x++)
             {
@@ -204,6 +211,9 @@ namespace Inventories
                 if (TryAddItem(freePosition, size)) return true;
             }
 
+            //is not necessary
+            freePosition = default;
+
             return false;
         }
 
@@ -212,9 +222,8 @@ namespace Inventories
         /// </summary>
         public bool Contains(in Item item)
         {
+            if (IsNull(item)) return false;
             return _items.ContainsKey(item);
-            return ItemIsNotNullAndHasValidSize(item) &&
-                   _items.ContainsKey(item);
         }
 
         /// <summary>
@@ -429,7 +438,7 @@ namespace Inventories
             }
 
             OnAdded?.Invoke(item, positions[0]);
-            
+
             return true;
         }
 
@@ -437,6 +446,8 @@ namespace Inventories
         {
             if (size.x <= 0 || size.y <= 0)
                 throw new ArgumentException("Invalid size exception");
+
+            if (size.x > Width || size.y > Height) return false;
 
             return true;
         }
