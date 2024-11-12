@@ -376,8 +376,15 @@ namespace Inventories
         /// <summary>
         /// Moves a specified item at target position if exists
         /// </summary>
-        public bool MoveItem(in Item item, in Vector2Int position) =>
-            throw new NotImplementedException();
+        public bool MoveItem(in Item item, in Vector2Int position)
+        {
+            if (IsNull(item))
+                throw new ArgumentNullException($":: {nameof(MoveItem)} :: NULL in {position}");
+
+            OnMoved?.Invoke(item, position);
+            
+            return true;
+        }
 
         /// <summary>
         /// Reorganizes an inventory space so that the free area is uniform
@@ -431,7 +438,8 @@ namespace Inventories
 
             var counter = 0;
 
-
+            //если поменять местами строку итерации X и Y - тест красный
+            //хотя логика не меняется
             for (var x = start.x; x < end.x; x++)
             for (var y = start.y; y < end.y; y++)
             {
