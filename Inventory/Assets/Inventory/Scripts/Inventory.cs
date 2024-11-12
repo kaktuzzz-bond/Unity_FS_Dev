@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 namespace Inventories
@@ -258,17 +259,20 @@ namespace Inventories
 
             if (!ItemIsNotNullAndHasValidSize(item)) return false;
 
-            // if (!_items.Remove(item, out position)) return false;
-            //
+            if (!Contains(item)) return false;
+
             var positions = _items[item];
+
+            position = positions[0];
 
             foreach (var pos in positions)
             {
                 _grid[pos.x, pos.y] = null;
-
-                position = pos;
-                OnRemoved?.Invoke(item, position);
             }
+
+            _items.Remove(item);
+
+            OnRemoved?.Invoke(item, position);
 
             return true;
         }
@@ -279,22 +283,21 @@ namespace Inventories
         /// </summary>
         public Item GetItem(in Vector2Int position)
         {
-            return TryGetItem(position, out var item) ? item : null;
+            if (!IsPositionValid(position))
+                throw new IndexOutOfRangeException("Invalid position.");
+
+            _ = TryGetItem(position, out var item);
+
+            if (IsNull(item))
+                throw new NullReferenceException("Item is null.");
+
+            return item;
         }
 
         public Item GetItem(in int x, in int y)
         {
             var position = new Vector2Int(x, y);
-
-            if (!IsPositionValid(position))
-                throw new IndexOutOfRangeException("Invalid position.");
-
-            var item = GetItem(position);
-
-            if (item == null)
-                throw new NullReferenceException("Item is null.");
-
-            return item;
+            return GetItem(position);
         }
 
         public bool TryGetItem(in Vector2Int position, out Item item)
@@ -305,7 +308,7 @@ namespace Inventories
 
             if (IsOccupied(position))
             {
-                item = GetItem(position);
+                item = _grid[position.x, position.y];
             }
 
             return IsNotNull(item);
@@ -428,8 +431,9 @@ namespace Inventories
 
             var counter = 0;
 
-            for (var y = start.y; y < end.y; y++)
+
             for (var x = start.x; x < end.x; x++)
+            for (var y = start.y; y < end.y; y++)
             {
                 var position = new Vector2Int(x, y);
                 positions[counter] = position;
