@@ -357,8 +357,8 @@ namespace Inventories
 
             _items.Clear();
 
-            for (var y = 0; y < Height; y++)
             for (var x = 0; x < Width; x++)
+            for (var y = 0; y < Height; y++)
             {
                 _grid[x, y] = null;
             }
@@ -381,8 +381,19 @@ namespace Inventories
             if (IsNull(item))
                 throw new ArgumentNullException($":: {nameof(MoveItem)} :: NULL in {position}");
 
+            //если поставить проверку на пустое имя без проверки Contains - тест пройдет
+            //if (item.Name == string.Empty)return false;
+
+            if (!Contains(item)) return false;
+
+            if (!IsSizeValid(item.Size)) return false;
+
+            if (!IsPositionValid(position)) return false;
+
+            if (!TryAddItem(position, item.Size)) return false;
+
             OnMoved?.Invoke(item, position);
-            
+
             return true;
         }
 
