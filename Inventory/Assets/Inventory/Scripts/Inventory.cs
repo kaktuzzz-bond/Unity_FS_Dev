@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Inventories
@@ -19,9 +20,12 @@ namespace Inventories
 
         public int Count => _items.Count;
 
-        private readonly Dictionary<Item, Vector2Int> _items = new();
-        private readonly InventoryGrid _grid;
+        private readonly Dictionary<Item, Vector2Int[]> _items = new();
+
+        //private readonly InventoryGrid _oldGrid;
         private readonly InventoryController _controller;
+        
+        private readonly bool[,] _grid;
 
         public Inventory(in int width, in int height)
         {
@@ -30,9 +34,8 @@ namespace Inventories
 
             Width = width;
             Height = height;
-
-            _grid = new InventoryGrid(Width, Height);
-            _controller = new InventoryController(this, _grid);
+            
+            _grid = new bool[width, height];
         }
 
         public Inventory(
@@ -105,11 +108,11 @@ namespace Inventories
 
         public bool CanAddItem(in Item item, in int posX, in int posY)
         {
-            if (!ItemIsNotNullAndHasSize(item)) return false;
+            if (!ItemIsNotNullAndHasValidSize(item)) return false;
 
             var position = new Vector2Int(posX, posY);
 
-            if (!_grid.TryAddItem(item.Size, position)) return false;
+            if (!_oldGrid.TryAddItem(item.Size, position)) return false;
 
             if (Contains(item)) return false;
 
@@ -127,12 +130,25 @@ namespace Inventories
             if (!_items.TryAdd(item, position)) return false;
 
             _items.Add(item, position);
+            
+            AddItemToGrid(item, position);
 
             OnAdded?.Invoke(item, position);
 
             return true;
         }
+        private void AddItemToGrid(Item item, Vector2Int position)
+        {
+            var start = position;
+            var end = position + item.Size;
 
+            for (var y = start.y; y < end.y; y++)
+            for (var x = start.x; x < end.x; x++)
+            {
+                _oldGrid[x, y] = item;
+            }
+        }
+        
         public bool AddItem(in Item item, in int posX, in int posY)
         {
             var position = new Vector2Int(posX, posY);
@@ -156,7 +172,7 @@ namespace Inventories
         /// </summary>
         public bool CanAddItem(in Item item)
         {
-            if (!ItemIsNotNullAndHasSize(item)) return false;
+            if (!ItemIsNotNullAndHasValidSize(item)) return false;
 
             return FindFreePosition(item, out var freePosition) &&
                    CanAddItem(item, freePosition);
@@ -173,10 +189,42 @@ namespace Inventories
         public bool FindFreePosition(in Vector2Int size, out Vector2Int freePosition)
         {
             freePosition = default;
-            return IsSizeValid(size) &&
-                   _grid.FindFreePosition(size, out freePosition);
+            if( !IsSizeValid(size)) return false;
+               
+            for (var y = 0; y < _oldGrid.GetLength(1); y++)
+            for (var x = 0; x < _oldGrid.GetLength(0); x++)
+            {
+                if (!IsFree(x, y))
+                    continue;
+
+                freePosition = new Vector2Int(x, y);
+
+                if (TryAddItemToGrid(size, freePosition))
+                    return true;
+            }
+
+            freePosition = default;
+
+            return false;
         }
 
+        private bool TryAddItemToGrid(Vector2Int size, Vector2Int position)
+        {
+            if (!IsStartPositionValid(position)) return false;
+
+            var end = position + size;
+
+            if (IsStartPositionValid(end)) return false;
+
+            for (var y = position.y; y <= end.y; y++)
+            for (var x = position.x; x <= end.x; x++)
+            {
+                if (_oldGrid[x, y] != null)
+                    return false;
+            }
+
+            return true;
+        }
         public bool FindFreePosition(in int sizeX, int sizeY, out Vector2Int freePosition)
         {
             var size = new Vector2Int(sizeX, sizeY);
@@ -188,7 +236,7 @@ namespace Inventories
         /// </summary>
         public bool Contains(in Item item)
         {
-            return ItemIsNotNullAndHasSize(item) &&
+            return ItemIsNotNullAndHasValidSize(item) &&
                    _items.ContainsKey(item);
         }
 
@@ -205,10 +253,10 @@ namespace Inventories
         /// Checks if a position is free
         /// </summary>
         public bool IsFree(in Vector2Int position) =>
-            _grid.IsFree(position);
+            IsFree(position.x, position.y);
 
         public bool IsFree(in int x, in int y) =>
-            _grid.IsFree(x, y);
+            _oldGrid[x, y] == null;
 
         /// <summary>
         /// Removes a specified item if exists
@@ -222,15 +270,29 @@ namespace Inventories
         {
             position = default;
 
-            if (!ItemIsNotNullAndHasSize(item)) return false;
+            if (!ItemIsNotNullAndHasValidSize(item)) return false;
 
             if (!_items.Remove(item, out position)) return false;
 
+            RemoveItemFromGrid(item, out position);
+                
             OnRemoved?.Invoke(item, position);
 
             return true;
         }
 
+        public void RemoveItemFromGrid(Item item, Vector2Int position)
+        {
+            var start = position;
+            var end = position + item.Size;
+
+            for (var y = start.y; y < end.y; y++)
+            for (var x = start.x; x < end.x; x++)
+            {
+                _oldGrid[x, y] = null;
+            }
+        }
+        
         /// <summary>
         /// Returns an item at specified position 
         /// </summary>
@@ -243,7 +305,7 @@ namespace Inventories
         {
             var position = new Vector2Int(x, y);
 
-            if (!_grid.IsStartPositionValid(position))
+            if (!_oldGrid.IsStartPositionValid(position))
                 throw new IndexOutOfRangeException("Invalid position.");
 
             var item = GetItem(position);
@@ -256,7 +318,13 @@ namespace Inventories
 
         public bool TryGetItem(in Vector2Int position, out Item item)
         {
-            return _grid.TryGetItem(position, out item);
+            item = null;
+
+            if (!IsStartPositionValid(position)) return false;
+
+            item = _oldGrid[position.x, position.y];
+
+            return item != null;
         }
 
         public bool TryGetItem(in int x, in int y, out Item item)
@@ -285,11 +353,21 @@ namespace Inventories
         public bool TryGetPositions(in Item item, out Vector2Int[] positions)
         {
             positions = default;
-            if (!ItemIsNotNullAndHasSize(item)) return false;
-            if (!Contains(item)) return false;
+            
+            if (!ItemIsNotNullAndHasValidSize(item)) return false;
+            
+            if (!_items.TryGetValue(item, out var position)) return false;
+            
 
-            positions = _grid.GetPositions(item);
-
+            var end = position + item.Size;
+            
+            for (var y = position.y; y < end.y; y++)
+            for (var x = position.x; x < end.x; x++)
+            {
+                if (_oldGrid[x, y] != null)
+                    return false;
+            }
+            
             return true;
         }
 
@@ -299,8 +377,21 @@ namespace Inventories
         public void Clear()
         {
             if (Count <= 0) return;
-            _items.Clear();
+
+            ClearGrid();
+
             OnCleared?.Invoke();
+        }
+
+        private void ClearGrid()
+        {
+            _items.Clear();
+
+            for (var y = 0; y < Height; y++)
+            for (var x = 0; x < Width; x++)
+            {
+                _oldGrid[x, y] = null;
+            }
         }
 
         /// <summary>
@@ -325,7 +416,7 @@ namespace Inventories
         /// Copies inventory items to a specified matrix
         /// </summary>
         public void CopyTo(in Item[,] matrix) =>
-            _grid.CopyTo(matrix);
+            Array.Copy(_oldGrid, matrix, _oldGrid.Length);
 
 
         public IEnumerator<Item> GetEnumerator()
@@ -345,7 +436,7 @@ namespace Inventories
         IEnumerator IEnumerable.GetEnumerator() =>
             GetEnumerator();
 
-        private bool ItemIsNotNullAndHasSize(in Item item)
+        private bool ItemIsNotNullAndHasValidSize(in Item item)
         {
             return IsNotNull(item) && IsSizeValid(item.Size);
         }
@@ -362,6 +453,25 @@ namespace Inventories
                 throw new ArgumentException("Invalid size exception");
 
             return true;
+        }
+        
+        private bool IsStartPositionValid(Vector2Int position) =>
+            position.x >= 0 && position.x < Width &&
+            position.y >= 0 && position.y < Height;
+        
+        private Vector2Int[] GetPositionsFromGrid(in Item item)
+        {
+            var positions = new List<Vector2Int>();
+            for (var x = 0; x < _oldGrid.GetLength(0); x++)
+            for (var y = 0; y < _oldGrid.GetLength(1); y++)
+            {
+                if (ReferenceEquals(_oldGrid[x, y], item))
+                {
+                    positions.Add(new Vector2Int(x, y));
+                }
+            }
+
+            return positions.ToArray();
         }
     }
 }
