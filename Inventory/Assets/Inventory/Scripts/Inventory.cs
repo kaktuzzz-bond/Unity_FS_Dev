@@ -30,6 +30,7 @@ namespace Inventories
 
             Width = width;
             Height = height;
+
             _grid = new InventoryGrid(Width, Height);
             _controller = new InventoryController(this, _grid);
         }
@@ -104,7 +105,7 @@ namespace Inventories
 
         public bool CanAddItem(in Item item, in int posX, in int posY)
         {
-            if (!IsValidItem(item)) return false;
+            if (!ItemIsNotNullAndHasSize(item)) return false;
 
             var position = new Vector2Int(posX, posY);
 
@@ -125,6 +126,8 @@ namespace Inventories
 
             if (!_items.TryAdd(item, position)) return false;
 
+            _items.Add(item, position);
+
             OnAdded?.Invoke(item, position);
 
             return true;
@@ -144,7 +147,6 @@ namespace Inventories
         {
             if (!CanAddItem(item)) return false;
 
-
             return FindFreePosition(item, out var freePosition) &&
                    AddItem(item, freePosition);
         }
@@ -154,7 +156,7 @@ namespace Inventories
         /// </summary>
         public bool CanAddItem(in Item item)
         {
-            if (!IsValidItem(item)) return false;
+            if (!ItemIsNotNullAndHasSize(item)) return false;
 
             return FindFreePosition(item, out var freePosition) &&
                    CanAddItem(item, freePosition);
@@ -171,7 +173,7 @@ namespace Inventories
         public bool FindFreePosition(in Vector2Int size, out Vector2Int freePosition)
         {
             freePosition = default;
-            return IsValidSize(size) &&
+            return IsSizeValid(size) &&
                    _grid.FindFreePosition(size, out freePosition);
         }
 
@@ -186,7 +188,8 @@ namespace Inventories
         /// </summary>
         public bool Contains(in Item item)
         {
-            return IsValidItem(item) && _items.ContainsKey(item);
+            return ItemIsNotNullAndHasSize(item) &&
+                   _items.ContainsKey(item);
         }
 
         /// <summary>
@@ -212,26 +215,20 @@ namespace Inventories
         /// </summary>
         public bool RemoveItem(in Item item)
         {
-            if (!IsValidItem(item)) return false;
-
-            if (!_items.TryGetValue(item, out var pos)) return false;
-
-            OnRemoved?.Invoke(item, pos);
-
-            return _items.Remove(item);
+            return RemoveItem(item, out _);
         }
 
         public bool RemoveItem(in Item item, out Vector2Int position)
         {
             position = default;
 
-            if (!IsValidItem(item)) return false;
+            if (!ItemIsNotNullAndHasSize(item)) return false;
 
-            if (!_items.TryGetValue(item, out position)) return false;
+            if (!_items.Remove(item, out position)) return false;
 
             OnRemoved?.Invoke(item, position);
 
-            return _items.Remove(item);
+            return true;
         }
 
         /// <summary>
@@ -246,7 +243,7 @@ namespace Inventories
         {
             var position = new Vector2Int(x, y);
 
-            if (!IsStartPositionValid(position))
+            if (!_grid.IsStartPositionValid(position))
                 throw new IndexOutOfRangeException("Invalid position.");
 
             var item = GetItem(position);
@@ -288,7 +285,7 @@ namespace Inventories
         public bool TryGetPositions(in Item item, out Vector2Int[] positions)
         {
             positions = default;
-            if (!IsValidItem(item)) return false;
+            if (!ItemIsNotNullAndHasSize(item)) return false;
             if (!Contains(item)) return false;
 
             positions = _grid.GetPositions(item);
@@ -301,20 +298,16 @@ namespace Inventories
         /// </summary>
         public void Clear()
         {
-            if (Count == 0) return;
-
+            if (Count <= 0) return;
             _items.Clear();
-
             OnCleared?.Invoke();
         }
 
         /// <summary>
         /// Returns a count of items with a specified name
         /// </summary>
-        public int GetItemCount(string name)
-        {
-            return this.Count(x => x.Name == name);
-        }
+        public int GetItemCount(string name) =>
+            this.Count(x => x.Name == name);
 
         /// <summary>
         /// Moves a specified item at target position if exists
@@ -331,10 +324,8 @@ namespace Inventories
         /// <summary>
         /// Copies inventory items to a specified matrix
         /// </summary>
-        public void CopyTo(in Item[,] matrix)
-        {
+        public void CopyTo(in Item[,] matrix) =>
             _grid.CopyTo(matrix);
-        }
 
 
         public IEnumerator<Item> GetEnumerator()
@@ -351,30 +342,26 @@ namespace Inventories
             return items.GetEnumerator();
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator() =>
+            GetEnumerator();
+
+        private bool ItemIsNotNullAndHasSize(in Item item)
         {
-            return GetEnumerator();
+            return IsNotNull(item) && IsSizeValid(item.Size);
         }
 
-        // private bool IsNull(Item item) =>
-        //     item == null;
+        private bool IsNull(Item item) =>
+            item == null;
 
+        private bool IsNotNull(Item item) =>
+            item != null;
 
-        private bool IsValidItem(in Item item)
-        {
-            return item != null && IsValidSize(item.Size);
-        }
-
-        private bool IsValidSize(Vector2Int size)
+        private bool IsSizeValid(Vector2Int size)
         {
             if (size.x <= 0 || size.y <= 0)
                 throw new ArgumentException("Invalid size exception");
 
             return true;
         }
-
-        private bool IsStartPositionValid(Vector2Int position) =>
-            position.x >= 0 && position.x < Width &&
-            position.y >= 0 && position.y < Height;
     }
 }

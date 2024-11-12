@@ -74,10 +74,10 @@ namespace Inventories
 
             var end = position + size;
 
-            if (IsSizeOutsideGrid(end)) return false;
+            if (IsStartPositionValid(end)) return false;
 
-            for (var y = position.y; y < end.y; y++)
-            for (var x = position.x; x < end.x; x++)
+            for (var y = position.y; y <= end.y; y++)
+            for (var x = position.x; x <= end.x; x++)
             {
                 if (_grid[x, y] != null)
                     return false;
@@ -100,8 +100,6 @@ namespace Inventories
             for (var x = start.x; x < end.x; x++)
             {
                 _grid[x, y] = item;
-
-                //Debug.Log($"Add item {item} at {new Vector2Int(x, y)}");
             }
         }
 
@@ -140,12 +138,8 @@ namespace Inventories
             IsFree(position.x, position.y);
 
 
-        private bool IsStartPositionValid(Vector2Int position) =>
+        public bool IsStartPositionValid(Vector2Int position) =>
             position.x >= 0 && position.x < _width &&
             position.y >= 0 && position.y < _height;
-
-        private bool IsSizeOutsideGrid(Vector2Int position) =>
-            position.x > _width ||
-            position.y > _height;
     }
 }
