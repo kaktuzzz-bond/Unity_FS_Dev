@@ -109,12 +109,12 @@ namespace Inventories
 
             //position
             if (!IsPositionValid(position)) return false;
-            if (!TryAddItem(position, item.Size)) return false;
+            if (!TryAddItem(position, item.Size, null)) return false;
 
             return true;
         }
 
-        private bool TryAddItem(Vector2Int start, Vector2Int size)
+        private bool TryAddItem(Vector2Int start, Vector2Int size, Item item)
         {
             if (!IsPositionValid(start)) return false;
             if (!IsSizeValid(size)) return false;
@@ -126,7 +126,8 @@ namespace Inventories
             for (var x = start.x; x < end.x; x++)
             for (var y = start.y; y < end.y; y++)
             {
-                if (_grid[x, y] != null)
+                var result = _grid[x, y];
+                if (IsNotNull(result) && !ReferenceEquals(result, item))
                     return false;
             }
 
@@ -210,7 +211,7 @@ namespace Inventories
 
                 freePosition = new Vector2Int(x, y);
 
-                if (TryAddItem(freePosition, size)) return true;
+                if (TryAddItem(freePosition, size, null)) return true;
             }
 
             //is not necessary
@@ -391,12 +392,13 @@ namespace Inventories
 
             if (!IsPositionValid(position)) return false;
 
-            // var positions = _items[item];
-            // ClearGridOnPositions(positions);
+            if (!TryAddItem(position, item.Size, item)) return false;
 
-           // if(!PlaceOnGrid(item, position, out var positions)) return false;
-            
-            if (!TryAddItem(position, item.Size)) return false;
+            // ClearGridOnPositions(_items[item]);
+            //
+            // if (!PlaceOnGrid(item, position, out var positions)) return false;
+            //
+            // _items[item] = positions;
 
             OnMoved?.Invoke(item, position);
 
@@ -420,7 +422,7 @@ namespace Inventories
 
             foreach (var item in items)
             {
-               AddItem(item);
+                AddItem(item);
             }
         }
 
