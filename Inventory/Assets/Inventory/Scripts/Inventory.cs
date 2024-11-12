@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Codice.Client.BaseCommands.Differences;
 using UnityEditor;
 using UnityEngine;
 
@@ -357,11 +358,7 @@ namespace Inventories
 
             _items.Clear();
 
-            for (var x = 0; x < Width; x++)
-            for (var y = 0; y < Height; y++)
-            {
-                _grid[x, y] = null;
-            }
+            Array.Clear(_grid, 0, _grid.Length);
 
             OnCleared?.Invoke();
         }
@@ -400,8 +397,23 @@ namespace Inventories
         /// <summary>
         /// Reorganizes an inventory space so that the free area is uniform
         /// </summary>
-        public void ReorganizeSpace() =>
-            throw new NotImplementedException();
+        public void ReorganizeSpace()
+        {
+            var copy = new Item[Width, Height];
+
+            CopyTo(copy);
+
+            var items = new List<Item>(_items
+                .OrderByDescending(x => x.Value.Length)
+                .Select(pair => pair.Key));
+
+            Clear();
+
+            foreach (var item in items)
+            {
+               AddItem(item);
+            }
+        }
 
         /// <summary>
         /// Copies inventory items to a specified matrix
