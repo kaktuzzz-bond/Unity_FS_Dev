@@ -123,8 +123,8 @@ namespace Inventories
 
             if (!IsPositionValid(end - Vector2Int.one)) return false;
 
-            for (var y = start.y; y < end.y; y++)
             for (var x = start.x; x < end.x; x++)
+            for (var y = start.y; y < end.y; y++)
             {
                 if (_grid[x, y] != null)
                     return false;
@@ -266,10 +266,7 @@ namespace Inventories
 
             position = positions[0];
 
-            foreach (var pos in positions)
-            {
-                _grid[pos.x, pos.y] = null;
-            }
+            ClearGridOnPositions(positions);
 
             _items.Remove(item);
 
@@ -278,6 +275,13 @@ namespace Inventories
             return true;
         }
 
+        private void ClearGridOnPositions(Vector2Int[] positions)
+        {
+            foreach (var pos in positions)
+            {
+                _grid[pos.x, pos.y] = null;
+            }
+        }
 
         /// <summary>
         /// Returns an item at specified position 
@@ -387,6 +391,11 @@ namespace Inventories
 
             if (!IsPositionValid(position)) return false;
 
+            // var positions = _items[item];
+            // ClearGridOnPositions(positions);
+
+           // if(!PlaceOnGrid(item, position, out var positions)) return false;
+            
             if (!TryAddItem(position, item.Size)) return false;
 
             OnMoved?.Invoke(item, position);
