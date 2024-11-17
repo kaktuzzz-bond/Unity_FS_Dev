@@ -1,30 +1,61 @@
-namespace Homework
+using System;
+
+
+public sealed class Converter<TLoad, TUnload> where TLoad : class
+                                              where TUnload : class
 {
-    /**
-       Конвертер представляет собой преобразователь ресурсов, который берет ресурсы
-       из зоны погрузки (справа) и через несколько секунд преобразовывает его в
-       ресурсы другого типа (слева).
-       
-       Конвертер работает автоматически. Когда заканчивается цикл переработки
-       ресурсов, то конвертер берет следующую партию и начинает цикл по новой, пока
-       можно брать ресурсы из зоны загрузки или пока есть место для ресурсов выгрузки.
-       
-       Также конвертер можно выключать. Если конвертер во время работы был
-       выключен, то он возвращает обратно ресурсы в зону загрузки. Если в это время
-       были добавлены еще ресурсы, то при переполнении возвращаемые ресурсы
-       «сгорают».
-     
-       Характеристики конвертера:
-       - Зона погрузки: вместимость бревен
-       - Зона выгрузки: вместимость досок
-       - Кол-во ресурсов, которое берется с зоны погрузки
-       - Кол-во ресурсов, которое поставляется в зону выгрузки
-       - Время преобразования ресурсов
-       - Состояние: вкл/выкл
-     */
-    
-    public sealed class Converter
+    private int _loadCapacity;
+    private int _unloadCapacity;
+    private int _capacity;
+
+    public bool IsActive { get; private set; }
+    public float Efficiency { get; private set; }
+
+
+    public bool SetEfficiency(float efficiencyValue)
     {
-        //TODO: Написать конвертер ресурсов по TDD
+        if (efficiencyValue is < 0 or > 1) 
+            throw new ArgumentOutOfRangeException(nameof(SetEfficiency), efficiencyValue, "Value must be in 0..1 range.");
+
+        Efficiency = efficiencyValue;
+
+        return true;
+    }
+
+    public bool SetCapacity(int capacity)
+    {
+        if (capacity < 0) 
+            throw new ArgumentOutOfRangeException(nameof(capacity), capacity, "Value must be greater than or equal to zero.");
+
+        _capacity = capacity;
+
+        return true;
+    }
+
+    public void Activate(bool isActive)
+    {
+        IsActive = isActive;
+    }
+
+
+    public bool SetUnloadAreaCapacity(int capacity)
+    {
+        if (capacity < 0) 
+            throw new ArgumentOutOfRangeException(nameof(capacity), capacity, "Value must be greater than or equal to zero.");
+
+        _unloadCapacity = capacity;
+
+        return true;
+    }
+
+
+    public bool SetLoadAreaCapacity(int capacity)
+    {
+        if (capacity < 0) 
+            throw new ArgumentOutOfRangeException(nameof(capacity), capacity, "Value must be greater than or equal to zero.");
+
+        _loadCapacity = capacity;
+
+        return true;
     }
 }
