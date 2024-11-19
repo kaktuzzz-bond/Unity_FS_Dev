@@ -1,7 +1,0 @@
-{
-    "name": "Converter.PlayMode.Tests",
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ],
-    "references":[ "Modules.Converter", "Stubs.Tests" ]
-}

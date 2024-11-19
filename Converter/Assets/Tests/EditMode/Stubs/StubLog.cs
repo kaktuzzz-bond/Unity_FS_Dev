@@ -1,4 +1,4 @@
-namespace Tests.Stubs
+namespace Tests.EditMode.Stubs
 {
     public class StubLog
     {
