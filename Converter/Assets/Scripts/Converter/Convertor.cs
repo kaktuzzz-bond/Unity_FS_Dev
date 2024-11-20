@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ResourceConverter
+namespace Converter
 {
     public class Convertor<TResource, TProduct> where TResource : class
                                                 where TProduct : class, new()
@@ -13,6 +13,7 @@ namespace ResourceConverter
 
         private readonly TProduct[] _productStorage;
         private readonly TResource[] _grabber;
+        private readonly int _resourceStorageCapacity;
         private readonly int _productPerResource;
         private readonly float _processingTime;
 
@@ -23,6 +24,7 @@ namespace ResourceConverter
 
         public Convertor(int convertorCapacity,
                          int productStorageCapacity,
+                         int resourceStorageCapacity,
                          int productPerResource,
                          float processingTime)
         {
@@ -33,6 +35,10 @@ namespace ResourceConverter
             if (productStorageCapacity < 0)
                 throw new ArgumentOutOfRangeException(nameof(productStorageCapacity), convertorCapacity,
                                                       "The productStorageCapacity cannot be negative.");
+            
+            if (resourceStorageCapacity < 0)
+                throw new ArgumentOutOfRangeException(nameof(resourceStorageCapacity), convertorCapacity,
+                                                      "The resourceStorageCapacity cannot be negative.");
 
             if (productPerResource < 0)
                 throw new ArgumentOutOfRangeException(nameof(productPerResource), convertorCapacity,
@@ -44,6 +50,7 @@ namespace ResourceConverter
 
             _grabber = new TResource[convertorCapacity];
             _productStorage = new TProduct[productStorageCapacity];
+            _resourceStorageCapacity = resourceStorageCapacity;
             _productPerResource = productPerResource;
             _processingTime = processingTime;
         }
