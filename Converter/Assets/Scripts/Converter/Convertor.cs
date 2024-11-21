@@ -23,22 +23,12 @@ namespace Converter
 
 
         public Convertor(int convertorCapacity,
-                         int productStorageCapacity,
-                         int resourceStorageCapacity,
                          int productPerResource,
                          float processingTime)
         {
             if (convertorCapacity < 0)
                 throw new ArgumentOutOfRangeException(nameof(convertorCapacity), convertorCapacity,
                                                       "The convertorCapacity cannot be negative.");
-
-            if (productStorageCapacity < 0)
-                throw new ArgumentOutOfRangeException(nameof(productStorageCapacity), convertorCapacity,
-                                                      "The productStorageCapacity cannot be negative.");
-            
-            if (resourceStorageCapacity < 0)
-                throw new ArgumentOutOfRangeException(nameof(resourceStorageCapacity), convertorCapacity,
-                                                      "The resourceStorageCapacity cannot be negative.");
 
             if (productPerResource < 0)
                 throw new ArgumentOutOfRangeException(nameof(productPerResource), convertorCapacity,
@@ -47,10 +37,7 @@ namespace Converter
             if (processingTime < 0)
                 throw new ArgumentOutOfRangeException(nameof(processingTime), convertorCapacity,
                                                       "The timePerLoad cannot be negative.");
-
-            _grabber = new TResource[convertorCapacity];
-            _productStorage = new TProduct[productStorageCapacity];
-            _resourceStorageCapacity = resourceStorageCapacity;
+            
             _productPerResource = productPerResource;
             _processingTime = processingTime;
         }

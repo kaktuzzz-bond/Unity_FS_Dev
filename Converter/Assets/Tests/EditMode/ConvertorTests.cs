@@ -19,8 +19,13 @@ namespace Tests.EditMode
             _resourceStorage = new Storage<StubLog>(20);
             _productStorage = new Storage<StubPlank>(300);
         }
-        
-        
+
+
+        [Test]
+        public void Constructor_InitializeWithValidParameters_ExpectNotNull()
+        {
+            //var convertor = new ConvertorTests()
+        }
         
         
         // private Convertor<StubLog, StubPlank> _defaultConverter;
