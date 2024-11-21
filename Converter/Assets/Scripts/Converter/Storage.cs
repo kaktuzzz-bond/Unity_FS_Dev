@@ -1,14 +1,15 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Converter
 {
-    public class Storage<T> where T : class
+    public class Storage<T> : IEnumerable<T> where T : class
     {
         public event Action OnFull;
 
-        private readonly int _capacity;
+        public int Capacity { get; }
 
         private readonly Queue<T> _storage;
 
@@ -19,8 +20,8 @@ namespace Converter
                 throw new ArgumentOutOfRangeException(nameof(T), capacity,
                                                       "The convertorCapacity cannot be negative.");
 
-            _capacity = capacity;
-            _storage = new Queue<T>(_capacity);
+            Capacity = capacity;
+            _storage = new Queue<T>(Capacity);
         }
 
 
@@ -51,22 +52,21 @@ namespace Converter
         }
 
 
-        public int Add(params T[] items)
+        public bool Add(out List<T> overloads, params T[] items)
         {
-            var count = 0;
+            overloads = new List<T>();
 
-            if (items == null || items.Length == 0) return 0;
-
-            if (_capacity - _storage.Count < items.Length) return 0;
+            if (items == null || items.Length == 0) return false;
 
             foreach (var item in items)
             {
-                if (!AddItem(item)) continue;
+                if (item == null || Contains(item) || AddItem(item))
+                    continue;
 
-                count++;
+                overloads.Add(item);
             }
 
-            return count;
+            return overloads.Count == 0;
         }
 
 
@@ -82,20 +82,38 @@ namespace Converter
             new List<T>(_storage);
 
 
-        private bool AddItem(T item)
+        public bool AddItem(T item)
         {
-            if (item == null || Contains(item))
+            if (item == null || Count == Capacity)
                 return false;
 
             _storage.Enqueue(item);
 
-            if (Count > _capacity)
-                throw new OverflowException($":: OVERFLOW :: Capacity was [{_capacity}] but the storage is [{Count}].");
-
-            if (Count == _capacity)
-                OnFull?.Invoke();
+            CheckStorageCapacity();
 
             return true;
+        }
+
+
+        private void CheckStorageCapacity()
+        {
+            if (Count == Capacity)
+                OnFull?.Invoke();
+
+            if (Count > Capacity)
+                throw new OverflowException($":: OVERFLOW :: Capacity was [{Capacity}] but the storage is [{Count}].");
+        }
+
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return _storage.GetEnumerator();
+        }
+
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

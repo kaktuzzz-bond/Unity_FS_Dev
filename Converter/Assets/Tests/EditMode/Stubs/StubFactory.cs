@@ -1,3 +1,5 @@
+using Converter;
+
 namespace Tests.EditMode.Stubs
 {
     public static class StubFactory

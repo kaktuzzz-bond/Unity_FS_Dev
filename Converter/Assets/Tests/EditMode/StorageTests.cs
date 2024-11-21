@@ -25,9 +25,8 @@ namespace Tests.EditMode
 
             var items = StubFactory.Create<StubLog>(countToLoad);
 
-            var add = storage.Add(items);
+            _ = storage.Add(out _, items);
 
-            Assert.AreEqual(add, countToLoad);
             Assert.AreEqual(storage.Count, countToLoad);
 
             var get = storage.Get(countToGet).ToArray();
@@ -44,9 +43,9 @@ namespace Tests.EditMode
 
             var items = Array.Empty<StubLog>();
 
-            var add = storage.Add(items);
+            var add = storage.Add(out _, items);
 
-            Assert.AreEqual(add, 0);
+            Assert.IsFalse(add);
             Assert.AreEqual(storage.Count, 0);
 
             var get = storage.GetSingle(out var item);
@@ -63,9 +62,8 @@ namespace Tests.EditMode
 
             var first = new StubLog();
 
-            var add = storage.Add(first);
+            _ = storage.Add(out _, first);
 
-            Assert.AreEqual(add, 1);
             Assert.AreEqual(storage.Count, 1);
 
             var get = storage.GetSingle(out var item);
@@ -87,9 +85,8 @@ namespace Tests.EditMode
 
             var items = new[] { first, second, third };
 
-            var add = storage.Add(items);
+            _ = storage.Add(out _, items);
 
-            Assert.AreEqual(add, 3);
             Assert.AreEqual(storage.Count, 3);
 
             var get = storage.GetAll().ToArray();
@@ -113,9 +110,8 @@ namespace Tests.EditMode
 
             var items = StubFactory.Create<StubLog>(3);
 
-            var add = storage.Add(items);
+            _ = storage.Add(out _, items);
 
-            Assert.AreEqual(add, 3);
             Assert.AreEqual(storage.Count, 3);
 
             Assert.IsTrue(isFull);
@@ -129,9 +125,8 @@ namespace Tests.EditMode
 
             var items = StubFactory.Create<StubLog>(10);
 
-            var add = storage.Add(items);
+            _ = storage.Add(out _, items);
 
-            Assert.AreEqual(add, 10);
             Assert.AreEqual(storage.Count, 10);
 
             storage.Clear();
@@ -154,9 +149,10 @@ namespace Tests.EditMode
                 first, null, second, first, third, null
             };
 
-            var add = storage.Add(items);
+            var add = storage.Add(out var overloads, items);
 
-            Assert.AreEqual(add, 3);
+            Assert.IsTrue(add);
+            Assert.AreEqual(overloads.Count, 0);
             Assert.AreEqual(storage.Count, 3);
 
             Assert.IsTrue(storage.Contains(first) &&
@@ -165,20 +161,41 @@ namespace Tests.EditMode
         }
 
 
-        [TestCase(3, 10, 0)]
-        [TestCase(3, 0, 0)]
-        [TestCase(3, 3, 3)]
-        [TestCase(3, 1, 1)]
-        public void Add_ValidObjects_ExpectFalse(int capacity, int count, int expectedCount)
+        [TestCase(3, 10, 3, 7)]
+        [TestCase(3, 0, 0, 0)]
+        public void Add_ValidObjectsWithOverloadsOrZero_ExpectFalse(int capacity,
+                                                                    int count,
+                                                                    int expectedStorageCount,
+                                                                    int expectedOverloadCount)
         {
             var storage = new Storage<StubLog>(capacity);
 
             var items = StubFactory.Create<StubLog>(count);
 
-            var add = storage.Add(items);
+            var add = storage.Add(out var overloads, items);
 
-            Assert.AreEqual(add, expectedCount);
-            Assert.AreEqual(storage.Count, expectedCount);
+            Assert.IsFalse(add);
+            Assert.AreEqual(overloads.Count, expectedOverloadCount);
+            Assert.AreEqual(storage.Count, expectedStorageCount);
+        }
+
+
+        [TestCase(3, 3, 3, 0)]
+        [TestCase(3, 1, 1, 0)]
+        public void Add_ValidObjects_ExpectCorrectCount(int capacity,
+                                                        int count,
+                                                        int expectedStorageCount,
+                                                        int expectedOverloadCount)
+        {
+            var storage = new Storage<StubLog>(capacity);
+
+            var items = StubFactory.Create<StubLog>(count);
+
+            var add = storage.Add(out var overloads, items);
+
+            Assert.IsTrue(add);
+            Assert.AreEqual(overloads.Count, expectedOverloadCount);
+            Assert.AreEqual(storage.Count, expectedStorageCount);
         }
 
 
@@ -187,9 +204,9 @@ namespace Tests.EditMode
         {
             var storage = new Storage<StubLog>(10);
 
-            var add = storage.Add(null);
+            var add = storage.Add(out _, null);
 
-            Assert.AreEqual(add, 0);
+            Assert.IsFalse(add);
             Assert.AreEqual(storage.Count, 0);
         }
 

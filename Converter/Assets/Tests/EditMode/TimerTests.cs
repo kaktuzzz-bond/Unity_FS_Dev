@@ -23,7 +23,7 @@ namespace Tests.EditMode
 
             var wasTimeout = false;
 
-            timer.OnTimeOut += () => wasTimeout = true;
+            timer.OnTimeUp += () => wasTimeout = true;
 
             timer.Tick(0.6f);
 
@@ -38,7 +38,7 @@ namespace Tests.EditMode
 
             var wasTimeout = false;
 
-            timer.OnTimeOut += () => wasTimeout = true;
+            timer.OnTimeUp += () => wasTimeout = true;
 
             timer.Tick(0.5f);
             Assert.IsFalse(wasTimeout);

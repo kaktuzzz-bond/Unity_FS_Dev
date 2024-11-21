@@ -1,10 +1,11 @@
 using System;
+using UnityEngine;
 
 namespace Converter
 {
     public class Timer
     {
-        public event Action OnTimeOut;
+        public event Action OnTimeUp;
 
         private readonly float _seconds;
         private float _timer;
@@ -30,9 +31,11 @@ namespace Converter
 
             _timer -= deltaTime;
 
+            Debug.Log($"Timer: {_timer}");
+            
             if (_timer > 0f) return;
 
-            OnTimeOut?.Invoke();
+            OnTimeUp?.Invoke();
 
             Reset();
         }

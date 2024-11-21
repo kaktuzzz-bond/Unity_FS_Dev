@@ -1,65 +1,41 @@
 using System;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 namespace Converter
 {
-    public class Convertor<TResource, TProduct> where TResource : class
-                                                where TProduct : class, new()
+    public class Convertor<TResource, TProduct> : IDisposable where TResource : class, IResource
+                                                              where TProduct : class, new()
     {
         public bool IsActive { get; private set; }
-        public int ResourceCount => _resourceStorage.Count;
-        public int ProductCount => _productCounter + 1;
 
-        private readonly TProduct[] _productStorage;
-        private readonly TResource[] _grabber;
-        private readonly int _resourceStorageCapacity;
-        private readonly int _productPerResource;
-        private readonly float _processingTime;
+        private readonly Storage<TResource> _resourceStorage;
+        private readonly Storage<TProduct> _productStorage;
 
-        private readonly Queue<TResource> _resourceStorage = new();
-        private int _productCounter = -1;
-        private float _timeCounter;
+        private readonly Storage<TResource> _loadingSlot;
+        private readonly Storage<TProduct> _unloadingSlot;
+
+        private readonly Timer _timer;
 
 
-        public Convertor(int convertorCapacity,
-                         int productPerResource,
+        public Convertor(int resourceStorageCapacity,
+                         int productStorageCapacity,
+                         int loadAmount,
+                         int unloadAmount,
                          float processingTime)
         {
-            if (convertorCapacity < 0)
-                throw new ArgumentOutOfRangeException(nameof(convertorCapacity), convertorCapacity,
-                                                      "The convertorCapacity cannot be negative.");
+            if (loadAmount < 0 || unloadAmount < 0)
+                throw new
+                    ArgumentOutOfRangeException($"Load amount [{loadAmount}] and unload amount [{unloadAmount}] cannot be negative.");
 
-            if (productPerResource < 0)
-                throw new ArgumentOutOfRangeException(nameof(productPerResource), convertorCapacity,
-                                                      "The productPerResource cannot be negative.");
+            _resourceStorage = new Storage<TResource>(resourceStorageCapacity);
+            _productStorage = new Storage<TProduct>(productStorageCapacity);
 
-            if (processingTime < 0)
-                throw new ArgumentOutOfRangeException(nameof(processingTime), convertorCapacity,
-                                                      "The timePerLoad cannot be negative.");
-            
-            _productPerResource = productPerResource;
-            _processingTime = processingTime;
-        }
+            _loadingSlot = new Storage<TResource>(loadAmount);
+            _unloadingSlot = new Storage<TProduct>(unloadAmount);
 
+            _timer = new Timer(processingTime);
 
-        public int Add(params TResource[] resources)
-        {
-            if (resources == null)
-                throw new ArgumentNullException(nameof(resources), "Resources cannot be null");
-
-            if (resources.Length == 0) return 0;
-
-            foreach (var resource in resources)
-            {
-                if (resource == null ||
-                    _resourceStorage.Contains(resource))
-                    continue;
-
-                _resourceStorage.Enqueue(resource);
-            }
-
-            return _resourceStorage.Count;
+            _timer.OnTimeUp += OnTimeUp;
         }
 
 
@@ -72,6 +48,11 @@ namespace Converter
         public void Stop()
         {
             IsActive = false;
+
+            if (_loadingSlot.Count > 0)
+            {
+                _resourceStorage.Add(out _, _loadingSlot.ToArray());
+            }
         }
 
 
@@ -79,92 +60,57 @@ namespace Converter
         {
             if (!IsActive) return;
 
-            _timeCounter -= dt;
-
-            Debug.Log($"Update: {_timeCounter}");
-
-            if (_timeCounter > 0f) return;
-
-            Grab();
-
-            var converted = Convert();
-
-            PlaceToProductStorage(converted);
-
-            ResetTimer();
+            _timer.Tick(dt);
         }
 
 
-        private void Grab()
+        private void OnTimeUp()
         {
-            for (var i = 0; i < _grabber.Length; i++)
+            Convert();
+
+            Unload();
+
+            Load();
+
+            _timer.Reset();
+        }
+
+
+        private void Load()
+        {
+            var resources = _resourceStorage.Get(_loadingSlot.Capacity);
+
+            if (!_loadingSlot.Add(out var overloads, resources.ToArray()))
             {
-                if (_resourceStorage.TryDequeue(out var resource))
-                    _grabber[i] = resource;
+                _resourceStorage.Add(out _, overloads.ToArray());
             }
         }
 
 
-        private void PlaceToProductStorage(params TProduct[] products)
+        private void Unload()
         {
-            foreach (var product in products)
+            if (!_productStorage.Add(out var overloads, _unloadingSlot.ToArray()))
             {
-                _productCounter++;
+                _productStorage.Add(out _, overloads.ToArray());
+            }
+        }
 
-                if (_productCounter > _productStorage.Length)
-                    throw new
-                        InvalidOperationException($"The product counter is out of range {_productCounter} : {_productStorage.Length}");
 
-                if (_productCounter == _productStorage.Length)
+        private void Convert()
+        {
+            foreach (var resource in _loadingSlot)
+            {
+                for (var i = 0; i < resource.ProductAmount; i++)
                 {
-                    Stop();
-
-                    return;
+                    _unloadingSlot.AddItem(new TProduct());
                 }
-
-                _productStorage[_productCounter] = product;
             }
         }
 
 
-        private TProduct[] Convert()
+        public void Dispose()
         {
-            var products = Array.Empty<TProduct>();
-
-            for (var i = 0; i < _grabber.Length; i++)
-            {
-                if (_grabber[i] == null) continue;
-
-                var converted = ConvertResourceToProduct(_grabber[i]);
-
-                _grabber[i] = null;
-
-                var length = products.Length;
-
-                Array.Resize(ref products, length + converted.Length);
-                Array.Copy(converted, 0, products, length, converted.Length);
-            }
-
-            return products;
-        }
-
-
-        private TProduct[] ConvertResourceToProduct(TResource resource)
-        {
-            var products = new TProduct[_productPerResource];
-
-            for (var i = 0; i < products.Length; i++)
-            {
-                products[i] = new TProduct();
-            }
-
-            return products;
-        }
-
-
-        private void ResetTimer()
-        {
-            _timeCounter = _processingTime;
+            _timer.OnTimeUp -= OnTimeUp;
         }
     }
 }
