@@ -10,6 +10,16 @@ namespace Tests.EditMode
     public class StorageTests
     {
         [Test]
+        public void GetEnumerator_TryToGetIEnumerator_NotNull()
+        {
+            var storage = new Storage<StubLog>(3);
+            var enumerator = storage.GetEnumerator();
+            Assert.NotNull(enumerator);
+            enumerator.Dispose();
+        }
+
+
+        [Test]
         [TestCase(10, 5, 3, 3, 2)]
         [TestCase(10, 5, 5, 5, 0)]
         [TestCase(10, 3, 5, 3, 0)]
@@ -96,25 +106,6 @@ namespace Tests.EditMode
             Assert.IsTrue(get.Contains(first) &&
                           get.Contains(second) &&
                           get.Contains(third));
-        }
-
-
-        [Test]
-        public void OnFull_CallOnFullEvent_ExpectInvoked()
-        {
-            var storage = new Storage<StubLog>(3);
-
-            var isFull = false;
-
-            storage.OnFull += () => isFull = true;
-
-            var items = StubFactory.Create<StubLog>(3);
-
-            _ = storage.Add(out _, items);
-
-            Assert.AreEqual(storage.Count, 3);
-
-            Assert.IsTrue(isFull);
         }
 
 

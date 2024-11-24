@@ -8,39 +8,54 @@ namespace Converter
     {
         public bool IsActive { get; private set; }
 
+        public int ResourcesCount => _resourceStorage.Count;
+        public int ProductsCount => _productStorage.Count;
+        public int GrabbedCount => _grabber.Count;
+
         private readonly Storage<TResource> _resourceStorage;
+
         private readonly Storage<TProduct> _productStorage;
 
-        private readonly Storage<TResource> _loadingSlot;
-        private readonly Storage<TProduct> _unloadingSlot;
+        private readonly Storage<TResource> _grabber;
+
+        private readonly int _productPerConversion;
 
         private readonly Timer _timer;
 
 
         public Convertor(int resourceStorageCapacity,
                          int productStorageCapacity,
-                         int loadAmount,
-                         int unloadAmount,
+                         int converterCapacity,
+                         int productPerConversion,
                          float processingTime)
         {
-            if (loadAmount < 0 || unloadAmount < 0)
+            if (converterCapacity < 0 || productPerConversion < 0)
                 throw new
-                    ArgumentOutOfRangeException($"Load amount [{loadAmount}] and unload amount [{unloadAmount}] cannot be negative.");
+                    ArgumentOutOfRangeException($"Load amount [{converterCapacity}] and unload amount [{productPerConversion}] cannot be negative.");
+
+            _productPerConversion = productPerConversion;
 
             _resourceStorage = new Storage<TResource>(resourceStorageCapacity);
             _productStorage = new Storage<TProduct>(productStorageCapacity);
 
-            _loadingSlot = new Storage<TResource>(loadAmount);
-            _unloadingSlot = new Storage<TProduct>(unloadAmount);
+            _grabber = new Storage<TResource>(converterCapacity);
 
-            _timer = new Timer(processingTime);
+            _timer = new Timer(processingTime, false);
 
             _timer.OnTimeUp += OnTimeUp;
         }
 
 
+        public void Dispose()
+        {
+            _timer.OnTimeUp -= OnTimeUp;
+        }
+
+
         public void Start()
         {
+            LoadFromResourcesToSlot();
+
             IsActive = true;
         }
 
@@ -49,68 +64,60 @@ namespace Converter
         {
             IsActive = false;
 
-            if (_loadingSlot.Count > 0)
-            {
-                _resourceStorage.Add(out _, _loadingSlot.ToArray());
-            }
+            ReturnResourceFromGrabber();
         }
 
 
         public void Update(float dt)
         {
             if (!IsActive) return;
+           
+            if (_productStorage.Count == _productStorage.Capacity) return;
 
             _timer.Tick(dt);
         }
 
 
+        public bool AddResourcesToStorage(params TResource[] resources)
+        {
+            return _resourceStorage.Add(out _, resources);
+        }
+
+
         private void OnTimeUp()
         {
-            Convert();
+            ConvertResourcesAndPutToProductSlot();
 
-            Unload();
-
-            Load();
+            LoadFromResourcesToSlot();
 
             _timer.Reset();
         }
 
 
-        private void Load()
+        private void ReturnResourceFromGrabber()
         {
-            var resources = _resourceStorage.Get(_loadingSlot.Capacity);
+            _resourceStorage.Add(out _, _grabber.ToArray());
 
-            if (!_loadingSlot.Add(out var overloads, resources.ToArray()))
-            {
-                _resourceStorage.Add(out _, overloads.ToArray());
-            }
+            _grabber.Clear();
         }
 
 
-        private void Unload()
+        private void ConvertResourcesAndPutToProductSlot()
         {
-            if (!_productStorage.Add(out var overloads, _unloadingSlot.ToArray()))
+            for (var i = 0; i < _productPerConversion; i++)
             {
-                _productStorage.Add(out _, overloads.ToArray());
+                _productStorage.Add(out _, new TProduct());
             }
+
+            _grabber.Clear();
         }
 
 
-        private void Convert()
+        private void LoadFromResourcesToSlot()
         {
-            foreach (var resource in _loadingSlot)
-            {
-                for (var i = 0; i < resource.ProductAmount; i++)
-                {
-                    _unloadingSlot.AddItem(new TProduct());
-                }
-            }
-        }
+            var resources = _resourceStorage.Get(_grabber.Capacity).ToArray();
 
-
-        public void Dispose()
-        {
-            _timer.OnTimeUp -= OnTimeUp;
+            _grabber.Add(out _, resources);
         }
     }
 }

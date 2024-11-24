@@ -31,8 +31,6 @@ namespace Converter
 
             _timer -= deltaTime;
 
-            Debug.Log($"Timer: {_timer}");
-            
             if (_timer > 0f) return;
 
             OnTimeUp?.Invoke();

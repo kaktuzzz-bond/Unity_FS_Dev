@@ -7,8 +7,6 @@ namespace Converter
 {
     public class Storage<T> : IEnumerable<T> where T : class
     {
-        public event Action OnFull;
-
         public int Capacity { get; }
 
         private readonly Queue<T> _storage;
@@ -89,20 +87,11 @@ namespace Converter
 
             _storage.Enqueue(item);
 
-            CheckStorageCapacity();
+     
 
             return true;
         }
-
-
-        private void CheckStorageCapacity()
-        {
-            if (Count == Capacity)
-                OnFull?.Invoke();
-
-            if (Count > Capacity)
-                throw new OverflowException($":: OVERFLOW :: Capacity was [{Capacity}] but the storage is [{Count}].");
-        }
+        
 
 
         public IEnumerator<T> GetEnumerator()
