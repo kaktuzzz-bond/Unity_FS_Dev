@@ -31,15 +31,18 @@ namespace SampleGame
             _presenter = presenter;
         }
 
-        private void OnEnable()
+        public void Show()
         {
+            _presenter.OnStateShanged += UpdateView;
             _consumeButton.interactable = _presenter.IsConsumable;
             _consumeButton.onClick.AddListener(OnConsumeButtonClicked);
             UpdateView();
         }
 
-        private void OnDisable()
+        public void Hide()
         {            
+            //???
+            _presenter.OnStateShanged -= UpdateView;
             _consumeButton.onClick.RemoveListener(OnConsumeButtonClicked);
         }
 
@@ -55,5 +58,6 @@ namespace SampleGame
             _count.text = _presenter.Count;
             _icon.sprite = _presenter.Icon;
         }
+        
     }
 }
