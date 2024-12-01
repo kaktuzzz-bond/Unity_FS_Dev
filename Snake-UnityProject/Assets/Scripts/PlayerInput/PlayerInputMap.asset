@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae49ae48bf1245e58d60c3a3bc1c215, type: 3}
+  m_Name: PlayerInputMap
+  m_EditorClassIdentifier: 
+  <MoveLeft>k__BackingField: 97
+  <MoveRight>k__BackingField: 100
+  <MoveUp>k__BackingField: 119
+  <MoveDown>k__BackingField: 115
+  <StartGame>k__BackingField: 32
+  <PauseGame>k__BackingField: 112
+  <ResumeGame>k__BackingField: 114
+  <FinishGame>k__BackingField: 27

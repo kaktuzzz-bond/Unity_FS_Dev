@@ -1,0 +1,16 @@
+{
+    "name": "Snake.PlayerInput",
+    "rootNamespace": "",
+    "references": [
+        "GUID:02b11abe76e3423a94e0b99a1a3738c6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
