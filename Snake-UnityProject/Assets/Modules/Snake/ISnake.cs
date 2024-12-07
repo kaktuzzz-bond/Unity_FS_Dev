@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Modules
+namespace Modules.Snake
 {
     //Don't modify
     public interface ISnake

@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Modules
+namespace Modules.Snake
 {
     //Don't modify
     public sealed class Snake : MonoBehaviour, ISnake

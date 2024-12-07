@@ -1,4 +1,4 @@
-using SnakeGame;
+using Modules.UI;
 using UnityEngine;
 
 namespace Zenject
@@ -6,14 +6,20 @@ namespace Zenject
     public class UIInstaller : MonoInstaller<UIInstaller>
     {
         [SerializeField]
-        private GameUI _gameUI;
+        private GameUI gameUI;
 
 
         public override void InstallBindings()
         {
+            BindGameUI();
+        }
+
+
+        private void BindGameUI()
+        {
             Container.Bind<IGameUI>()
                      .To<GameUI>()
-                     .FromInstance(_gameUI)
+                     .FromInstance(gameUI)
                      .AsSingle();
         }
     }

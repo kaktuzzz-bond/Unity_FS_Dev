@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Modules
+namespace Modules.Coin
 {
     //Don't modify
     public interface ICoin

@@ -4,7 +4,7 @@ using Sirenix.Serialization;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Modules
+namespace Modules.Coin
 {
     //Don't modify
     public sealed class Coin : SerializedMonoBehaviour, ICoin

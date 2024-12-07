@@ -1,6 +1,6 @@
 using System;
 
-namespace Modules
+namespace Modules.Difficulty
 {
     //Don't modify
     public interface IDifficulty

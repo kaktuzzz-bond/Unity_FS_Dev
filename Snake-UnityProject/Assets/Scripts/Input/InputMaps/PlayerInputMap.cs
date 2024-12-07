@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace SampleGame
+namespace Input.InputMaps
 {
     [CreateAssetMenu(
                         fileName = "PlayerInputMap",
-                        menuName = "Game/New PlayerInputMap"
+                        menuName = "Game/Input/New PlayerInputMap"
                     )]
     public sealed class PlayerInputMap : ScriptableObject
     {
@@ -20,18 +20,5 @@ namespace SampleGame
 
         [field: SerializeField]
         public KeyCode MoveDown { get; private set; } = KeyCode.S;
-
-        [field: Header("Game States")]
-        [field: SerializeField]
-        public KeyCode StartGame { get; private set; } = KeyCode.Space;
-
-        [field: SerializeField]
-        public KeyCode PauseGame { get; private set; } = KeyCode.P;
-
-        [field: SerializeField]
-        public KeyCode ResumeGame { get; private set; } = KeyCode.R;
-        
-        [field: SerializeField]
-        public KeyCode FinishGame { get; private set; } = KeyCode.Escape;
     }
 }

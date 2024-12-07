@@ -1,6 +1,6 @@
-using Modules;
+using Modules.Snake;
 
-namespace SampleGame
+namespace Input
 {
     public interface IPlayerInput
     {

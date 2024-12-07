@@ -1,7 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 
-namespace Modules
+namespace Modules.Score
 {
     //Don't modify
     public sealed class Score : IScore

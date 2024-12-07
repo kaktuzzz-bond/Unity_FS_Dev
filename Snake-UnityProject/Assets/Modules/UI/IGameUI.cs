@@ -1,4 +1,4 @@
-namespace SnakeGame
+namespace Modules.UI
 {
     public interface IGameUI
     {

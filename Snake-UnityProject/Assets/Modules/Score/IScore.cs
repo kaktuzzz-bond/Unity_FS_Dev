@@ -1,6 +1,6 @@
 using System;
 
-namespace Modules
+namespace Modules.Score
 {
     //Don't modify
     public interface IScore
