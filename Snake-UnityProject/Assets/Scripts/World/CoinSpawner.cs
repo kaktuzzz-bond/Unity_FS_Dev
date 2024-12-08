@@ -11,8 +11,6 @@ namespace World
             coin.Generate();
             coin.Position = position;
             coin.transform.SetParent(parent);
-           
         }
-      
     }
 }

@@ -4,6 +4,7 @@ using Modules.Difficulty;
 using Modules.Score;
 using Modules.UI;
 using UnityEngine;
+using World;
 using Zenject;
 
 namespace UI
@@ -14,17 +15,20 @@ namespace UI
         private readonly IDifficulty _difficulty;
         private readonly IScore _score;
         private readonly PlayerDeathObserver _playerDeathObserver;
+        private readonly CoinCollector _coinCollector;
 
 
         public UIController(IGameUI gameUI,
                             IDifficulty difficulty,
                             IScore score,
-                            PlayerDeathObserver playerDeathObserver)
+                            PlayerDeathObserver playerDeathObserver,
+                            CoinCollector coinCollector)
         {
             _gameUI = gameUI;
             _difficulty = difficulty;
             _score = score;
             _playerDeathObserver = playerDeathObserver;
+            _coinCollector = coinCollector;
         }
 
 
@@ -33,7 +37,8 @@ namespace UI
             _difficulty.OnStateChanged += OnDifficultyChanged;
             _score.OnStateChanged += OnScoreChanged;
             _playerDeathObserver.OnDeath += ShowFailed;
-
+            _coinCollector.OnGameWon += ShowWin;
+            
             ResetUIValues();
         }
 
@@ -46,7 +51,6 @@ namespace UI
 
         private void OnDifficultyChanged()
         {
-            Debug.Log("OnDifficultyChanged");
             _gameUI.SetDifficulty(_difficulty.Current, _difficulty.Max);
         }
 
@@ -76,6 +80,7 @@ namespace UI
             _difficulty.OnStateChanged -= OnDifficultyChanged;
             _score.OnStateChanged -= OnScoreChanged;
             _playerDeathObserver.OnDeath -= ShowFailed;
+            _coinCollector.OnGameWon -= ShowWin;
         }
     }
 }

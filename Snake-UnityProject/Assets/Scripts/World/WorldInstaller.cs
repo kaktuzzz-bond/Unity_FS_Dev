@@ -22,8 +22,11 @@ namespace World
             Container.BindMemoryPool<Coin, CoinSpawner>()
                      .FromComponentInNewPrefab(_coinPrefab)
                      .WithGameObjectName("Coin")
+                     .UnderTransformGroup("[Coins]")
                      .AsSingle();
             
+            Container.BindInterfacesAndSelfTo<CoinCollector>()
+                     .AsSingle();
         }
     }
 }

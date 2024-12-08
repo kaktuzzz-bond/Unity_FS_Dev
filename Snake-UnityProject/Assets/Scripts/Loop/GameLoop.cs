@@ -1,9 +1,5 @@
 using System;
 using Input.InputMaps;
-using Modules.Difficulty;
-using Modules.Score;
-using UnityEngine;
-using UnityEngine.UIElements;
 using Zenject;
 
 namespace Loop
@@ -15,7 +11,6 @@ namespace Loop
         public bool IsInProgress { get; private set; }
 
         private readonly GameLoopMap _gameLoopMap;
-       
 
 
         public GameLoop(GameLoopMap gameLoopMap)
@@ -36,7 +31,7 @@ namespace Loop
             IsInProgress = false;
             OnGameFinished?.Invoke();
         }
-        
+
 
         public void Tick()
         {
