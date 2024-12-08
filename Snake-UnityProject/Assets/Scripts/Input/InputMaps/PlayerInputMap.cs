@@ -20,8 +20,5 @@ namespace Input.InputMaps
 
         [field: SerializeField]
         public KeyCode MoveDown { get; private set; } = KeyCode.S;
-        
-        [field: SerializeField]
-        public KeyCode StartGame { get; private set; } = KeyCode.Space;
     }
 }

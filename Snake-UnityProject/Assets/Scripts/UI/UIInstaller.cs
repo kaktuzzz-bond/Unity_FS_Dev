@@ -1,5 +1,4 @@
 using Modules.UI;
-using UnityEngine;
 using Zenject;
 
 namespace UI
