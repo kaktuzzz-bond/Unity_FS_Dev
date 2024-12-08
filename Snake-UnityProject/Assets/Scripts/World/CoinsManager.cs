@@ -16,18 +16,18 @@ namespace World
     public class CoinsManager : IInitializable, IDisposable
     {
         private readonly IPlayerSpawner _playerSpawner;
-        private readonly GameLoop _gameLoop;
+        private readonly GameManager _gameManager;
 
         private readonly CoinCollector _coinCollector;
 
         private ISnake _snake;
 
 
-        public CoinsManager(IPlayerSpawner playerSpawner, GameLoop gameLoop, CoinCollector coinCollector)
+        public CoinsManager(IPlayerSpawner playerSpawner, GameManager gameManager, CoinCollector coinCollector)
         {
             _playerSpawner = playerSpawner;
 
-            _gameLoop = gameLoop;
+            _gameManager = gameManager;
             _coinCollector = coinCollector;
         }
 
@@ -35,7 +35,7 @@ namespace World
         public void Initialize()
         {
             _playerSpawner.OnPlayerSpawned += OnPlayerSpawned;
-            _gameLoop.OnGameStarted += OnGameStarted;
+            _gameManager.OnGameStarted += OnGameStarted;
 
             _coinCollector.OnGameWon += OnGameFinished;
         }
@@ -66,7 +66,7 @@ namespace World
         private void OnGameFinished()
         {
             _snake.OnMoved -= OnMoved;
-            _gameLoop.Finish();
+            _gameManager.Finish();
         }
 
 
@@ -74,7 +74,7 @@ namespace World
         {
             _playerSpawner.OnPlayerSpawned -= OnPlayerSpawned;
 
-            _gameLoop.OnGameStarted -= OnGameStarted;
+            _gameManager.OnGameStarted -= OnGameStarted;
 
             _coinCollector.OnGameWon -= OnGameFinished;
         }

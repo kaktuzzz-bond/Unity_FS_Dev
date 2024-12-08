@@ -15,9 +15,13 @@ namespace UI
             Container.BindInterfacesAndSelfTo<GameUI>()
                      .FromInstance(gameUI)
                      .AsSingle();
-
-            Container.BindInterfacesAndSelfTo<UIController>()
+            
+            Container.BindInterfacesTo<StartPanel>()
+                     .FromComponentsInHierarchy()
                      .AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<UIController>()
+                     .AsCached();
         }
     }
 }

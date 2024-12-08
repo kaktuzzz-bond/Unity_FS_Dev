@@ -6,26 +6,26 @@ namespace Loop
 {
     public class GameLoopObserver : IInitializable, IDisposable
     {
-        private readonly GameLoop _gameLoop;
+        private readonly GameManager _gameManager;
         private readonly IDeathObserver _playerDeathObserver;
 
 
-        public GameLoopObserver(GameLoop gameLoop, IDeathObserver playerDeathObserver)
+        public GameLoopObserver(GameManager gameManager, IDeathObserver playerDeathObserver)
         {
-            _gameLoop = gameLoop;
+            _gameManager = gameManager;
             _playerDeathObserver = playerDeathObserver;
         }
 
 
         public void Initialize()
         {
-            _playerDeathObserver.OnDeath += _gameLoop.Finish;
+            _playerDeathObserver.OnDeath += _gameManager.Finish;
         }
 
 
         public void Dispose()
         {
-            _playerDeathObserver.OnDeath -= _gameLoop.Finish;
+            _playerDeathObserver.OnDeath -= _gameManager.Finish;
         }
     }
 }

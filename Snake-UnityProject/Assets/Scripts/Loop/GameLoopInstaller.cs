@@ -18,7 +18,7 @@ namespace Loop
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<GameLoop>()
+            Container.BindInterfacesAndSelfTo<GameManager>()
                      .AsSingle();
 
             Container.BindInterfacesAndSelfTo<GameLoopObserver>()
@@ -33,7 +33,7 @@ namespace Loop
 
             Container.BindInterfacesAndSelfTo<Score>()
                      .AsSingle();
-            
+
             Container.BindInterfacesAndSelfTo<CoinsManager>()
                      .AsSingle();
         }

@@ -11,23 +11,23 @@ namespace Player
     {
         private readonly IPlayerInput _playerInput;
         private readonly PlayerSpawner _playerSpawner;
-        private readonly GameLoop _gameLoop;
+        private readonly GameManager _gameManager;
 
         private ISnake _snake;
 
 
-        public PlayerManager(IPlayerInput playerInput, PlayerSpawner playerSpawner, GameLoop gameLoop)
+        public PlayerManager(IPlayerInput playerInput, PlayerSpawner playerSpawner, GameManager gameManager)
         {
             _playerInput = playerInput;
             _playerSpawner = playerSpawner;
-            _gameLoop = gameLoop;
+            _gameManager = gameManager;
         }
 
 
         public void Initialize()
         {
-            _gameLoop.OnGameStarted += OnGameStarted;
-            _gameLoop.OnGameFinished += OnGameFinished;
+            _gameManager.OnGameStarted += OnGameStarted;
+            _gameManager.OnGameFinished += OnGameFinished;
         }
 
 
@@ -48,14 +48,14 @@ namespace Player
 
         public void Dispose()
         {
-            _gameLoop.OnGameStarted -= OnGameStarted;
-            _gameLoop.OnGameFinished -= OnGameFinished;
+            _gameManager.OnGameStarted -= OnGameStarted;
+            _gameManager.OnGameFinished -= OnGameFinished;
         }
 
 
         public void Tick()
         {
-            if (!_gameLoop.IsInProgress || _snake == null) return;
+            if (!_gameManager.IsInProgress || _snake == null) return;
 
             var direction = _playerInput.GetDirection();
 

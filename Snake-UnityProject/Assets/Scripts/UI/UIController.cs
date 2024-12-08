@@ -1,70 +1,59 @@
-using System;
-using Loop;
+using Loop.GameEvents;
 using Modules.Difficulty;
 using Modules.Score;
 using Modules.UI;
 using UnityEngine;
-using World;
-using Zenject;
 
 namespace UI
 {
-    public class UIController : IInitializable, IDisposable
+    public class UIController : IGameStartedListener, IGameFinishedListener, IGameFailedListener, IGameWonListener
     {
-        private readonly IGameUI _gameUI;
+        private readonly GameUI _gameUI;
+
         private readonly IDifficulty _difficulty;
         private readonly IScore _score;
-        private readonly PlayerDeathObserver _playerDeathObserver;
-        private readonly CoinCollector _coinCollector;
 
 
-        public UIController(IGameUI gameUI,
-                            IDifficulty difficulty,
-                            IScore score,
-                            PlayerDeathObserver playerDeathObserver,
-                            CoinCollector coinCollector)
+        public UIController(GameUI gameUI, IDifficulty difficulty, IScore score)
         {
             _gameUI = gameUI;
             _difficulty = difficulty;
             _score = score;
-            _playerDeathObserver = playerDeathObserver;
-            _coinCollector = coinCollector;
         }
 
 
-        public void Initialize()
+        public void OnGameStarted()
         {
+            Debug.Log("UI: OnGameStarted");
             _difficulty.OnStateChanged += OnDifficultyChanged;
             _score.OnStateChanged += OnScoreChanged;
-            _playerDeathObserver.OnDeath += ShowFailed;
-            _coinCollector.OnGameWon += ShowWin;
-            
+
             ResetUIValues();
         }
 
 
-        private void OnScoreChanged(int amount)
+        public void OnGameFinished()
         {
-            _gameUI.SetScore(amount.ToString());
+            Debug.Log("UI: OnGameFinished");
+            _difficulty.OnStateChanged -= OnDifficultyChanged;
+            _score.OnStateChanged -= OnScoreChanged;
         }
 
 
-        private void OnDifficultyChanged()
-        {
-            _gameUI.SetDifficulty(_difficulty.Current, _difficulty.Max);
-        }
-
-
-        private void ShowFailed()
-        {
+        public void OnGameFailed() => 
             _gameUI.GameOver(false);
-        }
 
 
-        private void ShowWin()
-        {
+        public void OnGameWon() => 
             _gameUI.GameOver(true);
-        }
+
+
+        private void OnScoreChanged(int amount) => 
+            _gameUI.SetScore(amount.ToString());
+
+
+        private void OnDifficultyChanged() => 
+            _gameUI.SetDifficulty(_difficulty.Current, _difficulty.Max);
 
 
         private void ResetUIValues()
@@ -72,15 +61,6 @@ namespace UI
             _ = _difficulty.Next(out var nextDifficulty);
             _gameUI.SetDifficulty(nextDifficulty, _difficulty.Max);
             _gameUI.SetScore(0.ToString());
-        }
-
-
-        public void Dispose()
-        {
-            _difficulty.OnStateChanged -= OnDifficultyChanged;
-            _score.OnStateChanged -= OnScoreChanged;
-            _playerDeathObserver.OnDeath -= ShowFailed;
-            _coinCollector.OnGameWon -= ShowWin;
         }
     }
 }

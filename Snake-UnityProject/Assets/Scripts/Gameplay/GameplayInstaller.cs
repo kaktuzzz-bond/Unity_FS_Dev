@@ -1,6 +1,7 @@
 using Input;
 using Input.InputMaps;
 using Loop;
+using Loop.GameEvents;
 using Modules.Coin;
 using Modules.Snake;
 using Player;
@@ -37,6 +38,8 @@ namespace Gameplay
             InputInstaller.Install(Container, playerInputMap, gameLoopMap);
 
             PlayerInstaller.Install(Container, snakePrefab);
+            
+            GameEventInstaller.Install(Container);
         }
     }
 }

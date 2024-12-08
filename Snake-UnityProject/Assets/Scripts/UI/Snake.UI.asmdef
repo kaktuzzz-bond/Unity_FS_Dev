@@ -1,0 +1,20 @@
+{
+    "name": "Snake.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:c412c9e31d994911958f7fb8a1932915",
+        "GUID:97caebb3a6c4474d9c602abeca0f1892",
+        "GUID:6f7395d087e174d07beb28d3d4a4ca24",
+        "GUID:c34e78d5a02544f09ebef82b73a5998b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

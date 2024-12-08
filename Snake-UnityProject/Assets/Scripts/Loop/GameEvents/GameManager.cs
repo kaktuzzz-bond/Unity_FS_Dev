@@ -1,22 +1,23 @@
 using System;
-using Input.InputMaps;
+// using Input.InputMaps;
+using UnityEngine;
 using Zenject;
 
 namespace Loop
 {
-    public class GameLoop : ITickable
+    public class GameManager : ITickable
     {
         public event Action OnGameStarted;
         public event Action OnGameFinished;
         public bool IsInProgress { get; private set; }
 
-        private readonly GameLoopMap _gameLoopMap;
-
-
-        public GameLoop(GameLoopMap gameLoopMap)
-        {
-            _gameLoopMap = gameLoopMap;
-        }
+        // private readonly GameLoopMap _gameLoopMap;
+        //
+        //
+        // public GameManager(GameLoopMap gameLoopMap)
+        // {
+        //     _gameLoopMap = gameLoopMap;
+        // }
 
 
         private void Start()
@@ -35,7 +36,7 @@ namespace Loop
 
         public void Tick()
         {
-            if (UnityEngine.Input.GetKeyDown(_gameLoopMap.StartGame))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Start();
             }

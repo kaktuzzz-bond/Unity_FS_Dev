@@ -1,38 +1,19 @@
-using System;
-using Loop;
+using Loop.GameEvents;
 using UnityEngine;
-using Zenject;
 
 namespace UI
 {
-    public class StartPanel : MonoBehaviour
+    public class StartPanel : MonoBehaviour, IGameStartedListener
     {
         [SerializeField]
         private GameObject startScreen;
 
-        private GameLoop _gameLoop;
-
-
-        [Inject]
-        private void Construct(GameLoop gameLoop)
-        {
-            _gameLoop = gameLoop;
-            _gameLoop.OnGameStarted += Hide;
-        }
-        
-        private void OnDestroy() =>
-            _gameLoop.OnGameStarted -= Hide;
-
 
         private void Awake() =>
-            Show();
-
-
-        public void Hide() =>
-            startScreen.SetActive(false);
-
-
-        public void Show() =>
             startScreen.SetActive(true);
+
+
+        public void OnGameStarted() =>
+            startScreen.SetActive(false);
     }
 }
