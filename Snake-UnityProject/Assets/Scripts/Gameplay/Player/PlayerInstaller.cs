@@ -33,7 +33,7 @@ namespace Gameplay.Player
                      .AsSingle();
 
             Container.BindInterfacesAndSelfTo<PlayerDeathObserver>()
-                     .AsSingle();
+                     .AsSingle(); 
         }
     }
 }

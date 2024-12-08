@@ -4,22 +4,18 @@ using Zenject;
 
 namespace UI
 {
-    public class UIInstaller : MonoInstaller<UIInstaller>
+    public class UIInstaller : Installer<UIInstaller>
     {
-        [SerializeField]
-        private GameUI gameUI;
-
-
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<GameUI>()
-                     .FromInstance(gameUI)
+                     .FromComponentsInHierarchy()
                      .AsSingle();
-            
+
             Container.BindInterfacesTo<StartPanel>()
                      .FromComponentsInHierarchy()
                      .AsSingle();
-            
+
             Container.BindInterfacesAndSelfTo<UIController>()
                      .AsCached();
         }

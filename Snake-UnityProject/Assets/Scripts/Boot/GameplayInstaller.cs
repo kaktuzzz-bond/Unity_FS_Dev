@@ -5,6 +5,7 @@ using Input;
 using Input.InputMaps;
 using Modules.Coin;
 using Modules.Snake;
+using UI;
 using UnityEngine;
 using Zenject;
 
@@ -31,6 +32,8 @@ namespace Boot
             GameLoopInstaller.Install(Container);
 
             WorldInstaller.Install(Container, coinPrefab, maxDifficulty);
+
+            UIInstaller.Install(Container);
 
             InputInstaller.Install(Container, playerInputMap);
 
