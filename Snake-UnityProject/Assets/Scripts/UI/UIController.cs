@@ -1,4 +1,4 @@
-using Loop.GameEvents;
+using Gameplay.Management;
 using Modules.Difficulty;
 using Modules.Score;
 using Modules.UI;

@@ -1,4 +1,4 @@
-using Loop.GameEvents;
+using Gameplay.Management;
 using UnityEngine;
 
 namespace UI
