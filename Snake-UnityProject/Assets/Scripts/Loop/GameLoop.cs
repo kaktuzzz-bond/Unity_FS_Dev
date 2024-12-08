@@ -1,6 +1,9 @@
 using System;
 using Input.InputMaps;
+using Modules.Difficulty;
+using Modules.Score;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Zenject;
 
 namespace Loop
@@ -12,6 +15,7 @@ namespace Loop
         public bool IsInProgress { get; private set; }
 
         private readonly GameLoopMap _gameLoopMap;
+       
 
 
         public GameLoop(GameLoopMap gameLoopMap)
@@ -20,48 +24,26 @@ namespace Loop
         }
 
 
-        public void Start()
+        private void Start()
         {
             IsInProgress = true;
             OnGameStarted?.Invoke();
-            Debug.Log("GAME STARTED");
         }
+
 
         public void Finish()
         {
-            IsInProgress = true;
+            IsInProgress = false;
             OnGameFinished?.Invoke();
-            Debug.Log("GAME FINISHED");
         }
         
-        // public void Stop()
-        // {
-        //     IsInProgress = false;
-        //     Debug.Log("GAME PAUSED");
-        // }
-        //
-        //
-        // private void Resume()
-        // {
-        //     Start();
-        //     Debug.Log("GAME RESUMED");
-        // }
-        //
-        //
-        // private void Exit()
-        // {
-        //     Stop();
-        //     Debug.Log("EXIT GAME");
-        // }
-
 
         public void Tick()
         {
-            if (UnityEngine.Input.GetKeyDown(_gameLoopMap.StartGame)) Start();
-            
-            // else if (UnityEngine.Input.GetKeyDown(_gameLoopMap.PauseGame)) Stop();
-            // else if (UnityEngine.Input.GetKeyDown(_gameLoopMap.ResumeGame)) Resume();
-            // else if (UnityEngine.Input.GetKeyDown(_gameLoopMap.ExitGame)) Exit();
+            if (UnityEngine.Input.GetKeyDown(_gameLoopMap.StartGame))
+            {
+                Start();
+            }
         }
     }
 }

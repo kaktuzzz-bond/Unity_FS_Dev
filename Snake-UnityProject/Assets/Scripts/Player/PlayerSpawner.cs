@@ -4,16 +4,19 @@ using Modules.Snake;
 using Modules.World;
 using UnityEngine;
 using Zenject;
+using Object = UnityEngine.Object;
 
 namespace Player
 {
-    public class PlayerSpawner : IPlayerProvider
+    public class PlayerSpawner : IPlayerSpawner
     {
         public event Action<ISnake> OnPlayerSpawned;
 
         private readonly Transform _worldTransform;
         private readonly PlayerFactory _playerFactory;
         private readonly PlayerDeathObserver _playerDeathObserver;
+
+        private Snake _snake;
 
 
         public PlayerSpawner(WorldBounds worldBounds,
@@ -28,15 +31,23 @@ namespace Player
 
         public ISnake SpawnPlayer()
         {
-            var player = _playerFactory.Create();
+            _snake = _playerFactory.Create();
 
-            player.transform.SetParent(_worldTransform);
+            _snake.transform.SetParent(_worldTransform);
 
-            _playerDeathObserver.StartObserving(player);
+            _playerDeathObserver.StartObserving(_snake);
 
-            OnPlayerSpawned?.Invoke(player);
+            OnPlayerSpawned?.Invoke(_snake);
 
-            return player;
+            return _snake;
+        }
+
+
+        public void DespawnPlayer()
+        {
+            if (_snake == null) return;
+
+            Object.Destroy(_snake.gameObject);
         }
 
 

@@ -1,7 +1,8 @@
 using Modules.UI;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject
+namespace UI
 {
     public class UIInstaller : MonoInstaller<UIInstaller>
     {
@@ -11,15 +12,11 @@ namespace Zenject
 
         public override void InstallBindings()
         {
-            BindGameUI();
-        }
-
-
-        private void BindGameUI()
-        {
-            Container.Bind<IGameUI>()
-                     .To<GameUI>()
+            Container.BindInterfacesAndSelfTo<GameUI>()
                      .FromInstance(gameUI)
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<UIController>()
                      .AsSingle();
         }
     }

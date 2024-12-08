@@ -1,6 +1,7 @@
 using Input;
 using Input.InputMaps;
 using Loop;
+using Modules.Coin;
 using Modules.Snake;
 using Player;
 using UnityEngine;
@@ -20,13 +21,18 @@ namespace Gameplay
 
         [SerializeField]
         private Snake snakePrefab;
+        
+        [SerializeField]
+        private Coin coinPrefab;
 
+        [SerializeField]
+        private int maxDifficulty = 5;
 
         public override void InstallBindings()
         {
-            GameLoopInstaller.Install(Container);
+            GameLoopInstaller.Install(Container, maxDifficulty);
 
-            WorldInstaller.Install(Container);
+            WorldInstaller.Install(Container, coinPrefab);
 
             InputInstaller.Install(Container, playerInputMap, gameLoopMap);
 

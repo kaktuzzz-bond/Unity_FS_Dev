@@ -1,4 +1,3 @@
-using Loop;
 using Modules.Snake;
 using Zenject;
 
@@ -24,9 +23,6 @@ namespace Player
                      .AsSingle();
 
             Container.BindInterfacesAndSelfTo<PlayerSpawner>()
-                     .AsSingle();
-
-            Container.BindInterfacesAndSelfTo<PlayerDeathObserver>()
                      .AsSingle();
 
             Container.BindInterfacesAndSelfTo<PlayerManager>()

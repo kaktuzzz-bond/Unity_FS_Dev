@@ -2,6 +2,7 @@ using System;
 using Input;
 using Loop;
 using Modules.Snake;
+using UnityEngine;
 using Zenject;
 
 namespace Player
@@ -33,11 +34,14 @@ namespace Player
         private void OnGameFinished()
         {
             _snake.SetSpeed(0f);
+           _playerSpawner.DespawnPlayer();
         }
 
 
         private void OnGameStarted()
         {
+            if (_snake != null) return;
+
             _snake = _playerSpawner.SpawnPlayer();
         }
 
