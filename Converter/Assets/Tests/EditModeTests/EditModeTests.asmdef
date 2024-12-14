@@ -1,11 +1,10 @@
 {
-    "name": "Converter.EditMode.Tests",
+    "name": "EditModeTests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Modules.Converter",
-        "Stubs.Tests"
+        "Modules.Converter"
     ],
     "includePlatforms": [
         "Editor"
