@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using Action = System.Action;
 
 namespace Feature
 {
@@ -9,6 +9,9 @@ namespace Feature
 
         public int ResourceCount => _resourceStorage.Count;
         public int ProductCount => _productStorage.Count;
+
+        public Type ResourceType = typeof(TResource);
+        public Type ProductType = typeof(TProduct);
 
         private readonly Storage _resourceStorage;
         private readonly Storage _productStorage;
@@ -59,7 +62,7 @@ namespace Feature
 
         private void GrabFromResources()
         {
-            if (!_resourceStorage.Expand(_resourceGrabValue, out var resources))
+            if (!_resourceStorage.Extract(_resourceGrabValue, out var resources))
             {
                 return;
             }
@@ -93,7 +96,7 @@ namespace Feature
             _currentTime = _produceTime;
 
 
-        private class Storage
+        public class Storage
         {
             public int Count { get; private set; }
 
@@ -113,7 +116,7 @@ namespace Feature
                 if (amount <= 0)
                     return false;
 
-                return CalculateDifference(amount) > 0;
+                return CalculateDifference(amount) >= 0;
             }
 
 
@@ -145,7 +148,7 @@ namespace Feature
                 requestedAmount > 0 && Count >= requestedAmount;
 
 
-            public bool Expand(int requestedAmount, out int result)
+            public bool Extract(int requestedAmount, out int result)
             {
                 result = 0;
 
