@@ -1,4 +1,3 @@
-using Codice.Client.Commands;
 using UnityEngine;
 using Action = System.Action;
 
@@ -6,7 +5,10 @@ namespace Feature
 {
     public class Converter<TResource, TProduct>
     {
-        public event Action OnTimerReset;
+        public bool IsLocked { get; private set; }
+
+        public int ResourceCount => _resourceStorage.Count;
+        public int ProductCount => _productStorage.Count;
 
         private readonly Storage _resourceStorage;
         private readonly Storage _productStorage;
@@ -17,37 +19,20 @@ namespace Feature
         private readonly float _produceTime;
 
         private float _currentTime;
-        private bool _isInProgress;
 
 
         public Converter(int resourceStorageCapacity = 1,
                          int productStorageCapacity = 1,
-                         int resourceCapacity = 1,
-                         int productCapacity = 1,
+                         int resourceGrabValue = 1,
+                         int productPerLoadValue = 1,
                          float produceTime = 1f)
         {
             _resourceStorage = new Storage(resourceStorageCapacity);
-            //_productStorage = new Storage(productStorageCapacity);
+            _productStorage = new Storage(productStorageCapacity);
 
-            _resourceGrabValue = Mathf.Clamp(resourceCapacity, 0, int.MaxValue);
-            _productPerLoadValue = Mathf.Clamp(productCapacity, 0, int.MaxValue);
+            _resourceGrabValue = Mathf.Clamp(resourceGrabValue, 0, int.MaxValue);
+            _productPerLoadValue = Mathf.Clamp(productPerLoadValue, 0, int.MaxValue);
             _produceTime = Mathf.Clamp(produceTime, 0, float.MaxValue);
-        }
-
-
-        public void Update(float deltaTime)
-        {
-            _currentTime -= deltaTime;
-
-            if (_currentTime <= 0)
-                ResetTimer();
-        }
-
-
-        private void ResetTimer()
-        {
-            _currentTime = _produceTime;
-            OnTimerReset?.Invoke();
         }
 
 
@@ -55,6 +40,57 @@ namespace Feature
         {
             return _resourceStorage.Add(amount, out giveBack);
         }
+
+
+        public void Update(float deltaTime)
+        {
+            if (!_resourceStorage.HasRequiredAmount(_resourceGrabValue))
+                return;
+
+            if (!IsLocked)
+                GrabFromResources();
+
+            if (!IsTimerExpired(deltaTime))
+                return;
+
+            ProduceProduct();
+        }
+
+
+        private void GrabFromResources()
+        {
+            if (!_resourceStorage.Expand(_resourceGrabValue, out var resources))
+            {
+                return;
+            }
+
+            IsLocked = true;
+            ResetTimer();
+        }
+
+
+        private void ProduceProduct()
+        {
+            if (!_productStorage.TryAdd(_productPerLoadValue))
+                return;
+
+            if (!_productStorage.Add(_productPerLoadValue, out _))
+            {
+                Debug.LogError($"Failed to add product after the successful check-up to {_productStorage}");
+
+                return;
+            }
+
+            IsLocked = false;
+        }
+
+
+        private bool IsTimerExpired(float step) =>
+            (_currentTime -= step) <= 0f;
+
+
+        private void ResetTimer() =>
+            _currentTime = _produceTime;
 
 
         private class Storage
@@ -72,16 +108,23 @@ namespace Feature
             }
 
 
+            public bool TryAdd(int amount)
+            {
+                if (amount <= 0)
+                    return false;
+
+                return CalculateDifference(amount) > 0;
+            }
+
+
             public bool Add(int amount, out int giveBack)
             {
                 giveBack = 0;
 
                 if (amount <= 0)
-                {
                     return false;
-                }
 
-                _diff = _capacity - Count - amount;
+                _diff = CalculateDifference(amount);
 
                 if (_diff < 0)
                 {
@@ -98,27 +141,33 @@ namespace Feature
             }
 
 
-            public bool Take(int amount, out int result)
+            public bool HasRequiredAmount(int requestedAmount) =>
+                requestedAmount > 0 && Count >= requestedAmount;
+
+
+            public bool Expand(int requestedAmount, out int result)
             {
                 result = 0;
 
-                if (amount > _capacity || amount <= 0)
-                {
+                if (requestedAmount > _capacity || requestedAmount <= 0)
                     return false;
-                }
 
-                if (amount > Count)
+                if (requestedAmount > Count)
                 {
                     result = Count;
 
                     return false;
                 }
 
-                Count -= amount;
-                result = amount;
+                Count -= requestedAmount;
+                result = requestedAmount;
 
                 return true;
             }
+
+
+            private int CalculateDifference(int amount) =>
+                _capacity - Count - amount;
         }
     }
 }
