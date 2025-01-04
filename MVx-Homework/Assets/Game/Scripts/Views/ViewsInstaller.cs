@@ -9,15 +9,18 @@ namespace Game.Scripts.Views
 {
     public sealed class ViewsInstaller : MonoInstaller
     {
+        [Header("Money")]
         [SerializeField]
         private MoneyView moneyView;
 
+        [Header("Planet Factory")]
         [SerializeField]
         private PlanetView planetViewPrefab;
 
         [SerializeField]
         private RectTransform planetsContainer;
        
+        [Header("Planet View Map")]
         [SerializeField]
         private PlanetViewModifier planetViewModifier;
 

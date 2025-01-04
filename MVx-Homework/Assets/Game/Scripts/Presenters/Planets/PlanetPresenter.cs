@@ -22,11 +22,24 @@ namespace Game.Scripts.Presenters.Planets
 
         public void Initialize()
         {
+            UpdateView();
+            
             _planetView.OnClick += OnPlanetClicked;
             _planetView.OnHold += OnPlanetHold;
         }
 
 
+        private void UpdateView()
+        {
+            var isUnlocked = _planet.IsUnlocked;
+            _planetView.SetIcon(_planet.GetIcon(isUnlocked));
+            _planetView.ShowProgress(isUnlocked);
+            _planetView.ShowCoin(isUnlocked);
+           
+        }
+        
+        
+        
         private void OnPlanetHold()
         {
             Debug.Log($"{_planet.Name} hold");
