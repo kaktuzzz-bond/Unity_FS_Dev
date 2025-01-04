@@ -15,7 +15,7 @@ namespace Game.Scripts.Presenters.Planets
         {
             _planet = planet;
             _planetView = planetView;
-            
+
             Initialize();
         }
 
@@ -23,7 +23,7 @@ namespace Game.Scripts.Presenters.Planets
         public void Initialize()
         {
             UpdateView();
-            
+
             _planetView.OnClick += OnPlanetClicked;
             _planetView.OnHold += OnPlanetHold;
         }
@@ -32,14 +32,17 @@ namespace Game.Scripts.Presenters.Planets
         private void UpdateView()
         {
             var isUnlocked = _planet.IsUnlocked;
+
             _planetView.SetIcon(_planet.GetIcon(isUnlocked));
+            _planetView.SetPrice(_planet.Price.ToString());
+
             _planetView.ShowProgress(isUnlocked);
             _planetView.ShowCoin(isUnlocked);
-           
+            
+            _planetView.ShowPrice(!isUnlocked);
         }
-        
-        
-        
+
+
         private void OnPlanetHold()
         {
             Debug.Log($"{_planet.Name} hold");

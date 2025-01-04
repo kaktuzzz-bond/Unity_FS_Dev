@@ -53,20 +53,24 @@ namespace Game.Scripts.Views.Planets
         }
 
 
-        public void ShowLockIcon(bool makeActive) => 
+        public void ShowLockIcon(bool makeActive) =>
             lockIcon.gameObject.SetActive(makeActive);
 
 
-        public void ShowCoin(bool makeActive) => 
+        public void ShowCoin(bool makeActive) =>
             coinView.SetActive(makeActive);
 
 
-        public void ShowProgress(bool makeActive) => 
+        public void ShowProgress(bool makeActive) =>
             progressbarView.SetActive(makeActive);
 
 
-        public void ShowPrice(bool makeActive) => 
+        public void ShowPrice(bool makeActive) =>
             priceView.SetActive(makeActive);
+
+
+        public void SetPrice(string price) =>
+            priceView.SetText(price);
 
 
         private void OnDisable()
