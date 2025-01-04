@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 namespace Game.Scripts.Views.Planets
 {
-    public class PlanetView : MonoBehaviour
+    public class PlanetView : MonoBehaviour, IPlanetView
     {
-        public event UnityAction OnClick
+        public event UnityAction OnClicked
         {
             add => button.onClick.AddListener(value);
             remove => button.onClick.RemoveListener(value);
