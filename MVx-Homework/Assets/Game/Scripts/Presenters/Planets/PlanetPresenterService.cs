@@ -26,7 +26,7 @@ namespace Game.Scripts.Presenters.Planets
         {
             foreach (var planet in _planets)
             {
-                var view = _planetViewFactory.Create(Vector3.zero, planet.Name);
+                var view = _planetViewFactory.Create(planet.Name);
 
                 var presenter = new PlanetPresenter(planet, view);
 

@@ -25,15 +25,11 @@ namespace Game.Scripts.Views.Planets.Price
         }
 
 
-        public void Show()
+        public void SetActive(bool isActive)
         {
-            gameObject.SetActive(true);
+            gameObject.SetActive(isActive);
         }
 
 
-        public void Hide()
-        {
-            gameObject.SetActive(false);
-        }
     }
 }

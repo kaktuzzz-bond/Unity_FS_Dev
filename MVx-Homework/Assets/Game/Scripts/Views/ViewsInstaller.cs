@@ -1,4 +1,5 @@
 using Game.Scripts.Views.HUD;
+using Game.Scripts.Views.Modifiers;
 using Game.Scripts.Views.Planets;
 using Game.Scripts.Views.Planets.Factory;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace Game.Scripts.Views
         [SerializeField]
         private RectTransform planetsContainer;
        
+        [SerializeField]
+        private PlanetViewModifier planetViewModifier;
 
 
         public override void InstallBindings()
@@ -28,7 +31,7 @@ namespace Game.Scripts.Views
             Container.Bind<IPlanetViewFactory>()
                      .To<PlanetViewFactory>()
                      .AsSingle()
-                     .WithArguments(planetViewPrefab, planetsContainer);
+                     .WithArguments(planetViewPrefab, planetsContainer, planetViewModifier);
         }
     }
 }

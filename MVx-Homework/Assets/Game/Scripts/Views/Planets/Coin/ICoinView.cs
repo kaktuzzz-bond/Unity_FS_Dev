@@ -6,8 +6,6 @@ namespace Game.Scripts.Views.Planets.Coin
     {
         void SetIcon(Sprite icon);
 
-        void Show();
-
-        void Hide();
+        void SetActive(bool isActive);
     }
 }

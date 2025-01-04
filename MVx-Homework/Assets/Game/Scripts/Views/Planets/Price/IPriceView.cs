@@ -8,8 +8,6 @@ namespace Game.Scripts.Views.Planets.Price
 
         void SetText(string text);
 
-        void Show();
-
-        void Hide();
+        void SetActive(bool isActive);
     }
 }

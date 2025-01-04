@@ -6,8 +6,6 @@ namespace Game.Scripts.Views.Planets.Progressbar
 
         void SetTimerText(string text);
 
-        void Show();
-
-        void Hide();
+        void SetActive(bool isActive);
     }
 }

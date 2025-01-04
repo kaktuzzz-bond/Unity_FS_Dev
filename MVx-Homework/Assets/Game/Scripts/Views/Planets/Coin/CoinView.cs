@@ -15,15 +15,9 @@ namespace Game.Scripts.Views.Planets.Coin
         }
 
 
-        public void Show()
+        public void SetActive(bool isActive)
         {
-            gameObject.SetActive(true);
-        }
-
-
-        public void Hide()
-        {
-            gameObject.SetActive(false);
+            gameObject.SetActive(isActive);
         }
     }
 }

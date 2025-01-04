@@ -39,11 +39,11 @@ namespace Game.Scripts.Views.Planets
         }
 
 
-        private void OnButtonHold() => 
+        private void OnButtonHold() =>
             OnHold?.Invoke();
 
 
-        private void OnButtonClicked() => 
+        private void OnButtonClicked() =>
             OnClick?.Invoke();
 
 
@@ -53,37 +53,20 @@ namespace Game.Scripts.Views.Planets
         }
 
 
-        public void ShowLockIcon(bool isVisible)
-        {
-            lockIcon.gameObject.SetActive(isVisible);
-        }
+        public void ShowLockIcon(bool makeActive) => 
+            lockIcon.gameObject.SetActive(makeActive);
 
 
-        public void ShowCoin(bool isVisible)
-        {
-            if (isVisible)
-                coinView.Show();
-            else
-                coinView.Hide();
-        }
+        public void ShowCoin(bool makeActive) => 
+            coinView.SetActive(makeActive);
 
 
-        public void ShowProgress(bool isVisible)
-        {
-            if (isVisible)
-                progressbarView.Show();
-            else
-                progressbarView.Hide();
-        }
+        public void ShowProgress(bool makeActive) => 
+            progressbarView.SetActive(makeActive);
 
 
-        public void ShowPrice(bool isVisible)
-        {
-            if (isVisible)
-                priceView.Show();
-            else
-                priceView.Hide();
-        }
+        public void ShowPrice(bool makeActive) => 
+            priceView.SetActive(makeActive);
 
 
         private void OnDisable()
