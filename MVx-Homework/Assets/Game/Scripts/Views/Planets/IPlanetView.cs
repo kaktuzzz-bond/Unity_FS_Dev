@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Game.Scripts.Views.Planets
 {
     public interface IPlanetView
     {
-        event UnityAction OnClicked;
+        event Action OnClick;
+        event Action OnHold;
 
         void SetIcon(Sprite icon);
 

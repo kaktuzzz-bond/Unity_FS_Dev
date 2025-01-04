@@ -1,19 +1,17 @@
+using System;
 using Game.Scripts.Views.Planets.Coin;
 using Game.Scripts.Views.Planets.Price;
 using Game.Scripts.Views.Planets.Progressbar;
+using Modules.UI;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Game.Scripts.Views.Planets
 {
     public class PlanetView : MonoBehaviour, IPlanetView
     {
-        public event UnityAction OnClicked
-        {
-            add => button.onClick.AddListener(value);
-            remove => button.onClick.RemoveListener(value);
-        }
+        public event Action OnClick;
+        public event Action OnHold;
 
         [SerializeField]
         private Image planetIcon;
@@ -31,7 +29,22 @@ namespace Game.Scripts.Views.Planets
         private PriceView priceView;
 
         [SerializeField]
-        private Button button;
+        private SmartButton button;
+
+
+        private void OnEnable()
+        {
+            button.OnClick += OnButtonClicked;
+            button.OnHold += OnButtonHold;
+        }
+
+
+        private void OnButtonHold() => 
+            OnHold?.Invoke();
+
+
+        private void OnButtonClicked() => 
+            OnClick?.Invoke();
 
 
         public void SetIcon(Sprite icon)
@@ -70,6 +83,13 @@ namespace Game.Scripts.Views.Planets
                 priceView.Show();
             else
                 priceView.Hide();
+        }
+
+
+        private void OnDisable()
+        {
+            button.OnClick -= OnButtonClicked;
+            button.OnHold -= OnButtonHold;
         }
     }
 }

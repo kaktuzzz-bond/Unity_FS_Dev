@@ -2,11 +2,10 @@ using System;
 using Game.Scripts.Views.Planets;
 using Modules.Planets;
 using UnityEngine;
-using Zenject;
 
 namespace Game.Scripts.Presenters.Planets
 {
-    public class PlanetPresenter : IInitializable, IDisposable
+    public class PlanetPresenter : IDisposable
     {
         private readonly IPlanet _planet;
         private readonly IPlanetView _planetView;
@@ -16,12 +15,21 @@ namespace Game.Scripts.Presenters.Planets
         {
             _planet = planet;
             _planetView = planetView;
+            
+            Initialize();
         }
 
 
         public void Initialize()
         {
-            _planetView.OnClicked += OnPlanetClicked;
+            _planetView.OnClick += OnPlanetClicked;
+            _planetView.OnHold += OnPlanetHold;
+        }
+
+
+        private void OnPlanetHold()
+        {
+            Debug.Log($"{_planet.Name} hold");
         }
 
 
@@ -33,7 +41,8 @@ namespace Game.Scripts.Presenters.Planets
 
         public void Dispose()
         {
-            _planetView.OnClicked -= OnPlanetClicked;
+            _planetView.OnClick -= OnPlanetClicked;
+            _planetView.OnHold -= OnPlanetHold;
         }
     }
 }
