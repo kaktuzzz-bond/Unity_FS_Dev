@@ -1,4 +1,4 @@
-using Game.Scripts.Views.Currency;
+using Game.Scripts.Views.HUD;
 using UnityEngine;
 using Zenject;
 
@@ -7,13 +7,13 @@ namespace Game.Scripts.Views
     public sealed class ViewsInstaller : MonoInstaller
     {
         [SerializeField]
-        private CurrencyView currencyView;
+        private MoneyView moneyView;
 
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<CurrencyView>()
-                     .FromInstance(currencyView)
+            Container.BindInterfacesTo<MoneyView>()
+                     .FromInstance(moneyView)
                      .AsCached();
         }
     }

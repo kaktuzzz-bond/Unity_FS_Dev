@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Game.Scripts.Views.Currency
+namespace Game.Scripts.Views.HUD
 {
-    public interface ICurrencyView
+    public interface IMoneyView
     {
         void SetIcon(Sprite sprite);
 

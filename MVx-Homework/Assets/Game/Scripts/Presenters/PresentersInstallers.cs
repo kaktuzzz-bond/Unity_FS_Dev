@@ -1,3 +1,4 @@
+using Game.Scripts.Presenters.HUD;
 using UnityEngine;
 using Zenject;
 
@@ -11,7 +12,7 @@ namespace Game.Scripts.Presenters
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<CurrencyViewPresenter>()
+            Container.BindInterfacesAndSelfTo<MoneyViewPresenter>()
                      .AsCached();
         }
     }

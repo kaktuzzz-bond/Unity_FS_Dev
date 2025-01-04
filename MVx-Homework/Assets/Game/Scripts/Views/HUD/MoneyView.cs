@@ -2,9 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Scripts.Views.Currency
+namespace Game.Scripts.Views.HUD
 {
-    public class CurrencyView : MonoBehaviour, ICurrencyView
+    public class MoneyView : MonoBehaviour, IMoneyView
     {
         [SerializeField]
         private Image icon;
