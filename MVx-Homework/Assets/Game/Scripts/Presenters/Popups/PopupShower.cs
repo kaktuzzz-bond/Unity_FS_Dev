@@ -26,6 +26,7 @@ namespace Game.Scripts.Presenters.Popups
             _planet.OnIncomeChanged += OnIncomeChangedHandler;
 
             _view.OnCloseClicked += Hide;
+            _view.OnUpgradeClicked += OnUpgradeClickedHandler;
 
             _view.Show();
 
@@ -40,6 +41,12 @@ namespace Game.Scripts.Presenters.Popups
             OnPopulationChangedHandler(_planet.Population);
             OnUpgradedHandler(_planet.Level);
             OnIncomeChangedHandler(_planet.NextMinuteIncome);
+        }
+
+
+        private void OnUpgradeClickedHandler()
+        {
+            _planet.UnlockOrUpgrade();
         }
 
 
@@ -65,6 +72,17 @@ namespace Game.Scripts.Presenters.Popups
         {
             _view.SetLevelText($"Level: {value}/{_planet.MaxLevel}");
             _view.SetPriceText($"Price: {_planet.Price}");
+
+            if (_planet.MaxLevel != _planet.Level)
+            {
+                _view.SetButtonInteractable(true);
+                _view.SetButtonText("Upgrade");
+            }
+            else
+            {
+                _view.SetButtonInteractable(false);
+                _view.SetButtonText("MaxLevel");
+            }
         }
 
 
@@ -82,6 +100,7 @@ namespace Game.Scripts.Presenters.Popups
             _planet.OnIncomeChanged -= OnIncomeChangedHandler;
 
             _view.OnCloseClicked -= Hide;
+            _view.OnUpgradeClicked -= OnUpgradeClickedHandler;
             _view.Hide();
         }
     }

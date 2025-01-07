@@ -82,5 +82,14 @@ namespace Game.Scripts.Views.Popups
 
         public void SetPriceText(string text) =>
             price.SetText(text);
+
+        public void SetButtonText(string text) =>
+            buttonText.SetText(text);
+        
+        public void SetButtonInteractable(bool interactable)
+        {
+            price.SetActive(interactable);
+            upgradeButton.interactable = interactable;
+        }
     }
 }
