@@ -61,6 +61,13 @@ namespace Game.Scripts.Views.Planets
             priceView.SetText(price);
 
 
+        public void SetProgress(float progress, string text)
+        {
+            progressbarView.SetProgress(progress);
+            progressbarView.SetProgressText(text);
+        }
+
+
         public void ShowLockIcon(bool makeActive) =>
             lockIcon.gameObject.SetActive(makeActive);
 

@@ -27,6 +27,7 @@ namespace Game.Scripts.Presenters.Planets
         {
             _planet.OnUnlocked += OnPlanetUnlock;
             _planet.OnUpgraded += OnPlanetUpgraded;
+            _planet.OnIncomeTimeChanged += OnIncomeTimeChanged;
             _planet.OnIncomeReady += OnPlanetIncomeReady;
             _planet.OnGathered += OnPlanetIncomeGathered;
 
@@ -34,6 +35,22 @@ namespace Game.Scripts.Presenters.Planets
             _planetView.OnHold += OnHold;
 
             UpdateView();
+        }
+
+
+        private void OnIncomeTimeChanged(float value)
+        {
+            if (_planet.IsIncomeReady)
+                return;
+
+            var minutes = Mathf.FloorToInt(value / 60f);
+            var seconds = Mathf.FloorToInt(value % 60f);
+
+            var time = string.Empty;
+            if (minutes > 0) time += $"{minutes}m:";
+            if (seconds >= 0) time += $"{seconds + 1}s";
+
+            _planetView.SetProgress(_planet.IncomeProgress, time);
         }
 
 
@@ -50,13 +67,17 @@ namespace Game.Scripts.Presenters.Planets
 
         private void OnPlanetIncomeGathered(int _)
         {
+            Debug.Log("Planet income GATHERED");
             _planetView.ShowProgressbar(true);
             _planetView.ShowCoin(false);
         }
 
 
-        private void OnPlanetIncomeReady(bool isIncomeReady)
+        private void OnPlanetIncomeReady(bool isReady)
         {
+            if (!isReady) return;
+
+            Debug.Log("Planet income READY");
             _planetView.ShowProgressbar(false);
             _planetView.ShowCoin(true);
         }
@@ -71,6 +92,7 @@ namespace Game.Scripts.Presenters.Planets
             if (!_planet.IsUnlocked && _planet.CanUnlock)
             {
                 _planet.Unlock();
+
                 return;
             }
 
@@ -89,10 +111,11 @@ namespace Game.Scripts.Presenters.Planets
 
                 return;
             }
-            
+
             _planet.Unlock();
             _planetView.ShowLockIcon(false);
-            
+            _planetView.ShowProgressbar(true);
+
             UpdateView();
         }
 
@@ -108,6 +131,7 @@ namespace Game.Scripts.Presenters.Planets
         {
             _planet.OnUnlocked -= OnPlanetUnlock;
             _planet.OnUpgraded -= OnPlanetUpgraded;
+            _planet.OnIncomeTimeChanged -= OnIncomeTimeChanged;
             _planet.OnIncomeReady -= OnPlanetIncomeReady;
             _planet.OnGathered -= OnPlanetIncomeGathered;
 

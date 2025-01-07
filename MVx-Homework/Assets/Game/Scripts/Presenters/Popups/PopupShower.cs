@@ -41,7 +41,7 @@ namespace Game.Scripts.Presenters.Popups
             OnUnlockedHandler();
             OnPopulationChangedHandler(_planet.Population);
             OnUpgradedHandler(_planet.Level);
-            OnIncomeChangedHandler(_planet.NextMinuteIncome);
+            OnIncomeChangedHandler(_planet.MinuteIncome);
         }
 
 

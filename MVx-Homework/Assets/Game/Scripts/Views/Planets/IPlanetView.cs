@@ -12,6 +12,8 @@ namespace Game.Scripts.Views.Planets
 
         void SetPrice(string price);
 
+        void SetProgress(float progress, string text);
+
         void ShowLockIcon(bool makeActive);
 
         void ShowCoin(bool makeActive);

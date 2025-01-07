@@ -1,6 +1,4 @@
-using System;
 using Game.Scripts.Views.Planets.Price;
-using Modules.Planets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;

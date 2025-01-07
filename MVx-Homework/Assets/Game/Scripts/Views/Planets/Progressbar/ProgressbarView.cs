@@ -19,7 +19,7 @@ namespace Game.Scripts.Views.Planets.Progressbar
         }
 
 
-        public void SetTimerText(string text)
+        public void SetProgressText(string text)
         {
             timerText.text = text;
         }
