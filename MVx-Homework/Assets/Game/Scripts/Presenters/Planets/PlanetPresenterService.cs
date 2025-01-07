@@ -1,15 +1,18 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using Game.Scripts.Views.Planets.Factory;
 using Modules.Planets;
-using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Presenters.Planets
 {
-    public class PlanetPresenterService : IInitializable, IEnumerable<PlanetPresenter>
+    public class PlanetPresenterService : IInitializable, IDisposable
     {
+        public event Action<IPlanet> OnPlanetClicked;
+        public event Action<IPlanet> OnPlanetHold;
+
         private readonly Planet[] _planets;
+
         private readonly IPlanetViewFactory _planetViewFactory;
 
         private readonly List<PlanetPresenter> _presenters = new();
@@ -30,16 +33,31 @@ namespace Game.Scripts.Presenters.Planets
 
                 var presenter = new PlanetPresenter(planet, view);
 
+                presenter.OnPlanetClicked += OnPlanetClickedHandler;
+                presenter.OnPlanetHold += OnPlanetHoldHandler;
+
                 _presenters.Add(presenter);
             }
         }
 
 
-        public IEnumerator<PlanetPresenter> GetEnumerator() =>
-            _presenters.GetEnumerator();
+        private void OnPlanetHoldHandler(IPlanet planet) =>
+            OnPlanetHold?.Invoke(planet);
 
 
-        IEnumerator IEnumerable.GetEnumerator() =>
-            GetEnumerator();
+        private void OnPlanetClickedHandler(IPlanet planet) =>
+            OnPlanetClicked?.Invoke(planet);
+
+
+        public void Dispose()
+        {
+            foreach (var presenter in _presenters)
+            {
+                presenter.OnPlanetClicked -= OnPlanetClickedHandler;
+                presenter.OnPlanetHold -= OnPlanetHoldHandler;
+            }
+
+            _presenters.Clear();
+        }
     }
 }

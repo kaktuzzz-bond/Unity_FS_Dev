@@ -2,6 +2,7 @@ using Game.Scripts.Views.HUD;
 using Game.Scripts.Views.Modifiers;
 using Game.Scripts.Views.Planets;
 using Game.Scripts.Views.Planets.Factory;
+using Game.Scripts.Views.Popups;
 using UnityEngine;
 using Zenject;
 
@@ -23,6 +24,10 @@ namespace Game.Scripts.Views
         [Header("Planet View Map")]
         [SerializeField]
         private PlanetViewModifier planetViewModifier;
+        
+        [Header("Planet Popup")]
+        [SerializeField]
+        private PlanetPopupView planetPopupView;
 
 
         public override void InstallBindings()
@@ -35,6 +40,10 @@ namespace Game.Scripts.Views
                      .To<PlanetViewFactory>()
                      .AsSingle()
                      .WithArguments(planetViewPrefab, planetsContainer, planetViewModifier);
+            
+            Container.BindInterfacesAndSelfTo<PlanetPopupView>()
+                     .FromInstance(planetPopupView)
+                     .AsCached();
         }
     }
 }

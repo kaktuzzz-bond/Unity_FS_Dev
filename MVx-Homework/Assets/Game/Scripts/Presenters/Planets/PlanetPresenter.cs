@@ -2,11 +2,15 @@ using System;
 using Game.Scripts.Views.Planets;
 using Modules.Planets;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Scripts.Presenters.Planets
 {
     public class PlanetPresenter : IDisposable
     {
+        public event Action<IPlanet> OnPlanetClicked;
+        public event Action<IPlanet> OnPlanetHold;
+
         private readonly IPlanet _planet;
         private readonly IPlanetView _planetView;
 
@@ -20,45 +24,61 @@ namespace Game.Scripts.Presenters.Planets
         }
 
 
-        public void Initialize()
+        private void Initialize()
         {
-            UpdateView();
+            _planet.OnUnlocked += OnPlanetUnlock;
+            _planet.OnIncomeReady += OnPlanetIncomeReady;
+            _planet.OnGathered += OnPlanetIncomeGathered;
 
-            _planetView.OnClick += OnPlanetClicked;
-            _planetView.OnHold += OnPlanetHold;
+            _planetView.OnClick += OnClick;
+            _planetView.OnHold += OnHold;
+
+            UpdateView();
+        }
+
+
+        private void OnPlanetIncomeGathered(int obj)
+        {
+            _planetView.ShowProgressbar(true);
+            _planetView.ShowCoin(false);
+        }
+
+
+        private void OnPlanetIncomeReady(bool isIncomeReady)
+        {
+            _planetView.ShowProgressbar(!isIncomeReady);
+            _planetView.ShowCoin(isIncomeReady);
+        }
+
+
+        private void OnHold() =>
+            OnPlanetHold?.Invoke(_planet);
+
+
+        private void OnClick() =>
+            OnPlanetClicked?.Invoke(_planet);
+
+
+        private void OnPlanetUnlock()
+        {
+            _planetView.ShowLockIcon(false);
+            UpdateView();
         }
 
 
         private void UpdateView()
         {
-            var isUnlocked = _planet.IsUnlocked;
-
-            _planetView.SetIcon(_planet.GetIcon(isUnlocked));
+            _planetView.SetPlanetIcon(_planet.GetIcon(_planet.IsUnlocked));
             _planetView.SetPrice(_planet.Price.ToString());
-
-            _planetView.ShowProgress(isUnlocked);
-            _planetView.ShowCoin(isUnlocked);
-            
-            _planetView.ShowPrice(!isUnlocked);
-        }
-
-
-        private void OnPlanetHold()
-        {
-            Debug.Log($"{_planet.Name} hold");
-        }
-
-
-        private void OnPlanetClicked()
-        {
-            Debug.Log($"{_planet.Name} clicked");
         }
 
 
         public void Dispose()
         {
-            _planetView.OnClick -= OnPlanetClicked;
-            _planetView.OnHold -= OnPlanetHold;
+            _planet.OnUnlocked -= OnPlanetUnlock;
+
+            _planetView.OnClick -= OnClick;
+            _planetView.OnHold -= OnHold;
         }
     }
 }

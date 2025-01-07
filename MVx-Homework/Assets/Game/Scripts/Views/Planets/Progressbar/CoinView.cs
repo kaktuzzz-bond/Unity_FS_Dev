@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Scripts.Views.Planets.Coin
+namespace Game.Scripts.Views.Planets.Progressbar
 {
-    public class CoinView : MonoBehaviour, ICoinView
+    public class CoinView : MonoBehaviour
     {
         [SerializeField]
         private Image iconImage;

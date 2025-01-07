@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Game.Scripts.Views.Planets.Progressbar
 {
-    public class ProgressbarView : MonoBehaviour, IProgressbarView
+    public class ProgressbarView : MonoBehaviour
     {
         [SerializeField]
         private Image progressbar;

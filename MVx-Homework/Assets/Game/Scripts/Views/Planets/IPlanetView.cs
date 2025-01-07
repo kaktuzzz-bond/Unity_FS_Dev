@@ -8,16 +8,14 @@ namespace Game.Scripts.Views.Planets
         event Action OnClick;
         event Action OnHold;
 
-        void SetIcon(Sprite icon);
+        void SetPlanetIcon(Sprite icon);
+
+        void SetPrice(string price);
 
         void ShowLockIcon(bool makeActive);
 
         void ShowCoin(bool makeActive);
 
-        void ShowProgress(bool makeActive);
-
-        void ShowPrice(bool makeActive);
-        
-        void SetPrice(string price);
+        void ShowProgressbar(bool makeActive);
     }
 }

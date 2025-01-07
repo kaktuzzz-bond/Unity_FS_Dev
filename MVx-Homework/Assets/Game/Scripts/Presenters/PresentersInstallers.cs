@@ -1,5 +1,6 @@
 using Game.Scripts.Presenters.HUD;
 using Game.Scripts.Presenters.Planets;
+using Game.Scripts.Presenters.Popups;
 using UnityEngine;
 using Zenject;
 
@@ -15,9 +16,17 @@ namespace Game.Scripts.Presenters
         {
             Container.BindInterfacesAndSelfTo<MoneyViewPresenter>()
                      .AsCached();
-            
+
             Container.BindInterfacesAndSelfTo<PlanetPresenterService>()
                      .AsSingle()
+                     .NonLazy();
+
+            Container.BindInterfacesAndSelfTo<PlanetPopupPresenter>()
+                     .AsCached()
+                     .NonLazy();
+
+            Container.BindInterfacesAndSelfTo<PopupShower>()
+                     .AsCached()
                      .NonLazy();
         }
     }

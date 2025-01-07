@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Game.Scripts.Views.Planets.Price
 {
-    public class PriceView : MonoBehaviour, IPriceView
+    public class PriceView : MonoBehaviour
     {
         [SerializeField]
         private Image icon;
