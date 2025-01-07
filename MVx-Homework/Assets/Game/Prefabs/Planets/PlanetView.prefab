@@ -505,7 +505,7 @@ MonoBehaviour:
   lockIcon: {fileID: 991180089803824017}
   coinView: {fileID: 8104402913347661254}
   progressbarView: {fileID: 524432334505946309}
-  priceText: {fileID: 5444377921757551026}
+  priceView: {fileID: 8996761388134972633}
   button: {fileID: 5583372068559771244}
 --- !u!222 &7486801599208217449
 CanvasRenderer:

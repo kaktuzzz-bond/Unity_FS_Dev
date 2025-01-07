@@ -17,5 +17,7 @@ namespace Game.Scripts.Views.Planets
         void ShowCoin(bool makeActive);
 
         void ShowProgressbar(bool makeActive);
+
+        void ShowPrice(bool makeActive);
     }
 }

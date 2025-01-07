@@ -2,7 +2,6 @@ using System;
 using Game.Scripts.Views.Planets.Price;
 using Game.Scripts.Views.Planets.Progressbar;
 using Modules.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,10 +25,17 @@ namespace Game.Scripts.Views.Planets
         private ProgressbarView progressbarView;
 
         [SerializeField]
-        private TMP_Text priceText;
+        private PriceView priceView;
 
         [SerializeField]
         private SmartButton button;
+
+
+        private void Awake()
+        {
+            ShowCoin(false);
+            ShowProgressbar(false);
+        }
 
 
         private void OnEnable()
@@ -52,7 +58,7 @@ namespace Game.Scripts.Views.Planets
 
 
         public void SetPrice(string price) =>
-            priceText.text = price;
+            priceView.SetText(price);
 
 
         public void ShowLockIcon(bool makeActive) =>
@@ -65,6 +71,10 @@ namespace Game.Scripts.Views.Planets
 
         public void ShowProgressbar(bool makeActive) =>
             progressbarView.SetActive(makeActive);
+
+
+        public void ShowPrice(bool makeActive) =>
+            priceView.SetActive(makeActive);
 
 
         private void OnDisable()

@@ -2,13 +2,12 @@ using System;
 using Game.Scripts.Views.Planets;
 using Modules.Planets;
 using UnityEngine;
-using Zenject;
 
 namespace Game.Scripts.Presenters.Planets
 {
     public class PlanetPresenter : IDisposable
     {
-        public event Action<IPlanet> OnPlanetClicked;
+        // public event Action<IPlanet> OnPlanetClicked;
         public event Action<IPlanet> OnPlanetHold;
 
         private readonly IPlanet _planet;
@@ -27,6 +26,7 @@ namespace Game.Scripts.Presenters.Planets
         private void Initialize()
         {
             _planet.OnUnlocked += OnPlanetUnlock;
+            _planet.OnUpgraded += OnPlanetUpgraded;
             _planet.OnIncomeReady += OnPlanetIncomeReady;
             _planet.OnGathered += OnPlanetIncomeGathered;
 
@@ -37,7 +37,18 @@ namespace Game.Scripts.Presenters.Planets
         }
 
 
-        private void OnPlanetIncomeGathered(int obj)
+        private void OnPlanetUpgraded(int obj)
+        {
+            _planetView.SetPrice(_planet.Price.ToString());
+
+            if (_planet.Level == _planet.MaxLevel)
+            {
+                _planetView.ShowPrice(false);
+            }
+        }
+
+
+        private void OnPlanetIncomeGathered(int _)
         {
             _planetView.ShowProgressbar(true);
             _planetView.ShowCoin(false);
@@ -46,8 +57,8 @@ namespace Game.Scripts.Presenters.Planets
 
         private void OnPlanetIncomeReady(bool isIncomeReady)
         {
-            _planetView.ShowProgressbar(!isIncomeReady);
-            _planetView.ShowCoin(isIncomeReady);
+            _planetView.ShowProgressbar(false);
+            _planetView.ShowCoin(true);
         }
 
 
@@ -55,13 +66,33 @@ namespace Game.Scripts.Presenters.Planets
             OnPlanetHold?.Invoke(_planet);
 
 
-        private void OnClick() =>
-            OnPlanetClicked?.Invoke(_planet);
+        private void OnClick()
+        {
+            if (!_planet.IsUnlocked && _planet.CanUnlock)
+            {
+                _planet.Unlock();
+                return;
+            }
+
+            if (_planet.IsIncomeReady)
+            {
+                _planet.GatherIncome();
+            }
+        }
 
 
         private void OnPlanetUnlock()
         {
+            if (_planet.CanUnlock)
+            {
+                Debug.LogWarning("Cannot unlock the planet");
+
+                return;
+            }
+            
+            _planet.Unlock();
             _planetView.ShowLockIcon(false);
+            
             UpdateView();
         }
 
@@ -76,6 +107,9 @@ namespace Game.Scripts.Presenters.Planets
         public void Dispose()
         {
             _planet.OnUnlocked -= OnPlanetUnlock;
+            _planet.OnUpgraded -= OnPlanetUpgraded;
+            _planet.OnIncomeReady -= OnPlanetIncomeReady;
+            _planet.OnGathered -= OnPlanetIncomeGathered;
 
             _planetView.OnClick -= OnClick;
             _planetView.OnHold -= OnHold;

@@ -15,7 +15,7 @@ namespace Game.Scripts.Presenters.Planets
 
         private readonly IPlanetViewFactory _planetViewFactory;
 
-        private readonly List<PlanetPresenter> _presenters = new();
+        private readonly Dictionary<IPlanet, PlanetPresenter> _presenters = new();
 
 
         public PlanetPresenterService(Planet[] planets, IPlanetViewFactory planetViewFactory)
@@ -33,10 +33,10 @@ namespace Game.Scripts.Presenters.Planets
 
                 var presenter = new PlanetPresenter(planet, view);
 
-                presenter.OnPlanetClicked += OnPlanetClickedHandler;
+               // presenter.OnPlanetClicked += OnPlanetClickedHandler;
                 presenter.OnPlanetHold += OnPlanetHoldHandler;
 
-                _presenters.Add(presenter);
+                _presenters.Add(planet, presenter);
             }
         }
 
@@ -45,15 +45,17 @@ namespace Game.Scripts.Presenters.Planets
             OnPlanetHold?.Invoke(planet);
 
 
-        private void OnPlanetClickedHandler(IPlanet planet) =>
+        private void OnPlanetClickedHandler(IPlanet planet)
+        {
             OnPlanetClicked?.Invoke(planet);
+        }
 
 
         public void Dispose()
         {
-            foreach (var presenter in _presenters)
+            foreach (var presenter in _presenters.Values)
             {
-                presenter.OnPlanetClicked -= OnPlanetClickedHandler;
+               // presenter.OnPlanetClicked -= OnPlanetClickedHandler;
                 presenter.OnPlanetHold -= OnPlanetHoldHandler;
             }
 

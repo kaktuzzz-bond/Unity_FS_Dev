@@ -1,5 +1,6 @@
 using Game.Scripts.Views.Popups;
 using Modules.Planets;
+using UnityEngine;
 
 namespace Game.Scripts.Presenters.Popups
 {
@@ -73,6 +74,8 @@ namespace Game.Scripts.Presenters.Popups
             _view.SetLevelText($"Level: {value}/{_planet.MaxLevel}");
             _view.SetPriceText($"Price: {_planet.Price}");
 
+            Debug.Log($"{_planet.Name} is upgraded | Level: {_planet.Level}");
+            
             if (_planet.MaxLevel != _planet.Level)
             {
                 _view.SetButtonInteractable(true);

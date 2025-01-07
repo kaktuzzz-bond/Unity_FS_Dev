@@ -1,9 +1,5 @@
 using System;
-using System.Runtime.CompilerServices;
 using Game.Scripts.Presenters.Planets;
-using Game.Scripts.Views.Popups;
-using Modules.Planets;
-using Sirenix.OdinInspector;
 using Zenject;
 
 

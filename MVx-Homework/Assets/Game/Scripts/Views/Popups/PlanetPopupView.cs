@@ -1,3 +1,4 @@
+using System;
 using Game.Scripts.Views.Planets.Price;
 using Modules.Planets;
 using TMPro;
@@ -50,6 +51,12 @@ namespace Game.Scripts.Views.Popups
 
         [SerializeField]
         private Button upgradeButton;
+
+
+        private void Awake()
+        {
+            Hide();
+        }
 
 
         public void Show() =>
