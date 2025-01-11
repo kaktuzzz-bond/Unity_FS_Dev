@@ -8,10 +8,6 @@ namespace Game.Scripts.Common
             $"{value:###,###,###,###,###}";
 
 
-        public static string FormatFloat(float value) =>
-            $"{value:###,###,###,###,#}";
-
-
         public static string SecondsToText(float value)
         {
             var span = TimeSpan.FromSeconds(value);
