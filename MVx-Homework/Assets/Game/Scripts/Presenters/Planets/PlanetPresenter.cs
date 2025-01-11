@@ -1,9 +1,9 @@
 using System;
-using Game.Scripts.Common;
+using Game.Scripts.Views.Common;
 using Game.Scripts.Views.Planets;
 using Modules.Planets;
 using UnityEngine;
-using static Game.Scripts.Common.Utils;
+using static Game.Scripts.Views.Common.Utils;
 
 namespace Game.Scripts.Presenters.Planets
 {

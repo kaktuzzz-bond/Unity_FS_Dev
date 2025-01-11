@@ -965,6 +965,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1465214279}
     m_Modifications:
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: earnColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: earnColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: earnColor.g
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: earnColor.r
+      value: 0.200218
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: spendColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: spendColor.b
+      value: 0.2028302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: spendColor.g
+      value: 0.2028302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: spendColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056209805212305038, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
+      propertyPath: moneyAnimator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7207275897469232668, guid: 922a3fcd633baa0498344270e9eabd2a, type: 3}
       propertyPath: m_Name
       value: MoneyView

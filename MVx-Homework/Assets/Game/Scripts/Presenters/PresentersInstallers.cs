@@ -1,7 +1,6 @@
 using Game.Scripts.Presenters.HUD;
 using Game.Scripts.Presenters.Planets;
 using Game.Scripts.Presenters.Popups;
-using Game.Scripts.Presenters.VFX;
 using UnityEngine;
 using Zenject;
 
@@ -33,9 +32,6 @@ namespace Game.Scripts.Presenters
             Container.BindInterfacesAndSelfTo<PlanetClickListener>()
                      .AsCached()
                      .NonLazy();
-
-            Container.BindInterfacesAndSelfTo<ParticlePresenter>()
-                     .AsCached();
         }
     }
 }

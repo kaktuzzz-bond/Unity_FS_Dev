@@ -1,7 +1,7 @@
 using Game.Scripts.Views.Popups;
 using Modules.Money;
 using Modules.Planets;
-using static Game.Scripts.Common.Utils;
+using static Game.Scripts.Views.Common.Utils;
 
 namespace Game.Scripts.Presenters.Popups
 {

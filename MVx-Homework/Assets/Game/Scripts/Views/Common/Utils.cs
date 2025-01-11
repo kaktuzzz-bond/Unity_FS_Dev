@@ -1,6 +1,6 @@
 using System;
 
-namespace Game.Scripts.Common
+namespace Game.Scripts.Views.Common
 {
     public sealed class Utils
     {
