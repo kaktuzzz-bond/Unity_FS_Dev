@@ -1,4 +1,5 @@
 using Game.Scripts.Views.Buttons;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -46,22 +47,5 @@ namespace Game.Scripts.Views.Popups
 
         public void SetHeaderText(string text) =>
             headerText.text = text;
-
-
-        // public void SetUpdateButtonState(bool canUpgrade, string buttonText, string priceText)
-        // {
-        //     upgradeButton.SetText(buttonText);
-        //     upgradeButton.SetButtonInteractable(canUpgrade);
-        //     upgradeButton.Price.SetActive(canUpgrade);
-        //     upgradeButton.Price.SetText(priceText);
-        // }
-        //
-        //
-        // public void SetMaxLevelButtonState(string buttonText)
-        // {
-        //     upgradeButton.SetText(buttonText);
-        //     upgradeButton.SetButtonInteractable(false);
-        //     upgradeButton.Price.SetActive(false);
-        // }
     }
 }

@@ -14,18 +14,20 @@ namespace Game.Scripts.Presenters
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<MoneyViewPresenter>()
-                     .AsCached();
+           
 
-            Container.BindInterfacesAndSelfTo<PlanetPresenterService>()
-                     .AsSingle()
-                     .NonLazy();
-
-            Container.BindInterfacesAndSelfTo<PlanetPopupPresenter>()
+            Container.BindInterfacesTo<PlanetPresenterService>()
                      .AsCached()
                      .NonLazy();
-
+            
             Container.BindInterfacesAndSelfTo<PopupShower>()
+                     .AsCached()
+                     .NonLazy();
+            
+            Container.BindInterfacesAndSelfTo<MoneyViewController>()
+                     .AsCached();
+            
+            Container.BindInterfacesAndSelfTo<PlanetPopupController>()
                      .AsCached()
                      .NonLazy();
             

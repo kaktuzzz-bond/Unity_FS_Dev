@@ -1,8 +1,5 @@
 using System;
 using Game.Scripts.Presenters.Planets;
-using Game.Scripts.Views.Popups;
-using Modules.Money;
-using Modules.Planets;
 using Zenject;
 
 
@@ -10,14 +7,14 @@ namespace Game.Scripts.Presenters.Popups
 
 
 {
-    public class PlanetPopupPresenter : IInitializable, IDisposable
+    public class PlanetPopupController : IInitializable, IDisposable
     {
         private readonly PopupShower _popupShower;
-        private readonly PlanetPresenterService _planetPresenterService;
+        private readonly IPlanetPresenterService _planetPresenterService;
 
 
-        public PlanetPopupPresenter(PopupShower popupShower,
-                                    PlanetPresenterService planetPresenterService)
+        public PlanetPopupController(PopupShower popupShower,
+                                    IPlanetPresenterService planetPresenterService)
         {
             _popupShower = popupShower;
             _planetPresenterService = planetPresenterService;

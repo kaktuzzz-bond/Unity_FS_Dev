@@ -1,7 +1,9 @@
 using System;
+using Game.Scripts.Common;
 using Game.Scripts.Views.Planets;
 using Modules.Planets;
 using UnityEngine;
+using static Game.Scripts.Common.Utils;
 
 namespace Game.Scripts.Presenters.Planets
 {
@@ -57,7 +59,7 @@ namespace Game.Scripts.Presenters.Planets
 
         private void OnPlanetUpgraded(int level)
         {
-            _planetView.SetPrice(_planet.Price.ToString());
+            SetPrice();
 
             if (level == _planet.MaxLevel)
             {
@@ -69,7 +71,14 @@ namespace Game.Scripts.Presenters.Planets
         private void UpdateView()
         {
             _planetView.SetPlanetIcon(_planet.GetIcon(_planet.IsUnlocked));
-            _planetView.SetPrice(_planet.Price.ToString());
+            SetPrice();
+        }
+
+
+        private void SetPrice()
+        {
+            var price = FormatInt(_planet.Price);
+            _planetView.SetPrice(price);
         }
 
 
@@ -78,12 +87,7 @@ namespace Game.Scripts.Presenters.Planets
             if (_planet.IsIncomeReady)
                 return;
 
-            var minutes = Mathf.FloorToInt(value / 60f);
-            var seconds = Mathf.FloorToInt(value % 60f);
-
-            var time = string.Empty;
-            if (minutes > 0) time += $"{minutes}m:";
-            if (seconds >= 0) time += $"{seconds + 1}s";
+            var time = Utils.SecondsToText(value);
 
             _planetView.SetProgress(_planet.IncomeProgress, time);
         }
@@ -91,7 +95,6 @@ namespace Game.Scripts.Presenters.Planets
 
         private void OnPlanetIncomeGathered(int _)
         {
-            Debug.Log("Planet income GATHERED");
             _planetView.ShowProgressbar(true);
             _planetView.ShowCoin(false);
         }
@@ -101,7 +104,6 @@ namespace Game.Scripts.Presenters.Planets
         {
             if (!isReady) return;
 
-            Debug.Log("Planet income READY");
             _planetView.ShowProgressbar(false);
             _planetView.ShowCoin(true);
         }

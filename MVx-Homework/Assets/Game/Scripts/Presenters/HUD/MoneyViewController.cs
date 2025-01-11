@@ -2,16 +2,17 @@ using System;
 using Game.Scripts.Views.HUD;
 using Modules.Money;
 using Zenject;
+using static Game.Scripts.Common.Utils;
 
 namespace Game.Scripts.Presenters.HUD
 {
-    public class MoneyViewPresenter : IInitializable, IDisposable
+    public class MoneyViewController : IInitializable, IDisposable
     {
         private readonly IMoneyView _moneyView;
         private readonly IMoneyStorage _moneyStorage;
 
 
-        public MoneyViewPresenter(IMoneyView moneyView, IMoneyStorage moneyStorage)
+        public MoneyViewController(IMoneyView moneyView, IMoneyStorage moneyStorage)
         {
             _moneyView = moneyView;
             _moneyStorage = moneyStorage;
@@ -20,14 +21,15 @@ namespace Game.Scripts.Presenters.HUD
 
         public void Initialize()
         {
-            _moneyView.SetText(_moneyStorage.Money.ToString());
+            OnMoneyChanged(_moneyStorage.Money, _moneyStorage.Money);
             _moneyStorage.OnMoneyChanged += OnMoneyChanged;
         }
 
 
         private void OnMoneyChanged(int newValue, int prevValue)
         {
-            _moneyView.SetText(newValue.ToString());
+            var price = FormatInt(_moneyStorage.Money);
+            _moneyView.SetText(price);
         }
 
 

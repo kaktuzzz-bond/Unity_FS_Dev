@@ -460,7 +460,6 @@ GameObject:
   m_Component:
   - component: {fileID: 873220071}
   - component: {fileID: 873220075}
-  - component: {fileID: 873220076}
   m_Layer: 0
   m_Name: '[UI]'
   m_TagString: Untagged
@@ -502,18 +501,6 @@ MonoBehaviour:
   planetsContainer: {fileID: 974007726}
   planetViewModifier: {fileID: 974007727}
   planetPopupView: {fileID: 1802329538}
---- !u!114 &873220076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873220070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96755ff816c54ba59554ffec0733e9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &974007725
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4047992451227309323, guid: c6f3aabda10ed1841ba1c1a8999ef4ba, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 155.47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4047992451227309323, guid: c6f3aabda10ed1841ba1c1a8999ef4ba, type: 3}
       propertyPath: m_SizeDelta.y
