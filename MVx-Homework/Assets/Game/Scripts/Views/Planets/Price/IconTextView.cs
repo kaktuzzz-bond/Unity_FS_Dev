@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Game.Scripts.Views.Planets.Price
 {
-    public class PriceView : MonoBehaviour
+    public class IconTextView : MonoBehaviour, IIconTextView
     {
         [SerializeField]
         private Image icon;
@@ -13,23 +13,15 @@ namespace Game.Scripts.Views.Planets.Price
         private TMP_Text priceText;
 
 
-        public void SetIcon(Sprite sprite)
-        {
+        public void SetIcon(Sprite sprite) => 
             icon.sprite = sprite;
-        }
 
 
-        public void SetText(string text)
-        {
+        public void SetText(string text) => 
             priceText.text = text;
-        }
 
 
-        public void SetActive(bool isActive)
-        {
+        public void SetActive(bool isActive) => 
             gameObject.SetActive(isActive);
-        }
-
-
     }
 }

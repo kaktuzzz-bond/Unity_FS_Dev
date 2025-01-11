@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Game.Scripts.Presenters.Planets
 {
-    public class PlanetPresenterService : IInitializable, IDisposable
+    public class PlanetPresenterService : IPlanetPresenterService, IInitializable, IDisposable
     {
         public event Action<IPlanet> OnPlanetClicked;
         public event Action<IPlanet> OnPlanetHold;
@@ -32,9 +32,9 @@ namespace Game.Scripts.Presenters.Planets
                 var view = _planetViewFactory.Create(planet.Name);
 
                 var presenter = new PlanetPresenter(planet, view);
-
-               // presenter.OnPlanetClicked += OnPlanetClickedHandler;
+                
                 presenter.OnPlanetHold += OnPlanetHoldHandler;
+                presenter.OnPlanetClicked += OnPlanetClickedHandler;
 
                 _presenters.Add(planet, presenter);
             }
@@ -45,18 +45,16 @@ namespace Game.Scripts.Presenters.Planets
             OnPlanetHold?.Invoke(planet);
 
 
-        private void OnPlanetClickedHandler(IPlanet planet)
-        {
+        private void OnPlanetClickedHandler(IPlanet planet) => 
             OnPlanetClicked?.Invoke(planet);
-        }
 
 
         public void Dispose()
         {
             foreach (var presenter in _presenters.Values)
             {
-               // presenter.OnPlanetClicked -= OnPlanetClickedHandler;
                 presenter.OnPlanetHold -= OnPlanetHoldHandler;
+                presenter.OnPlanetClicked -= OnPlanetClickedHandler;
             }
 
             _presenters.Clear();

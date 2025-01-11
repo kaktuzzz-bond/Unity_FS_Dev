@@ -1,4 +1,4 @@
-using Game.Scripts.Views.Planets.Price;
+using Game.Scripts.Views.Buttons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,11 +14,8 @@ namespace Game.Scripts.Views.Popups
             remove => closeButton.onClick.RemoveListener(value);
         }
 
-        public event UnityAction OnUpgradeClicked
-        {
-            add => upgradeButton.onClick.AddListener(value);
-            remove => upgradeButton.onClick.RemoveListener(value);
-        }
+        public IPlanetInfoPanel PlanetInfoPanel => planetInfoPanel;
+        public IUpgradeButtonView UpgradeButton => upgradeButton;
 
         [Header("Header")]
         [SerializeField]
@@ -29,32 +26,14 @@ namespace Game.Scripts.Views.Popups
 
         [Header("Body")]
         [SerializeField]
-        private Image planetAvatar;
+        private PlanetInfoPanel planetInfoPanel;
 
         [SerializeField]
-        private TMP_Text populationText;
-
-        [SerializeField]
-        private TMP_Text levelText;
-
-        [SerializeField]
-        private TMP_Text incomeText;
-
-        [Header("Button")]
-        [SerializeField]
-        private TMP_Text buttonText;
-
-        [SerializeField]
-        private PriceView price;
-
-        [SerializeField]
-        private Button upgradeButton;
+        private UpgradeButtonView upgradeButton;
 
 
-        private void Awake()
-        {
+        private void Awake() => 
             Hide();
-        }
 
 
         public void Show() =>
@@ -69,32 +48,20 @@ namespace Game.Scripts.Views.Popups
             headerText.text = text;
 
 
-        public void SetAvatar(Sprite img) =>
-            planetAvatar.sprite = img;
-
-
-        public void SetPopulationText(string text) =>
-            populationText.text = text;
-
-
-        public void SetLevelText(string text) =>
-            levelText.text = text;
-
-
-        public void SetIncomeText(string text) =>
-            incomeText.text = text;
-
-
-        public void SetPriceText(string text) =>
-            price.SetText(text);
-
-        public void SetButtonText(string text) =>
-            buttonText.SetText(text);
-        
-        public void SetButtonInteractable(bool interactable)
-        {
-            price.SetActive(interactable);
-            upgradeButton.interactable = interactable;
-        }
+        // public void SetUpdateButtonState(bool canUpgrade, string buttonText, string priceText)
+        // {
+        //     upgradeButton.SetText(buttonText);
+        //     upgradeButton.SetButtonInteractable(canUpgrade);
+        //     upgradeButton.Price.SetActive(canUpgrade);
+        //     upgradeButton.Price.SetText(priceText);
+        // }
+        //
+        //
+        // public void SetMaxLevelButtonState(string buttonText)
+        // {
+        //     upgradeButton.SetText(buttonText);
+        //     upgradeButton.SetButtonInteractable(false);
+        //     upgradeButton.Price.SetActive(false);
+        // }
     }
 }

@@ -25,7 +25,7 @@ namespace Game.Scripts.Views.Planets
         private ProgressbarView progressbarView;
 
         [SerializeField]
-        private PriceView priceView;
+        private IconTextView priceView;
 
         [SerializeField]
         private SmartButton button;

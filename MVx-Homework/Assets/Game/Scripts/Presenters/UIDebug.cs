@@ -20,7 +20,6 @@ namespace Game.Scripts.Presenters
 
         private void Awake()
         {
-            _planetPresenterService.OnPlanetClicked += (p)=> Debug.Log($"Planet Clicked: {p.Name}");
             _planetPresenterService.OnPlanetHold += (p)=> Debug.Log($"Planet Hold: {p.Name}");
         }
     }

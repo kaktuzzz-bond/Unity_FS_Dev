@@ -28,6 +28,10 @@ namespace Game.Scripts.Presenters
             Container.BindInterfacesAndSelfTo<PopupShower>()
                      .AsCached()
                      .NonLazy();
+            
+            Container.BindInterfacesAndSelfTo<PlanetClickListener>()
+                     .AsCached()
+                     .NonLazy();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Game.Scripts.Presenters.Planets
 {
     public class PlanetPresenter : IDisposable
     {
-        // public event Action<IPlanet> OnPlanetClicked;
+        public event Action<IPlanet> OnPlanetClicked;
         public event Action<IPlanet> OnPlanetHold;
 
         private readonly IPlanet _planet;
@@ -38,6 +38,41 @@ namespace Game.Scripts.Presenters.Planets
         }
 
 
+        private void OnPlanetUnlock()
+        {
+            if (_planet.CanUnlock)
+            {
+                Debug.LogWarning("Cannot unlock the planet");
+
+                return;
+            }
+
+            _planet.Unlock();
+            _planetView.ShowLockIcon(false);
+            _planetView.ShowProgressbar(true);
+
+            UpdateView();
+        }
+
+
+        private void OnPlanetUpgraded(int level)
+        {
+            _planetView.SetPrice(_planet.Price.ToString());
+
+            if (level == _planet.MaxLevel)
+            {
+                _planetView.ShowPrice(false);
+            }
+        }
+
+
+        private void UpdateView()
+        {
+            _planetView.SetPlanetIcon(_planet.GetIcon(_planet.IsUnlocked));
+            _planetView.SetPrice(_planet.Price.ToString());
+        }
+
+
         private void OnIncomeTimeChanged(float value)
         {
             if (_planet.IsIncomeReady)
@@ -51,17 +86,6 @@ namespace Game.Scripts.Presenters.Planets
             if (seconds >= 0) time += $"{seconds + 1}s";
 
             _planetView.SetProgress(_planet.IncomeProgress, time);
-        }
-
-
-        private void OnPlanetUpgraded(int obj)
-        {
-            _planetView.SetPrice(_planet.Price.ToString());
-
-            if (_planet.Level == _planet.MaxLevel)
-            {
-                _planetView.ShowPrice(false);
-            }
         }
 
 
@@ -87,44 +111,8 @@ namespace Game.Scripts.Presenters.Planets
             OnPlanetHold?.Invoke(_planet);
 
 
-        private void OnClick()
-        {
-            if (!_planet.IsUnlocked && _planet.CanUnlock)
-            {
-                _planet.Unlock();
-
-                return;
-            }
-
-            if (_planet.IsIncomeReady)
-            {
-                _planet.GatherIncome();
-            }
-        }
-
-
-        private void OnPlanetUnlock()
-        {
-            if (_planet.CanUnlock)
-            {
-                Debug.LogWarning("Cannot unlock the planet");
-
-                return;
-            }
-
-            _planet.Unlock();
-            _planetView.ShowLockIcon(false);
-            _planetView.ShowProgressbar(true);
-
-            UpdateView();
-        }
-
-
-        private void UpdateView()
-        {
-            _planetView.SetPlanetIcon(_planet.GetIcon(_planet.IsUnlocked));
-            _planetView.SetPrice(_planet.Price.ToString());
-        }
+        private void OnClick() =>
+            OnPlanetClicked?.Invoke(_planet);
 
 
         public void Dispose()

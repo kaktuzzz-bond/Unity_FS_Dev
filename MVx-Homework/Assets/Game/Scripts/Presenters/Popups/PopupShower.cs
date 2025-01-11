@@ -1,4 +1,5 @@
 using Game.Scripts.Views.Popups;
+using Modules.Money;
 using Modules.Planets;
 using UnityEngine;
 
@@ -7,13 +8,15 @@ namespace Game.Scripts.Presenters.Popups
     public class PopupShower
     {
         private readonly PlanetPopupView _view;
+        private readonly IMoneyStorage _moneyStorage;
 
         private IPlanet _planet;
 
 
-        public PopupShower(PlanetPopupView view)
+        public PopupShower(PlanetPopupView view, IMoneyStorage moneyStorage)
         {
             _view = view;
+            _moneyStorage = moneyStorage;
         }
 
 
@@ -21,89 +24,96 @@ namespace Game.Scripts.Presenters.Popups
         {
             _planet = planet;
 
-            _planet.OnUnlocked += OnUnlockedHandler;
-            _planet.OnPopulationChanged += OnPopulationChangedHandler;
-            _planet.OnUpgraded += OnUpgradedHandler;
-            _planet.OnIncomeChanged += OnIncomeChangedHandler;
+            _planet.OnUnlocked += OnUnlocked;
+            _planet.OnUpgraded += SetLevelInfo;
+            _planet.OnIncomeChanged += SetIncomeInfo;
+            _planet.OnPopulationChanged += SetPopulationInfo;
 
+            _moneyStorage.OnMoneyChanged += SetInteractableButtonState;
+
+            _view.UpgradeButton.OnClicked += OnUpdateButtonClicked;
             _view.OnCloseClicked += Hide;
-            _view.OnUpgradeClicked += OnUpgradeClickedHandler;
+
+            SetHeader();
+            SetAvatar(_planet.IsUnlocked);
+            UpdateInfo();
 
             _view.Show();
-
-            UpdateView();
         }
 
 
-        private void UpdateView()
-        {
-            SetHeader();
-            OnUnlockedHandler();
-            OnPopulationChangedHandler(_planet.Population);
-            OnUpgradedHandler(_planet.Level);
-            OnIncomeChangedHandler(_planet.MinuteIncome);
-        }
-
-
-        private void OnUpgradeClickedHandler()
-        {
+        private void OnUpdateButtonClicked() =>
             _planet.UnlockOrUpgrade();
+
+
+        private void UpdateInfo()
+        {
+            SetPopulationInfo(_planet.Population);
+            SetLevelInfo(_planet.Level);
+            SetIncomeInfo(_planet.MinuteIncome);
+
+            SetPriceButtonInfo();
         }
 
 
-        private void SetHeader()
-        {
+        private void SetInteractableButtonState(int newValue, int prevValue) =>
+            _view.UpgradeButton.SetButtonInteractable(_planet.CanUnlock || _planet.CanUpgrade);
+
+
+        private void SetHeader() =>
             _view.SetHeaderText(_planet.Name);
+
+
+        private void OnUnlocked()
+        {
+            SetAvatar(true);
+            UpdateInfo();
         }
 
 
-        private void OnUnlockedHandler()
+        private void SetAvatar(bool isUnlocked) =>
+            _view.PlanetInfoPanel.SetAvatar(_planet.GetIcon(isUnlocked));
+
+
+        private void SetIncomeInfo(int value) =>
+            _view.PlanetInfoPanel.SetIncomeText($"Income: {value} / sec");
+
+
+        private void SetPopulationInfo(int value) =>
+            _view.PlanetInfoPanel.SetPopulationText($"Population: {value}");
+
+
+        private void SetLevelInfo(int value) =>
+            _view.PlanetInfoPanel.SetLevelText($"Level: {value}/{_planet.MaxLevel}");
+
+
+        private void SetPriceButtonInfo()
         {
-            _view.SetAvatar(_planet.GetIcon(_planet.IsUnlocked));
-        }
-
-
-        private void OnIncomeChangedHandler(int value)
-        {
-            _view.SetIncomeText($"Income: {value} / sec");
-        }
-
-
-        private void OnUpgradedHandler(int value)
-        {
-            _view.SetLevelText($"Level: {value}/{_planet.MaxLevel}");
-            _view.SetPriceText($"Price: {_planet.Price}");
-
-            Debug.Log($"{_planet.Name} is upgraded | Level: {_planet.Level}");
-            
-            if (_planet.MaxLevel != _planet.Level)
+            if (_planet.Level == _planet.MaxLevel)
             {
-                _view.SetButtonInteractable(true);
-                _view.SetButtonText("Upgrade");
-            }
-            else
-            {
-                _view.SetButtonInteractable(false);
-                _view.SetButtonText("MaxLevel");
-            }
-        }
+                _view.UpgradeButton.SetText("MAX LEVEL");
+                _view.UpgradeButton.Price.SetActive(false);
 
+                return;
+            }
 
-        private void OnPopulationChangedHandler(int value)
-        {
-            _view.SetPopulationText($"Population: {value}");
+            _view.UpgradeButton.SetText(_planet.IsUnlocked ? "Upgrade" : "Unlock");
+            _view.UpgradeButton.Price.SetText(_planet.Price.ToString());
         }
 
 
         private void Hide()
         {
-            _planet.OnUnlocked -= OnUnlockedHandler;
-            _planet.OnPopulationChanged -= OnPopulationChangedHandler;
-            _planet.OnUpgraded -= OnUpgradedHandler;
-            _planet.OnIncomeChanged -= OnIncomeChangedHandler;
+            _planet.OnUnlocked -= OnUnlocked;
+            _planet.OnPopulationChanged -= SetPopulationInfo;
+            _planet.OnUpgraded -= SetLevelInfo;
+            _planet.OnIncomeChanged -= SetIncomeInfo;
 
             _view.OnCloseClicked -= Hide;
-            _view.OnUpgradeClicked -= OnUpgradeClickedHandler;
+            _view.UpgradeButton.OnClicked -= OnUpdateButtonClicked;
+
+            _moneyStorage.OnMoneyChanged -= SetInteractableButtonState;
+
             _view.Hide();
         }
     }
