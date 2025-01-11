@@ -4,14 +4,14 @@ using Zenject;
 
 namespace Game.Scripts.Presenters.Planets
 {
-    public class PlanetClickListener : IInitializable, IDisposable
+    public class PlanetClickHandler : IInitializable, IDisposable
     {
         public event Action<PlanetPresenter> OnPlanetIncomeGathered;
 
         private readonly IPlanetPresenterService _planetPresenterService;
 
 
-        public PlanetClickListener(IPlanetPresenterService planetPresenterService)
+        public PlanetClickHandler(IPlanetPresenterService planetPresenterService)
         {
             _planetPresenterService = planetPresenterService;
         }

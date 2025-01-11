@@ -29,7 +29,7 @@ namespace Game.Scripts.Presenters
                      .AsCached()
                      .NonLazy();
 
-            Container.BindInterfacesAndSelfTo<PlanetClickListener>()
+            Container.BindInterfacesAndSelfTo<PlanetClickHandler>()
                      .AsCached()
                      .NonLazy();
         }

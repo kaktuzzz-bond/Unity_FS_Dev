@@ -12,7 +12,7 @@ namespace Game.Scripts.Presenters.HUD
     {
         private readonly IMoneyView _moneyView;
         private readonly IMoneyStorage _moneyStorage;
-        private readonly PlanetClickListener _planetClickListener;
+        private readonly PlanetClickHandler _planetClickHandler;
         private readonly ParticleAnimator _particleAnimator;
 
         private const float ParticleDuration = 1f;
@@ -22,19 +22,19 @@ namespace Game.Scripts.Presenters.HUD
 
         public MoneyViewPresenter(IMoneyView moneyView,
                                   IMoneyStorage moneyStorage,
-                                  PlanetClickListener planetClickListener,
+                                  PlanetClickHandler planetClickHandler,
                                   ParticleAnimator particleAnimator)
         {
             _moneyView = moneyView;
             _moneyStorage = moneyStorage;
-            _planetClickListener = planetClickListener;
+            _planetClickHandler = planetClickHandler;
             _particleAnimator = particleAnimator;
         }
 
 
         public void Initialize()
         {
-            _planetClickListener.OnPlanetIncomeGathered += EmitParticles;
+            _planetClickHandler.OnPlanetIncomeGathered += EmitParticles;
 
             _moneyStorage.OnMoneyEarned += OnMoneyEarned;
             _moneyStorage.OnMoneySpent += OnMoneySpent;
@@ -74,7 +74,7 @@ namespace Game.Scripts.Presenters.HUD
 
         public void Dispose()
         {
-            _planetClickListener.OnPlanetIncomeGathered -= EmitParticles;
+            _planetClickHandler.OnPlanetIncomeGathered -= EmitParticles;
 
             _moneyStorage.OnMoneyEarned -= OnMoneyEarned;
             _moneyStorage.OnMoneySpent -= OnMoneySpent;
