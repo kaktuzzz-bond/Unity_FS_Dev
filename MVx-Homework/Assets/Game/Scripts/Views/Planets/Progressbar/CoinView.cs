@@ -5,6 +5,8 @@ namespace Game.Scripts.Views.Planets.Progressbar
 {
     public class CoinView : MonoBehaviour
     {
+        public Vector3 Position => transform.position;
+        
         [SerializeField]
         private Image iconImage;
 

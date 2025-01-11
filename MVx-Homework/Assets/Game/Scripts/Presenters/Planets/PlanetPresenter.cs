@@ -9,6 +9,7 @@ namespace Game.Scripts.Presenters.Planets
 {
     public class PlanetPresenter : IDisposable
     {
+        public Vector3 CoinPosition => _planetView.CoinPosition;
         public event Action<IPlanet> OnPlanetClicked;
         public event Action<IPlanet> OnPlanetHold;
 

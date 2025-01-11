@@ -11,6 +11,7 @@ namespace Game.Scripts.Presenters.Planets
         public event Action<IPlanet> OnPlanetClicked;
         public event Action<IPlanet> OnPlanetHold;
 
+
         private readonly Planet[] _planets;
 
         private readonly IPlanetViewFactory _planetViewFactory;
@@ -32,7 +33,7 @@ namespace Game.Scripts.Presenters.Planets
                 var view = _planetViewFactory.Create(planet.Name);
 
                 var presenter = new PlanetPresenter(planet, view);
-                
+
                 presenter.OnPlanetHold += OnPlanetHoldHandler;
                 presenter.OnPlanetClicked += OnPlanetClickedHandler;
 
@@ -45,8 +46,17 @@ namespace Game.Scripts.Presenters.Planets
             OnPlanetHold?.Invoke(planet);
 
 
-        private void OnPlanetClickedHandler(IPlanet planet) => 
+        private void OnPlanetClickedHandler(IPlanet planet) =>
             OnPlanetClicked?.Invoke(planet);
+
+
+        public PlanetPresenter GetPlanetPresenter(IPlanet planet)
+        {
+            if (!_presenters.TryGetValue(planet, out var planetPresenter))
+                throw new Exception($"Planet presenter {planet} has not been registered.");
+
+            return planetPresenter;
+        }
 
 
         public void Dispose()

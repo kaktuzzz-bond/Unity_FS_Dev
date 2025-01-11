@@ -6,6 +6,8 @@ namespace Game.Scripts.Views.HUD
 {
     public class MoneyView : MonoBehaviour, IMoneyView
     {
+        public Vector3 AttractorPosition => icon.transform.position;
+        
         [SerializeField]
         private Image icon;
 

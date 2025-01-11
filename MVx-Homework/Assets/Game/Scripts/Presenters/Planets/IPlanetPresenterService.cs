@@ -7,5 +7,7 @@ namespace Game.Scripts.Presenters.Planets
     {
         event Action<IPlanet> OnPlanetClicked;
         event Action<IPlanet> OnPlanetHold;
+        
+        PlanetPresenter GetPlanetPresenter(IPlanet planet);
     }
 }

@@ -6,6 +6,8 @@ namespace Game.Scripts.Presenters.Planets
 {
     public class PlanetClickListener : IInitializable, IDisposable
     {
+        public event Action<PlanetPresenter> OnPlanetIncomeGathered;
+
         private readonly IPlanetPresenterService _planetPresenterService;
 
 
@@ -33,6 +35,9 @@ namespace Game.Scripts.Presenters.Planets
             if (planet.IsIncomeReady)
             {
                 planet.GatherIncome();
+                
+                var presenter = _planetPresenterService.GetPlanetPresenter(planet);
+                OnPlanetIncomeGathered?.Invoke(presenter);
             }
         }
 

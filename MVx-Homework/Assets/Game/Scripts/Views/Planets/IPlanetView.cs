@@ -7,6 +7,7 @@ namespace Game.Scripts.Views.Planets
     {
         event Action OnClick;
         event Action OnHold;
+        Vector3 CoinPosition { get; }
 
         void SetPlanetIcon(Sprite icon);
 

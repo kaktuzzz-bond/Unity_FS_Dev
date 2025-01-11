@@ -11,6 +11,7 @@ namespace Game.Scripts.Views.Planets
     {
         public event Action OnClick;
         public event Action OnHold;
+        public Vector3 CoinPosition => coinView.Position;
 
         [SerializeField]
         private Image planetIcon;
@@ -29,8 +30,7 @@ namespace Game.Scripts.Views.Planets
 
         [SerializeField]
         private SmartButton button;
-
-
+        
         private void Awake()
         {
             ShowCoin(false);

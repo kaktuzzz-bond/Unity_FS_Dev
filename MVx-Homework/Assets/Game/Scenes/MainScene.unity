@@ -501,6 +501,7 @@ MonoBehaviour:
   planetsContainer: {fileID: 974007726}
   planetViewModifier: {fileID: 974007727}
   planetPopupView: {fileID: 1802329538}
+  particleAnimator: {fileID: 1465214280}
 --- !u!1 &974007725
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4047992451227309323, guid: c6f3aabda10ed1841ba1c1a8999ef4ba, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 155.47
       objectReference: {fileID: 0}
     - target: {fileID: 4047992451227309323, guid: c6f3aabda10ed1841ba1c1a8999ef4ba, type: 3}
       propertyPath: m_SizeDelta.y
