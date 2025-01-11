@@ -82,7 +82,7 @@ namespace Game.Scripts.Presenters.Popups
 
 
         private void SetIncomeInfo(int value) =>
-            _view.PlanetInfoPanel.SetIncomeText($"Income: {FormatInt(_planet.MinuteIncome/60)} / sec");
+            _view.PlanetInfoPanel.SetIncomeText($"Income: ${FormatInt(_planet.MinuteIncome/60)} / sec");
 
 
         private void SetPopulationInfo(int value) =>
