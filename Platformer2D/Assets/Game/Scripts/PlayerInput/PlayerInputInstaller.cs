@@ -10,7 +10,7 @@ namespace Game.Scripts.PlayerInput
             Container.Bind<PLayerInputMap>()
                      .AsSingle();
 
-            Container.BindInterfacesTo<PlayerInputHandler>()
+            Container.BindInterfacesTo<PlayerInputBroadcast>()
                      .AsSingle();
         }
     }

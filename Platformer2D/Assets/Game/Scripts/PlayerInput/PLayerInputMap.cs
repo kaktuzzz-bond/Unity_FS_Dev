@@ -59,6 +59,17 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""d82c208b-f7e0-47fc-9142-cd22210fd8bd"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""AD"",
                     ""id"": ""7939bdbe-4d2f-4300-bdcd-4308ee068513"",
                     ""path"": ""1DAxis"",
