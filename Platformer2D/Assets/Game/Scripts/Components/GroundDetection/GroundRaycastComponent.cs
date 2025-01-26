@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Components
+namespace Game.Scripts.Components.GroundDetection
 {
     public class GroundRaycastComponent : IGroundRaycastComponent
     {

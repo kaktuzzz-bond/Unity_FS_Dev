@@ -1,4 +1,8 @@
 using Game.Scripts.Components;
+using Game.Scripts.Components.Conditions;
+using Game.Scripts.Components.GroundDetection;
+using Game.Scripts.Components.Jump;
+using Game.Scripts.Components.Move;
 using Game.Scripts.PlayerInput;
 using UnityEngine;
 using Zenject;
@@ -11,7 +15,7 @@ namespace Game.Scripts.Player
         private IMoveComponent _moveComponent;
         private IJumpComponent _jumpComponent;
         private IGroundRaycastComponent _groundRaycastComponent;
-        private IFlipComponent _flipComponent;
+
 
         private IConditionComponent _jumpCondition;
         private IConditionComponent _moveCondition;
@@ -20,17 +24,15 @@ namespace Game.Scripts.Player
         [Inject]
         public void Construct(IPlayerInput playerInput,
             IMoveComponent moveComponent,
-            IFlipComponent flipComponent,
             IJumpComponent jumpComponent,
             IGroundRaycastComponent groundRaycastComponent)
         {
             _playerInput = playerInput;
             _moveComponent = moveComponent;
-            _flipComponent = flipComponent;
             _jumpComponent = jumpComponent;
             _groundRaycastComponent = groundRaycastComponent;
 
-            _jumpCondition = new ConditionComponent(() => _groundRaycastComponent.IsGrounded);
+            _jumpCondition = new ConditionComponent(()=> _groundRaycastComponent.IsGrounded);
         }
 
         public void OnEnable()
@@ -41,15 +43,15 @@ namespace Game.Scripts.Player
 
         private void Move(Vector3 direction)
         {
-            _flipComponent.LookTowards(direction);
             _moveComponent.Move(direction);
         }
 
         private void Jump()
         {
-            if (!_jumpCondition.IsValid) return;
-
-            _jumpComponent.Jump();
+            if (_jumpCondition.IsValid)
+            {
+                _jumpComponent.Jump();
+            }
         }
 
 

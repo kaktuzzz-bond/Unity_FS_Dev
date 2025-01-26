@@ -1,4 +1,8 @@
 using Game.Scripts.Components;
+using Game.Scripts.Components.Flip;
+using Game.Scripts.Components.GroundDetection;
+using Game.Scripts.Components.Jump;
+using Game.Scripts.Components.Move;
 using UnityEngine;
 using Zenject;
 

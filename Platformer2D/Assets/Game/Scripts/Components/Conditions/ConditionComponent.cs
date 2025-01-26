@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Game.Scripts.Components
+namespace Game.Scripts.Components.Conditions
 {
     public class ConditionComponent : IConditionComponent
     {
