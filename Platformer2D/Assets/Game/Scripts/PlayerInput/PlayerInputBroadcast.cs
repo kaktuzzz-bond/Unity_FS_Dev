@@ -41,8 +41,6 @@ namespace Game.Scripts.PlayerInput
         {
             _direction.x = _inputMap.Keyboard.Move.ReadValue<float>();
 
-            if (_direction.x == 0) return;
-
             OnMoved?.Invoke(_direction);
         }
 

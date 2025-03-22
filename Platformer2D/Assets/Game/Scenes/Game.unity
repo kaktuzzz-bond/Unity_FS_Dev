@@ -1770,6 +1770,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 774187977907358418, guid: f8c9fe38d3b5d4b20be5ba7130a1c5bc, type: 3}
   m_PrefabInstance: {fileID: 800970029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &847232639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6488680396639977520, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
+  m_PrefabInstance: {fileID: 8996098538730116476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db2815c1bc44d348e04d5763ec9dcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &861637017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4217,7 +4228,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -214628805
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1685061594
@@ -5881,6 +5892,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4860270069701936151, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611090415534067880, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1417fc278c8e048e09eac2c464cd52e8, type: 3}
+    - target: {fileID: 6611090415534067880, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087920226503576418, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
+      propertyPath: playerHealthBar
+      value: 
+      objectReference: {fileID: 847232639}
     - target: {fileID: 7490323295220271620, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
       propertyPath: m_Name
       value: Character

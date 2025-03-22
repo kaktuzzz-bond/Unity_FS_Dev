@@ -1,19 +1,43 @@
+using System;
+using Sirenix.OdinInspector;
+using UnityEngine;
+
 namespace Game.Scripts.Components.Health
 {
-    public class HealthComponent
+    public interface IHealthComponent
     {
-        private readonly int _maxHealth;
-        private int _currentHealth;
+        void TakeDamage(int damage);
 
-        public HealthComponent(int maxHealth)
+        void Restore();
+    }
+
+
+    public class HealthComponent : IHealthComponent
+    {
+        public int CurrentHealth { get; private set; }
+
+        private readonly int _maxHealth;
+
+        public HealthComponent(int maxHealth, int startHealth)
         {
+            if (maxHealth <= 0 || startHealth <= 0)
+                throw new ArgumentOutOfRangeException($"Max Health <{maxHealth}> | Start Health <{startHealth}>");
+
             _maxHealth = maxHealth;
+            CurrentHealth = startHealth;
         }
 
-        public void TakeDamage(int damage) =>
-            _currentHealth -= damage;
+        [Button]
+        public void TakeDamage(int damage)
+        {
+            damage = Mathf.Clamp(damage, 0, CurrentHealth);
+            CurrentHealth -= damage;
+        }
 
-        public bool IsDead() =>
-            _currentHealth <= 0;
+        [Button]
+        public void Restore()
+        {
+            CurrentHealth = _maxHealth;
+        }
     }
 }
