@@ -5,9 +5,9 @@ namespace Game.Scripts.Components.Flip
     public class FlipComponent : IFlipComponent
     {
         private readonly Transform _target;
-        
-        private Vector3 _localScale = Vector3.one;
 
+        private Vector3 _localScale = Vector3.one;
+        
         public FlipComponent(Transform target)
         {
             _target = target;

@@ -4,19 +4,10 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Health
 {
-    public interface IHealthComponent
-    {
-        void TakeDamage(int damage);
-
-        void Restore();
-    }
-
-
     public class HealthComponent : IHealthComponent
     {
-        public int CurrentHealth { get; private set; }
-
         private readonly int _maxHealth;
+        private int _currentHealth;
 
         public HealthComponent(int maxHealth, int startHealth)
         {
@@ -24,20 +15,22 @@ namespace Game.Scripts.Components.Health
                 throw new ArgumentOutOfRangeException($"Max Health <{maxHealth}> | Start Health <{startHealth}>");
 
             _maxHealth = maxHealth;
-            CurrentHealth = startHealth;
+            _currentHealth = startHealth;
         }
 
-        [Button]
+        [ShowInInspector, ReadOnly]
+        public float Health => (float)_currentHealth / _maxHealth;
+
+        [ShowInInspector, ReadOnly]
+        public bool IsDead => _currentHealth <= 0;
+
         public void TakeDamage(int damage)
         {
-            damage = Mathf.Clamp(damage, 0, CurrentHealth);
-            CurrentHealth -= damage;
+            damage = Mathf.Clamp(damage, 0, _currentHealth);
+            _currentHealth -= damage;
         }
 
         [Button]
-        public void Restore()
-        {
-            CurrentHealth = _maxHealth;
-        }
+        public void Restore() => _currentHealth = _maxHealth;
     }
 }

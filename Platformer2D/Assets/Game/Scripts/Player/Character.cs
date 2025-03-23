@@ -1,89 +1,59 @@
-using System;
 using Game.Scripts.Components;
-using Game.Scripts.Components.Conditions;
-using Game.Scripts.Components.Flip;
-using Game.Scripts.Components.GroundDetection;
 using Game.Scripts.Components.Health;
-using Game.Scripts.Components.Jump;
-using Game.Scripts.Components.Move;
-using Game.Scripts.PlayerInput;
+using Game.Scripts.Components.Sensors;
+using Game.Scripts.Components.Vfx;
+using Game.Scripts.Data;
 using Game.Scripts.UI;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Player
 {
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour, IDamagable
     {
-        public event Action OnDeath;
-        
-        [SerializeField]
-        private HealthBarView healthBarView;
-        
-        private IPlayerInput _playerInput;
-        private IMoveComponent _moveComponent;
-        private IFlipComponent _flipComponent;
-        private IJumpComponent _jumpComponent;
-        private IGroundRaycastComponent _groundRaycastComponent;
-
-        [ShowInInspector]
+        [ShowInInspector, HideInEditorMode]
         private IHealthComponent _healthComponent;
-        
 
-        private IConditionComponent _jumpCondition;
-        private IConditionComponent _moveCondition;
+        private HealthBarView _healthBarView;
+        private IVisualFX _blinkVFX;
+
+
+        private ITriggerProxy _triggerProxy;
 
 
         [Inject]
         public void Construct(
-            IPlayerInput playerInput,
-            IMoveComponent moveComponent,
-            IFlipComponent flipComponent,
-            IJumpComponent jumpComponent,
-            IGroundRaycastComponent groundRaycastComponent,
-            IHealthComponent healthComponent)
+            IHealthComponent healthComponent,
+            HealthBarView healthBarView,
+            [Inject(Id = NameProvider.Vfx.Blink)]
+            IVisualFX blinkVFX,
+            ITriggerProxy triggerProxy)
         {
-            _playerInput = playerInput;
-            _moveComponent = moveComponent;
-            _flipComponent = flipComponent;
-            _jumpComponent = jumpComponent;
-            _groundRaycastComponent = groundRaycastComponent;
             _healthComponent = healthComponent;
-
-            _jumpCondition = new ConditionComponent(() => _groundRaycastComponent.IsGrounded);
+            _healthBarView = healthBarView;
+            _blinkVFX = blinkVFX;
+            _triggerProxy = triggerProxy;
         }
 
         public void OnEnable()
         {
-            _playerInput.OnJumped += Jump;
-            _playerInput.OnMoved += Move;
+            _triggerProxy.OnTriggered += (col) => Debug.Log($"{gameObject.name} entered to {col.GetType().Name}");
         }
 
-        private void TakeDamage(int damage)
+        [Button, HideInEditorMode]
+        public void TakeDamage(int damage)
         {
             _healthComponent.TakeDamage(damage);
-        }
 
-        private void Move(Vector3 direction)
-        {
-            _flipComponent.LookTowards(direction);
-            _moveComponent.SetDirection(direction);
-        }
+            var health = _healthComponent.Health;
+            _healthBarView.SetValue(health);
 
-        private void Jump()
-        {
-            if (_jumpCondition.IsValid)
+            _blinkVFX.Play(() =>
             {
-                _jumpComponent.Jump();
-            }
-        }
-
-
-        public void OnDisable()
-        {
-            _playerInput.OnJumped -= Jump;
-            _playerInput.OnMoved -= Move;
+                if (health <= 0f) gameObject.SetActive(false);
+            });
         }
     }
 }

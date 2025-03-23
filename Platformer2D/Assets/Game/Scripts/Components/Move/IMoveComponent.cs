@@ -4,6 +4,6 @@ namespace Game.Scripts.Components.Move
 {
     public interface IMoveComponent
     {
-        void SetDirection(Vector3 direction);
+        void Move(Vector3 direction);
     }
 }

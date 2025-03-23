@@ -5,8 +5,8 @@ namespace Game.Scripts.UI
 {
     public class HealthBarView : MonoBehaviour
     {
-        [SerializeField] public Image fillImage;
-        [SerializeField] public Gradient gradient;
+        [SerializeField] private Image fillImage;
+        [SerializeField] private Gradient gradient;
 
         public void SetValue(float value)
         {
