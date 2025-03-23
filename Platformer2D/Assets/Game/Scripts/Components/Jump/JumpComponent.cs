@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Jump
 {
-    public class JumpComponent : IJumpComponent
+    public class JumpComponent : IJumpable
     {
         private readonly Rigidbody2D _rigidbody;
 

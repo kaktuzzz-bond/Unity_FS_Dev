@@ -1,43 +1,31 @@
 using System;
+using Game.Scripts.Components.Attack;
 using Game.Scripts.Components.Health;
-using Game.Scripts.Components.Sensors;
-using UnityEngine;
-using Zenject;
 
 namespace Game.Scripts.Enemies.Trap
 {
-    public class Trap : MonoBehaviour, IDamagable
+    public class Trap : ITrap
     {
-        [SerializeField, Min(0)]
-        private int attackDamage = 1;
+        public event Action OnDead;
 
-        private IHealthComponent _healthComponent;
+        private readonly IHealthComponent _healthComponent;
+        private readonly IAttackable _attackComponent;
 
-        private ITriggerProxy _triggerProxy;
-
-        [Inject]
-        public void Construct(IHealthComponent healthComponent, ITriggerProxy triggerProxy)
+        public Trap(IHealthComponent healthComponent, IAttackable attackComponent)
         {
             _healthComponent = healthComponent;
-            _triggerProxy = triggerProxy;
+            _attackComponent = attackComponent;
         }
 
-        private void OnEnable()
+
+        public void TakeDamage(int damage)
         {
-            _triggerProxy.OnTriggered += OnTargetCaught;
+            _healthComponent.TakeDamage(damage);
+            
+            if (_healthComponent.IsDead) 
+                OnDead?.Invoke();
         }
 
-        private void OnTargetCaught(IDamagable target)
-        {
-            target.TakeDamage(attackDamage);
-            gameObject.SetActive(false);
-        }
-
-        public void TakeDamage(int damage) => _healthComponent.TakeDamage(damage);
-
-        private void OnDisable()
-        {
-            _triggerProxy.OnTriggered -= OnTargetCaught;
-        }
+        public void Attack(IDamagable target) => _attackComponent.Attack(target);
     }
 }

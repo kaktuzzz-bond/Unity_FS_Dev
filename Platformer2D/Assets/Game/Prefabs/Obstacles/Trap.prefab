@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3861428367970733972}
-  - component: {fileID: 2186113233479993845}
   - component: {fileID: 4695388499574527720}
   - component: {fileID: 2663554713004964140}
   m_Layer: 8
-  m_Name: Visual
+  m_Name: sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,33 +34,6 @@ Transform:
   - {fileID: 7668759244915626143}
   m_Father: {fileID: 3075001735327464809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2186113233479993845
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254860857682096947}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: ab257e1d35ce64a6f8763918388a3ca0, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!60 &4695388499574527720
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -219,6 +191,7 @@ GameObject:
   - component: {fileID: 7626958828212587919}
   - component: {fileID: 497825731439939865}
   - component: {fileID: 5783041533006662224}
+  - component: {fileID: 2967571885436114290}
   m_Layer: 8
   m_Name: Trap
   m_TagString: Untagged
@@ -254,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fffc0e61224013b2547b8ac7b46773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1
+  triggerProxy: {fileID: 2663554713004964140}
 --- !u!114 &7626958828212587919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  hit: {fileID: 2663554713004964140}
+  attackDamage: 1
 --- !u!114 &497825731439939865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +272,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c47912ae4e51a84d92f1acf689997c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &2967571885436114290
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331236207197526835}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: ab257e1d35ce64a6f8763918388a3ca0, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

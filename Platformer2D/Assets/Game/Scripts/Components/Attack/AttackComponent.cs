@@ -3,13 +3,17 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Attack
 {
-    public class AttackComponent : MonoBehaviour, IAttackable
+    public class AttackComponent: IAttackable
     {
-        [SerializeField, Min(0)] private int damage = 1;
+        private readonly int _damage;
 
+        public AttackComponent(int damage)
+        {
+            _damage = damage;
+        }
         public void Attack(IDamagable target)
         {
-            target.TakeDamage(damage);
+            target.TakeDamage(_damage);
         }
     }
 }

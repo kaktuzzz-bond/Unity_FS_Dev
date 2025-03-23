@@ -1,6 +1,6 @@
 namespace Game.Scripts.Components.Jump
 {
-    public interface IJumpComponent
+    public interface IJumpable
     {
         void Jump();
     }

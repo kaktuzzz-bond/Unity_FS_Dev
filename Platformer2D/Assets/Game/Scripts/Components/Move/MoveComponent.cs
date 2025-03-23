@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Move
 {
-    public class MoveComponent : IMoveComponent
+    public class MoveComponent : IMovable
     {
         private readonly Rigidbody2D _rigidbody;
         private readonly float _speed;

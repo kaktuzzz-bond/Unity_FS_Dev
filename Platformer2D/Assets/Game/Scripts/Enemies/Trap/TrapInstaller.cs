@@ -1,6 +1,5 @@
-using Game.Scripts.Components.Health;
-using Game.Scripts.Components.Sensors;
-using Sirenix.OdinInspector;
+using Game.Scripts.Components.Installers;
+using Game.Scripts.Player;
 using UnityEngine;
 using Zenject;
 
@@ -8,22 +7,20 @@ namespace Game.Scripts.Enemies.Trap
 {
     public class TrapInstaller : MonoInstaller
     {
-        [Title("Settings")]
         [SerializeField]
         private int health = 1;
-        
-        [Title("Sensors")]
+
         [SerializeField]
-        private TriggerSensor hit;
+        private int attackDamage = 1;
+
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<HealthComponent>()
-                     .AsSingle()
-                     .WithArguments(health, health);
-            
-            Container.Bind<ITriggerProxy>()
-                     .FromInstance(hit)
+            HealthInstaller.Install(Container, health);
+            AttackInstaller.Install(Container, attackDamage);
+
+            Container.Bind<ITrap>()
+                     .To<Trap>()
                      .AsSingle();
         }
     }

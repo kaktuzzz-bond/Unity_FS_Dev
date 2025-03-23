@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Flip
 {
-    public class FlipComponent : IFlipComponent
+    public class FlipComponent : IFlippable
     {
         private readonly Transform _target;
 

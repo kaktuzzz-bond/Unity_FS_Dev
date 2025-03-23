@@ -812,7 +812,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4102650447071868940}
   - component: {fileID: 8849378925273981239}
-  - component: {fileID: 6799050275055776114}
   - component: {fileID: 8342082945872629457}
   - component: {fileID: 518846070392667632}
   - component: {fileID: 7994378608356181130}
@@ -853,18 +852,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e260f36b7caf4a449d7ed45fe37a0eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6799050275055776114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490323295220271620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9899336ce924fc59d772b333329f6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  healthBarView: {fileID: 6488680396639977520}
+  blinkVFX: {fileID: 1295306651862097982}
+  triggerProxy: {fileID: 315726719411192422}
 --- !u!50 &8342082945872629457
 Rigidbody2D:
   serializedVersion: 4
@@ -941,13 +931,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  hit: {fileID: 315726719411192422}
   moveSpeed: 5
   jumpForce: 10
   maxHealth: 10
-  startHealth: 10
-  playerHealthBar: {fileID: 6488680396639977520}
-  blinkFx: {fileID: 1295306651862097982}
 --- !u!1 &8432998189065592541
 GameObject:
   m_ObjectHideFlags: 0

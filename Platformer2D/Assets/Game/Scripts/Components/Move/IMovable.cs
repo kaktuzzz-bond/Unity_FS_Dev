@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Move
 {
-    public interface IMoveComponent
+    public interface IMovable
     {
         void Move(Vector3 direction);
     }

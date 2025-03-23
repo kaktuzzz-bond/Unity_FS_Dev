@@ -9,13 +9,13 @@ namespace Game.Scripts.Components.Health
         private readonly int _maxHealth;
         private int _currentHealth;
 
-        public HealthComponent(int maxHealth, int startHealth)
+        public HealthComponent(int maxHealth)
         {
-            if (maxHealth <= 0 || startHealth <= 0)
-                throw new ArgumentOutOfRangeException($"Max Health <{maxHealth}> | Start Health <{startHealth}>");
+            if (maxHealth <= 0 )
+                throw new ArgumentOutOfRangeException($"Max Health <{maxHealth}>. Error");
 
             _maxHealth = maxHealth;
-            _currentHealth = startHealth;
+            _currentHealth = maxHealth;
         }
 
         [ShowInInspector, ReadOnly]
