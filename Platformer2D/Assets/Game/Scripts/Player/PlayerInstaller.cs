@@ -1,7 +1,9 @@
 using Game.Scripts.Components.Conditions;
+using Game.Scripts.Components.Cooldown;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
+using Game.Scripts.Components.Movement.Move;
 using Game.Scripts.Components.Sensors;
 using Game.Scripts.Player.Settings;
 using Sirenix.OdinInspector;
@@ -47,22 +49,28 @@ namespace Game.Scripts.Player
                 config.AttackSettings
             );
 
-            MoveInstaller.Install(Container, rigidbodyComponent, config.MoveSettings);
-            FlipInstaller.Install(Container, body);
+            MoveInstaller.Install(Container, rigidbodyComponent, body, config.MoveSettings);
             JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpSettings);
             HealthInstaller.Install(Container, config.HealthSettings);
-
+            
             Container.Bind<PlayerView>()
                      .FromInstance(view)
                      .AsSingle();
 
             Container.BindInterfacesTo<Entity>()
                      .AsSingle()
-                     .WithArguments(Container);
+                     .WithArguments(Container)
+                     .OnInstantiated<IEntity>((_, it) =>
+                     {
+                         var jumper = it.Get<Jumper>();
+                         var mover = it.Get<Mover>();
+                         var health = it.Get<IHealthComponent>();
+                         var groundSensor = it.Get<IGroundRaycastSensor>();
+                         jumper.AddCondition(() => health.IsAlive);
+                         jumper.AddCondition(() => groundSensor.IsGrounded);
+                         mover.AddCondition(() => health.IsAlive);
+                     });
 
-            Container.BindInterfacesAndSelfTo<JumpValidator>()
-                     .AsSingle();
-            
             Container.BindInterfacesAndSelfTo<Player>()
                      .AsSingle();
         }

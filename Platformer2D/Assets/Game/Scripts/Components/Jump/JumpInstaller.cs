@@ -1,3 +1,4 @@
+using Game.Scripts.Components.Cooldown;
 using Game.Scripts.Components.Sensors;
 using Game.Scripts.Player.Settings;
 using UnityEngine;
@@ -8,15 +9,15 @@ namespace Game.Scripts.Components.Jump
     public class JumpInstaller : Installer<Transform, Rigidbody2D, LayerMask, JumpSettings, JumpInstaller>
     {
         private readonly Transform _feelPoint;
-
         private readonly Rigidbody2D _rigidbodyComponent;
-
         private readonly LayerMask _groundLayer;
         private readonly JumpSettings _settings;
 
-
         public JumpInstaller(
-            Transform feelPoint, Rigidbody2D rigidbodyComponent, LayerMask groundLayer, JumpSettings settings)
+            Transform feelPoint,
+            Rigidbody2D rigidbodyComponent,
+            LayerMask groundLayer,
+            JumpSettings settings)
         {
             _feelPoint = feelPoint;
             _rigidbodyComponent = rigidbodyComponent;
@@ -29,6 +30,10 @@ namespace Game.Scripts.Components.Jump
             Container.BindInterfacesTo<JumpComponent>()
                      .AsSingle()
                      .WithArguments(_rigidbodyComponent, _settings.JumpForce);
+
+            Container.Bind<Jumper>()
+                     .AsSingle()
+                     .WithArguments(new CooldownTimer(_settings.JumpCooldown));
 
             Container.BindInterfacesTo<GroundRaycastSensor>()
                      .AsSingle()

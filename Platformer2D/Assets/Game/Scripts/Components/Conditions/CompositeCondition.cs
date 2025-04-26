@@ -13,9 +13,9 @@ namespace Game.Scripts.Components.Conditions
             _conditions = conditions.ToList();
         }
 
-        public void Append(Func<bool> condition) => _conditions.Add(condition);
+        public void AddCondition(Func<bool> condition) => _conditions.Add(condition);
 
-        public void Remove(Func<bool> condition) => _conditions.Remove(condition);
+        public void RemoveCondition(Func<bool> condition) => _conditions.Remove(condition);
 
         public bool IsValid => _conditions.All(condition => condition.Invoke());
     }

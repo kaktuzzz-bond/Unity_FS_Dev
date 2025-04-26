@@ -16,7 +16,7 @@ MonoBehaviour:
     moveSpeed: 5
   <JumpSettings>k__BackingField:
     jumpForce: 10
-    jumpCooldown: 0.5
+    jumpCooldown: 2
   <HealthSettings>k__BackingField:
     maxHealth: 10
   <AttackSettings>k__BackingField:

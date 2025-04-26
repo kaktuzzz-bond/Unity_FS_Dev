@@ -17,6 +17,6 @@ namespace Game.Scripts.Player.Settings
         public float JumpForce => jumpForce;
         public float JumpCooldown => jumpCooldown;
 
-        public CooldownTimer CreateTimer => new(jumpCooldown);
+        public CooldownTimer CreateCooldown => new(jumpCooldown);
     }
 }
