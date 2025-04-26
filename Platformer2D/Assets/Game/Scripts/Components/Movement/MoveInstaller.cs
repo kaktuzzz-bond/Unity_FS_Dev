@@ -1,27 +1,28 @@
 using Game.Scripts.Components.Movement.Move;
+using Game.Scripts.Player.Settings;
 using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Components.Movement
 {
-    public class MoveInstaller : Installer<Rigidbody2D, float, MoveInstaller>
+    public class MoveInstaller : Installer<Rigidbody2D, MoveSettings, MoveInstaller>
     {
         private readonly Rigidbody2D _rigidbodyComponent;
 
-        private readonly float _moveSpeed;
+        private readonly MoveSettings _moveSettings;
 
 
-        public MoveInstaller(Rigidbody2D rigidbodyComponent, float moveSpeed)
+        public MoveInstaller(Rigidbody2D rigidbodyComponent, MoveSettings moveSettings)
         {
             _rigidbodyComponent = rigidbodyComponent;
-            _moveSpeed = moveSpeed;
+            _moveSettings = moveSettings;
         }
 
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<MoveComponent>()
                      .AsSingle()
-                     .WithArguments(_rigidbodyComponent, _moveSpeed);
+                     .WithArguments(_rigidbodyComponent, _moveSettings.MoveSpeed);
         }
     }
 }

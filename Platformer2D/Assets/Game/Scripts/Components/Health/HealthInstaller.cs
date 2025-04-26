@@ -1,21 +1,22 @@
+using Game.Scripts.Player.Settings;
 using Zenject;
 
 namespace Game.Scripts.Components.Health
 {
-    public class HealthInstaller : Installer<int, HealthInstaller>
+    public class HealthInstaller : Installer<HealthSettings, HealthInstaller>
     {
-        private readonly int _maxHealth;
+        private readonly HealthSettings _settings;
 
-        public HealthInstaller(int maxHealth)
+        public HealthInstaller(HealthSettings settings)
         {
-            _maxHealth = maxHealth;
+            _settings = settings;
         }
 
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<HealthComponent>()
                      .AsSingle()
-                     .WithArguments(_maxHealth);
+                     .WithArguments(_settings.MaxHealth);
         }
     }
 }

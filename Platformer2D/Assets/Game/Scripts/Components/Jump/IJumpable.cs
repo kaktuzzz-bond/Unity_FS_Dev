@@ -1,4 +1,4 @@
-namespace Game.Scripts.Components.Movement.Jump
+namespace Game.Scripts.Components.Jump
 {
     public interface IJumpable
     {

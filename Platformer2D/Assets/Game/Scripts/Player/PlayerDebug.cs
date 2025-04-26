@@ -15,5 +15,8 @@ namespace Game.Scripts.Player
 
         [Inject, ShowInInspector, ReadOnly, HideInEditorMode]
         private IEntity _entity;
+        
+        [Inject, ShowInInspector, HideInEditorMode]
+        private Player _player;
     }
 }

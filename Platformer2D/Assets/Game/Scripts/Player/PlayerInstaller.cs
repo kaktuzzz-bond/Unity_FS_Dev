@@ -1,5 +1,9 @@
+using Game.Scripts.Components.Conditions;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
+using Game.Scripts.Components.Sensors;
+using Game.Scripts.Player.Settings;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -35,19 +39,29 @@ namespace Game.Scripts.Player
 
         public override void InstallBindings()
         {
-            MoveInstaller.Install(Container, rigidbodyComponent, config.MoveSpeed);
+            Container.BindInstances(
+                config,
+                config.MoveSettings,
+                config.JumpSettings,
+                config.HealthSettings,
+                config.AttackSettings
+            );
+
+            MoveInstaller.Install(Container, rigidbodyComponent, config.MoveSettings);
             FlipInstaller.Install(Container, body);
-            JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpForce);
-            HealthInstaller.Install(Container, config.MaxHealth);
-            
+            JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpSettings);
+            HealthInstaller.Install(Container, config.HealthSettings);
+
             Container.Bind<PlayerView>()
                      .FromInstance(view)
                      .AsSingle();
 
-            Container.Bind<IEntity>()
-                     .To<Entity>()
+            Container.BindInterfacesTo<Entity>()
                      .AsSingle()
                      .WithArguments(Container);
+
+            Container.BindInterfacesAndSelfTo<JumpValidator>()
+                     .AsSingle();
             
             Container.BindInterfacesAndSelfTo<Player>()
                      .AsSingle();

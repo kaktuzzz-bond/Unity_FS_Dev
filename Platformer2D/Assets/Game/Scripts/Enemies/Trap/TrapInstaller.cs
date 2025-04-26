@@ -17,7 +17,7 @@ namespace Game.Scripts.Enemies.Trap
 
         public override void InstallBindings()
         {
-            HealthInstaller.Install(Container, health);
+            //HealthInstaller.Install(Container, health);
             AttackInstaller.Install(Container, attackDamage);
 
             Container.Bind<ITrap>()
