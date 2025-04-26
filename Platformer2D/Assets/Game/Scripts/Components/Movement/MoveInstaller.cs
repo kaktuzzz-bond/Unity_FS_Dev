@@ -1,9 +1,8 @@
-using Game.Scripts.Components.Flip;
-using Game.Scripts.Components.Move;
+using Game.Scripts.Components.Movement.Move;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Player
+namespace Game.Scripts.Components.Movement
 {
     public class MoveInstaller : Installer<Rigidbody2D, float, MoveInstaller>
     {

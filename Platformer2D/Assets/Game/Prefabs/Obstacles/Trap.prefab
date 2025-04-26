@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3861428367970733972}
   - component: {fileID: 4695388499574527720}
-  - component: {fileID: 2663554713004964140}
   m_Layer: 8
   m_Name: sensor
   m_TagString: Untagged
@@ -82,18 +81,6 @@ PolygonCollider2D:
       - {x: -0.5644675, y: 0.0016976148}
       - {x: 0.5652342, y: 0.0005790591}
   m_UseDelaunayMesh: 0
---- !u!114 &2663554713004964140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254860857682096947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c53721057540849e7221b264730559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3976483565223223776
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fffc0e61224013b2547b8ac7b46773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerProxy: {fileID: 2663554713004964140}
 --- !u!114 &7626958828212587919
 MonoBehaviour:
   m_ObjectHideFlags: 0

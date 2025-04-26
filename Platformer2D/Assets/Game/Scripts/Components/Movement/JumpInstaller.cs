@@ -1,9 +1,9 @@
-using Game.Scripts.Components.Jump;
+using Game.Scripts.Components.Movement.Jump;
 using Game.Scripts.Components.Sensors;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Player
+namespace Game.Scripts.Components.Movement
 {
     public class JumpInstaller : Installer<Transform, Rigidbody2D, LayerMask, float, JumpInstaller>
     {

@@ -1,7 +1,6 @@
-using Game.Scripts.Components.Health;
 using Zenject;
 
-namespace Game.Scripts.Player
+namespace Game.Scripts.Components.Health
 {
     public class HealthInstaller : Installer<int, HealthInstaller>
     {

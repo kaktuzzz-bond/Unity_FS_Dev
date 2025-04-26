@@ -1,21 +1,18 @@
-using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Player
 {
-    public class Entity : MonoBehaviour, IEntity
+    public class Entity : IEntity
     {
-        [SerializeField]
-        private GameObjectContext context;
+        private readonly DiContainer _container;
 
-        public T Get<T>() where T : class
+        public Entity(DiContainer container)
         {
-            return context.Container.Resolve<T>();
+            _container = container;
         }
-        
-        public T TryGet<T>() where T : class
-        {
-            return context.Container.TryResolve<T>();
-        }
+
+        public T Get<T>() where T : class => _container.Resolve<T>();
+
+        public T TryGet<T>() where T : class => _container.TryResolve<T>();
     }
 }

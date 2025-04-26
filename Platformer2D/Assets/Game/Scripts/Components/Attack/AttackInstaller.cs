@@ -1,7 +1,6 @@
-using Game.Scripts.Components.Attack;
 using Zenject;
 
-namespace Game.Scripts.Components.Installers
+namespace Game.Scripts.Components.Attack
 {
     public class AttackInstaller: Installer<int, AttackInstaller>
     {

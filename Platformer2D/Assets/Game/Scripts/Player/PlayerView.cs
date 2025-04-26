@@ -6,31 +6,16 @@ using Zenject;
 
 namespace Game.Scripts.Player
 {
-    public class PlayerView : MonoBehaviour, IDamagable
+    public class PlayerView : MonoBehaviour
     {
         [SerializeField]
         private HealthBarView healthBarView;
 
         [SerializeField]
         private BlinkSpriteComponent blinkVFX;
-        
-       
-        private IPlayer _player;
 
-        [Inject]
-        private void Construct(IPlayer player)
-        {
-            _player = player;
-        }
 
-        public void OnEnable()
-        {
-            _player.OnHealthChanged += AnimateDamage;
-        }
-        
-        public void TakeDamage(int damage) => _player.TakeDamage(damage);
-        
-        private void AnimateDamage(float healthValue)
+        public void ShowTakenDamage(float healthValue)
         {
             healthBarView.SetValue(healthValue);
 
@@ -39,12 +24,5 @@ namespace Game.Scripts.Player
                 if (healthValue <= 0f) gameObject.SetActive(false);
             });
         }
-
-        public void OnDisable()
-        {
-            _player.OnHealthChanged += AnimateDamage;
-        }
-
-      
     }
 }

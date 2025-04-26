@@ -1,4 +1,4 @@
-using Game.Scripts.Components.Installers;
+using Game.Scripts.Components.Attack;
 using UnityEngine;
 using Zenject;
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Components.Move
+namespace Game.Scripts.Components.Movement.Move
 {
     public interface IMovable
     {

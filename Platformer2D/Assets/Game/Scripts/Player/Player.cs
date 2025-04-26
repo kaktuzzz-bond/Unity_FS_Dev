@@ -1,9 +1,9 @@
 using System;
 using Game.Scripts.Components.Conditions;
-using Game.Scripts.Components.Flip;
 using Game.Scripts.Components.Health;
-using Game.Scripts.Components.Jump;
-using Game.Scripts.Components.Move;
+using Game.Scripts.Components.Movement.Flip;
+using Game.Scripts.Components.Movement.Jump;
+using Game.Scripts.Components.Movement.Move;
 using Game.Scripts.Components.Sensors;
 using Game.Scripts.PlayerInput;
 using UnityEngine;
@@ -11,37 +11,31 @@ using Zenject;
 
 namespace Game.Scripts.Player
 {
-    public class Player : IInitializable, IDisposable, IPlayer
+    public class Player : IInitializable, IDisposable
     {
-        public event Action<float> OnHealthChanged;
-
         private readonly IPlayerInput _playerInput;
-        private readonly IMovable _moveComponent;
-        private readonly IFlippable _flipComponent;
-        private readonly IJumpable _jumpComponent;
-        private readonly IGroundRaycastSensor _groundRaycastSensor;
-        private readonly IHealthComponent _healthComponent;
+        private readonly IEntity _entity;
+        private readonly PlayerView _view;
 
         private readonly CompositeCondition _jumpCondition;
         private readonly CompositeCondition _moveCondition;
 
-        public Player(
-            IPlayerInput playerInput, IMovable moveComponent, IFlippable flipComponent, IJumpable jumpComponent,
-            IGroundRaycastSensor groundRaycastSensor, IHealthComponent healthComponent)
+        public Player(IPlayerInput playerInput, IEntity entity, PlayerView view)
         {
             _playerInput = playerInput;
-            _moveComponent = moveComponent;
-            _flipComponent = flipComponent;
-            _jumpComponent = jumpComponent;
-            _groundRaycastSensor = groundRaycastSensor;
-            _healthComponent = healthComponent;
-            _jumpCondition = new CompositeCondition(
-                () => _groundRaycastSensor.IsGrounded,
-                () => !_healthComponent.IsDead);
+            _entity = entity;
+            _view = view;
 
-            _moveCondition = new CompositeCondition(
-                () => !_healthComponent.IsDead);
+            var healthComponent = _entity.Get<IHealthComponent>();
+            var groundSensor = _entity.Get<IGroundRaycastSensor>();
+
+            _jumpCondition = new CompositeCondition(
+                () => groundSensor.IsGrounded,
+                () => healthComponent.IsAlive);
+
+            _moveCondition = new CompositeCondition(() => healthComponent.IsAlive);
         }
+
 
         public void Initialize()
         {
@@ -49,30 +43,39 @@ namespace Game.Scripts.Player
             _playerInput.OnMoved += Move;
         }
 
-        public void Dispose()
-        {
-            _playerInput.OnJumped -= Jump;
-            _playerInput.OnMoved -= Move;
-        }
 
         private void Move(Vector3 direction)
         {
             if (!_moveCondition.IsValid) return;
-            _flipComponent.LookTowards(direction);
-            _moveComponent.Move(direction);
+            
+            var flippable = _entity.Get<IFlippable>();
+            var movable = _entity.Get<IMovable>();
+            
+            flippable.LookTowards(direction);
+            movable.Move(direction);
         }
 
         private void Jump()
         {
             if (!_jumpCondition.IsValid) return;
-            _jumpComponent.Jump();
+            
+            var jumpable = _entity.Get<IJumpable>();
+            jumpable.Jump();
         }
 
-
-        public void TakeDamage(int damage)
+        private void TakeDamage(int damage)
         {
-            _healthComponent.TakeDamage(damage);
-            OnHealthChanged?.Invoke(_healthComponent.Health);
+            var healthComponent = _entity.Get<IHealthComponent>();
+
+            healthComponent.TakeDamage(damage);
+
+            _view.ShowTakenDamage(healthComponent.Health);
+        }
+
+        public void Dispose()
+        {
+            _playerInput.OnJumped -= Jump;
+            _playerInput.OnMoved -= Move;
         }
     }
 }

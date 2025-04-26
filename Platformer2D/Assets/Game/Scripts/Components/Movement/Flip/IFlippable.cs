@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Components.Flip
+namespace Game.Scripts.Components.Movement.Flip
 {
     public interface IFlippable
     {

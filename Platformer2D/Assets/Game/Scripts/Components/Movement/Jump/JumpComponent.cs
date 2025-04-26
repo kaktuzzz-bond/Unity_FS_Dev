@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Components.Jump
+namespace Game.Scripts.Components.Movement.Jump
 {
     public class JumpComponent : IJumpable
     {

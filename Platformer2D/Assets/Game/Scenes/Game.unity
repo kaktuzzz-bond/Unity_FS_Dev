@@ -494,25 +494,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 279388144}
     m_Modifications:
-    - target: {fileID: 790263129781726672, guid: 1ff28e98c3c0f41e3ba43630d5d0ba0a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.30400506
-      objectReference: {fileID: 0}
-    - target: {fileID: 790263129781726672, guid: 1ff28e98c3c0f41e3ba43630d5d0ba0a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.28235292
-      objectReference: {fileID: 0}
-    - target: {fileID: 790263129781726672, guid: 1ff28e98c3c0f41e3ba43630d5d0ba0a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7294118
-      objectReference: {fileID: 0}
     - target: {fileID: 1941354820746825385, guid: 1ff28e98c3c0f41e3ba43630d5d0ba0a, type: 3}
       propertyPath: m_Name
       value: Lava
-      objectReference: {fileID: 0}
-    - target: {fileID: 6318981597555825327, guid: 1ff28e98c3c0f41e3ba43630d5d0ba0a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6318981597555825327, guid: 1ff28e98c3c0f41e3ba43630d5d0ba0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5407,8 +5391,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6799050275055776114, guid: 059a7ddbcfb4f4b51a6fd1d2b168a503, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

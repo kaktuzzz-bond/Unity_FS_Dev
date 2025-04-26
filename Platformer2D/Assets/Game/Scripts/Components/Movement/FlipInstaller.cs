@@ -1,8 +1,8 @@
-using Game.Scripts.Components.Flip;
+using Game.Scripts.Components.Movement.Flip;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Components.Installers
+namespace Game.Scripts.Components.Movement
 {
     public class FlipInstaller : Installer<Transform, FlipInstaller>
     {
