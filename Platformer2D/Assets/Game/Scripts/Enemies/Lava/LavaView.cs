@@ -7,15 +7,15 @@ namespace Game.Scripts.Enemies.Lava
 {
     public class LavaView : MonoBehaviour
     {
-        [SerializeField]
-        private TriggerSensor triggerProxy;
+        // [SerializeField]
+        // private TriggerSensor triggerProxy;
 
         [Inject]
         private ILava _lava;
 
         private void OnEnable()
         {
-            triggerProxy.OnTriggered += OnTargetCaught;
+            //triggerProxy.OnTriggered += OnTargetCaught;
         }
 
         private void OnTargetCaught(IDamagable target)
@@ -25,7 +25,7 @@ namespace Game.Scripts.Enemies.Lava
 
         private void OnDisable()
         {
-            triggerProxy.OnTriggered -= OnTargetCaught;
+            //triggerProxy.OnTriggered -= OnTargetCaught;
         }
     }
 }

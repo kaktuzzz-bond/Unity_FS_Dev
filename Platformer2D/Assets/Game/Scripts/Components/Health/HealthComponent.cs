@@ -11,7 +11,7 @@ namespace Game.Scripts.Components.Health
 
         public HealthComponent(int maxHealth)
         {
-            if (maxHealth <= 0 )
+            if (maxHealth <= 0)
                 throw new ArgumentOutOfRangeException($"Max Health <{maxHealth}>. Error");
 
             _maxHealth = maxHealth;
@@ -22,6 +22,8 @@ namespace Game.Scripts.Components.Health
         public float Health => (float)_currentHealth / _maxHealth;
 
         [ShowInInspector, ReadOnly]
+        public bool IsAlive => _currentHealth > 0;
+
         public bool IsDead => _currentHealth <= 0;
 
         public void TakeDamage(int damage)

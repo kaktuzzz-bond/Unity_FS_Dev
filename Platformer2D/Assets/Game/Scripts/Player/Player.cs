@@ -35,9 +35,8 @@ namespace Game.Scripts.Player
             _jumpComponent = jumpComponent;
             _groundRaycastSensor = groundRaycastSensor;
             _healthComponent = healthComponent;
-
             _jumpCondition = new CompositeCondition(
-                () => _groundRaycastSensor.IsGrounded, 
+                () => _groundRaycastSensor.IsGrounded,
                 () => !_healthComponent.IsDead);
 
             _moveCondition = new CompositeCondition(
@@ -50,10 +49,15 @@ namespace Game.Scripts.Player
             _playerInput.OnMoved += Move;
         }
 
+        public void Dispose()
+        {
+            _playerInput.OnJumped -= Jump;
+            _playerInput.OnMoved -= Move;
+        }
+
         private void Move(Vector3 direction)
         {
             if (!_moveCondition.IsValid) return;
-
             _flipComponent.LookTowards(direction);
             _moveComponent.Move(direction);
         }
@@ -61,20 +65,13 @@ namespace Game.Scripts.Player
         private void Jump()
         {
             if (!_jumpCondition.IsValid) return;
-
             _jumpComponent.Jump();
         }
 
-        public void Dispose()
-        {
-            _playerInput.OnJumped -= Jump;
-            _playerInput.OnMoved -= Move;
-        }
 
         public void TakeDamage(int damage)
         {
             _healthComponent.TakeDamage(damage);
-
             OnHealthChanged?.Invoke(_healthComponent.Health);
         }
     }

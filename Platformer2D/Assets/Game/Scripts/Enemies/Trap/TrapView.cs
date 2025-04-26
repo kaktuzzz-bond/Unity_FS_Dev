@@ -8,15 +8,15 @@ namespace Game.Scripts.Enemies.Trap
 {
     public class TrapView : MonoBehaviour, IDamagable
     {
-        [SerializeField]
-        private TriggerSensor triggerProxy;
+        // [SerializeField]
+        // private TriggerSensor triggerProxy;
 
         [Inject]
         private ITrap _trap;
 
         private void OnEnable()
         {
-            triggerProxy.OnTriggered += OnTargetCaught;
+            //triggerProxy.OnTriggered += OnTargetCaught;
             _trap.OnDead += Die;
         }
 
@@ -37,7 +37,7 @@ namespace Game.Scripts.Enemies.Trap
 
         private void OnDisable()
         {
-            triggerProxy.OnTriggered -= OnTargetCaught;
+            //triggerProxy.OnTriggered -= OnTargetCaught;
             _trap.OnDead -= Die;
         }
     }

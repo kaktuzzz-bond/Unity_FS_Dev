@@ -1,5 +1,4 @@
 using Game.Scripts.Components.Health;
-using Game.Scripts.Components.Sensors;
 using Game.Scripts.Components.Vfx;
 using Game.Scripts.UI;
 using UnityEngine;
@@ -14,13 +13,15 @@ namespace Game.Scripts.Player
 
         [SerializeField]
         private BlinkSpriteComponent blinkVFX;
-
-        [SerializeField]
-        private TriggerSensor triggerProxy;
-
-        [Inject]
+        
+       
         private IPlayer _player;
 
+        [Inject]
+        private void Construct(IPlayer player)
+        {
+            _player = player;
+        }
 
         public void OnEnable()
         {

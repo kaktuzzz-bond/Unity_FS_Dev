@@ -7,6 +7,9 @@ namespace Game.Scripts.Player
 {
     public class PlayerInstaller : MonoInstaller
     {
+        [SerializeField]
+        private EntityConfig config;
+
         [Title("Refs")]
         [SerializeField]
         public Transform body;
@@ -23,23 +26,13 @@ namespace Game.Scripts.Player
         [SerializeField]
         private LayerMask groundLayer;
 
-        [Title("Settings")]
-        [SerializeField]
-        private float moveSpeed = 5;
-
-        [SerializeField]
-        private float jumpForce = 10;
-
-        [SerializeField]
-        private int maxHealth = 10;
-
         public override void InstallBindings()
         {
-            MoveInstaller.Install(Container, rigidbodyComponent, moveSpeed);
+            MoveInstaller.Install(Container, rigidbodyComponent, config.MoveSpeed);
             FlipInstaller.Install(Container, body);
-            JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, jumpForce);
-            HealthInstaller.Install(Container, maxHealth);
-
+            JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpForce);
+            HealthInstaller.Install(Container, config.MaxHealth);
+            
             Container.BindInterfacesTo<Player>()
                      .AsSingle();
         }

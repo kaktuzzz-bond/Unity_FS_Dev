@@ -4,6 +4,7 @@ namespace Game.Scripts.Components.Health
     {
         public float Health { get; }
         bool IsDead { get; }
+        bool IsAlive { get; }
 
         void Restore();
     }
