@@ -52,7 +52,7 @@ namespace Game.Scripts.Player
             MoveInstaller.Install(Container, rigidbodyComponent, body, config.MoveSettings);
             JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpSettings);
             HealthInstaller.Install(Container, config.HealthSettings);
-            
+
             Container.Bind<PlayerView>()
                      .FromInstance(view)
                      .AsSingle();
@@ -62,13 +62,14 @@ namespace Game.Scripts.Player
                      .WithArguments(Container)
                      .OnInstantiated<IEntity>((_, it) =>
                      {
-                         var jumper = it.Get<Jumper>();
-                         var mover = it.Get<Mover>();
-                         var health = it.Get<IHealthComponent>();
-                         var groundSensor = it.Get<IGroundRaycastSensor>();
-                         jumper.AddCondition(() => health.IsAlive);
-                         jumper.AddCondition(() => groundSensor.IsGrounded);
-                         mover.AddCondition(() => health.IsAlive);
+                         it.Get<Jumper>()
+                           .AddCondition(() => it.Get<IHealthComponent>().IsAlive);
+
+                         it.Get<Jumper>()
+                           .AddCondition(() => it.Get<IGroundRaycastSensor>().IsGrounded);
+
+                         it.Get<Mover>()
+                           .AddCondition(() => it.Get<IHealthComponent>().IsAlive);
                      });
 
             Container.BindInterfacesAndSelfTo<Player>()
