@@ -6,6 +6,7 @@ namespace Game.Scripts.Components.Health
         bool IsDead { get; }
         bool IsAlive { get; }
 
+        void Kill();
         void Restore();
     }
 }

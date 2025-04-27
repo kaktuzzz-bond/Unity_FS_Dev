@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade6e05f7dd84910adb88ac6956b8998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1000
+  attackSettings:
+    attackDamage: 1000
   triggerSensor: {fileID: 7360510982631947968}
   audioSource: {fileID: 1562219783841291422}
   view: {fileID: 6820012666156837930}

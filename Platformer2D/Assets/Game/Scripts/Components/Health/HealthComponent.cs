@@ -32,6 +32,8 @@ namespace Game.Scripts.Components.Health
             _currentHealth -= damage;
         }
 
+        public void Kill() => _currentHealth = 0;
+
         [Button]
         public void Restore() => _currentHealth = _maxHealth;
     }

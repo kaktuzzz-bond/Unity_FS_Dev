@@ -8,12 +8,8 @@ namespace Game.Scripts.Player.Settings
     public class AttackSettings
     {
         [SerializeField, Min(0)]
-        private float pushCooldown = 2;
+        private int attackDamage;
 
-        [SerializeField, Min(0)]
-        private float tossCooldown = 2;
-
-        public float PushCooldown => pushCooldown;
-        public float TossCooldown => tossCooldown;
+        public int AttackDamage => attackDamage;
     }
 }

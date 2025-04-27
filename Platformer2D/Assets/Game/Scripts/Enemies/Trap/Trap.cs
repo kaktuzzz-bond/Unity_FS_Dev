@@ -1,31 +1,71 @@
 using System;
+using Game.Scripts.Audio;
 using Game.Scripts.Components.Attack;
+using Game.Scripts.Components.Audio;
+using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Impacts;
+using Game.Scripts.Components.Sensors;
+using Unity.VisualScripting;
+using UnityEngine;
+using IInitializable = Zenject.IInitializable;
 
 namespace Game.Scripts.Enemies.Trap
 {
-    public class Trap : ITrap
+    public class Trap : IInitializable, IDisposable
     {
-        public event Action OnDead;
+        private readonly IEntity _entity;
+        private readonly TrapView _view;
 
-        private readonly IHealthComponent _healthComponent;
-        private readonly IAttackable _attackComponent;
-
-        public Trap(IHealthComponent healthComponent, IAttackable attackComponent)
+        public Trap(IEntity entity, TrapView view)
         {
-            _healthComponent = healthComponent;
-            _attackComponent = attackComponent;
+            _entity = entity;
+            _view = view;
         }
 
 
-        public void TakeDamage(int damage)
+        public void Initialize()
         {
-            _healthComponent.TakeDamage(damage);
+            _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
+            _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
+            _entity.Get<ITriggerSensor>().OnTriggerEnter += OnTriggerEnter;
+        }
+
+        private void OnTriggerEnter(Collider2D other)
+        {
+            if (!other.TryGetComponent<IDamagable>(out var target)) return;
+
+            _entity.Get<IAttackable>().Attack(target);
             
-            if (_healthComponent.IsDead) 
-                OnDead?.Invoke();
+            KillEntity();
         }
 
-        public void Attack(IDamagable target) => _attackComponent.Attack(target);
+        private void TakeDamage(int damage)
+        {
+            var healthComponent = _entity.Get<IHealthComponent>();
+
+            healthComponent.TakeDamage(damage);
+            _view.ShowTakenDamage(healthComponent.Health);
+        }
+
+        private void TakeImpact(Vector3 force)
+        {
+            _entity.Get<IPushable>().TakePush(force);
+        }
+
+        private void KillEntity()
+        {
+            var healthComponent = _entity.Get<IHealthComponent>();
+
+            healthComponent.Kill();
+            _view.ShowTakenDamage(healthComponent.Health);
+        }
+
+        public void Dispose()
+        {
+            _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
+            _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
+            _entity.Get<ITriggerSensor>().OnTriggerEnter -= OnTriggerEnter;
+        }
     }
 }

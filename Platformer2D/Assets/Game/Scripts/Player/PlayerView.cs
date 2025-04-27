@@ -18,7 +18,8 @@ namespace Game.Scripts.Player
 
             blinkVFX.Play(() =>
             {
-                if (healthValue <= 0f) gameObject.SetActive(false);
+                if (healthValue <= 0f) 
+                    gameObject.SetActive(false);
             });
         }
     }
