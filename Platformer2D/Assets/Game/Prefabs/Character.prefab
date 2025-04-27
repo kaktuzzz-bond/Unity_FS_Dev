@@ -287,9 +287,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8980892021632546839}
+  - component: {fileID: 9210623509313711627}
   - component: {fileID: 3109106816392369252}
   - component: {fileID: 2234009592881848764}
-  - component: {fileID: 315726719411192422}
   m_Layer: 9
   m_Name: root
   m_TagString: Character
@@ -317,6 +317,18 @@ Transform:
   - {fileID: 3511145341736734193}
   m_Father: {fileID: 4102650447071868940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9210623509313711627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742679491460429038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d931a695a2f1450f8509f33de744aedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &3109106816392369252
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -387,18 +399,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.2542764}
   serializedVersion: 2
   m_Radius: 0.2457236
---- !u!114 &315726719411192422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742679491460429038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059fd9abb6f549b8832b32ab98c96114, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2052054696943251309
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,12 +853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e260f36b7caf4a449d7ed45fe37a0eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 7763561300529826441}
   healthBarView: {fileID: 6488680396639977520}
   blinkVFX: {fileID: 1295306651862097982}
-  takeDamageSound: {fileID: 8300000, guid: 32f565ba94f200f49adb407cce64e873, type: 3}
-  jumpSound: {fileID: 8300000, guid: 4a3d24c7a7d02497a9aa7b0018822e35, type: 3}
-  tossSound: {fileID: 8300000, guid: a2fb8d4706a16468592a6e50aa24de65, type: 3}
 --- !u!114 &7087920226503576418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,6 +869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 68672dc0efa644238a7dfc0875ad60b4, type: 2}
   view: {fileID: 8849378925273981239}
+  audioSource: {fileID: 7763561300529826441}
+  damagableBody: {fileID: 9210623509313711627}
   body: {fileID: 8980892021632546839}
   feelPoint: {fileID: 5450401019508516262}
   pushPoint: {fileID: 3511145341736734193}

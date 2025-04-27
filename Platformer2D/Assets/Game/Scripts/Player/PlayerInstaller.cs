@@ -1,5 +1,7 @@
+using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Conditions;
 using Game.Scripts.Components.Cooldown;
+using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
@@ -20,11 +22,18 @@ namespace Game.Scripts.Player
 
         [Title("View")]
         [SerializeField]
-        public PlayerView view;
+        private PlayerView view;
 
+        [Title("Audio")]
+        [SerializeField]
+        private AudioSource audioSource;
+        
         [Title("Refs")]
         [SerializeField]
-        public Transform body;
+        private DamagableBody damagableBody;
+        
+        [SerializeField]
+        private Transform body;
 
         [SerializeField]
         private Transform feelPoint;
@@ -42,35 +51,23 @@ namespace Game.Scripts.Player
         public override void InstallBindings()
         {
             Container.BindInstances(
-                config,
-                config.MoveSettings,
-                config.JumpSettings,
-                config.HealthSettings,
-                config.AttackSettings
+                config//,
+                // config.MoveSettings,
+                // config.JumpSettings,
+                // config.HealthSettings,
+                // config.AttackSettings
             );
 
             MoveInstaller.Install(Container, rigidbodyComponent, body, config.MoveSettings);
             JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpSettings);
             HealthInstaller.Install(Container, config.HealthSettings);
-
+            BodyInstaller.Install(Container, damagableBody);
+            AudioInstaller.Install(Container, audioSource);
+            EntityInstaller.Install(Container);
+            
             Container.Bind<PlayerView>()
                      .FromInstance(view)
                      .AsSingle();
-            
-            Container.BindInterfacesTo<Entity>()
-                     .AsSingle()
-                     .WithArguments(Container)
-                     .OnInstantiated<IEntity>((_, it) =>
-                     {
-                         it.Get<Jumper>()
-                           .AddCondition(() => it.Get<IHealthComponent>().IsAlive);
-
-                         it.Get<Jumper>()
-                           .AddCondition(() => it.Get<IGroundRaycastSensor>().IsGrounded);
-
-                         it.Get<Mover>()
-                           .AddCondition(() => it.Get<IHealthComponent>().IsAlive);
-                     });
 
             Container.BindInterfacesAndSelfTo<Player>()
                      .AsSingle();

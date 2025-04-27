@@ -1,3 +1,4 @@
+using Game.Scripts.Components.Entities;
 using Game.Scripts.PlayerInput;
 using Sirenix.OdinInspector;
 using UnityEngine;

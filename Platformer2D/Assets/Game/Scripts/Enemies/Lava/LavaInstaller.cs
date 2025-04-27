@@ -1,4 +1,7 @@
 using Game.Scripts.Components.Attack;
+using Game.Scripts.Components.Audio;
+using Game.Scripts.Components.Entities;
+using Game.Scripts.Components.Sensors;
 using UnityEngine;
 using Zenject;
 
@@ -7,15 +10,29 @@ namespace Game.Scripts.Enemies.Lava
     public class LavaInstaller : MonoInstaller
     {
         [SerializeField]
-        private int attackDamage = 1000;
+        private int attackDamage = int.MaxValue;
 
+        [SerializeField]
+        private TriggerSensor triggerSensor;
+
+        [SerializeField]
+        private AudioSource audioSource;
+        
+        [SerializeField]
+        private LavaView view;
 
         public override void InstallBindings()
         {
             AttackInstaller.Install(Container, attackDamage);
+            TriggerSensorInstaller.Install(Container, triggerSensor);
+            AudioInstaller.Install(Container, audioSource);
+            EntityInstaller.Install(Container);
 
-            Container.Bind<ILava>()
-                     .To<Lava>()
+            Container.Bind<LavaView>()
+                     .FromInstance(view)
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Lava>()
                      .AsSingle();
         }
     }

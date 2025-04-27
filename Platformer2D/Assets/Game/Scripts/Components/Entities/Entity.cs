@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Game.Scripts.Player
+namespace Game.Scripts.Components.Entities
 {
     public class Entity : IEntity
     {

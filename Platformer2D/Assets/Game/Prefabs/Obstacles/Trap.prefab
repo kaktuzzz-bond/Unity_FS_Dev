@@ -174,8 +174,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3075001735327464809}
-  - component: {fileID: 5186780264369601147}
-  - component: {fileID: 7626958828212587919}
   - component: {fileID: 497825731439939865}
   - component: {fileID: 5783041533006662224}
   - component: {fileID: 2967571885436114290}
@@ -202,32 +200,6 @@ Transform:
   - {fileID: 3861428367970733972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5186780264369601147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331236207197526835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79fffc0e61224013b2547b8ac7b46773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7626958828212587919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331236207197526835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07bc7be3ca74201a6b6b582e46391d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  attackDamage: 1
 --- !u!114 &497825731439939865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 7626958828212587919}
+  _monoInstallers: []
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 5783041533006662224}
