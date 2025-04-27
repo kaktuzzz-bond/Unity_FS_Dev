@@ -56,7 +56,7 @@ namespace Game.Scripts.Player
             Container.Bind<PlayerView>()
                      .FromInstance(view)
                      .AsSingle();
-
+            
             Container.BindInterfacesTo<Entity>()
                      .AsSingle()
                      .WithArguments(Container)
