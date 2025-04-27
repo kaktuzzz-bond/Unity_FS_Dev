@@ -3,11 +3,11 @@ using Zenject;
 
 namespace Game.Scripts.Components.Audio
 {
-    public class AudioInstaller : Installer<AudioSource, AudioInstaller>
+    public class AudioComponentInstaller : Installer<AudioSource, AudioComponentInstaller>
     {
         private readonly AudioSource _audioSource;
 
-        public AudioInstaller(AudioSource audioSource)
+        public AudioComponentInstaller(AudioSource audioSource)
         {
             _audioSource = audioSource;
         }

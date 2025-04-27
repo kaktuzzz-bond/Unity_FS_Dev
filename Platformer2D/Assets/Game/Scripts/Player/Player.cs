@@ -5,6 +5,7 @@ using Game.Scripts.Components.Conditions;
 using Game.Scripts.Components.Cooldown;
 using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement.Move;
 using Game.Scripts.Components.Sensors;
@@ -40,11 +41,13 @@ namespace Game.Scripts.Player
             _playerInput.OnJumped += Jump;
             _playerInput.OnMoved += Move;
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
+            _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
 
             _entity.Get<Jumper>().AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
             _entity.Get<Jumper>().AddCondition(() => _entity.Get<IGroundRaycastSensor>().IsGrounded);
             _entity.Get<Mover>().AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
         }
+
 
         [Button, HideInEditorMode]
         private void Move(Vector3 direction)
@@ -73,11 +76,18 @@ namespace Game.Scripts.Player
             _view.ShowTakenDamage(healthComponent.Health);
         }
 
+        [Button, HideInEditorMode]
+        private void TakeImpact(Vector3 force)
+        {
+            _entity.Get<IPushable>().TakePush(force);
+        }
+
         public void Dispose()
         {
             _playerInput.OnJumped -= Jump;
             _playerInput.OnMoved -= Move;
             _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
+            _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
         }
     }
 }

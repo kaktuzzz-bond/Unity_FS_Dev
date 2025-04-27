@@ -288,10 +288,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8980892021632546839}
   - component: {fileID: 9210623509313711627}
+  - component: {fileID: 7292231897018823252}
   - component: {fileID: 3109106816392369252}
   - component: {fileID: 2234009592881848764}
   m_Layer: 9
-  m_Name: root
+  m_Name: <Body>
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,6 +328,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d931a695a2f1450f8509f33de744aedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7292231897018823252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742679491460429038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6b8036908c4413873df82a2b66d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!70 &3109106816392369252
@@ -871,6 +884,7 @@ MonoBehaviour:
   view: {fileID: 8849378925273981239}
   audioSource: {fileID: 7763561300529826441}
   damagableBody: {fileID: 9210623509313711627}
+  pushableBody: {fileID: 7292231897018823252}
   body: {fileID: 8980892021632546839}
   feelPoint: {fileID: 5450401019508516262}
   pushPoint: {fileID: 3511145341736734193}

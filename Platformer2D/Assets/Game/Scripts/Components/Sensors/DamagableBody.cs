@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Sensors
 {
+    [RequireComponent(typeof(Collider2D))]
     public class DamagableBody : MonoBehaviour, IDamagableBody
     {
         public event Action<int> OnDamageTaken;

@@ -3,6 +3,7 @@ using Game.Scripts.Components.Conditions;
 using Game.Scripts.Components.Cooldown;
 using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
 using Game.Scripts.Components.Movement.Move;
@@ -27,11 +28,15 @@ namespace Game.Scripts.Player
         [Title("Audio")]
         [SerializeField]
         private AudioSource audioSource;
-        
-        [Title("Refs")]
+
+        [Title("Sensors")]
         [SerializeField]
         private DamagableBody damagableBody;
-        
+
+        [SerializeField]
+        private PushableBody pushableBody;
+
+        [Title("Refs")]
         [SerializeField]
         private Transform body;
 
@@ -50,21 +55,18 @@ namespace Game.Scripts.Player
 
         public override void InstallBindings()
         {
-            Container.BindInstances(
-                config//,
-                // config.MoveSettings,
-                // config.JumpSettings,
-                // config.HealthSettings,
-                // config.AttackSettings
-            );
+            Container.BindInstances(config);
 
+            //components
             MoveInstaller.Install(Container, rigidbodyComponent, body, config.MoveSettings);
             JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpSettings);
-            HealthInstaller.Install(Container, config.HealthSettings);
-            BodyInstaller.Install(Container, damagableBody);
-            AudioInstaller.Install(Container, audioSource);
+            HealthInstaller.Install(Container, config.HealthSettings, damagableBody);
+            PushableInstaller.Install(Container, rigidbodyComponent, pushableBody);
+            AudioComponentInstaller.Install(Container, audioSource);
+
+            //entity
             EntityInstaller.Install(Container);
-            
+
             Container.Bind<PlayerView>()
                      .FromInstance(view)
                      .AsSingle();
