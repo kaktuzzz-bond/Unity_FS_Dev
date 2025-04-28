@@ -6,7 +6,7 @@ using Game.Scripts.Player.Settings;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Enemies.Lava
+namespace Game.Scripts.Entities.Lava
 {
     public class LavaInstaller : MonoInstaller
     {

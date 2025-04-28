@@ -7,7 +7,7 @@ using Game.Scripts.Components.Sensors;
 using UnityEngine;
 using IInitializable = Zenject.IInitializable;
 
-namespace Game.Scripts.Enemies.Trap
+namespace Game.Scripts.Entities.Trap
 {
     public class Trap : IInitializable, IDisposable
     {

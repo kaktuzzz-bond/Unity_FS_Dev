@@ -17,7 +17,7 @@ namespace Game.Scripts.Components.Movement.Flip
         {
             if (direction.x == 0) return;
 
-            _localScale.x = direction.x;
+            _localScale.x = direction.x < 0 ? -1 : 1;
             _target.localScale = _localScale;
         }
     }

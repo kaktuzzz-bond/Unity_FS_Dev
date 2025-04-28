@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   <MoveSettings>k__BackingField:
-    <MoveSpeed>k__BackingField: 6
+    <MoveSpeed>k__BackingField: 5
     <Drag>k__BackingField: 1
     <IsFlippable>k__BackingField: 1
   <JumpSettings>k__BackingField:

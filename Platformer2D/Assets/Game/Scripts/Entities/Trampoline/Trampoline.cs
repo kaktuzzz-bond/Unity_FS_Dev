@@ -7,7 +7,7 @@ using Game.Scripts.Components.Sensors;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Enemies.Trampoline
+namespace Game.Scripts.Entities.Trampoline
 {
     public class Trampoline : IInitializable, IDisposable
     {

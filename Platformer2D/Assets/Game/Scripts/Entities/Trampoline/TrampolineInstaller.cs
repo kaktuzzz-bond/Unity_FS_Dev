@@ -6,7 +6,7 @@ using Game.Scripts.Player.Settings;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Enemies.Trampoline
+namespace Game.Scripts.Entities.Trampoline
 {
     public class TrampolineInstaller : MonoInstaller
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Enemies.Trap
+namespace Game.Scripts.Entities.Trap
 {
     public class TrapView : MonoBehaviour
     {

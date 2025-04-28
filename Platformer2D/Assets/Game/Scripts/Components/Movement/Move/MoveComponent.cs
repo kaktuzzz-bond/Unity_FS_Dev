@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Game.Scripts.Components.Conditions;
 using Game.Scripts.Components.Movement.Flip;
 using Game.Scripts.Player.Settings;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -14,8 +15,7 @@ namespace Game.Scripts.Components.Movement.Move
         private readonly IFlippable _flipComponent;
         private readonly MoveSettings _settings;
         private readonly ICondition _condition;
-
-
+        
         public MoveComponent(Rigidbody2D rb, IFlippable flipComponent, MoveSettings settings)
         {
             _rb = rb;
@@ -30,14 +30,21 @@ namespace Game.Scripts.Components.Movement.Move
             _rb.drag = _settings.Drag;
         }
 
+        [Button,HideInEditorMode]
+        public void MoveHorizontal(Vector3 direction)
+        {
+            Move(new Vector2(direction.x * _settings.MoveSpeed, _rb.velocity.y));
+        }
+        
+        [Button,HideInEditorMode]
         public void Move(Vector3 direction)
         {
             if (!_condition.IsValid) return;
 
-            _rb.velocity = new Vector2(direction.x * _settings.MoveSpeed, _rb.velocity.y);
+            _rb.velocity = direction;
 
             if (!_settings.IsFlippable) return;
-            
+
             _flipComponent.LookTowards(direction);
         }
 
@@ -45,5 +52,6 @@ namespace Game.Scripts.Components.Movement.Move
         {
             _condition.AddCondition(condition);
         }
+        
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Enemies.Lava
+namespace Game.Scripts.Entities.Lava
 {
     public class LavaView : MonoBehaviour
     {

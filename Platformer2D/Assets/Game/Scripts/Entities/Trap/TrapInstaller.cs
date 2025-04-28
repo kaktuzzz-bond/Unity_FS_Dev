@@ -3,13 +3,12 @@ using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Sensors;
-using Game.Scripts.Player;
 using Game.Scripts.Player.Settings;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Enemies.Trap
+namespace Game.Scripts.Entities.Trap
 {
     public class TrapInstaller : MonoInstaller
     {

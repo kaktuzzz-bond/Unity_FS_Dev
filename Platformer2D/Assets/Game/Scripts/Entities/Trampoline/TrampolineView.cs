@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Enemies.Trampoline
+namespace Game.Scripts.Entities.Trampoline
 {
     public class TrampolineView:MonoBehaviour
     {

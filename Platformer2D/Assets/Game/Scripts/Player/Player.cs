@@ -57,7 +57,7 @@ namespace Game.Scripts.Player
         {
             if (!Mathf.Approximately(direction.x, 0f))
             {
-                _entity.Get<IMoveComponent>().Move(direction);
+                _entity.Get<IMoveComponent>().MoveHorizontal(direction);
             }
         }
 

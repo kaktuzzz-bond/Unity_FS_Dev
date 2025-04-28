@@ -8,7 +8,7 @@ using Game.Scripts.Components.Sensors;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Enemies.Lava
+namespace Game.Scripts.Entities.Lava
 {
     public class Lava : IInitializable, IDisposable
     {
