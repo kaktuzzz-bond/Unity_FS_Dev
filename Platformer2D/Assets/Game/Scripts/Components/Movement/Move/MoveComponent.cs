@@ -30,6 +30,14 @@ namespace Game.Scripts.Components.Movement.Move
             _rb.drag = _settings.Drag;
         }
 
+
+        public Vector2 BodyDirection => new Vector2(_flipComponent.GetScale.x, 0);
+
+        public void AddCondition(Func<bool> condition)
+        {
+            _condition.AddCondition(condition);
+        }
+        
         [Button,HideInEditorMode]
         public void MoveHorizontal(Vector3 direction)
         {
@@ -48,10 +56,6 @@ namespace Game.Scripts.Components.Movement.Move
             _flipComponent.LookTowards(direction);
         }
 
-        public void AddCondition(Func<bool> condition)
-        {
-            _condition.AddCondition(condition);
-        }
         
     }
 }

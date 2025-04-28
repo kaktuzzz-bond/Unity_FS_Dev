@@ -23,5 +23,5 @@ MonoBehaviour:
   <HealthSettings>k__BackingField:
     <MaxHealth>k__BackingField: 10
   <PushSettings>k__BackingField:
-    <Force>k__BackingField: 10
+    <Force>k__BackingField: 3
     cooldown: 2

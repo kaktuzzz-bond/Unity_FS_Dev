@@ -73,21 +73,7 @@ namespace Game.Scripts.Player
             }
         }
 
-        private void Toss()
-        {
-            var pusher = _entity.Get<IPusher>();
-            var sensor = _entity.Get<IEntityRaycastSensor>();
-
-            var direction = GetBodyDirection();
-
-            foreach (var col in sensor.Scan(direction * 5))
-            {
-                if (col.TryGetComponent<IPushable>(out var target))
-                {
-                    pusher.Push(target, Vector2.up);
-                }
-            }
-        }
+      
 
 
         private void Push()
@@ -95,9 +81,9 @@ namespace Game.Scripts.Player
             var pusher = _entity.Get<IPusher>();
             var sensor = _entity.Get<IEntityRaycastSensor>();
 
-            var direction = GetBodyDirection();
+            var direction = _entity.Get<IMoveComponent>().BodyDirection;
 
-            foreach (var col in sensor.Scan(direction * 5))
+            foreach (var col in sensor.Scan(direction))
             {
                 if (col.TryGetComponent<IPushable>(out var target))
                 {
@@ -106,6 +92,22 @@ namespace Game.Scripts.Player
             }
         }
 
+        private void Toss()
+        {
+            var pusher = _entity.Get<IPusher>();
+            var sensor = _entity.Get<IEntityRaycastSensor>();
+
+            var direction = _entity.Get<IMoveComponent>().BodyDirection;
+
+            foreach (var col in sensor.Scan(direction))
+            {
+                if (col.TryGetComponent<IPushable>(out var target))
+                {
+                    pusher.Push(target, Vector2.up);
+                }
+            }
+        }
+        
         [Button, HideInEditorMode]
         public void TakeDamage(int damage)
         {
@@ -122,8 +124,6 @@ namespace Game.Scripts.Player
         {
             _entity.Get<IPushable>().TakePush(force);
         }
-
-        private Vector2 GetBodyDirection() => (Vector2.right * _entity.Get<IFlippable>().GetScale.x).normalized;
 
         public void Dispose()
         {
