@@ -1,12 +1,9 @@
 using System;
-using Game.Scripts.Audio;
 using Game.Scripts.Components.Attack;
-using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Sensors;
-using Unity.VisualScripting;
 using UnityEngine;
 using IInitializable = Zenject.IInitializable;
 
@@ -23,7 +20,6 @@ namespace Game.Scripts.Enemies.Trap
             _view = view;
         }
 
-
         public void Initialize()
         {
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
@@ -36,7 +32,7 @@ namespace Game.Scripts.Enemies.Trap
             if (!other.TryGetComponent<IDamagable>(out var target)) return;
 
             _entity.Get<IAttackable>().Attack(target);
-            
+
             KillEntity();
         }
 

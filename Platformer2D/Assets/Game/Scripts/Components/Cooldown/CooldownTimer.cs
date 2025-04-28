@@ -1,10 +1,11 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Game.Scripts.Components.Jump;
 
 namespace Game.Scripts.Components.Cooldown
 {
-    public class CooldownTimer : IDisposable
+    public class CooldownTimer : IDisposable, ICooldownTimer
     {
         private readonly float _duration;
 

@@ -11,7 +11,7 @@ namespace Game.Scripts.Components.Movement
         private readonly Rigidbody2D _rigidbodyComponent;
 
         private readonly Transform _body;
-        
+
         private readonly MoveSettings _moveSettings;
 
 
@@ -24,17 +24,13 @@ namespace Game.Scripts.Components.Movement
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<MoveComponent>()
-                     .AsSingle()
-                     .WithArguments(_rigidbodyComponent, _moveSettings.MoveSpeed);
-            
             Container.BindInterfacesTo<FlipComponent>()
                      .AsSingle()
                      .WithArguments(_body);
-            
-            Container.BindInterfacesAndSelfTo<Mover>()
-                     .AsSingle();
-            
+
+            Container.BindInterfacesTo<MoveComponent>()
+                     .AsSingle()
+                     .WithArguments(_rigidbodyComponent, _moveSettings);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Game.Scripts.Components.Impacts
 
         public void TakePush(Vector3 force)
         {
+            _rigidbody.velocity = Vector2.zero;
             _rigidbody.AddForce(force, ForceMode2D.Impulse);
         }
     }

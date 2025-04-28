@@ -1,22 +1,62 @@
+using System;
+using Game.Scripts.Components.Conditions;
+using Game.Scripts.Player.Settings;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Scripts.Components.Jump
 {
-    public class JumpComponent : IJumpable
+    public class JumpComponent : IJumpComponent, IInitializable, ITickable
+
     {
-        private readonly Rigidbody2D _rigidbody;
+        private readonly Rigidbody2D _rb;
 
-        private readonly float _jumpForce;
+        private readonly JumpSettings _jumpSettings;
 
-        public JumpComponent(Rigidbody2D rigidbody, float jumpForce)
+        private readonly ICondition _condition;
+        private readonly ICooldownTimer _timer;
+
+        private float _defaultGravityScale;
+        private float JumpForce => Mathf.Sqrt(_jumpSettings.JumpHeight *
+                                              Mathf.Abs(Physics2D.gravity.y * _rb.gravityScale)) *
+                                    _rb.mass;
+
+        public JumpComponent(Rigidbody2D rb, JumpSettings jumpSettings)
         {
-            _rigidbody = rigidbody;
-            _jumpForce = jumpForce;
+            _rb = rb;
+            _jumpSettings = jumpSettings;
+            _condition = _jumpSettings.Condition;
+            _timer = _jumpSettings.Cooldown;
+
+            _defaultGravityScale = _rb.gravityScale;
         }
 
-        public void Jump()
+        public void Initialize()
         {
-            _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            _condition.AddCondition(() => !_timer.IsInProgress);
+            _defaultGravityScale = _rb.gravityScale;
+        }
+
+        public void Tick()
+        {
+            _rb.gravityScale = _rb.velocity.y > 0 ? _defaultGravityScale : _jumpSettings.FallGravityScale;
+        }
+
+        public void AddCondition(Func<bool> condition) => _condition.AddCondition(condition);
+
+        public bool TryJump()
+        {
+            if (!_condition.IsValid) return false;
+
+            Jump();
+
+            return true;
+        }
+
+        private void Jump()
+        {
+            _rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+            _timer.Launch();
         }
     }
 }

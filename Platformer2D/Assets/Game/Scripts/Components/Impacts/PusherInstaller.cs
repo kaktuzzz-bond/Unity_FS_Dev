@@ -3,18 +3,18 @@ using Zenject;
 
 namespace Game.Scripts.Components.Impacts
 {
-    public class PushInstaller : Installer<Vector3, PushInstaller>
+    public class PusherInstaller : Installer<Vector3, PusherInstaller>
     {
         private readonly Vector3 _force;
 
-        public PushInstaller(Vector3 force)
+        public PusherInstaller(Vector3 force)
         {
             _force = force;
         }
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<PushComponent>()
+            Container.BindInterfacesTo<PusherComponent>()
                      .AsSingle()
                      .WithArguments(_force);
         }

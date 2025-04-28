@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   <MoveSettings>k__BackingField:
-    moveSpeed: 5
+    moveSpeed: 6
+    drag: 1
   <JumpSettings>k__BackingField:
-    jumpForce: 10
-    jumpCooldown: 2
+    jumpHeight: 5
+    fallGravityScale: 3
+    jumpCooldown: 1
   <HealthSettings>k__BackingField:
     maxHealth: 10
   <AttackSettings>k__BackingField:
+    attackDamage: 0
+  <PushSettings>k__BackingField:
     pushCooldown: 2
     tossCooldown: 2

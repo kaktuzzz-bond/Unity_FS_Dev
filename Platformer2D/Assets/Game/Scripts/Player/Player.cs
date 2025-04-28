@@ -43,23 +43,28 @@ namespace Game.Scripts.Player
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
             _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
 
-            _entity.Get<Jumper>().AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
-            _entity.Get<Jumper>().AddCondition(() => _entity.Get<IGroundRaycastSensor>().IsGrounded);
-            _entity.Get<Mover>().AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
+            var jumpComponent = _entity.Get<IJumpComponent>();
+            jumpComponent.AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
+            jumpComponent.AddCondition(() => _entity.Get<IGroundRaycastSensor>().IsGrounded);
+
+            var moveComponent = _entity.Get<IMoveComponent>();
+            moveComponent.AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
         }
 
 
         [Button, HideInEditorMode]
         private void Move(Vector3 direction)
         {
-            var mover = _entity.Get<Mover>();
-            mover.Move(direction);
+            if (!Mathf.Approximately(direction.x, 0f))
+            {
+                _entity.Get<IMoveComponent>().Move(direction);
+            }
         }
 
         [Button, HideInEditorMode]
         private void Jump()
         {
-            if (_entity.Get<Jumper>().Jump())
+            if (_entity.Get<IJumpComponent>().TryJump())
             {
                 _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Jump));
             }

@@ -29,11 +29,7 @@ namespace Game.Scripts.Components.Jump
         {
             Container.BindInterfacesTo<JumpComponent>()
                      .AsSingle()
-                     .WithArguments(_rigidbodyComponent, _settings.JumpForce);
-
-            Container.Bind<Jumper>()
-                     .AsSingle()
-                     .WithArguments(new CooldownTimer(_settings.JumpCooldown));
+                     .WithArguments(_rigidbodyComponent, _settings);
 
             Container.BindInterfacesTo<GroundRaycastSensor>()
                      .AsSingle()

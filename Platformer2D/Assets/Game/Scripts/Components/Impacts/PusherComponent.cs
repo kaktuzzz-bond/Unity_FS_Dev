@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace Game.Scripts.Components.Impacts
 {
-    public class PushComponent : IPusher
+    public class PusherComponent : IPusher
     {
         private readonly Vector3 _defaultForce;
 
-        public PushComponent(Vector3 defaultForce)
+        public PusherComponent(Vector3 defaultForce)
         {
             _defaultForce = defaultForce;
         }

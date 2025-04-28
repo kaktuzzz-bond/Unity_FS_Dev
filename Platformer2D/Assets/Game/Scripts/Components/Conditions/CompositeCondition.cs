@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Game.Scripts.Components.Conditions
 {
-    public class CompositeCondition
+    public class CompositeCondition : ICondition
     {
         private readonly List<Func<bool>> _conditions;
 
