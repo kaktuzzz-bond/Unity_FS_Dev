@@ -17,9 +17,11 @@ namespace Game.Scripts.Components.Jump
         private readonly ICooldownTimer _timer;
 
         private float _defaultGravityScale;
-        private float JumpForce => Mathf.Sqrt(_jumpSettings.JumpHeight *
-                                              Mathf.Abs(Physics2D.gravity.y * _rb.gravityScale)) *
-                                    _rb.mass;
+
+        private float JumpForce =>
+            Mathf.Sqrt(_jumpSettings.JumpHeight *
+                       Mathf.Abs(Physics2D.gravity.y * _rb.gravityScale)) *
+            _rb.mass;
 
         public JumpComponent(Rigidbody2D rb, JumpSettings jumpSettings)
         {
@@ -33,7 +35,7 @@ namespace Game.Scripts.Components.Jump
 
         public void Initialize()
         {
-            _condition.AddCondition(() => !_timer.IsInProgress);
+            AddCondition(() => !_timer.IsInProgress);
             _defaultGravityScale = _rb.gravityScale;
         }
 

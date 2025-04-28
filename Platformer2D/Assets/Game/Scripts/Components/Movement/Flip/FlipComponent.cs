@@ -7,7 +7,8 @@ namespace Game.Scripts.Components.Movement.Flip
         private readonly Transform _target;
 
         private Vector3 _localScale = Vector3.one;
-        
+
+        public Vector3 GetScale => _localScale;
         public FlipComponent(Transform target)
         {
             _target = target;

@@ -383,10 +383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    defaultDirection: {x: 0, y: 1}
-    force: 20
-    pushCooldown: 0
-    tossCooldown: 0
+    <Force>k__BackingField: 10
+    cooldown: 2
   triggerSensor: {fileID: 3017475948549261902}
   audioSource: {fileID: 1617741907949594362}
   view: {fileID: 2572618455702870379}

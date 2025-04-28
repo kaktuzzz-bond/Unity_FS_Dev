@@ -9,21 +9,17 @@ namespace Game.Scripts.Player.Settings
     [Serializable]
     public class PushSettings
     {
-        [field: SerializeField]
-        public Vector2 DefaultDirection { get; private set; } = Vector2.up;
+        [field: SerializeField, Min(0)]
+        public float Force { get; private set; } = 2;
 
         [SerializeField, Min(0)]
-        private float force = 2;
-        
-        [SerializeField, Min(0)]
-        private float pushCooldown = 2;
+        private float cooldown = 2;
 
         private ICooldownTimer _pushTimer;
-       
-        private ICondition _condition;
-        public ICooldownTimer PushCooldown => _pushTimer ?? new CooldownTimer(pushCooldown);
-        public ICondition Condition => _condition ?? new CompositeCondition();
 
-        public Vector2 GetForce(Vector2 direction) => direction.normalized * force;
+        private ICondition _condition;
+
+        public ICooldownTimer Cooldown => _pushTimer ?? new CooldownTimer(cooldown);
+        public ICondition Condition => _condition ?? new CompositeCondition();
     }
 }

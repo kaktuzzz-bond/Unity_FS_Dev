@@ -7,6 +7,7 @@ using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Jump;
+using Game.Scripts.Components.Movement.Flip;
 using Game.Scripts.Components.Movement.Move;
 using Game.Scripts.Components.Sensors;
 using Game.Scripts.PlayerInput;
@@ -40,6 +41,8 @@ namespace Game.Scripts.Player
         {
             _playerInput.OnJumped += Jump;
             _playerInput.OnMoved += Move;
+            _playerInput.OnPush += Push;
+            _playerInput.OnToss += Toss;
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
             _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
 
@@ -70,6 +73,39 @@ namespace Game.Scripts.Player
             }
         }
 
+        private void Toss()
+        {
+            var pusher = _entity.Get<IPusher>();
+            var sensor = _entity.Get<IEntityRaycastSensor>();
+
+            var direction = GetBodyDirection();
+
+            foreach (var col in sensor.Scan(direction * 5))
+            {
+                if (col.TryGetComponent<IPushable>(out var target))
+                {
+                    pusher.Push(target, Vector2.up);
+                }
+            }
+        }
+
+
+        private void Push()
+        {
+            var pusher = _entity.Get<IPusher>();
+            var sensor = _entity.Get<IEntityRaycastSensor>();
+
+            var direction = GetBodyDirection();
+
+            foreach (var col in sensor.Scan(direction * 5))
+            {
+                if (col.TryGetComponent<IPushable>(out var target))
+                {
+                    pusher.Push(target, direction);
+                }
+            }
+        }
+
         [Button, HideInEditorMode]
         public void TakeDamage(int damage)
         {
@@ -87,10 +123,14 @@ namespace Game.Scripts.Player
             _entity.Get<IPushable>().TakePush(force);
         }
 
+        private Vector2 GetBodyDirection() => (Vector2.right * _entity.Get<IFlippable>().GetScale.x).normalized;
+
         public void Dispose()
         {
             _playerInput.OnJumped -= Jump;
             _playerInput.OnMoved -= Move;
+            _playerInput.OnPush -= Push;
+            _playerInput.OnToss -= Toss;
             _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
             _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
         }

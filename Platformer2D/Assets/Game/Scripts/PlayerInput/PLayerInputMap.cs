@@ -44,6 +44,24 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Push"",
+                    ""type"": ""Button"",
+                    ""id"": ""e215c112-d73b-4840-a1b4-09cc42e42adb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Toss"",
+                    ""type"": ""Button"",
+                    ""id"": ""b82919ee-6a7c-4eca-9aae-45532d2b35ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -134,6 +152,28 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e82e462c-e068-482c-8d1e-d2bc3fa048f5"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Push"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68ac5add-e36d-45c2-a452-534269f441ab"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toss"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -144,6 +184,8 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
         m_Keyboard_Jump = m_Keyboard.FindAction("Jump", throwIfNotFound: true);
         m_Keyboard_Move = m_Keyboard.FindAction("Move", throwIfNotFound: true);
+        m_Keyboard_Push = m_Keyboard.FindAction("Push", throwIfNotFound: true);
+        m_Keyboard_Toss = m_Keyboard.FindAction("Toss", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,12 +249,16 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
     private readonly InputAction m_Keyboard_Jump;
     private readonly InputAction m_Keyboard_Move;
+    private readonly InputAction m_Keyboard_Push;
+    private readonly InputAction m_Keyboard_Toss;
     public struct KeyboardActions
     {
         private @PLayerInputMap m_Wrapper;
         public KeyboardActions(@PLayerInputMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Keyboard_Jump;
         public InputAction @Move => m_Wrapper.m_Keyboard_Move;
+        public InputAction @Push => m_Wrapper.m_Keyboard_Push;
+        public InputAction @Toss => m_Wrapper.m_Keyboard_Toss;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -228,6 +274,12 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Push.started += instance.OnPush;
+            @Push.performed += instance.OnPush;
+            @Push.canceled += instance.OnPush;
+            @Toss.started += instance.OnToss;
+            @Toss.performed += instance.OnToss;
+            @Toss.canceled += instance.OnToss;
         }
 
         private void UnregisterCallbacks(IKeyboardActions instance)
@@ -238,6 +290,12 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Push.started -= instance.OnPush;
+            @Push.performed -= instance.OnPush;
+            @Push.canceled -= instance.OnPush;
+            @Toss.started -= instance.OnToss;
+            @Toss.performed -= instance.OnToss;
+            @Toss.canceled -= instance.OnToss;
         }
 
         public void RemoveCallbacks(IKeyboardActions instance)
@@ -259,5 +317,7 @@ public partial class @PLayerInputMap: IInputActionCollection2, IDisposable
     {
         void OnJump(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnPush(InputAction.CallbackContext context);
+        void OnToss(InputAction.CallbackContext context);
     }
 }

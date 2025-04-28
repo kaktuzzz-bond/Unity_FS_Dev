@@ -23,6 +23,5 @@ MonoBehaviour:
   <HealthSettings>k__BackingField:
     <MaxHealth>k__BackingField: 10
   <PushSettings>k__BackingField:
-    <DefaultDirection>k__BackingField: {x: 0, y: 1}
-    force: 2
-    pushCooldown: 2
+    <Force>k__BackingField: 10
+    cooldown: 2

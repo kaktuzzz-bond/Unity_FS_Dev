@@ -7,6 +7,8 @@ namespace Game.Scripts.PlayerInput
     {
         event Action<Vector3> OnMoved;
         event Action OnJumped;
+        event Action OnPush;
+        event Action OnToss;
 
         void EnableInput();
 

@@ -62,6 +62,7 @@ namespace Game.Scripts.Player
             JumpInstaller.Install(Container, feelPoint, rigidbodyComponent, groundLayer, config.JumpSettings);
             HealthInstaller.Install(Container, config.HealthSettings, damagableBody);
             PushableInstaller.Install(Container, rigidbodyComponent, pushableBody);
+            PusherInstaller.Install(Container, pushPoint, config.PushSettings);
             AudioComponentInstaller.Install(Container, audioSource);
 
             //entity

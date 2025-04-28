@@ -24,7 +24,7 @@ namespace Game.Scripts.Entities.Trampoline
 
         public override void InstallBindings()
         {
-            PusherInstaller.Install(Container, settings);
+            PusherInstaller.Install(Container, triggerSensor.transform, settings);
             TriggerSensorInstaller.Install(Container, triggerSensor);
             AudioComponentInstaller.Install(Container, audioSource);
             EntityInstaller.Install(Container);
