@@ -1,22 +1,22 @@
-using UnityEngine;
+using Game.Scripts.Player.Settings;
 using Zenject;
 
 namespace Game.Scripts.Components.Impacts
 {
-    public class PusherInstaller : Installer<Vector3, PusherInstaller>
+    public class PusherInstaller : Installer<PushSettings, PusherInstaller>
     {
-        private readonly Vector3 _force;
+        private readonly PushSettings _settings;
 
-        public PusherInstaller(Vector3 force)
+        public PusherInstaller(PushSettings settings)
         {
-            _force = force;
+            _settings = settings;
         }
 
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<PusherComponent>()
                      .AsSingle()
-                     .WithArguments(_force);
+                     .WithArguments(_settings);
         }
     }
 }

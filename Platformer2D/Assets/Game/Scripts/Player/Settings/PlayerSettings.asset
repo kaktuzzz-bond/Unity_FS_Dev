@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   <MoveSettings>k__BackingField:
-    moveSpeed: 6
-    drag: 1
+    <MoveSpeed>k__BackingField: 6
+    <Drag>k__BackingField: 1
+    <IsFlippable>k__BackingField: 1
   <JumpSettings>k__BackingField:
-    jumpHeight: 5
-    fallGravityScale: 3
+    <JumpHeight>k__BackingField: 5
+    <FallGravityScale>k__BackingField: 3
     jumpCooldown: 1
   <HealthSettings>k__BackingField:
-    maxHealth: 10
-  <AttackSettings>k__BackingField:
-    attackDamage: 0
+    <MaxHealth>k__BackingField: 10
   <PushSettings>k__BackingField:
+    <DefaultDirection>k__BackingField: {x: 0, y: 1}
+    force: 2
     pushCooldown: 2
-    tossCooldown: 2

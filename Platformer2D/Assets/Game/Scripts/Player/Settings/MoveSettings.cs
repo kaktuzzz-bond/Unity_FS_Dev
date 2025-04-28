@@ -8,15 +8,14 @@ namespace Game.Scripts.Player.Settings
     [Serializable]
     public class MoveSettings
     {
-        [SerializeField, Min(0)]
-        private float moveSpeed = 5;
+        [field: SerializeField, Min(0)]
+        public float MoveSpeed { get; private set; } = 6;
+        
+        [field: SerializeField, Min(0)]
+        public float Drag { get; private set; } = 1;
 
-        public float MoveSpeed => moveSpeed;
-
-        [SerializeField, Min(0)]
-        private float drag = 5;
-
-        public float Drag => drag;
+        [field: SerializeField]
+        public bool IsFlippable { get; private set; } = true;
 
         private ICondition _condition;
         public ICondition Condition => _condition ?? new CompositeCondition();

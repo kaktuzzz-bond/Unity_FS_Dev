@@ -13,9 +13,6 @@ namespace Game.Scripts.Player.Settings
 
         [field: SerializeField]
         public HealthSettings HealthSettings { get; private set; }
-
-        [field: SerializeField]
-        public AttackSettings AttackSettings { get; private set; }
         
         [field: SerializeField]
         public PushSettings PushSettings { get; private set; }

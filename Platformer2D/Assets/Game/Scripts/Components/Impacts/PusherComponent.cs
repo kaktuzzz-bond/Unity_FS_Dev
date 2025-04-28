@@ -1,24 +1,26 @@
+using Game.Scripts.Player.Settings;
 using UnityEngine;
 
 namespace Game.Scripts.Components.Impacts
 {
     public class PusherComponent : IPusher
     {
-        private readonly Vector3 _defaultForce;
+        private readonly PushSettings _settings;
+        
 
-        public PusherComponent(Vector3 defaultForce)
+        public PusherComponent(PushSettings settings)
         {
-            _defaultForce = defaultForce;
+            _settings = settings;
         }
 
         public void Push(IPushable pushable)
         {
-            pushable.TakePush(_defaultForce);
+            Push(pushable, _settings.DefaultDirection);
         }
 
-        public void Push(IPushable pushable, Vector3 force)
+        public void Push(IPushable pushable, Vector3 direction)
         {
-            pushable.TakePush(force);
+            pushable.TakePush(_settings.GetForce(direction));
         }
     }
 }

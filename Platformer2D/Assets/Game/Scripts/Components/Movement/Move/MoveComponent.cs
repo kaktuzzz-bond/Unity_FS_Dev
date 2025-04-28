@@ -34,9 +34,11 @@ namespace Game.Scripts.Components.Movement.Move
         {
             if (!_condition.IsValid) return;
 
-            _flipComponent.LookTowards(direction);
-
             _rb.velocity = new Vector2(direction.x * _settings.MoveSpeed, _rb.velocity.y);
+
+            if (!_settings.IsFlippable) return;
+            
+            _flipComponent.LookTowards(direction);
         }
 
         public void AddCondition(Func<bool> condition)

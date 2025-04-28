@@ -7,9 +7,7 @@ namespace Game.Scripts.Player.Settings
     [Serializable]
     public class HealthSettings
     {
-        [SerializeField, Min(0)]
-        private int maxHealth = 10;
-
-        public int MaxHealth => maxHealth;
-    }
+        [field: SerializeField, Min(0)]
+        public int MaxHealth { get; private set; } = 10;
+    };
 }

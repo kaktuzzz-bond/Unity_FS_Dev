@@ -10,17 +10,14 @@ namespace Game.Scripts.Player.Settings
     [Serializable]
     public class JumpSettings
     {
-        [SerializeField, Min(0)]
-        private float jumpHeight = 10;
+        [field: SerializeField, Min(0)]
+        public float JumpHeight { get; private set; } = 5;
+
+        [field: SerializeField, Min(0)]
+        public float FallGravityScale { get; private set; } = 1;
 
         [SerializeField, Min(0)]
-        private float fallGravityScale = 3;
-        
-        [SerializeField, Min(0)]
-        private float jumpCooldown = 2;
-
-        public float JumpHeight => jumpHeight;
-        public float FallGravityScale => fallGravityScale;
+        private float jumpCooldown = 1;
 
         private ICooldownTimer _timer;
 

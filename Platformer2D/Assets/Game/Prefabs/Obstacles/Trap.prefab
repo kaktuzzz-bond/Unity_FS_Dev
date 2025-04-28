@@ -266,9 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSettings:
-    maxHealth: 1
+    <MaxHealth>k__BackingField: 1
   attackSettings:
-    attackDamage: 1
+    <AttackDamage>k__BackingField: 1
   triggerSensor: {fileID: 6068103282408105265}
   damagableBody: {fileID: 255782312555602920}
   pushableBody: {fileID: 7212786520502693721}
@@ -317,7 +317,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: ab257e1d35ce64a6f8763918388a3ca0, type: 2}

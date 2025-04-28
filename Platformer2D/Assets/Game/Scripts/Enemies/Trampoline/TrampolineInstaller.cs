@@ -2,6 +2,7 @@ using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Entities;
 using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Sensors;
+using Game.Scripts.Player.Settings;
 using UnityEngine;
 using Zenject;
 
@@ -10,7 +11,7 @@ namespace Game.Scripts.Enemies.Trampoline
     public class TrampolineInstaller : MonoInstaller
     {
         [SerializeField]
-        private Vector3 force = new(0, 20f, 0);
+        private PushSettings settings;
 
         [SerializeField]
         private TriggerSensor triggerSensor;
@@ -23,7 +24,7 @@ namespace Game.Scripts.Enemies.Trampoline
 
         public override void InstallBindings()
         {
-            PusherInstaller.Install(Container, force);
+            PusherInstaller.Install(Container, settings);
             TriggerSensorInstaller.Install(Container, triggerSensor);
             AudioComponentInstaller.Install(Container, audioSource);
             EntityInstaller.Install(Container);

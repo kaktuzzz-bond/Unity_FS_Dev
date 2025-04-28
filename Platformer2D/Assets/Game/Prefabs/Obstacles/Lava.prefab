@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSettings:
-    attackDamage: 1000
+    <AttackDamage>k__BackingField: 1000
   triggerSensor: {fileID: 7360510982631947968}
   audioSource: {fileID: 1562219783841291422}
   view: {fileID: 6820012666156837930}
