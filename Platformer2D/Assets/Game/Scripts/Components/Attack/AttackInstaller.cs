@@ -2,20 +2,20 @@ using Zenject;
 
 namespace Game.Scripts.Components.Attack
 {
-    public class AttackInstaller: Installer<int, AttackInstaller>
+    public class AttackInstaller:Installer<int, AttackInstaller>
     {
-        private readonly int _attackDamage;
+        private readonly int _damage;
 
-        public AttackInstaller(int attackDamage)
+        public AttackInstaller(int damage)
         {
-            _attackDamage = attackDamage;
+            _damage = damage;
         }
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<AttackComponent>()
+            Container.BindInterfacesTo<AttackUseCase>()
                      .AsSingle()
-                     .WithArguments(_attackDamage);
+                     .WithArguments(_damage);
         }
     }
 }

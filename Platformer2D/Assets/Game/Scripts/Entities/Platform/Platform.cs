@@ -1,6 +1,5 @@
-using Game.Scripts.Components.Entities;
-using Game.Scripts.Components.Movement.Move;
-using UnityEngine;
+using Game.Scripts.Components.Entity;
+using Game.Scripts.Components.Patrol;
 using Zenject;
 
 namespace Game.Scripts.Entities.Platform
@@ -18,15 +17,15 @@ namespace Game.Scripts.Entities.Platform
 
         public void Tick()
         {
-            var moveComponent = _entity.Get<IMoveComponent>();
-            var patrolComponent = _entity.Get<IPatrolComponent>();
-
-            moveComponent.Move(patrolComponent.Direction);
-
-            if (patrolComponent.IsNear)
-            {
-                patrolComponent.MoveNext();
-            }
+            // var moveComponent = _entity.Get<IMoveComponent>();
+            // var patrolComponent = _entity.Get<IPatrolable>();
+            //
+            // moveComponent.Move(patrolComponent.Direction);
+            //
+            // if (patrolComponent.IsNear)
+            // {
+            //     patrolComponent.MoveNext();
+            // }
         }
     }
 }

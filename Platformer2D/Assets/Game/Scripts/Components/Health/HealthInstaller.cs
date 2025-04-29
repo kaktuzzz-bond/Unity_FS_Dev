@@ -1,28 +1,25 @@
-using Game.Scripts.Components.Sensors;
-using Game.Scripts.Player.Settings;
 using Zenject;
 
 namespace Game.Scripts.Components.Health
 {
-    public class HealthInstaller : Installer<HealthSettings, DamagableBody, HealthInstaller>
+    public class HealthInstaller : Installer<int, IDamagableBody, HealthInstaller>
     {
-        private readonly HealthSettings _settings;
-        private readonly DamagableBody _body;
+        private readonly int _maxHealth;
+        private readonly IDamagableBody _body;
 
-        public HealthInstaller(HealthSettings settings, DamagableBody body)
+        public HealthInstaller(int maxHealth, IDamagableBody body)
         {
-            _settings = settings;
+            _maxHealth = maxHealth;
             _body = body;
         }
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<HealthComponent>()
+            Container.BindInterfacesTo<HealthUseCase>()
                      .AsSingle()
-                     .WithArguments(_settings.MaxHealth);
+                     .WithArguments(_maxHealth);
 
-            Container.Bind<IDamagableBody>()
-                     .To<DamagableBody>()
+            Container.BindInterfacesTo<DamagableBody>()
                      .FromInstance(_body)
                      .AsSingle();
         }

@@ -1,8 +1,8 @@
 using Game.Scripts.Components.Attack;
 using Game.Scripts.Components.Audio;
-using Game.Scripts.Components.Entities;
+using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Sensors;
-using Game.Scripts.Player.Settings;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -10,23 +10,30 @@ namespace Game.Scripts.Entities.Lava
 {
     public class LavaInstaller : MonoInstaller
     {
-        [SerializeField]
-        private AttackSettings attackSettings;
+        [BoxGroup("Settings")]
+        [SerializeField, BoxGroup("Settings/Attack")]
+        private int attackDamage = int.MaxValue;
 
-        [SerializeField]
-        private TriggerSensor triggerSensor;
+        [SerializeField, BoxGroup("Settings/Sensors")]
+        private TriggerObserver triggerObserver;
 
-        [SerializeField]
+        [SerializeField, BoxGroup("Settings/Refs")]
         private AudioSource audioSource;
-        
-        [SerializeField]
+
+        [SerializeField, BoxGroup("Settings/Refs")]
         private LavaView view;
 
         public override void InstallBindings()
         {
-            AttackInstaller.Install(Container, attackSettings.AttackDamage);
-            TriggerSensorInstaller.Install(Container, triggerSensor);
+            AttackInstaller.Install(Container, attackDamage);
+            TriggerSensorInstaller.Install(Container, triggerObserver);
             AudioComponentInstaller.Install(Container, audioSource);
+
+            InstallEntity();
+        }
+
+        private void InstallEntity()
+        {
             EntityInstaller.Install(Container);
 
             Container.Bind<LavaView>()

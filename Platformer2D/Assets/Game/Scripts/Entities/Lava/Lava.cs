@@ -2,7 +2,7 @@ using System;
 using Game.Scripts.Audio;
 using Game.Scripts.Components.Attack;
 using Game.Scripts.Components.Audio;
-using Game.Scripts.Components.Entities;
+using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Sensors;
 using UnityEngine;
@@ -26,20 +26,23 @@ namespace Game.Scripts.Entities.Lava
 
         public void Initialize()
         {
-            _entity.Get<ITriggerSensor>().OnTriggerEnter += OnTriggerEnter;
+            _entity.Get<ITriggerObserver>().OnTriggerEnter += OnTriggerEnter;
         }
 
         private void OnTriggerEnter(Collider2D other)
         {
-            if (!other.TryGetComponent<IDamagable>(out var target)) return;
+            Debug.Log($"Catch {other.name}");
+            
+            if (!other.TryGetComponent<IDamagableBody>(out var target)) return;
 
+            Debug.Log($"damagable body {other.name}");
             _entity.Get<IAttackable>().Attack(target);
             _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Lava));
         }
 
         public void Dispose()
         {
-            _entity.Get<ITriggerSensor>().OnTriggerEnter -= OnTriggerEnter;
+            _entity.Get<ITriggerObserver>().OnTriggerEnter -= OnTriggerEnter;
         }
     }
 }

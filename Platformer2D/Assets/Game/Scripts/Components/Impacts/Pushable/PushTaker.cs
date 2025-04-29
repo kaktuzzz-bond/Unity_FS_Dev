@@ -1,0 +1,20 @@
+using UnityEngine;
+
+namespace Game.Scripts.Components.Impacts.Pushable
+{
+    public class PushTaker : IPushable
+    {
+        private readonly Rigidbody2D _rigidbody;
+
+        public PushTaker(Rigidbody2D rigidbody)
+        {
+            _rigidbody = rigidbody;
+        }
+
+        public void TakePush(Vector3 force)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.AddForce(force, ForceMode2D.Impulse);
+        }
+    }
+}

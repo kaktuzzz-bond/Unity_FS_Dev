@@ -1,39 +1,26 @@
-using Game.Scripts.Components.Cooldown;
-using Game.Scripts.Components.Sensors;
-using Game.Scripts.Player.Settings;
 using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Components.Jump
 {
-    public class JumpInstaller : Installer<Transform, Rigidbody2D, LayerMask, JumpSettings, JumpInstaller>
+    public class JumpInstaller: Installer<Rigidbody2D, float, float, JumpInstaller>
     {
-        private readonly Transform _feelPoint;
-        private readonly Rigidbody2D _rigidbodyComponent;
-        private readonly LayerMask _groundLayer;
-        private readonly JumpSettings _settings;
+        private readonly Rigidbody2D _rb;
+        private readonly float _jumpHeight;
+        private readonly float _fallGravityScale;
 
-        public JumpInstaller(
-            Transform feelPoint,
-            Rigidbody2D rigidbodyComponent,
-            LayerMask groundLayer,
-            JumpSettings settings)
+        public JumpInstaller(Rigidbody2D rb, float jumpHeight, float fallGravityScale)
         {
-            _feelPoint = feelPoint;
-            _rigidbodyComponent = rigidbodyComponent;
-            _groundLayer = groundLayer;
-            _settings = settings;
+            _rb = rb;
+            _jumpHeight = jumpHeight;
+            _fallGravityScale = fallGravityScale;
         }
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<JumpComponent>()
-                     .AsSingle()
-                     .WithArguments(_rigidbodyComponent, _settings);
-
-            Container.BindInterfacesTo<GroundRaycastSensor>()
-                     .AsSingle()
-                     .WithArguments(_feelPoint, _groundLayer);
+            Container.BindInterfacesTo<JumpUseCase>()
+                     .AsCached()
+                     .WithArguments(_rb, _jumpHeight, _fallGravityScale);
         }
     }
 }

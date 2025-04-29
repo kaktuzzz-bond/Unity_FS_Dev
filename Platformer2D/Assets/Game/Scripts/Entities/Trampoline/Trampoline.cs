@@ -1,8 +1,10 @@
 using System;
 using Game.Scripts.Audio;
 using Game.Scripts.Components.Audio;
-using Game.Scripts.Components.Entities;
+using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Impacts;
+using Game.Scripts.Components.Impacts.Pushable;
+using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Sensors;
 using UnityEngine;
 using Zenject;
@@ -24,7 +26,7 @@ namespace Game.Scripts.Entities.Trampoline
 
         public void Initialize()
         {
-            _entity.Get<ITriggerSensor>().OnTriggerEnter += OnTriggerEnter;
+            _entity.Get<ITriggerObserver>().OnTriggerEnter += OnTriggerEnter;
         }
 
         private void OnTriggerEnter(Collider2D other)
@@ -37,7 +39,7 @@ namespace Game.Scripts.Entities.Trampoline
 
         public void Dispose()
         {
-            _entity.Get<ITriggerSensor>().OnTriggerEnter -= OnTriggerEnter;
+            _entity.Get<ITriggerObserver>().OnTriggerEnter -= OnTriggerEnter;
         }
     }
 }

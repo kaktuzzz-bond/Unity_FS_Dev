@@ -1,36 +1,28 @@
-using Game.Scripts.Components.Movement.Flip;
-using Game.Scripts.Components.Movement.Move;
-using Game.Scripts.Player.Settings;
 using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Components.Movement
 {
-    public class MoveInstaller : Installer<Rigidbody2D, Transform, MoveSettings, MoveInstaller>
+    public class MoveInstaller:Installer<Rigidbody2D, Transform, float, bool, MoveInstaller>
     {
-        private readonly Rigidbody2D _rigidbodyComponent;
-
+        private readonly Rigidbody2D _rb;
         private readonly Transform _body;
+        private readonly float _speed;
+        private readonly bool _isFlippable;
 
-        private readonly MoveSettings _moveSettings;
-
-
-        public MoveInstaller(Rigidbody2D rigidbodyComponent, Transform body, MoveSettings moveSettings)
+        public MoveInstaller(Rigidbody2D rb, Transform body, float speed, bool isFlippable)
         {
-            _rigidbodyComponent = rigidbodyComponent;
+            _rb = rb;
             _body = body;
-            _moveSettings = moveSettings;
+            _speed = speed;
+            _isFlippable = isFlippable;
         }
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<FlipComponent>()
-                     .AsSingle()
-                     .WithArguments(_body);
-
-            Container.BindInterfacesTo<MoveComponent>()
-                     .AsSingle()
-                     .WithArguments(_rigidbodyComponent, _moveSettings);
+            Container.BindInterfacesTo<MoveUseCase>()
+                     .AsCached()
+                     .WithArguments(_rb, _body, _speed, _isFlippable);
         }
     }
 }

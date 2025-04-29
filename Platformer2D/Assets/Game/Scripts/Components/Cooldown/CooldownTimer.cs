@@ -1,9 +1,7 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Game.Scripts.Components.Jump;
 using Sirenix.OdinInspector;
-using UnityEngine;
 
 namespace Game.Scripts.Components.Cooldown
 {
@@ -11,7 +9,7 @@ namespace Game.Scripts.Components.Cooldown
     {
         private readonly float _duration;
 
-        [ShowInInspector]
+        [ShowInInspector, ReadOnly]
         public bool IsInProgress { get; private set; }
 
         private readonly CancellationTokenSource _cts = new();
@@ -25,13 +23,11 @@ namespace Game.Scripts.Components.Cooldown
 
         private async UniTaskVoid LaunchAsync()
         {
-            Debug.Log($"Launch time ({Time.time})");
             IsInProgress = true;
 
             await UniTask.WaitForSeconds(_duration);
             
             IsInProgress = false;
-            Debug.Log($"Stop time ({Time.time})");
         }
 
         public void Dispose()

@@ -61,9 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade6e05f7dd84910adb88ac6956b8998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSettings:
-    <AttackDamage>k__BackingField: 1000
-  triggerSensor: {fileID: 7360510982631947968}
+  attackDamage: 2147483647
+  triggerObserver: {fileID: 7360510982631947968}
   audioSource: {fileID: 1562219783841291422}
   view: {fileID: 6820012666156837930}
 --- !u!114 &4303157079115647472

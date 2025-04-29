@@ -4,6 +4,6 @@ namespace Game.Scripts.Components.Attack
 {
     public interface IAttackable
     {
-        void Attack(IDamagable target);
+        void Attack(IDamagableBody target);
     }
 }

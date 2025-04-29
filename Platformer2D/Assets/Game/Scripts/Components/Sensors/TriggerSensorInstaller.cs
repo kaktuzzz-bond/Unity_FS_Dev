@@ -2,18 +2,20 @@ using Zenject;
 
 namespace Game.Scripts.Components.Sensors
 {
-    public class TriggerSensorInstaller : Installer<ITriggerSensor, TriggerSensorInstaller>
+    public class TriggerSensorInstaller:Installer<ITriggerObserver, TriggerSensorInstaller>
     {
-        private readonly ITriggerSensor _triggerSensor;
 
-        public TriggerSensorInstaller(ITriggerSensor triggerSensor)
+        private readonly ITriggerObserver _triggerObserver;
+
+        public TriggerSensorInstaller(ITriggerObserver triggerObserver)
         {
-            _triggerSensor = triggerSensor;
+            _triggerObserver = triggerObserver;
         }
+
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<TriggerSensor>()
-                     .FromInstance(_triggerSensor)
+            Container.BindInterfacesTo<TriggerObserver>()
+                     .FromInstance(_triggerObserver)
                      .AsSingle();
         }
     }
