@@ -5,6 +5,6 @@ namespace Game.Scripts.Components.Sensors
 {
     public interface IEntityRaycastSensor
     {
-        IEnumerable<Collider2D> Scan(Vector2 direction, float distance = 1);
+        IEnumerable<Collider2D> Scan(Vector2 direction);
     }
 }

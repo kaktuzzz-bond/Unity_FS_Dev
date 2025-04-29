@@ -1,4 +1,5 @@
 using Game.Scripts.Components.Entities;
+using Game.Scripts.Components.Impacts;
 using Game.Scripts.PlayerInput;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,5 +20,8 @@ namespace Game.Scripts.Player
         
         [Inject, ShowInInspector, HideInEditorMode]
         private Player _player;
+        
+        [Inject, ShowInInspector, HideInEditorMode]
+        private IPusher _pusher;
     }
 }

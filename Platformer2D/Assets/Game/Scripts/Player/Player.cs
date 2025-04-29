@@ -67,47 +67,40 @@ namespace Game.Scripts.Player
         [Button, HideInEditorMode]
         private void Jump()
         {
-            if (_entity.Get<IJumpComponent>().TryJump())
+            if (_entity.Get<IJumpComponent>()
+                       .TryJump())
             {
-                _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Jump));
+                _entity.Get<IAudioComponent>()
+                       .Play(_audioProvider
+                           .GetClip(SoundKey.Jump));
             }
         }
 
-      
 
+        private void Push() => ImpactOutside(_entity.Get<IMoveComponent>().BodyDirection, _view.PlayPush);
 
-        private void Push()
+        private void Toss() => ImpactOutside(Vector2.up, _view.PlayToss);
+
+        private void ImpactOutside(Vector2 forceDirection, Action callback)
         {
-            var pusher = _entity.Get<IPusher>();
+            var pusher = _entity.Get<IPusherComponent>();
+            
+            Debug.Log("Impact 1");
+            if (!pusher.IsValid) return;
+            Debug.Log("Impact 2");
             var sensor = _entity.Get<IEntityRaycastSensor>();
-
             var direction = _entity.Get<IMoveComponent>().BodyDirection;
 
             foreach (var col in sensor.Scan(direction))
             {
-                if (col.TryGetComponent<IPushable>(out var target))
-                {
-                    pusher.Push(target, direction);
-                }
+                if (!col.TryGetComponent<IPushable>(out var target)) continue;
+
+                pusher.Push(target, forceDirection);
             }
+
+            callback?.Invoke();
         }
 
-        private void Toss()
-        {
-            var pusher = _entity.Get<IPusher>();
-            var sensor = _entity.Get<IEntityRaycastSensor>();
-
-            var direction = _entity.Get<IMoveComponent>().BodyDirection;
-
-            foreach (var col in sensor.Scan(direction))
-            {
-                if (col.TryGetComponent<IPushable>(out var target))
-                {
-                    pusher.Push(target, Vector2.up);
-                }
-            }
-        }
-        
         [Button, HideInEditorMode]
         public void TakeDamage(int damage)
         {

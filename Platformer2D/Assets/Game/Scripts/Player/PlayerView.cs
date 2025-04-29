@@ -12,6 +12,12 @@ namespace Game.Scripts.Player
         [SerializeField]
         private BlinkSpriteComponent blinkVFX;
 
+        [SerializeField]
+        private ParticleSystem pushVFX;
+        
+        [SerializeField]
+        private ParticleSystem tossVFX;
+        
         public void ShowTakenDamage(float healthValue)
         {
             healthBarView.SetValue(healthValue);
@@ -22,5 +28,8 @@ namespace Game.Scripts.Player
                     gameObject.SetActive(false);
             });
         }
+
+        public void PlayPush() => pushVFX.Play();
+        public void PlayToss() => tossVFX.Play();
     }
 }

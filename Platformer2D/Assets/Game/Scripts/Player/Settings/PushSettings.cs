@@ -12,6 +12,9 @@ namespace Game.Scripts.Player.Settings
         [field: SerializeField, Min(0)]
         public float Force { get; private set; } = 2;
 
+        [field: SerializeField, Min(0)]
+        public float RaycastDistance { get; private set; } = 1;
+        
         [SerializeField, Min(0)]
         private float cooldown = 2;
 

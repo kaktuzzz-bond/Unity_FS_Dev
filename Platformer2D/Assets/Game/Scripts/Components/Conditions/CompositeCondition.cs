@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 
 namespace Game.Scripts.Components.Conditions
 {
     public class CompositeCondition : ICondition
     {
+        [ShowInInspector]
         private readonly List<Func<bool>> _conditions;
 
         public CompositeCondition(params Func<bool>[] conditions)
