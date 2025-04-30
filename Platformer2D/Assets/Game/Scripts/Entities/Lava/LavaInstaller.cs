@@ -20,7 +20,7 @@ namespace Game.Scripts.Entities.Lava
         [SerializeField, BoxGroup("Settings/Refs")]
         private AudioSource audioSource;
 
-        [SerializeField, BoxGroup("Settings/Refs")]
+        [SerializeField, BoxGroup("Settings/View")]
         private LavaView view;
 
         public override void InstallBindings()
@@ -29,11 +29,6 @@ namespace Game.Scripts.Entities.Lava
             TriggerSensorInstaller.Install(Container, triggerObserver);
             AudioComponentInstaller.Install(Container, audioSource);
 
-            InstallEntity();
-        }
-
-        private void InstallEntity()
-        {
             EntityInstaller.Install(Container);
 
             Container.Bind<LavaView>()
@@ -43,5 +38,7 @@ namespace Game.Scripts.Entities.Lava
             Container.BindInterfacesAndSelfTo<Lava>()
                      .AsSingle();
         }
+
+      
     }
 }

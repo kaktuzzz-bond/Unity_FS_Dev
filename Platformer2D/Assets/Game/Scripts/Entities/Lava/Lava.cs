@@ -31,11 +31,8 @@ namespace Game.Scripts.Entities.Lava
 
         private void OnTriggerEnter(Collider2D other)
         {
-            Debug.Log($"Catch {other.name}");
-            
             if (!other.TryGetComponent<IDamagableBody>(out var target)) return;
 
-            Debug.Log($"damagable body {other.name}");
             _entity.Get<IAttackable>().Attack(target);
             _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Lava));
         }

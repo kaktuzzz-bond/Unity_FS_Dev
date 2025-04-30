@@ -5,6 +5,8 @@ using Game.Scripts.Components.Impacts.Pushable;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
 using Game.Scripts.Components.Sensors;
+using Game.Scripts.Components.Vfx;
+using Game.Scripts.Death;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -38,29 +40,37 @@ namespace Game.Scripts.Entities.Player
         [SerializeField, BoxGroup("Settings/Health")]
         private DamagableBody damagableBody;
 
-        [Title("View")]
-        [SerializeField]
-        private PlayerView view;
-
-        [Title("Audio")]
-        [SerializeField]
-        private AudioSource audioSource;
-
-        [Title("Sensors")]
-        [SerializeField]
+        [SerializeField, BoxGroup("Settings/Impacts")]
         private PushableBody pushableBody;
 
-        [Title("Refs")]
-        [SerializeField]
+        [SerializeField, BoxGroup("Settings/View")]
+        private PlayerView view;
+
+        [SerializeField, BoxGroup("Settings/Audio")]
+        private AudioSource audioSource;
+
+        [SerializeField, BoxGroup("Settings/BlinkVFX")]
+        private Color blinkColor = Color.white;
+
+        [SerializeField, BoxGroup("Settings/BlinkVFX")]
+        private SpriteRenderer targetSprite;
+
+        [SerializeField, BoxGroup("Settings/BlinkVFX")]
+        private float blinkDuration = 1f;
+
+        [SerializeField, BoxGroup("Settings/BlinkVFX")]
+        private int blinkFrequency = 10;
+
+        [SerializeField, BoxGroup("Settings/Refs")]
         private Transform body;
 
-        [SerializeField]
+        [SerializeField, BoxGroup("Settings/Refs")]
         private Transform feelPoint;
 
-        [SerializeField]
+        [SerializeField, BoxGroup("Settings/Refs")]
         private Transform pushPoint;
 
-        [SerializeField]
+        [SerializeField, BoxGroup("Settings/Refs")]
         private Rigidbody2D rigidbodyComponent;
 
 
@@ -68,20 +78,25 @@ namespace Game.Scripts.Entities.Player
         {
             AudioComponentInstaller.Install(Container, audioSource);
 
-            InstallMovement();
+            //Movement
+            MoveInstaller.Install(Container, rigidbodyComponent, body, movementSpeed, isFlippable);
+            CharacterMoverInstaller.Install(Container);
 
-            InstallJump();
+            //Jump
+            GroundSensorInstaller.Install(Container, feelPoint, groundLayer);
+            JumpInstaller.Install(Container, rigidbodyComponent, jumpHeight, fallGravityScale);
+            CharacterJumpInstaller.Install(Container, jumpCooldown);
 
+            //Health
             HealthInstaller.Install(Container, maxHealth, damagableBody);
+            DeathInstaller.Install(Container, gameObject);
+            ColorBlinkEffectInstaller.Install(Container, blinkColor, targetSprite, blinkDuration, blinkFrequency);
 
-            // PushableInstaller.Install(Container, rigidbodyComponent, pushableBody);
+            //Impacts
+            PushTakerInstaller.Install(Container, rigidbodyComponent, pushableBody);
             // PusherComponentInstaller.Install(Container, pushPoint, config.PushSettings);
 
-            InstallEntity();
-        }
-
-        private void InstallEntity()
-        {
+            //Entity
             EntityInstaller.Install(Container);
 
             Container.Bind<PlayerView>()
@@ -90,20 +105,6 @@ namespace Game.Scripts.Entities.Player
 
             Container.BindInterfacesAndSelfTo<Player>()
                      .AsSingle();
-        }
-
-        private void InstallJump()
-        {
-            GroundSensorInstaller.Install(Container, feelPoint, groundLayer);
-            JumpInstaller.Install(Container, rigidbodyComponent, jumpHeight, fallGravityScale);
-            CharacterJumpInstaller.Install(Container, jumpCooldown);
-        }
-
-
-        private void InstallMovement()
-        {
-            MoveInstaller.Install(Container, rigidbodyComponent, body, movementSpeed, isFlippable);
-            CharacterMoverInstaller.Install(Container);
         }
     }
 }

@@ -5,6 +5,6 @@ namespace Game.Scripts.Components.Impacts.Pusher
 {
     public interface IPusher
     {
-        void Push(IPushable pushable, Vector2 direction);
+        void Push(IPushableBody pushable, Vector2 direction);
     }
 }

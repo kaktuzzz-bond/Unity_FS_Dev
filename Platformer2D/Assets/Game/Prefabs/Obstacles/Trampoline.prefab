@@ -382,10 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d44cf0d16b3418fbcc24bd78e4e5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings:
-    <Force>k__BackingField: 20
-    cooldown: 0
-  triggerSensor: {fileID: 3017475948549261902}
+  pushForce: 20
+  triggerObserver: {fileID: 3017475948549261902}
   audioSource: {fileID: 1617741907949594362}
   view: {fileID: 2572618455702870379}
 --- !u!114 &1314224540784578732

@@ -21,7 +21,7 @@ namespace Game.Scripts.Components.Vfx
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<ColorBlinkEffect>()
+            Container.BindInterfacesAndSelfTo<ColorBlinkEffect>()
                      .AsSingle()
                      .WithArguments(_blinkColor, _targetSprite, _blinkDuration, _blinkFrequency);
         }

@@ -12,11 +12,11 @@ namespace Game.Scripts.Components.Impacts.Pusher
         private readonly float _pushForce;
         private readonly ICooldownTimer _timer;
 
-        public CharacterPusher(IPusher pusher, float pushForce, float cooldown)
+        public CharacterPusher(IPusher pusher, float pushForce, ICooldownTimer timer)
         {
             _pusher = pusher;
             _pushForce = pushForce;
-            _timer = new CooldownTimer(cooldown);
+            _timer = timer;
         }
 
         public void Initialize()
@@ -24,7 +24,7 @@ namespace Game.Scripts.Components.Impacts.Pusher
             AddCondition(() => !_timer.IsInProgress);
         }
 
-        public void Push(IPushable pushable, Vector2 direction)
+        public void Push(IPushableBody pushable, Vector2 direction)
         {
             if (!IsValid) return;
             

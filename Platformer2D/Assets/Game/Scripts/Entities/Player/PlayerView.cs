@@ -21,12 +21,6 @@ namespace Game.Scripts.Entities.Player
         public void ShowTakenDamage(float healthValue)
         {
             healthBarView.SetValue(healthValue);
-
-            blinkVFX.Play(() =>
-            {
-                if (healthValue <= 0f) 
-                    gameObject.SetActive(false);
-            });
         }
 
         public void PlayPush() => pushVFX.Play();

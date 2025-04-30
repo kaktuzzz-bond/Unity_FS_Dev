@@ -6,6 +6,8 @@ using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
+using Game.Scripts.Components.Vfx;
+using Game.Scripts.Death;
 using Game.Scripts.PlayerInput;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,7 +21,7 @@ namespace Game.Scripts.Entities.Player
         private readonly IEntity _entity;
         private readonly PlayerView _view;
         private readonly AudioProvider _audioProvider;
-        
+
         private CooldownTimer _jumpCooldown;
 
         public Player(IPlayerInput playerInput, IEntity entity, PlayerView view, AudioProvider audioProvider)
@@ -38,13 +40,13 @@ namespace Game.Scripts.Entities.Player
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
             // _playerInput.OnPush += Push;
             // _playerInput.OnToss += Toss;
-          
+
             // _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
             //
             var healthComponent = _entity.Get<IDamagable>();
             var jumpComponent = _entity.Get<ICharacterJumper>();
             var moveComponent = _entity.Get<ICharacterMover>();
-            
+
             jumpComponent.AddCondition(() => healthComponent.IsAlive);
             moveComponent.AddCondition(() => healthComponent.IsAlive);
         }
@@ -103,11 +105,19 @@ namespace Game.Scripts.Entities.Player
         public void TakeDamage(int damage)
         {
             var healthComponent = _entity.Get<IDamagable>();
-            
+
             healthComponent.TakeDamage(damage);
-            
+
             _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.TakeDamage));
+            
             _view.ShowTakenDamage(healthComponent.HealthLevel);
+
+            _entity.Get<ColorBlinkEffect>()
+                   .Play(() =>
+                   {
+                       if (!healthComponent.IsAlive)
+                           _entity.Get<IMortal>().Die();
+                   });
         }
 
         [Button, HideInEditorMode]

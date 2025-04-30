@@ -2,7 +2,6 @@ using System;
 using Game.Scripts.Audio;
 using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Entity;
-using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Impacts.Pushable;
 using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Sensors;
@@ -31,7 +30,7 @@ namespace Game.Scripts.Entities.Trampoline
 
         private void OnTriggerEnter(Collider2D other)
         {
-            if (!other.TryGetComponent<IPushable>(out var target)) return;
+            if (!other.TryGetComponent<IPushableBody>(out var target)) return;
 
             _entity.Get<IPusher>().Push(target, Vector2.up);
             _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Trampoline));

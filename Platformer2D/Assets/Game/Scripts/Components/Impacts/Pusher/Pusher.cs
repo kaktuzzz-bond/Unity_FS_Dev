@@ -1,13 +1,23 @@
+using Game.Scripts.Components.Cooldown;
 using Game.Scripts.Components.Impacts.Pushable;
 using UnityEngine;
 
 namespace Game.Scripts.Components.Impacts.Pusher
 {
     public class Pusher : IPusher
+    
     {
-        public void Push(IPushable pushable, Vector2 direction)
+        private readonly float _pushForce;
+
+        public Pusher(float pushForce)
         {
-            pushable.TakePush(direction);
+            _pushForce = pushForce;
+        }
+
+        public void Push(IPushableBody pushable, Vector2 direction)
+        {
+            pushable.TakePush(direction * _pushForce);
+            
         }
     }
 }
