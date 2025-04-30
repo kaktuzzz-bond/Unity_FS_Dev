@@ -23,10 +23,8 @@ namespace Game.Scripts.Components.Sensors
 
         public IEnumerable<Collider2D> Scan(Vector2 direction)
         {
-           
             Debug.DrawRay(_origin.position, direction * _raycastDistance, Color.red, 0.5f);
 
-            Debug.Log($"Draw ray:({direction}) : ({_raycastDistance})");
             Physics2D.queriesHitTriggers = false;
             _ = Physics2D.RaycastNonAlloc(_origin.position, direction, _hits, _raycastDistance, _layer);
 

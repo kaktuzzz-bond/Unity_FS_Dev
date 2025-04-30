@@ -101,10 +101,8 @@ namespace Game.Scripts.Entities.Player
         {
             var pusher = _entity.Get<CharacterPusher>(id);
 
-            Debug.Log("Impact 1");
-
             if (!pusher.IsValid) return;
-            Debug.Log("Impact 2");
+            
             var sensor = _entity.Get<IEntityRaycastSensor>();
             var direction = _entity.Get<IMovable>().GetDirection;
 
