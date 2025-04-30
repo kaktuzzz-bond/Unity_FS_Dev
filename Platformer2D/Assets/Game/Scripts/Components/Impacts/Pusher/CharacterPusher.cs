@@ -9,13 +9,11 @@ namespace Game.Scripts.Components.Impacts.Pusher
     public class CharacterPusher : CompositeCondition, IInitializable, ICharacterPusher
     {
         private readonly IPusher _pusher;
-        private readonly float _pushForce;
         private readonly ICooldownTimer _timer;
 
-        public CharacterPusher(IPusher pusher, float pushForce, ICooldownTimer timer)
+        public CharacterPusher(IPusher pusher, ICooldownTimer timer)
         {
             _pusher = pusher;
-            _pushForce = pushForce;
             _timer = timer;
         }
 
@@ -28,7 +26,7 @@ namespace Game.Scripts.Components.Impacts.Pusher
         {
             if (!IsValid) return;
             
-            _pusher.Push(pushable, direction * _pushForce);
+            _pusher.Push(pushable, direction);
             
             _timer.Launch();
         }

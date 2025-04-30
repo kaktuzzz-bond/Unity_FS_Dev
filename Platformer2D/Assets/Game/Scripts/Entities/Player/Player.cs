@@ -1,11 +1,16 @@
 using System;
+using System.Linq;
 using Game.Scripts.Audio;
 using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Cooldown;
 using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Impacts;
+using Game.Scripts.Components.Impacts.Pushable;
+using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
+using Game.Scripts.Components.Sensors;
 using Game.Scripts.Components.Vfx;
 using Game.Scripts.Death;
 using Game.Scripts.PlayerInput;
@@ -38,17 +43,28 @@ namespace Game.Scripts.Entities.Player
             _playerInput.OnJumped += Jump;
             _playerInput.OnMoved += Move;
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
-            // _playerInput.OnPush += Push;
-            // _playerInput.OnToss += Toss;
+            _playerInput.OnPush += Push;
+            _playerInput.OnToss += Toss;
 
             // _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
             //
+
             var healthComponent = _entity.Get<IDamagable>();
+            var groundSensor = _entity.Get<IGroundRaycastSensor>();
             var jumpComponent = _entity.Get<ICharacterJumper>();
             var moveComponent = _entity.Get<ICharacterMover>();
+            var pusher = _entity.Get<CharacterPusher>(ImpactKeys.Push);
+            var tosser = _entity.Get<CharacterPusher>(ImpactKeys.Toss);
 
             jumpComponent.AddCondition(() => healthComponent.IsAlive);
+            jumpComponent.AddCondition(() => groundSensor.IsGrounded);
+
             moveComponent.AddCondition(() => healthComponent.IsAlive);
+
+            pusher.AddCondition(() => healthComponent.IsAlive);
+            pusher.AddCondition(() => groundSensor.IsGrounded);
+
+            tosser.AddCondition(() => healthComponent.IsAlive);
         }
 
 
@@ -73,32 +89,33 @@ namespace Game.Scripts.Entities.Player
 
         private void Push()
         {
-            // ImpactOutside(_entity.Get<IMoveComponent>().BodyDirection, _view.PlayPush);
+            ImpactOutside(ImpactKeys.Push, _entity.Get<IMovable>().GetDirection, _view.PlayPush);
         }
 
         private void Toss()
         {
-            ImpactOutside(Vector2.up, _view.PlayToss);
+            ImpactOutside(ImpactKeys.Toss, Vector2.up, _view.PlayToss);
         }
 
-        private void ImpactOutside(Vector2 forceDirection, Action callback)
+        private void ImpactOutside(string id, Vector2 forceDirection, Action callback)
         {
-            // var pusher = _entity.Get<ICharacterPusher>();
-            //
-            // Debug.Log("Impact 1");
-            // if (!pusher.IsValid) return;
-            // Debug.Log("Impact 2");
-            // var sensor = _entity.Get<IEntityRaycastSensor>();
-            // var direction = _entity.Get<IMoveComponent>().BodyDirection;
-            //
-            // foreach (var col in sensor.Scan(direction))
-            // {
-            //     if (!col.TryGetComponent<IPushable>(out var target)) continue;
-            //
-            //     pusher.Push(target, forceDirection);
-            // }
-            //
-            // callback?.Invoke();
+            var pusher = _entity.Get<CharacterPusher>(id);
+
+            Debug.Log("Impact 1");
+
+            if (!pusher.IsValid) return;
+            Debug.Log("Impact 2");
+            var sensor = _entity.Get<IEntityRaycastSensor>();
+            var direction = _entity.Get<IMovable>().GetDirection;
+
+            foreach (var col in sensor.Scan(direction))
+            {
+                if (!col.TryGetComponent<IPushableBody>(out var target)) continue;
+
+                pusher.Push(target, forceDirection);
+            }
+
+            callback?.Invoke();
         }
 
         [Button, HideInEditorMode]
@@ -109,7 +126,7 @@ namespace Game.Scripts.Entities.Player
             healthComponent.TakeDamage(damage);
 
             _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.TakeDamage));
-            
+
             _view.ShowTakenDamage(healthComponent.HealthLevel);
 
             _entity.Get<ColorBlinkEffect>()
@@ -131,8 +148,8 @@ namespace Game.Scripts.Entities.Player
             _playerInput.OnJumped -= Jump;
             _playerInput.OnMoved -= Move;
             _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
-            // _playerInput.OnPush -= Push;
-            // _playerInput.OnToss -= Toss;
+            _playerInput.OnPush -= Push;
+            _playerInput.OnToss -= Toss;
             // _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
         }
     }

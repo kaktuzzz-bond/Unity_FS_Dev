@@ -14,7 +14,7 @@ namespace Game.Scripts.Components.Impacts.Pusher
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Pusher>()
-                     .AsSingle()
+                     .AsCached()
                      .WithArguments(_pushForce);
         }
     }

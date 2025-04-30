@@ -7,20 +7,20 @@ namespace Game.Scripts.Components.Sensors
     {
         private readonly Transform _origin;
         private readonly float _raycastDistance;
-        private readonly LayerMask _groundLayer;
+        private readonly LayerMask _layer;
 
-        public EntitySensorInstaller(Transform origin, float raycastDistance, LayerMask groundLayer)
+        public EntitySensorInstaller(Transform origin, float raycastDistance, LayerMask layer)
         {
             _origin = origin;
             _raycastDistance = raycastDistance;
-            _groundLayer = groundLayer;
+            _layer = layer;
         }
 
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<EntityRaycastSensor>()
                      .AsSingle()
-                     .WithArguments(_origin, _raycastDistance, _groundLayer);
+                     .WithArguments(_origin, _raycastDistance, _layer);
         }
     }
 }

@@ -1,6 +1,5 @@
 using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Entity;
-using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Sensors;
 using UnityEngine;

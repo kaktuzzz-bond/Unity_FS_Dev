@@ -1,7 +1,9 @@
 using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Impacts.Pushable;
+using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
 using Game.Scripts.Components.Sensors;
@@ -40,8 +42,26 @@ namespace Game.Scripts.Entities.Player
         [SerializeField, BoxGroup("Settings/Health")]
         private DamagableBody damagableBody;
 
-        [SerializeField, BoxGroup("Settings/Impacts")]
+        [SerializeField, BoxGroup("Settings/Impact")]
         private PushableBody pushableBody;
+
+        [SerializeField, BoxGroup("Settings/Impact")]
+        private float pushSensorRayLength = 1;
+
+        [SerializeField, BoxGroup("Settings/Impact")]
+        private LayerMask sensorLayer;
+
+        [SerializeField, BoxGroup("Settings/Impact")]
+        private float pushForce = 10;
+
+        [SerializeField, BoxGroup("Settings/Impact")]
+        private float pushCooldown = 2;
+
+        [SerializeField, BoxGroup("Settings/Impact")]
+        private float tossForce = 10;
+
+        [SerializeField, BoxGroup("Settings/Impact")]
+        private float tossCooldown = 2;
 
         [SerializeField, BoxGroup("Settings/View")]
         private PlayerView view;
@@ -93,8 +113,10 @@ namespace Game.Scripts.Entities.Player
             ColorBlinkEffectInstaller.Install(Container, blinkColor, targetSprite, blinkDuration, blinkFrequency);
 
             //Impacts
-            PushTakerInstaller.Install(Container, rigidbodyComponent, pushableBody);
-            // PusherComponentInstaller.Install(Container, pushPoint, config.PushSettings);
+            ImpactTakerInstaller.Install(Container, rigidbodyComponent, pushableBody);
+            EntitySensorInstaller.Install(Container, pushPoint, pushSensorRayLength, sensorLayer);
+            CharacterPusherInstaller.Install(Container, pushForce, pushCooldown, ImpactKeys.Push);
+            CharacterPusherInstaller.Install(Container, tossForce, tossCooldown, ImpactKeys.Toss);
 
             //Entity
             EntityInstaller.Install(Container);

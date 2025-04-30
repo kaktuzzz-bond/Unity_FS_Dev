@@ -8,7 +8,7 @@ namespace Game.Scripts.Components.Movement
         private readonly Transform _body;
         private readonly float _speed;
         private readonly bool _isFlippable;
-        private Vector3 _direction = Vector3.one;
+        private Vector3 _scale = Vector3.one;
 
         public MoveUseCase(Rigidbody2D rb, Transform body, float speed, bool isFlippable)
         {
@@ -18,7 +18,7 @@ namespace Game.Scripts.Components.Movement
             _isFlippable = isFlippable;
         }
 
-        public Vector3 GetDirection => _direction;
+        public Vector3 GetDirection => new(_scale.x, 0);
 
         public void MoveX(float xDirection)
         {
@@ -40,8 +40,9 @@ namespace Game.Scripts.Components.Movement
         private void LookTowardsX(float direction)
         {
             if (direction == 0) return;
-            _direction.x = direction < 0 ? -1 : 1;
-            _body.localScale = _direction;
+            _scale.x = direction < 0 ? -1 : 1;
+
+            _body.localScale = _scale;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Game.Scripts.Entities.Trap
             TriggerSensorInstaller.Install(Container, triggerObserver);
             HealthInstaller.Install(Container, maxHealth, damagableBody);
             DeathInstaller.Install(Container, gameObject);
-            PushTakerInstaller.Install(Container, rigidbody, pushableBody);
+            ImpactTakerInstaller.Install(Container, rigidbody, pushableBody);
             
             EntityInstaller.Install(Container);
             

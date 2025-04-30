@@ -1,24 +1,35 @@
 using Game.Scripts.Components.Cooldown;
+using Unity.VisualScripting;
 using Zenject;
 
 namespace Game.Scripts.Components.Impacts.Pusher
 {
-    public class CharacterPusherInstaller : Installer<float, float, CharacterPusherInstaller>
+    public class CharacterPusherInstaller : Installer<float, float, string, CharacterPusherInstaller>
     {
-        private readonly float _pushForce;
+        private readonly float _force;
         private readonly float _cooldown;
+        private readonly string _id;
 
-        public CharacterPusherInstaller(float pushForce, float cooldown)
+
+        public CharacterPusherInstaller(float force, float cooldown, string id)
         {
-            _pushForce = pushForce;
+            _force = force;
             _cooldown = cooldown;
+            _id = id;
         }
 
         public override void InstallBindings()
         {
+           
+            
+            Container.Bind<CharacterPusher>()
+                     .WithId(_id)
+                     .AsCached()
+                     .WithArguments(new Pusher(_force), new CooldownTimer(_cooldown));
+            
             Container.BindInterfacesTo<CharacterPusher>()
-                     .AsSingle()
-                     .WithArguments(_pushForce, new CooldownTimer(_cooldown));
+                     .FromMethod(ctx=> ctx.Container.ResolveId<CharacterPusher>(_id))
+                     .AsCached();
         }
     }
 }

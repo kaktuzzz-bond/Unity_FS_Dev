@@ -9,24 +9,26 @@ namespace Game.Scripts.Components.Sensors
     {
         private readonly Transform _origin;
         private readonly float _raycastDistance;
-        private readonly LayerMask _groundLayer;
+        private readonly LayerMask _layer;
 
         private readonly RaycastHit2D[] _hits = new RaycastHit2D[8];
 
-        public EntityRaycastSensor(Transform origin, float raycastDistance, LayerMask groundLayer)
+        public EntityRaycastSensor(Transform origin, float raycastDistance, LayerMask layer)
         {
             _origin = origin;
             _raycastDistance = raycastDistance;
-            _groundLayer = groundLayer;
+            _layer = layer;
         }
 
 
         public IEnumerable<Collider2D> Scan(Vector2 direction)
         {
+           
             Debug.DrawRay(_origin.position, direction * _raycastDistance, Color.red, 0.5f);
 
+            Debug.Log($"Draw ray:({direction}) : ({_raycastDistance})");
             Physics2D.queriesHitTriggers = false;
-            _ = Physics2D.RaycastNonAlloc(_origin.position, direction, _hits, _raycastDistance, _groundLayer);
+            _ = Physics2D.RaycastNonAlloc(_origin.position, direction, _hits, _raycastDistance, _layer);
 
             var colliders = _hits
                             .Where(x => x.collider != null)

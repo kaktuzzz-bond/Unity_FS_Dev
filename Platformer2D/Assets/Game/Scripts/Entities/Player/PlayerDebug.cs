@@ -1,4 +1,6 @@
 using Game.Scripts.Components.Entity;
+using Game.Scripts.Components.Impacts;
+using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.PlayerInput;
 using Sirenix.OdinInspector;
@@ -23,8 +25,12 @@ namespace Game.Scripts.Entities.Player
         
         [Inject, ShowInInspector, HideInEditorMode]
         private Player _player;
+
+        [Inject(Id = ImpactKeys.Push), ShowInInspector, HideInEditorMode]
+        private CharacterPusher _pusher;
+
+        [Inject(Id = ImpactKeys.Toss), ShowInInspector, HideInEditorMode]
+        private CharacterPusher _tosser;
         
-        // [Inject, ShowInInspector, HideInEditorMode]
-        // private IPusher _pusher;
     }
 }
