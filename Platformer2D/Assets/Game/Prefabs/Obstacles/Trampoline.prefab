@@ -330,7 +330,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979841302588641904}
-  - component: {fileID: 2572618455702870379}
   - component: {fileID: 8270065185440761469}
   - component: {fileID: 1314224540784578732}
   - component: {fileID: 7488797518354471236}
@@ -358,18 +357,6 @@ Transform:
   - {fileID: 7195593461678769857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2572618455702870379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8595837930061912479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dad120d54a4f6ab40f516839c9222f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8270065185440761469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,10 +369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d44cf0d16b3418fbcc24bd78e4e5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 20
-  triggerObserver: {fileID: 3017475948549261902}
+  pusherData:
+    <Force>k__BackingField: 25
+  triggerObserverData:
+    <TriggerObserver>k__BackingField: {fileID: 3017475948549261902}
   audioSource: {fileID: 1617741907949594362}
-  view: {fileID: 2572618455702870379}
 --- !u!114 &1314224540784578732
 MonoBehaviour:
   m_ObjectHideFlags: 0

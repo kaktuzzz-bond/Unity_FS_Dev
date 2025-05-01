@@ -262,7 +262,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3075001735327464809}
-  - component: {fileID: 4246753863508377104}
   - component: {fileID: 1343203123320389705}
   - component: {fileID: 497825731439939865}
   - component: {fileID: 5783041533006662224}
@@ -291,18 +290,6 @@ Transform:
   - {fileID: 3861428367970733972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4246753863508377104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331236207197526835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79fffc0e61224013b2547b8ac7b46773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1343203123320389705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,13 +302,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07bc7be3ca74201a6b6b582e46391d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1
-  triggerObserver: {fileID: 6068103282408105265}
-  maxHealth: 1
-  damagableBody: {fileID: 255782312555602920}
-  pushableBody: {fileID: 7212786520502693721}
-  rigidbody: {fileID: 2967571885436114290}
-  view: {fileID: 4246753863508377104}
+  healthData:
+    <GameObject>k__BackingField: {fileID: 4331236207197526835}
+    <DamagableBody>k__BackingField: {fileID: 255782312555602920}
+    <MaxHealth>k__BackingField: 1
+  impactTakerData:
+    <Rigidbody>k__BackingField: {fileID: 2967571885436114290}
+    <Body>k__BackingField: {fileID: 7212786520502693721}
+  attackData:
+    <Damage>k__BackingField: 1
+  triggerObserverdata:
+    <TriggerObserver>k__BackingField: {fileID: 6068103282408105265}
 --- !u!114 &497825731439939865
 MonoBehaviour:
   m_ObjectHideFlags: 0

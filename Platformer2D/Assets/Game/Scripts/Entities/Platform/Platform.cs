@@ -8,12 +8,11 @@ namespace Game.Scripts.Entities.Platform
     public class Platform : IFixedTickable
     {
         private readonly IEntity _entity;
-        private readonly PlatformView _view;
+      
 
-        public Platform(IEntity entity, PlatformView view)
+        public Platform(IEntity entity)
         {
             _entity = entity;
-            _view = view;
         }
 
         public void FixedTick()

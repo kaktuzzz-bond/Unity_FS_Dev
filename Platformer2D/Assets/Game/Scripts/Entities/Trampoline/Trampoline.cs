@@ -5,6 +5,7 @@ using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Impacts.Pushable;
 using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Sensors;
+using Game.Scripts.Components.Sensors.TriggerObserver;
 using UnityEngine;
 using Zenject;
 
@@ -13,13 +14,11 @@ namespace Game.Scripts.Entities.Trampoline
     public class Trampoline : IInitializable, IDisposable
     {
         private readonly IEntity _entity;
-        private readonly TrampolineView _view;
         private readonly AudioProvider _audioProvider;
 
-        public Trampoline(IEntity entity, TrampolineView view, AudioProvider audioProvider)
+        public Trampoline(IEntity entity,  AudioProvider audioProvider)
         {
             _entity = entity;
-            _view = view;
             _audioProvider = audioProvider;
         }
 

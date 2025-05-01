@@ -5,6 +5,7 @@ using Game.Scripts.Components.Audio;
 using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Sensors;
+using Game.Scripts.Components.Sensors.TriggerObserver;
 using UnityEngine;
 using Zenject;
 
@@ -13,14 +14,12 @@ namespace Game.Scripts.Entities.Lava
     public class Lava : IInitializable, IDisposable
     {
         private readonly IEntity _entity;
-        private readonly LavaView _view;
         private readonly AudioProvider _audioProvider;
 
 
-        public Lava(IEntity entity, LavaView view, AudioProvider audioProvider)
+        public Lava(IEntity entity, AudioProvider audioProvider)
         {
             _entity = entity;
-            _view = view;
             _audioProvider = audioProvider;
         }
 

@@ -7,8 +7,9 @@ using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
 using Game.Scripts.Components.Sensors;
+using Game.Scripts.Components.Sensors.EntityRaycast;
+using Game.Scripts.Components.Sensors.GroundRaycast;
 using Game.Scripts.Components.Vfx;
-using Game.Scripts.Death;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -17,106 +18,62 @@ namespace Game.Scripts.Entities.Player
 {
     public class PlayerInstaller : MonoInstaller
     {
-        [BoxGroup("Settings")]
-        [SerializeField, BoxGroup("Settings/Movement")]
-        private float movementSpeed = 5;
-
-        [SerializeField, BoxGroup("Settings/Movement")]
-        private bool isFlippable = true;
-
-        [SerializeField, BoxGroup("Settings/Jump")]
-        private float jumpHeight = 5;
-
-        [SerializeField, BoxGroup("Settings/Jump")]
-        private float fallGravityScale = 3;
-
-        [SerializeField, BoxGroup("Settings/Jump")]
-        private float jumpCooldown = 1;
-
-        [SerializeField, BoxGroup("Settings/Jump")]
-        private LayerMask groundLayer;
-
-        [SerializeField, BoxGroup("Settings/Health")]
-        private int maxHealth = 10;
-
-        [SerializeField, BoxGroup("Settings/Health")]
-        private DamagableBody damagableBody;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private PushableBody pushableBody;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private float pushSensorRayLength = 1;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private LayerMask sensorLayer;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private float pushForce = 10;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private float pushCooldown = 2;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private float tossForce = 10;
-
-        [SerializeField, BoxGroup("Settings/Impact")]
-        private float tossCooldown = 2;
-
-        [SerializeField, BoxGroup("Settings/View")]
+        [SerializeField]
         private PlayerView view;
 
-        [SerializeField, BoxGroup("Settings/Audio")]
+        [SerializeField]
         private AudioSource audioSource;
 
-        [SerializeField, BoxGroup("Settings/BlinkVFX")]
-        private Color blinkColor = Color.white;
+        [Title("Data")]
+        [SerializeField]
+        private MovementData movementData;
 
-        [SerializeField, BoxGroup("Settings/BlinkVFX")]
-        private SpriteRenderer targetSprite;
+        [SerializeField]
+        private JumpData jumpData;
 
-        [SerializeField, BoxGroup("Settings/BlinkVFX")]
-        private float blinkDuration = 1f;
+        [SerializeField]
+        private HealthData healthData;
 
-        [SerializeField, BoxGroup("Settings/BlinkVFX")]
-        private int blinkFrequency = 10;
+        [SerializeField]
+        private GroundSensorData groundSensorData;
 
-        [SerializeField, BoxGroup("Settings/Refs")]
-        private Transform body;
+        [SerializeField]
+        private EntitySensorData entitySensorData;
 
-        [SerializeField, BoxGroup("Settings/Refs")]
-        private Transform feelPoint;
+        [SerializeField]
+        private ImpactTakerData impactTakerData;
 
-        [SerializeField, BoxGroup("Settings/Refs")]
-        private Transform pushPoint;
+        [SerializeField]
+        private PusherData pushData;
 
-        [SerializeField, BoxGroup("Settings/Refs")]
-        private Rigidbody2D rigidbodyComponent;
+        [SerializeField]
+        private PusherData tossData;
+
+        [SerializeField]
+        private BlinkableVFXData blinkableVFXData;
+
+        [Title("Cooldowns")]
+        [SerializeField]
+        private float jumpCooldown = 1;
+
+        [SerializeField]
+        private float pushCooldown = 2;
+
+        [SerializeField]
+        private float tossCooldown = 2;
 
 
         public override void InstallBindings()
         {
             AudioComponentInstaller.Install(Container, audioSource);
-
-            //Movement
-            MoveInstaller.Install(Container, rigidbodyComponent, body, movementSpeed, isFlippable);
-            CharacterMoverInstaller.Install(Container);
-
-            //Jump
-            GroundSensorInstaller.Install(Container, feelPoint, groundLayer);
-            JumpInstaller.Install(Container, rigidbodyComponent, jumpHeight, fallGravityScale);
-            CharacterJumpInstaller.Install(Container, jumpCooldown);
-
-            //Health
-            HealthInstaller.Install(Container, maxHealth, damagableBody);
-            DeathInstaller.Install(Container, gameObject);
-            ColorBlinkEffectInstaller.Install(Container, blinkColor, targetSprite, blinkDuration, blinkFrequency);
-
-            //Impacts
-            ImpactTakerInstaller.Install(Container, rigidbodyComponent, pushableBody);
-            EntitySensorInstaller.Install(Container, pushPoint, pushSensorRayLength, sensorLayer);
-            CharacterPusherInstaller.Install(Container, pushForce, pushCooldown, ImpactKeys.Push);
-            CharacterPusherInstaller.Install(Container, tossForce, tossCooldown, ImpactKeys.Toss);
+            CharacterMoverInstaller.Install(Container, movementData);
+            CharacterJumpInstaller.Install(Container, groundSensorData, jumpData, jumpCooldown);
+            HealthInstaller.Install(Container, healthData);
+            ColorBlinkEffectInstaller.Install(Container, blinkableVFXData);
+            ImpactTakerInstaller.Install(Container, impactTakerData);
+            EntitySensorInstaller.Install(Container, entitySensorData);
+            CharacterPusherInstaller.Install(Container, pushData, pushCooldown, ImpactKeys.Push);
+            CharacterPusherInstaller.Install(Container, tossData, tossCooldown, ImpactKeys.Toss);
 
             //Entity
             EntityInstaller.Install(Container);

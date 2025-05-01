@@ -933,35 +933,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1680bf8a914e25a0eec69a29f7b63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
-  isFlippable: 1
-  jumpHeight: 10
-  fallGravityScale: 3
-  jumpCooldown: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  maxHealth: 10
-  damagableBody: {fileID: 9210623509313711627}
-  pushableBody: {fileID: 7292231897018823252}
-  pushSensorRayLength: 2
-  sensorLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  pushForce: 10
-  pushCooldown: 2
-  tossForce: 25
-  tossCooldown: 2
   view: {fileID: 8849378925273981239}
   audioSource: {fileID: 7763561300529826441}
-  blinkColor: {r: 0.8679245, g: 0.21698113, b: 0.21698113, a: 1}
-  targetSprite: {fileID: 6611090415534067880}
-  blinkDuration: 1
-  blinkFrequency: 10
-  body: {fileID: 8980892021632546839}
-  feelPoint: {fileID: 5450401019508516262}
-  pushPoint: {fileID: 3511145341736734193}
-  rigidbodyComponent: {fileID: 8342082945872629457}
+  movementData:
+    <Rigidbody>k__BackingField: {fileID: 8342082945872629457}
+    <Body>k__BackingField: {fileID: 8980892021632546839}
+    <Speed>k__BackingField: 6
+    <IsFlippable>k__BackingField: 1
+  jumpData:
+    <Rigidbody>k__BackingField: {fileID: 8342082945872629457}
+    <Height>k__BackingField: 10
+    <FallGravityScale>k__BackingField: 3
+  healthData:
+    <GameObject>k__BackingField: {fileID: 7490323295220271620}
+    <DamagableBody>k__BackingField: {fileID: 9210623509313711627}
+    <MaxHealth>k__BackingField: 10
+  groundSensorData:
+    <Origin>k__BackingField: {fileID: 5450401019508516262}
+    <LayerMask>k__BackingField:
+      serializedVersion: 2
+      m_Bits: 8
+  entitySensorData:
+    <Origin>k__BackingField: {fileID: 3511145341736734193}
+    <RaycastDistance>k__BackingField: 2
+    <LayerMask>k__BackingField:
+      serializedVersion: 2
+      m_Bits: 256
+  impactTakerData:
+    <Rigidbody>k__BackingField: {fileID: 8342082945872629457}
+    <Body>k__BackingField: {fileID: 7292231897018823252}
+  pushData:
+    <Force>k__BackingField: 25
+  tossData:
+    <Force>k__BackingField: 10
+  blinkableVFXData:
+    <Color>k__BackingField: {r: 0.8679245, g: 0.21698113, b: 0.21698113, a: 1}
+    <Renderer>k__BackingField: {fileID: 6611090415534067880}
+    <Duration>k__BackingField: 2
+    <Frequency>k__BackingField: 10
+  jumpCooldown: 1
+  pushCooldown: 2
+  tossCooldown: 2
 --- !u!50 &8342082945872629457
 Rigidbody2D:
   serializedVersion: 4

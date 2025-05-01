@@ -2,26 +2,24 @@ using Zenject;
 
 namespace Game.Scripts.Components.Health
 {
-    public class HealthInstaller : Installer<int, IDamagableBody, HealthInstaller>
+    public class HealthInstaller : Installer<HealthData, HealthInstaller>
     {
-        private readonly int _maxHealth;
-        private readonly IDamagableBody _body;
-
-        public HealthInstaller(int maxHealth, IDamagableBody body)
-        {
-            _maxHealth = maxHealth;
-            _body = body;
-        }
+        [Inject]
+        private readonly HealthData _data;
 
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<HealthUseCase>()
                      .AsSingle()
-                     .WithArguments(_maxHealth);
+                     .WithArguments(_data.MaxHealth);
 
             Container.BindInterfacesTo<DamagableBody>()
-                     .FromInstance(_body)
+                     .FromInstance(_data.DamagableBody)
                      .AsSingle();
+            
+            Container.BindInterfacesTo<DeathUseCase>()
+                     .AsSingle()
+                     .WithArguments(_data.GameObject);
         }
     }
 }

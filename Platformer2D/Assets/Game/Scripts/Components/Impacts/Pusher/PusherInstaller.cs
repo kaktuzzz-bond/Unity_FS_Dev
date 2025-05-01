@@ -2,20 +2,18 @@ using Zenject;
 
 namespace Game.Scripts.Components.Impacts.Pusher
 {
-    public class PusherInstaller : Installer<float, PusherInstaller>
+    public class PusherInstaller : Installer<PusherData, PusherInstaller>
     {
-        private readonly float _pushForce;
+        [Inject]
+        private readonly PusherData _data;
 
-        public PusherInstaller(float pushForce)
-        {
-            _pushForce = pushForce;
-        }
+      
 
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Pusher>()
                      .AsCached()
-                     .WithArguments(_pushForce);
+                     .WithArguments(_data.Force);
         }
     }
 }

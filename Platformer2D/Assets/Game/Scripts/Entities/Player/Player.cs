@@ -11,10 +11,10 @@ using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
 using Game.Scripts.Components.Sensors;
+using Game.Scripts.Components.Sensors.EntityRaycast;
+using Game.Scripts.Components.Sensors.GroundRaycast;
 using Game.Scripts.Components.Vfx;
-using Game.Scripts.Death;
 using Game.Scripts.PlayerInput;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -45,8 +45,7 @@ namespace Game.Scripts.Entities.Player
             _playerInput.OnPush += Push;
             _playerInput.OnToss += Toss;
             _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
-            // _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
-            //
+            _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
 
             var healthComponent = _entity.Get<IDamagable>();
             var groundSensor = _entity.Get<IGroundRaycastSensor>();
@@ -65,14 +64,14 @@ namespace Game.Scripts.Entities.Player
             tosser.AddCondition(() => healthComponent.IsAlive);
             tosser.AddCondition(() => groundSensor.IsGrounded);
         }
-        
+
         private void Move(Vector3 direction)
         {
             if (Mathf.Approximately(direction.x, 0f)) return;
 
             _entity.Get<ICharacterMover>().MoveX(direction.x);
         }
-        
+
         private void Jump()
         {
             var jumper = _entity.Get<ICharacterJumper>();
@@ -93,7 +92,6 @@ namespace Game.Scripts.Entities.Player
             Impact(ImpactKeys.Toss, Vector2.up, _view.PlayToss);
         }
 
-      
 
         private void TakeDamage(int damage)
         {
@@ -115,7 +113,7 @@ namespace Game.Scripts.Entities.Player
 
         private void TakeImpact(Vector3 force)
         {
-            // _entity.Get<IPushable>().TakePush(force);
+            _entity.Get<IPushable>().TakePush(force);
         }
 
         private void Impact(string id, Vector2 forceDirection, Action callback)
@@ -140,7 +138,7 @@ namespace Game.Scripts.Entities.Player
 
             callback?.Invoke();
         }
-        
+
         public void Dispose()
         {
             _playerInput.OnJumped -= Jump;
@@ -148,7 +146,7 @@ namespace Game.Scripts.Entities.Player
             _playerInput.OnPush -= Push;
             _playerInput.OnToss -= Toss;
             _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
-            // _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
+            _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
         }
     }
 }

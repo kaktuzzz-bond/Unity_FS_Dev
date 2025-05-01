@@ -1,10 +1,10 @@
 using Game.Scripts.Components.Attack;
 using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
+using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Impacts.Pushable;
 using Game.Scripts.Components.Sensors;
-using Game.Scripts.Death;
-using Sirenix.OdinInspector;
+using Game.Scripts.Components.Sensors.TriggerObserver;
 using UnityEngine;
 using Zenject;
 
@@ -12,42 +12,28 @@ namespace Game.Scripts.Entities.Trap
 {
     public class TrapInstaller : MonoInstaller
     {
-        [BoxGroup("Settings")]
-        [SerializeField, BoxGroup("Settings/Attack")]
-        private int attackDamage = int.MaxValue;
+        [SerializeField]
+        private HealthData healthData;
 
-        [SerializeField, BoxGroup("Settings/Sensors")]
-        private TriggerObserver triggerObserver;
+        [SerializeField]
+        private ImpactTakerData impactTakerData;
 
-        [SerializeField, BoxGroup("Settings/Health")]
-        private int maxHealth = 10;
+        [SerializeField]
+        private AttackData attackData;
 
-        [SerializeField, BoxGroup("Settings/Health")]
-        private DamagableBody damagableBody;
+        [SerializeField]
+        private TriggerObserverData triggerObserverdata;
 
-        [SerializeField, BoxGroup("Settings/Impacts")]
-        private PushableBody pushableBody;
-
-        [SerializeField, BoxGroup("Settings/Refs")]
-        private new Rigidbody2D rigidbody;
-
-        [SerializeField, BoxGroup("Settings/View")]
-        private TrapView view;
 
         public override void InstallBindings()
         {
-            AttackInstaller.Install(Container, attackDamage);
-            TriggerSensorInstaller.Install(Container, triggerObserver);
-            HealthInstaller.Install(Container, maxHealth, damagableBody);
-            DeathInstaller.Install(Container, gameObject);
-            ImpactTakerInstaller.Install(Container, rigidbody, pushableBody);
-            
+            AttackInstaller.Install(Container, attackData);
+            TriggerSensorInstaller.Install(Container, triggerObserverdata);
+            HealthInstaller.Install(Container, healthData);
+            ImpactTakerInstaller.Install(Container, impactTakerData);
+
             EntityInstaller.Install(Container);
-            
-            Container.Bind<TrapView>()
-                     .FromInstance(view)
-                     .AsSingle();
-            
+
             Container.BindInterfacesAndSelfTo<Trap>()
                      .AsSingle();
         }

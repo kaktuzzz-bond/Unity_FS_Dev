@@ -261,7 +261,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1736318179580503177}
-  - component: {fileID: 4629219291764944792}
   - component: {fileID: 804080462875106065}
   - component: {fileID: 783612559537060244}
   - component: {fileID: 5912143407461459545}
@@ -291,18 +290,6 @@ Transform:
   - {fileID: 7441270365842623162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4629219291764944792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8655644000359545328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5905862fe54bcebf5396a25f4a6c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &804080462875106065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,16 +302,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce96a8cc6aab4387acf201679ced71a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSettings:
-    <MoveSpeed>k__BackingField: 1
-    <Drag>k__BackingField: 0
+  movementData:
+    <Rigidbody>k__BackingField: {fileID: 1599025579162667576}
+    <Body>k__BackingField: {fileID: 7845036276167105276}
+    <Speed>k__BackingField: 1
     <IsFlippable>k__BackingField: 0
-  rigidbodyComponent: {fileID: 1599025579162667576}
-  body: {fileID: 7845036276167105276}
-  view: {fileID: 4629219291764944792}
-  waypoints:
-  - {fileID: 5434138037557620653}
-  - {fileID: 7441270365842623162}
+  patrolData:
+    <Body>k__BackingField: {fileID: 7845036276167105276}
+    waypoints:
+    - {fileID: 5434138037557620653}
+    - {fileID: 7441270365842623162}
 --- !u!114 &783612559537060244
 MonoBehaviour:
   m_ObjectHideFlags: 0
