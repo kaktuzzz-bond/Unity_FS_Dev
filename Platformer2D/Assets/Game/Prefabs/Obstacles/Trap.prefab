@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3861428367970733972}
   - component: {fileID: 4695388499574527720}
-  - component: {fileID: 7212786520502693721}
   - component: {fileID: 255782312555602920}
   - component: {fileID: 6068103282408105265}
+  - component: {fileID: 1684043917502993950}
   m_Layer: 8
   m_Name: <Body>
   m_TagString: Untagged
@@ -80,22 +80,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0008292012, y: 0.5776895}
-      - {x: -0.5700588, y: -0.013678625}
-      - {x: 0.56383634, y: -0.005012274}
+    - - {x: -0.0008292012, y: 0.5667899}
+      - {x: -0.54514545, y: -0.0012219399}
+      - {x: 0.54670835, y: -0.00034102798}
   m_UseDelaunayMesh: 0
---- !u!114 &7212786520502693721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254860857682096947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6b8036908c4413873df82a2b66d6df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &255782312555602920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +108,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7d310875b843f5848da9a6659f690a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1684043917502993950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254860857682096947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6b8036908c4413873df82a2b66d6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3976483565223223776
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7668759244915626143}
   - component: {fileID: 5235324702786249921}
-  - component: {fileID: 6083573085073457990}
   m_Layer: 0
   m_Name: <Sprite>
   m_TagString: Untagged
@@ -205,54 +204,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &6083573085073457990
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976483565223223776}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8671875, y: 0.75}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.00001375936, y: 0.37815136}
-      - {x: -0.44115433, y: -0.38025165}
-      - {x: 0.43651864, y: -0.3723661}
-  m_UseDelaunayMesh: 0
 --- !u!1 &4331236207197526835
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +259,7 @@ MonoBehaviour:
     <MaxHealth>k__BackingField: 1
   impactTakerData:
     <Rigidbody>k__BackingField: {fileID: 2967571885436114290}
-    <Body>k__BackingField: {fileID: 7212786520502693721}
+    <Body>k__BackingField: {fileID: 1684043917502993950}
   attackData:
     <Damage>k__BackingField: 1
   triggerObserverdata:

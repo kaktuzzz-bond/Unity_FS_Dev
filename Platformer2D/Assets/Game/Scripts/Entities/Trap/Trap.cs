@@ -3,10 +3,9 @@ using Game.Scripts.Components.Attack;
 using Game.Scripts.Components.Entity;
 using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Impacts.Pushable;
-using Game.Scripts.Components.Sensors;
 using Game.Scripts.Components.Sensors.TriggerObserver;
 using UnityEngine;
-using IInitializable = Zenject.IInitializable;
+using Zenject;
 
 namespace Game.Scripts.Entities.Trap
 {

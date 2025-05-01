@@ -3,22 +3,29 @@ using Zenject;
 
 namespace Game.Scripts.Components.Impacts.Pusher
 {
-    public class CharacterPusherInstaller : Installer<PusherData, float, string, CharacterPusherInstaller>
+    public class
+        CharacterPusherInstaller : Installer<PusherData, DirectionData, float, string, CharacterPusherInstaller>
     {
         private readonly PusherData _data;
+        private readonly DirectionData _directionData;
         private readonly float _cooldown;
         private readonly string _id;
 
 
-        public CharacterPusherInstaller(PusherData data, float cooldown, string id)
+        public CharacterPusherInstaller(PusherData data, DirectionData directionData, float cooldown, string id)
         {
             _data = data;
+            _directionData = directionData;
             _cooldown = cooldown;
             _id = id;
         }
 
         public override void InstallBindings()
         {
+            Container.BindInstance(_directionData)
+                     .WithId(_id)
+                     .AsCached();
+
             Container.Bind<CharacterPusher>()
                      .WithId(_id)
                      .AsCached()

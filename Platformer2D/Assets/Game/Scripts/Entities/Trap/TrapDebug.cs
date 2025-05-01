@@ -1,5 +1,4 @@
 using Game.Scripts.Components.Health;
-using Game.Scripts.PlayerInput;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;

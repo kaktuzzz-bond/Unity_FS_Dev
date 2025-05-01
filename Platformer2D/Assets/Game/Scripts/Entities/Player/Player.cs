@@ -10,7 +10,6 @@ using Game.Scripts.Components.Impacts.Pushable;
 using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
 using Game.Scripts.Components.Movement;
-using Game.Scripts.Components.Sensors;
 using Game.Scripts.Components.Sensors.EntityRaycast;
 using Game.Scripts.Components.Sensors.GroundRaycast;
 using Game.Scripts.Components.Vfx;
@@ -84,12 +83,12 @@ namespace Game.Scripts.Entities.Player
 
         private void Push()
         {
-            Impact(ImpactKeys.Push, _entity.Get<IMovable>().GetDirection, _view.PlayPush);
+            Impact(ImpactKeys.Push, _view.PlayPush);
         }
 
         private void Toss()
         {
-            Impact(ImpactKeys.Toss, Vector2.up, _view.PlayToss);
+            Impact(ImpactKeys.Toss, _view.PlayToss);
         }
 
 
@@ -116,15 +115,19 @@ namespace Game.Scripts.Entities.Player
             _entity.Get<IPushable>().TakePush(force);
         }
 
-        private void Impact(string id, Vector2 forceDirection, Action callback)
+        private void Impact(string id, Action callback)
         {
             var pusher = _entity.Get<ICharacterPusher>(id);
 
             if (!pusher.IsValid) return;
 
+            var forceDirection = _entity.Get<DirectionData>(id).NormalizedDirection;
+            var bodyDirection = _entity.Get<IMovable>().GetDirection;
+            forceDirection.x *= bodyDirection.x;
+
             var bodies = _entity
                          .Get<IEntityRaycastSensor>()
-                         .Scan<IPushableBody>(_entity.Get<IMovable>().GetDirection)
+                         .Scan<IPushableBody>(bodyDirection)
                          .ToHashSet();
 
             if (bodies.Any())

@@ -11,5 +11,15 @@ namespace Game.Scripts.Components.Sensors.TriggerObserver
         private void OnTriggerEnter2D(Collider2D other) => OnTriggerEnter?.Invoke(other);
 
         private void OnTriggerExit2D(Collider2D other) => OnTriggerExit?.Invoke(other);
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            OnTriggerEnter?.Invoke(other.collider);
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            OnTriggerExit?.Invoke(other.collider);
+        }
     }
 }

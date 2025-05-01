@@ -7,7 +7,7 @@ namespace Game.Scripts.Components.Health
     public class DamagableBody : MonoBehaviour, IDamagableBody
     {
         public event Action<int> OnDamageTaken;
-        
+
         public void TakeDamage(int damage)
         {
             OnDamageTaken?.Invoke(damage);

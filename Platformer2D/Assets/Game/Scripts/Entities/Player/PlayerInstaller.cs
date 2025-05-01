@@ -47,6 +47,12 @@ namespace Game.Scripts.Entities.Player
         private PusherData pushData;
 
         [SerializeField]
+        private DirectionData pushDirectionData;
+
+        [SerializeField]
+        private DirectionData tossDirectionData;
+
+        [SerializeField]
         private PusherData tossData;
 
         [SerializeField]
@@ -72,8 +78,8 @@ namespace Game.Scripts.Entities.Player
             ColorBlinkEffectInstaller.Install(Container, blinkableVFXData);
             ImpactTakerInstaller.Install(Container, impactTakerData);
             EntitySensorInstaller.Install(Container, entitySensorData);
-            CharacterPusherInstaller.Install(Container, pushData, pushCooldown, ImpactKeys.Push);
-            CharacterPusherInstaller.Install(Container, tossData, tossCooldown, ImpactKeys.Toss);
+            CharacterPusherInstaller.Install(Container, pushData, pushDirectionData, pushCooldown, ImpactKeys.Push);
+            CharacterPusherInstaller.Install(Container, tossData, tossDirectionData, tossCooldown, ImpactKeys.Toss);
 
             //Entity
             EntityInstaller.Install(Container);
