@@ -8,5 +8,9 @@ namespace Game.Scripts.Components.Movement
         void MoveX(float xDirection);
 
         void Move(Vector3 direction);
+
+        void ForceMoveX(float value);
+
+        void ForceMove(Vector2 force);
     }
 }

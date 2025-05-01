@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Game.Scripts.Entities.Platform
 {
-    public class Platform : IFixedTickable
+    public class Platform : ITickable
     {
         private readonly IEntity _entity;
       
@@ -15,7 +15,7 @@ namespace Game.Scripts.Entities.Platform
             _entity = entity;
         }
 
-        public void FixedTick()
+        public void Tick()
         {
             var moveComponent = _entity.Get<IMovable>();
             var patrolComponent = _entity.Get<IPatrolable>();

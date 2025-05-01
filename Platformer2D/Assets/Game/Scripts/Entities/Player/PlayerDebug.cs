@@ -1,4 +1,5 @@
 using Game.Scripts.Components.Entity;
+using Game.Scripts.Components.Health;
 using Game.Scripts.Components.Impacts;
 using Game.Scripts.Components.Impacts.Pusher;
 using Game.Scripts.Components.Jump;
@@ -19,6 +20,9 @@ namespace Game.Scripts.Entities.Player
 
         [Inject, ShowInInspector, HideInEditorMode, ReadOnly]
         private IEntity _entity;
+        
+        [Inject, ShowInInspector, HideInEditorMode, ReadOnly]
+        private IDamagable _health;
         
         [Inject, ShowInInspector, HideInEditorMode, ReadOnly]
         private ICharacterJumper _jumper;

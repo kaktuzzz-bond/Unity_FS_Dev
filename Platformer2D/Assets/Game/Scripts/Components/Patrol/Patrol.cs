@@ -1,16 +1,16 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Scripts.Components.Patrol
 {
     public class Patrol : IPatrolable
-    {
+    {  [ShowInInspector]
         private readonly Transform _target;
-
+        [ShowInInspector]
         private readonly IReadOnlyList<Vector3> _waypoints;
-
-
-        private const float Threshold = 0.01f;
+        
+        private const float Threshold = 0.1f;
 
         private int _currentIndex;
         
@@ -20,11 +20,16 @@ namespace Game.Scripts.Components.Patrol
             _waypoints = waypoints;
         }
 
+        [ShowInInspector]
         public bool IsNear => Vector2.Distance(PointPos, LocalPos) <= Threshold;
+        [ShowInInspector]
         public Vector3 Direction => (PointPos - LocalPos).normalized;
+        [ShowInInspector]
         private Vector2 LocalPos => _target.transform.localPosition;
+        [ShowInInspector]
         private Vector2 PointPos => _waypoints[_currentIndex];
 
+        [Button]
         public void MoveNext()
         {
             var next = _currentIndex + 1;

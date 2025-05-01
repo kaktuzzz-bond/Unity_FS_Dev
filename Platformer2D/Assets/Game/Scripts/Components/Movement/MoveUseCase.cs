@@ -36,6 +36,15 @@ namespace Game.Scripts.Components.Movement
             }
         }
 
+        public void ForceMoveX(float value)
+        {
+            ForceMove(new Vector2(value, 0));
+        }
+        
+        public void ForceMove(Vector2 force)
+        {
+            _rb.AddForce(force);
+        }
 
         private void LookTowardsX(float direction)
         {
