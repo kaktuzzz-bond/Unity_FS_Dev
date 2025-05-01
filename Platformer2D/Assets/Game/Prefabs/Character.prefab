@@ -935,7 +935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 6
   isFlippable: 1
-  jumpHeight: 8
+  jumpHeight: 10
   fallGravityScale: 3
   jumpCooldown: 1
   groundLayer:
@@ -950,7 +950,7 @@ MonoBehaviour:
     m_Bits: 256
   pushForce: 10
   pushCooldown: 2
-  tossForce: 10
+  tossForce: 25
   tossCooldown: 2
   view: {fileID: 8849378925273981239}
   audioSource: {fileID: 7763561300529826441}
@@ -975,7 +975,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: ab257e1d35ce64a6f8763918388a3ca0, type: 2}

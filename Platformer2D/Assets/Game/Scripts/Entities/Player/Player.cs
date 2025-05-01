@@ -42,10 +42,9 @@ namespace Game.Scripts.Entities.Player
         {
             _playerInput.OnJumped += Jump;
             _playerInput.OnMoved += Move;
-            _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
             _playerInput.OnPush += Push;
             _playerInput.OnToss += Toss;
-
+            _entity.Get<IDamagableBody>().OnDamageTaken += TakeDamage;
             // _entity.Get<IPushableBody>().OnImpacted += TakeImpact;
             //
 
@@ -53,8 +52,8 @@ namespace Game.Scripts.Entities.Player
             var groundSensor = _entity.Get<IGroundRaycastSensor>();
             var jumpComponent = _entity.Get<ICharacterJumper>();
             var moveComponent = _entity.Get<ICharacterMover>();
-            var pusher = _entity.Get<CharacterPusher>(ImpactKeys.Push);
-            var tosser = _entity.Get<CharacterPusher>(ImpactKeys.Toss);
+            var pusher = _entity.Get<ICharacterPusher>(ImpactKeys.Push);
+            var tosser = _entity.Get<ICharacterPusher>(ImpactKeys.Toss);
 
             jumpComponent.AddCondition(() => healthComponent.IsAlive);
             jumpComponent.AddCondition(() => groundSensor.IsGrounded);
@@ -62,21 +61,18 @@ namespace Game.Scripts.Entities.Player
             moveComponent.AddCondition(() => healthComponent.IsAlive);
 
             pusher.AddCondition(() => healthComponent.IsAlive);
-            pusher.AddCondition(() => groundSensor.IsGrounded);
 
             tosser.AddCondition(() => healthComponent.IsAlive);
+            tosser.AddCondition(() => groundSensor.IsGrounded);
         }
-
-
-        [Button, HideInEditorMode]
+        
         private void Move(Vector3 direction)
         {
             if (Mathf.Approximately(direction.x, 0f)) return;
 
             _entity.Get<ICharacterMover>().MoveX(direction.x);
         }
-
-        [Button, HideInEditorMode]
+        
         private void Jump()
         {
             var jumper = _entity.Get<ICharacterJumper>();
@@ -89,35 +85,17 @@ namespace Game.Scripts.Entities.Player
 
         private void Push()
         {
-            ImpactOutside(ImpactKeys.Push, _entity.Get<IMovable>().GetDirection, _view.PlayPush);
+            Impact(ImpactKeys.Push, _entity.Get<IMovable>().GetDirection, _view.PlayPush);
         }
 
         private void Toss()
         {
-            ImpactOutside(ImpactKeys.Toss, Vector2.up, _view.PlayToss);
+            Impact(ImpactKeys.Toss, Vector2.up, _view.PlayToss);
         }
 
-        private void ImpactOutside(string id, Vector2 forceDirection, Action callback)
-        {
-            var pusher = _entity.Get<CharacterPusher>(id);
+      
 
-            if (!pusher.IsValid) return;
-            
-            var sensor = _entity.Get<IEntityRaycastSensor>();
-            var direction = _entity.Get<IMovable>().GetDirection;
-
-            foreach (var col in sensor.Scan(direction))
-            {
-                if (!col.TryGetComponent<IPushableBody>(out var target)) continue;
-
-                pusher.Push(target, forceDirection);
-            }
-
-            callback?.Invoke();
-        }
-
-        [Button, HideInEditorMode]
-        public void TakeDamage(int damage)
+        private void TakeDamage(int damage)
         {
             var healthComponent = _entity.Get<IDamagable>();
 
@@ -135,19 +113,41 @@ namespace Game.Scripts.Entities.Player
                    });
         }
 
-        [Button, HideInEditorMode]
         private void TakeImpact(Vector3 force)
         {
             // _entity.Get<IPushable>().TakePush(force);
         }
 
+        private void Impact(string id, Vector2 forceDirection, Action callback)
+        {
+            var pusher = _entity.Get<ICharacterPusher>(id);
+
+            if (!pusher.IsValid) return;
+
+            var bodies = _entity
+                         .Get<IEntityRaycastSensor>()
+                         .Scan<IPushableBody>(_entity.Get<IMovable>().GetDirection)
+                         .ToHashSet();
+
+            if (bodies.Any())
+            {
+                pusher.Push(bodies, forceDirection);
+            }
+            else
+            {
+                pusher.Push();
+            }
+
+            callback?.Invoke();
+        }
+        
         public void Dispose()
         {
             _playerInput.OnJumped -= Jump;
             _playerInput.OnMoved -= Move;
-            _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
             _playerInput.OnPush -= Push;
             _playerInput.OnToss -= Toss;
+            _entity.Get<IDamagableBody>().OnDamageTaken -= TakeDamage;
             // _entity.Get<IPushableBody>().OnImpacted -= TakeImpact;
         }
     }

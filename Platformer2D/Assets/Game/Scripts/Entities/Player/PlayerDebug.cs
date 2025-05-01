@@ -27,10 +27,10 @@ namespace Game.Scripts.Entities.Player
         private Player _player;
 
         [Inject(Id = ImpactKeys.Push), ShowInInspector, HideInEditorMode]
-        private CharacterPusher _pusher;
+        private ICharacterPusher _pusher;
 
         [Inject(Id = ImpactKeys.Toss), ShowInInspector, HideInEditorMode]
-        private CharacterPusher _tosser;
+        private ICharacterPusher _tosser;
         
     }
 }

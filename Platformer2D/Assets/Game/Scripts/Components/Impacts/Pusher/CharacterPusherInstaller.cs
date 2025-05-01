@@ -1,5 +1,4 @@
 using Game.Scripts.Components.Cooldown;
-using Unity.VisualScripting;
 using Zenject;
 
 namespace Game.Scripts.Components.Impacts.Pusher
@@ -20,16 +19,18 @@ namespace Game.Scripts.Components.Impacts.Pusher
 
         public override void InstallBindings()
         {
-           
-            
             Container.Bind<CharacterPusher>()
                      .WithId(_id)
                      .AsCached()
                      .WithArguments(new Pusher(_force), new CooldownTimer(_cooldown));
-            
+
             Container.BindInterfacesTo<CharacterPusher>()
-                     .FromMethod(ctx=> ctx.Container.ResolveId<CharacterPusher>(_id))
-                     .AsCached();
+                     .FromMethod(ctx => ctx.Container.ResolveId<CharacterPusher>(_id));
+
+            Container.Bind<ICharacterPusher>()
+                     .WithId(_id)
+                     .To<CharacterPusher>()
+                     .FromMethod(ctx => ctx.Container.ResolveId<CharacterPusher>(_id));
         }
     }
 }

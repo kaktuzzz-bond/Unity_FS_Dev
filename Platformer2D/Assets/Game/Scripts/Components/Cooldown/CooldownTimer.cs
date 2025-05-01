@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Game.Scripts.Components.Cooldown
 {
@@ -23,11 +24,13 @@ namespace Game.Scripts.Components.Cooldown
 
         private async UniTaskVoid LaunchAsync()
         {
+            Debug.Log($"Timer start: ({Time.time})  : ({this.GetHashCode()})");
             IsInProgress = true;
 
-            await UniTask.WaitForSeconds(_duration);
+            await UniTask.WaitForSeconds(_duration, cancellationToken: _cts.Token);
             
             IsInProgress = false;
+            Debug.Log($"Timer stop: ({Time.time})  : ({this.GetHashCode()})");
         }
 
         public void Dispose()
