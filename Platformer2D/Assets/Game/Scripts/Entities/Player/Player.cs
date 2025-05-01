@@ -83,12 +83,20 @@ namespace Game.Scripts.Entities.Player
 
         private void Push()
         {
-            Impact(ImpactKeys.Push, _view.PlayPush);
+            Impact(ImpactKeys.Push, () =>
+            {
+                _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Push));
+                _view.PlayPush();
+            });
         }
 
         private void Toss()
         {
-            Impact(ImpactKeys.Toss, _view.PlayToss);
+            Impact(ImpactKeys.Toss, () =>
+            {
+                _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Toss));
+                _view.PlayToss();
+            });
         }
 
 
