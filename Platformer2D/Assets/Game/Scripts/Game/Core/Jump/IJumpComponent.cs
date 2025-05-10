@@ -1,4 +1,4 @@
-using Game.Scripts.Game.Core.Conditions;
+using Modules.Conditions;
 
 namespace Game.Scripts.Game.Core.Jump
 {

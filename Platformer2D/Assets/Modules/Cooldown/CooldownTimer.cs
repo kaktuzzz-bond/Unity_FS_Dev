@@ -3,7 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 
-namespace Game.Scripts.Game.Core.Cooldown
+namespace Modules.Cooldown
 {
     public class CooldownTimer : IDisposable, ICooldownTimer
     {

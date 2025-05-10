@@ -1,6 +1,6 @@
 using System;
 
-namespace Game.Scripts.Game.Core.Conditions
+namespace Modules.Conditions
 {
     public interface ICompositeCondition
     {

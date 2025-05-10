@@ -1,12 +1,13 @@
 using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game.Scripts.Game.Core.Vfx
+namespace Game.Scripts.Game.Core.MonoComponents
 {
-    [Serializable]
-    public class BlinkSpriteComponent : IVisualFX
+   
+    public class BlinkSpriteComponent : MonoBehaviour
     {
         [SerializeField]
         private Color blinkColor;
@@ -34,7 +35,7 @@ namespace Game.Scripts.Game.Core.Vfx
         }
 
         [Button, HideInEditorMode]
-        public void Play(Action onComplete)
+        public UniTask Play()
         {
             _tween?.Kill(true);
 
@@ -43,10 +44,9 @@ namespace Game.Scripts.Game.Core.Vfx
                      .Join(targetSprite.DOColor(blinkColor, _calculatedDuration)
                                        .SetEase(Ease.InOutSine)
                                        .SetLoops(_calculatedFrequency, LoopType.Yoyo))
-                     .Append(targetSprite.DOColor(_originalColor, RestoreColorDuration))
-                     .OnComplete(() => onComplete?.Invoke());
+                     .Append(targetSprite.DOColor(_originalColor, RestoreColorDuration));
 
-            ;
+            return _tween.ToUniTask(cancellationToken: destroyCancellationToken);
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Game.Scripts.Components.Entity;
 using Game.Scripts.Game.Core.Attack;
 using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Core.Impacts.Pushable;
@@ -9,8 +8,7 @@ using Game.Scripts.Game.Core.Impacts.Pusher;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Patrol;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;
-using Game.Scripts.Game.Core.Sensors.TriggerObserver;
-using Game.Scripts.Game.Core.Vfx;
+using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;

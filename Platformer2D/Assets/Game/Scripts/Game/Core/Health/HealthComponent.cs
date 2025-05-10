@@ -15,7 +15,7 @@ namespace Game.Scripts.Game.Core.Health
         public event Action<float> OnHealthChanged;
 
         [ShowInInspector, ReadOnly]
-        public float HealthLevel => (float)_currentHealth / maxHealth;
+        private float HealthLevel => (float)_currentHealth / maxHealth;
 
         [ShowInInspector, ReadOnly]
         public bool IsAlive => _currentHealth > 0;
@@ -34,16 +34,15 @@ namespace Game.Scripts.Game.Core.Health
         {
             _currentHealth -= damage;
 
-            if (IsAlive) return;
-
-            Kill();
-        }
-
-        [Button, HideInEditorMode]
-        public void Kill()
-        {
-            _currentHealth = 0;
-            OnDeath?.Invoke();
+            if (IsAlive)
+            {
+                OnHealthChanged?.Invoke(HealthLevel);
+            }
+            else
+            {
+                _currentHealth = 0;
+                OnDeath?.Invoke();
+            }
         }
 
         [Button, HideInEditorMode]

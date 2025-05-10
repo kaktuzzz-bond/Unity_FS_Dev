@@ -1,4 +1,4 @@
-namespace Game.Scripts.Game.Core.Cooldown
+namespace Modules.Cooldown
 {
     public interface ICooldownTimer
     {

@@ -4,7 +4,7 @@ using Game.Scripts.GameSystem.PlayerInput;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.GameSystem.Controllers
+namespace Game.Scripts.GameSystem.PlayerManagement
 {
     public class PlayerController : IInitializable, IDisposable
     {

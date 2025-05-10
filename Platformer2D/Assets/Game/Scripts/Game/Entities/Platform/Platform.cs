@@ -1,6 +1,6 @@
-using Game.Scripts.Components.Entity;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Patrol;
+using Modules.Entity;
 using Zenject;
 
 namespace Game.Scripts.Game.Entities.Platform

@@ -1,9 +1,7 @@
 using System;
 using System.Linq;
-using Game.Scripts.Components.Entity;
+using Cysharp.Threading.Tasks;
 using Game.Scripts.Game.Core.Audio;
-using Game.Scripts.Game.Core.Conditions;
-using Game.Scripts.Game.Core.Cooldown;
 using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Core.Impacts;
 using Game.Scripts.Game.Core.Impacts.Pushable;
@@ -12,8 +10,8 @@ using Game.Scripts.Game.Core.Jump;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Sensors.EntityRaycast;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;
-using Game.Scripts.Game.Core.Vfx;
 using Game.Scripts.GameSystem.Audio;
+using Modules.Entity;
 using UnityEngine;
 using Zenject;
 
@@ -22,14 +20,11 @@ namespace Game.Scripts.Game.Entities.Player
     public class Player : IPlayer, IInitializable, IDisposable
     {
         private readonly IEntity _entity;
-        private readonly PlayerView _view;
-        private readonly AudioProvider _audioProvider;
+       
 
-        public Player(IEntity entity, PlayerView view, AudioProvider audioProvider)
+        public Player(IEntity entity)
         {
             _entity = entity;
-            _view = view;
-            _audioProvider = audioProvider;
         }
 
 
@@ -37,6 +32,7 @@ namespace Game.Scripts.Game.Entities.Player
         {
             _entity.Get<IJumpComponent>()
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
+
             _entity.Get<IJumpComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
@@ -48,7 +44,7 @@ namespace Game.Scripts.Game.Entities.Player
             // var moveComponent = _entity.Get<ICharacterMover>();
             // var pusher = _entity.Get<ICharacterPusher>(ImpactKeys.Push);
             // var tosser = _entity.Get<ICharacterPusher>(ImpactKeys.Toss);
-            
+
             // pusher.AddCondition(() => healthComponent.IsAlive);
             //
             // tosser.AddCondition(() => healthComponent.IsAlive);
@@ -58,16 +54,17 @@ namespace Game.Scripts.Game.Entities.Player
 
         public void Move(Vector3 direction)
         {
-            Debug.Log($"Move: {direction}");
-            _entity.Get<IMoveComponent>().MoveX(direction.x);
+            _entity.Get<IMoveComponent>()
+                   .MoveX(direction.x);
         }
 
         public void Jump()
         {
-            if (!_entity.Get<IJumpComponent>().Jump()) return;
-
-            var clip = _audioProvider.GetClip(SoundKey.Jump);
-            _entity.Get<IAudioComponent>().Play(clip);
+            if (_entity.Get<IJumpComponent>()
+                       .Jump())
+            {
+                _entity.Get<PlayerView>().PlayJump();
+            }
         }
 
 
@@ -96,18 +93,8 @@ namespace Game.Scripts.Game.Entities.Player
             var healthComponent = _entity.Get<IHealthComponent>();
 
             healthComponent.TakeDamage(damage);
-
-            _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.TakeDamage));
-
-            _view.ShowTakenDamage(healthComponent.HealthLevel);
-
-            _entity.Get<IVisualFX>()
-                   .Play(() =>
-                   {
-                       if (!healthComponent.IsAlive)
-                           _entity.Get<PlayerView>().PlayDeath();
-                   });
         }
+
 
         private void TakeImpact(Vector3 force)
         {
@@ -143,7 +130,6 @@ namespace Game.Scripts.Game.Entities.Player
 
         public void Dispose()
         {
-            _entity.Get<IHealthComponent>().OnHealthChanged -= _view.ShowTakenDamage;
         }
     }
 }

@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace Game.Scripts.Game.Core.Sensors.TriggerObserver
+namespace Game.Scripts.Game.Core.MonoComponents
 {
-    public interface ITriggerObserver
+    public interface ITriggerReceiver
     {
         event Action<Collider2D> OnTriggerEnter;
         event Action<Collider2D> OnTriggerExit;

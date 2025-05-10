@@ -1,6 +1,7 @@
-using System;
-using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Vfx;
+using Cysharp.Threading.Tasks;
+using Game.Scripts.Game.Core.Audio;
+using Game.Scripts.Game.Core.MonoComponents;
+using Game.Scripts.GameSystem.Audio;
 using Game.Scripts.UI;
 using UnityEngine;
 using Zenject;
@@ -13,19 +14,55 @@ namespace Game.Scripts.Game.Entities.Player
         private HealthBarView healthBarView;
 
         [SerializeField]
+        private AudioSource audioSource;
+
+        [SerializeField]
         private ParticleSystem pushVFX;
 
         [SerializeField]
         private ParticleSystem tossVFX;
-        
+
+        [SerializeField]
+        private BlinkSpriteComponent blinkVFX;
+
+        private AudioProvider _audioProvider;
 
 
-        public void ShowTakenDamage(float healthValue) => healthBarView.SetValue(healthValue);
+        [Inject]
+        private void Construct(AudioProvider audioProvider)
+        {
+            _audioProvider = audioProvider;
+        }
 
-        public void PlayPush() => pushVFX.Play();
+        public UniTask ShowTakenDamage(float healthValue)
+        {
+            healthBarView.SetValue(healthValue);
+            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.TakeDamage));
 
-        public void PlayToss() => tossVFX.Play();
-        public void PlayDeath() => gameObject.SetActive(false);
-        
+            return blinkVFX.Play();
+        }
+
+        public void PlayJump()
+        {
+            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Jump));
+        }
+
+        public void PlayPush()
+        {
+            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Push));
+            pushVFX.Play();
+        }
+
+        public void PlayToss()
+        {
+            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Toss));
+            tossVFX.Play();
+        }
+
+        public async UniTaskVoid PlayDeath()
+        {
+            await ShowTakenDamage(0f);
+            gameObject.SetActive(false);
+        }
     }
 }

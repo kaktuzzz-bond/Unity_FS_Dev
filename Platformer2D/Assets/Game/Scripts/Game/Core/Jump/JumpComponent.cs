@@ -1,6 +1,6 @@
 using System;
-using Game.Scripts.Game.Core.Conditions;
-using Game.Scripts.Game.Core.Cooldown;
+using Modules.Conditions;
+using Modules.Cooldown;
 using UnityEngine;
 using Zenject;
 

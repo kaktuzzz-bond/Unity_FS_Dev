@@ -1,8 +1,8 @@
 using Game.Scripts.Game.Core.Attack;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Impacts;
-using Game.Scripts.Game.Core.Impacts.Pushable;
-using Game.Scripts.Game.Core.Sensors.TriggerObserver;
+using Game.Scripts.Game.Core.MonoComponents;
+using Modules.Entity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -10,30 +10,42 @@ namespace Game.Scripts.Game.Entities.Trap
 {
     public class TrapInstaller : MonoInstaller
     {
-        // [SerializeField]
-        // private HealthData healthData;
-        //
-        // [SerializeField]
-        // private ImpactTakerData impactTakerData;
-        //
-        // [SerializeField]
-        // private AttackData attackData;
-        //
-        // [SerializeField]
-        // private TriggerObserverData triggerObserverdata;
+        [SerializeField, BoxGroup("View", ShowLabel = false)]
+        private TrapView view;
+
+        [SerializeField, BoxGroup("Health", ShowLabel = false)]
+        private HealthComponent healthComponent;
+
+        [SerializeField, BoxGroup("Attack", ShowLabel = false)]
+        private AttackComponent attackComponent;
+
+        [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
+        private TriggerReceiver triggerReceiver;
 
 
         public override void InstallBindings()
         {
-            // AttackInstaller.Install(Container, attackData);
-            // TriggerSensorInstaller.Install(Container, triggerObserverdata);
-            // HealthInstaller.Install(Container, healthData);
-            // ImpactTakerInstaller.Install(Container, impactTakerData);
-            //
-            // EntityInstaller.Install(Container);
-            //
-            // Container.BindInterfacesAndSelfTo<Trap>()
-            //          .AsSingle();
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.Bind<TrapView>()
+                     .FromInstance(view)
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Trap>()
+                     .AsSingle();
+
+            Container.BindInterfacesTo<HealthComponent>()
+                     .FromInstance(healthComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<AttackComponent>()
+                     .FromInstance(attackComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<TriggerReceiver>()
+                     .FromInstance(triggerReceiver)
+                     .AsSingle();
         }
     }
 }

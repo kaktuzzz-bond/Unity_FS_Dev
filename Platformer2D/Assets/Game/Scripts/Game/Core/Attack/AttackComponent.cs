@@ -1,20 +1,18 @@
-using Game.Scripts.Game.Core.Conditions;
+using System;
 using Game.Scripts.Game.Core.Health;
+using UnityEngine;
 
 namespace Game.Scripts.Game.Core.Attack
 {
+    [Serializable]
     public class AttackComponent : IAttackComponent
     {
-        private readonly int _damage;
-
-        public AttackComponent(int damage)
+        [SerializeField, Min(0)]
+        private int damage = 1;
+        
+        public void Attack(IDamagable target)
         {
-            _damage = damage;
-        }
-
-        public void Attack(IHealthComponent target)
-        {
-            target.TakeDamage(_damage);
+            target.TakeDamage(damage);
         }
     }
 }

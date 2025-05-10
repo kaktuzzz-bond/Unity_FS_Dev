@@ -1,4 +1,4 @@
-namespace Game.Scripts.Components.Entity
+namespace Modules.Entity
 {
     public interface IEntity
     {

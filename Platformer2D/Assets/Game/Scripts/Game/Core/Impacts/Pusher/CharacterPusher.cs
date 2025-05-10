@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Game.Scripts.Game.Core.Conditions;
-using Game.Scripts.Game.Core.Cooldown;
 using Game.Scripts.Game.Core.Impacts.Pushable;
+using Modules.Cooldown;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;

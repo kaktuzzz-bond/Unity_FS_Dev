@@ -1,4 +1,4 @@
-using Game.Scripts.Game.Core.Conditions;
+using Modules.Conditions;
 using UnityEngine;
 
 namespace Game.Scripts.Game.Core.Movement

@@ -1,6 +1,7 @@
 using Game.Scripts.Game.Core.Attack;
-using Game.Scripts.Game.Core.Audio;
-using Game.Scripts.Game.Core.Sensors.TriggerObserver;
+using Game.Scripts.Game.Core.MonoComponents;
+using Modules.Entity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -8,24 +9,34 @@ namespace Game.Scripts.Game.Entities.Lava
 {
     public class LavaInstaller : MonoInstaller
     {
-      
-        [SerializeField]
-        private TriggerObserverData triggerObserverData;
+        [SerializeField, BoxGroup("View", ShowLabel = false)]
+        private LavaView view;
 
-        [SerializeField]
-        private AudioSource audioSource;
+        [SerializeField, BoxGroup("Attack", ShowLabel = false)]
+        private AttackComponent attackComponent;
 
+        [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
+        private TriggerReceiver triggerReceiver;
 
         public override void InstallBindings()
         {
-            // AttackInstaller.Install(Container, attackData);
-            // TriggerSensorInstaller.Install(Container, triggerObserverData);
-            // AudioComponentInstaller.Install(Container, audioSource);
-            //
-            // EntityInstaller.Install(Container);
-            //
-            // Container.BindInterfacesAndSelfTo<Lava>()
-            //          .AsSingle();
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.Bind<LavaView>()
+                     .FromInstance(view)
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Lava>()
+                     .AsSingle();
+
+            Container.BindInterfacesTo<AttackComponent>()
+                     .FromInstance(attackComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<TriggerReceiver>()
+                     .FromInstance(triggerReceiver)
+                     .AsSingle();
         }
     }
 }

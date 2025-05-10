@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 
-namespace Game.Scripts.Game.Core.Conditions
+namespace Modules.Conditions
 {
     public sealed class CompositeCondition : ICompositeCondition
     {

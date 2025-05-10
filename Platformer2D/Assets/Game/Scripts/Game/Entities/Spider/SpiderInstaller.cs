@@ -6,8 +6,6 @@ using Game.Scripts.Game.Core.Impacts.Pusher;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Patrol;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;
-using Game.Scripts.Game.Core.Sensors.TriggerObserver;
-using Game.Scripts.Game.Core.Vfx;
 using UnityEngine;
 using Zenject;
 

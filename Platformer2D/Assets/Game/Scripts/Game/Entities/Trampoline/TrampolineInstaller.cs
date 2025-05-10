@@ -1,7 +1,6 @@
 using Game.Scripts.Game.Core.Audio;
 using Game.Scripts.Game.Core.Impacts;
 using Game.Scripts.Game.Core.Impacts.Pusher;
-using Game.Scripts.Game.Core.Sensors.TriggerObserver;
 using UnityEngine;
 using Zenject;
 

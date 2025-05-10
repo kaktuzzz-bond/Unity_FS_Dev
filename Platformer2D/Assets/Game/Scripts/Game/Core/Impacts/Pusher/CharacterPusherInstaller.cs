@@ -1,4 +1,4 @@
-using Game.Scripts.Game.Core.Cooldown;
+using Modules.Cooldown;
 using Zenject;
 
 namespace Game.Scripts.Game.Core.Impacts.Pusher
