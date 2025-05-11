@@ -32,13 +32,13 @@ namespace Game.Scripts.Game.Entities.Player
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<EntitySensor>("Push")
+            _entity.Get<EntitySensor>(PushKey.Push)
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<EntitySensor>("Toss")
+            _entity.Get<EntitySensor>(PushKey.Toss)
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<EntitySensor>("Toss")
+            _entity.Get<EntitySensor>(PushKey.Toss)
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
         }
 
@@ -62,7 +62,7 @@ namespace Game.Scripts.Game.Entities.Player
 
         public void Push()
         {
-            if (!_entity.Get<EntitySensor>("Push")
+            if (!_entity.Get<EntitySensor>(PushKey.Push)
                         .Push(_entity.Get<IMoveComponent>().GetDirection))
                 return;
 
@@ -72,7 +72,7 @@ namespace Game.Scripts.Game.Entities.Player
 
         public void Toss()
         {
-            if (!_entity.Get<EntitySensor>("Toss")
+            if (!_entity.Get<EntitySensor>(PushKey.Toss)
                         .Push(_entity.Get<IMoveComponent>().GetDirection))
                 return;
 

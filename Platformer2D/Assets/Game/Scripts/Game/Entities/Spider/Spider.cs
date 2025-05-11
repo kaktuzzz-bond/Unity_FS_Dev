@@ -37,7 +37,6 @@ namespace Game.Scripts.Game.Entities.Spider
 
         private void OnForceAdded()
         {
-            Debug.Log($"Spider force added");
             _entity.Get<IPatrolComponent>().Pause();
         }
 

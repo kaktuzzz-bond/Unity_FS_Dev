@@ -962,7 +962,7 @@ MonoBehaviour:
     layerMask:
       serializedVersion: 2
       m_Bits: 256
-    force: {x: 10, y: 1}
+    force: {x: 15, y: 1}
     raycastLimit: 8
     cooldownTime: 2
   tosser:

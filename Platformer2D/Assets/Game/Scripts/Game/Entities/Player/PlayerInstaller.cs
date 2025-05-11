@@ -59,8 +59,8 @@ namespace Game.Scripts.Game.Entities.Player
                      .FromInstance(forceComponent)
                      .AsSingle();
 
-            BindPusher("Push", pusher);
-            BindPusher("Toss", tosser);
+            BindPusher(PushKey.Push, pusher);
+            BindPusher(PushKey.Toss, tosser);
             
             Container.BindInterfacesTo<Entity>()
                      .AsSingle();
@@ -81,7 +81,7 @@ namespace Game.Scripts.Game.Entities.Player
                      .NonLazy();
         }
 
-        private void BindPusher(string id, EntitySensor instance)
+        private void BindPusher(PushKey id, EntitySensor instance)
         {
             Container.Bind<EntitySensor>()
                      .WithId(id)

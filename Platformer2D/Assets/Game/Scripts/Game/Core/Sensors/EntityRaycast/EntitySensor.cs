@@ -29,7 +29,7 @@ namespace Game.Scripts.Game.Core.Sensors.EntityRaycast
 
         [SerializeField]
         private float cooldownTime = -1;
-        
+
         public bool IsValid => _condition.IsValid;
 
         private RaycastHit2D[] _hits;
@@ -38,11 +38,11 @@ namespace Game.Scripts.Game.Core.Sensors.EntityRaycast
         private ICooldownTimer _cooldown;
 
         private bool IgnoreCooldown => cooldownTime < 0;
-        
+
         public void Initialize()
         {
             _hits = new RaycastHit2D[raycastLimit];
-            
+
             AddCooldown();
         }
 
@@ -52,13 +52,11 @@ namespace Game.Scripts.Game.Core.Sensors.EntityRaycast
 
             var targets = Scan<IPushable>(scanDirection);
 
-            Debug.Log($"Pushables: ({targets.Count()})");
-            
             foreach (var target in targets)
             {
                 target.AddForce(force, origin.position);
             }
-            
+
             if (!IgnoreCooldown)
                 _cooldown.Launch();
 
@@ -95,7 +93,7 @@ namespace Game.Scripts.Game.Core.Sensors.EntityRaycast
 
             return targets;
         }
-        
+
         private void AddCooldown()
         {
             if (IgnoreCooldown) return;
