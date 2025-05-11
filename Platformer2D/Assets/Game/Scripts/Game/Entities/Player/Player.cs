@@ -3,9 +3,6 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using Game.Scripts.Game.Core.Audio;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Impacts;
-using Game.Scripts.Game.Core.Impacts.Pushable;
-using Game.Scripts.Game.Core.Impacts.Pusher;
 using Game.Scripts.Game.Core.Jump;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Sensors.EntityRaycast;
@@ -52,10 +49,10 @@ namespace Game.Scripts.Game.Entities.Player
         }
 
 
-        public void Move(Vector3 direction)
+        public void Move(Vector2 direction)
         {
             _entity.Get<IMoveComponent>()
-                   .MoveX(direction.x);
+                   .Move(direction);
         }
 
         public void Jump()

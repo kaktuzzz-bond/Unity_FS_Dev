@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 254860857682096947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6b8036908c4413873df82a2b66d6df, type: 3}
+  m_Script: {fileID: 11500000, guid: bab9cbae74c84325a881b482e83e1399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3976483565223223776
@@ -260,6 +260,8 @@ MonoBehaviour:
   attackComponent:
     damage: 1
   triggerReceiver: {fileID: 6068103282408105265}
+  forceComponent:
+    rigidbody: {fileID: 2967571885436114290}
 --- !u!114 &497825731439939865
 MonoBehaviour:
   m_ObjectHideFlags: 0

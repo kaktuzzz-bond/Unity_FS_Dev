@@ -1,5 +1,5 @@
 using Game.Scripts.Game.Core.Attack;
-using Game.Scripts.Game.Core.MonoComponents;
+using Game.Scripts.Game.Core.Sensors.TriggerSensor;
 using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;

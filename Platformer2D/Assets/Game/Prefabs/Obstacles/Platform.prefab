@@ -302,13 +302,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce96a8cc6aab4387acf201679ced71a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementData:
-    <Rigidbody>k__BackingField: {fileID: 1599025579162667576}
-    <Body>k__BackingField: {fileID: 7845036276167105276}
-    <Speed>k__BackingField: 1
-    <IsFlippable>k__BackingField: 0
-  patrolData:
-    <Body>k__BackingField: {fileID: 7845036276167105276}
+  patrolComponent:
+    rigidbody: {fileID: 1599025579162667576}
+    body: {fileID: 7845036276167105276}
+    speed: 1
+    isFlippable: 0
+    target: {fileID: 7845036276167105276}
     waypoints:
     - {fileID: 5434138037557620653}
     - {fileID: 7441270365842623162}

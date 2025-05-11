@@ -1,5 +1,6 @@
-using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Patrol;
+using Modules.Entity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -8,19 +9,21 @@ namespace Game.Scripts.Game.Entities.Platform
     public class PlatformInstaller : MonoInstaller
     {
       
-        [SerializeField]
-        private PatrolData patrolData;
+        [SerializeField, BoxGroup("Movement", ShowLabel = false)]
+        private PatrolComponent patrolComponent;
 
 
         public override void InstallBindings()
         {
-            // MoveInstaller.Install(Container, movementData);
-            // PatrolInstaller.Install(Container, patrolData);
-            //
-            // EntityInstaller.Install(Container);
-            //
-            // Container.BindInterfacesAndSelfTo<Platform>()
-            //          .AsSingle();
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Platform>()
+                     .AsSingle();
+            
+            Container.BindInterfacesTo<PatrolComponent>()
+                     .FromInstance(patrolComponent)
+                     .AsSingle();
         }
     }
 }

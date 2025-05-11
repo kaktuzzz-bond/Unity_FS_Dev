@@ -1,8 +1,6 @@
 using Game.Scripts.Game.Core.Audio;
+using Game.Scripts.Game.Core.Force;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Impacts;
-using Game.Scripts.Game.Core.Impacts.Pushable;
-using Game.Scripts.Game.Core.Impacts.Pusher;
 using Game.Scripts.Game.Core.Jump;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Sensors.EntityRaycast;
@@ -26,12 +24,18 @@ namespace Game.Scripts.Game.Entities.Player
 
         [SerializeField, BoxGroup("Movement", ShowLabel = false)]
         private MoveComponent moveComponent;
-
+        
         [SerializeField, BoxGroup("Jump", ShowLabel = false)]
         private JumpComponent jumpComponent;
 
         [SerializeField, BoxGroup("GroundSensor", ShowLabel = false)]
         private GroundSensor groundSensor;
+
+        [SerializeField, BoxGroup("Force", ShowLabel = false)]
+        private ForceComponent forceComponent;
+        
+        [SerializeField, BoxGroup("EntitySensor", ShowLabel = false)]
+        private EntitySensor entitySensor;
 
         // [SerializeField]
         // private EntitySensorData entitySensorData;
@@ -54,12 +58,6 @@ namespace Game.Scripts.Game.Entities.Player
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<Entity>()
-                     .AsSingle();
-
-            Container.BindInterfacesAndSelfTo<Player>()
-                     .AsSingle();
-
             Container.BindInterfacesTo<MoveComponent>()
                      .FromInstance(moveComponent)
                      .AsSingle();
@@ -74,6 +72,20 @@ namespace Game.Scripts.Game.Entities.Player
 
             Container.BindInterfacesTo<GroundSensor>()
                      .FromInstance(groundSensor)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<EntitySensor>()
+                     .FromInstance(entitySensor)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<ForceComponent>()
+                     .FromInstance(forceComponent)
+                     .AsSingle();
+            
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Player>()
                      .AsSingle();
 
             Container.Bind<PlayerView>()

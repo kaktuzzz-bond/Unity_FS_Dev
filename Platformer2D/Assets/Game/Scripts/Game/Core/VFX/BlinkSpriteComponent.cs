@@ -1,10 +1,9 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game.Scripts.Game.Core.MonoComponents
+namespace Game.Scripts.Game.Core.VFX
 {
    
     public class BlinkSpriteComponent : MonoBehaviour

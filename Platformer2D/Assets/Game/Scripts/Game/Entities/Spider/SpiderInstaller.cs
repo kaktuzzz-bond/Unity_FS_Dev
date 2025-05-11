@@ -1,8 +1,5 @@
 using Game.Scripts.Game.Core.Attack;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Impacts;
-using Game.Scripts.Game.Core.Impacts.Pushable;
-using Game.Scripts.Game.Core.Impacts.Pusher;
 using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Patrol;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;

@@ -4,7 +4,7 @@ namespace Game.Scripts.Game.Entities.Player
 {
     public interface IPlayer
     {
-        void Move(Vector3 direction);
+        void Move(Vector2 direction);
 
         void Jump();
 

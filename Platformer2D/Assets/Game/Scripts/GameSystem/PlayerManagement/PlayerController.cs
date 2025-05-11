@@ -27,7 +27,7 @@ namespace Game.Scripts.GameSystem.PlayerManagement
 
         private void Jump() => _player.Jump();
 
-        private void Move(Vector3 direction) => _player.Move(direction);
+        private void Move(Vector2 direction) => _player.Move(direction);
 
         private void Push() => _player.Push();
 

@@ -1,8 +1,7 @@
 using System;
 using Game.Scripts.Game.Core.Attack;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Impacts.Pushable;
-using Game.Scripts.Game.Core.MonoComponents;
+using Game.Scripts.Game.Core.Sensors.TriggerSensor;
 using Modules.Entity;
 using UnityEngine;
 using Zenject;

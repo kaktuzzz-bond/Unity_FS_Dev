@@ -1,6 +1,11 @@
+using Game.Scripts.Game.Core.Attack;
 using Game.Scripts.Game.Core.Audio;
-using Game.Scripts.Game.Core.Impacts;
-using Game.Scripts.Game.Core.Impacts.Pusher;
+using Game.Scripts.Game.Core.Force;
+using Game.Scripts.Game.Core.Health;
+using Game.Scripts.Game.Core.Sensors.TriggerSensor;
+using Game.Scripts.Game.Entities.Trap;
+using Modules.Entity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -8,26 +13,36 @@ namespace Game.Scripts.Game.Entities.Trampoline
 {
     public class TrampolineInstaller : MonoInstaller
     {
-        //     [SerializeField]
-        //     private PusherData pusherData;
-        //
-        //     [SerializeField]
-        //     private TriggerObserverData triggerObserverData;
-        //     
-        //     [SerializeField]
-        //     private AudioSource audioSource;
-        //     
+        [SerializeField, BoxGroup("View", ShowLabel = false)]
+        private TrampolineView view;
+
+        [SerializeField, BoxGroup("ForceData", ShowLabel = false)]
+        private ForceData forceData;
+
+        [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
+        private TriggerReceiver triggerReceiver;
+
 
         public override void InstallBindings()
         {
-            // PusherInstaller.Install(Container, pusherData);
-            // TriggerSensorInstaller.Install(Container, triggerObserverData);
-            // AudioComponentInstaller.Install(Container, audioSource);
-            //
-            // EntityInstaller.Install(Container);
-            //
-            // Container.BindInterfacesAndSelfTo<Trampoline>()
-            //          .AsSingle();
+            
+            Container.BindInstance(forceData)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<TriggerReceiver>()
+                     .FromInstance(triggerReceiver)
+                     .AsSingle();
+            
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.Bind<TrampolineView>()
+                     .FromInstance(view)
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Trampoline>()
+                     .AsSingle();
         }
+        
     }
 }

@@ -1,6 +1,7 @@
 using Game.Scripts.Game.Core.Attack;
+using Game.Scripts.Game.Core.Force;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.MonoComponents;
+using Game.Scripts.Game.Core.Sensors.TriggerSensor;
 using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -21,7 +22,10 @@ namespace Game.Scripts.Game.Entities.Trap
 
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
         private TriggerReceiver triggerReceiver;
-
+        
+        [SerializeField, BoxGroup("Force", ShowLabel = false)]
+        private ForceComponent forceComponent;
+        
 
         public override void InstallBindings()
         {
@@ -45,6 +49,10 @@ namespace Game.Scripts.Game.Entities.Trap
 
             Container.BindInterfacesTo<TriggerReceiver>()
                      .FromInstance(triggerReceiver)
+                     .AsSingle();
+            
+            Container.BindInterfacesTo<ForceComponent>()
+                     .FromInstance(forceComponent)
                      .AsSingle();
         }
     }

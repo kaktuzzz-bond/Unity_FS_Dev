@@ -1,8 +1,7 @@
-using Game.Scripts.Game.Core.Health;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.Game.Core.MonoComponents
+namespace Game.Scripts.Game.Core.Health
 {
     public class HealthProxy : MonoBehaviour, IDamagable
     {

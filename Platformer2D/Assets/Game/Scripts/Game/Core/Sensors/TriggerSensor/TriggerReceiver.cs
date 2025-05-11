@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Game.Scripts.Game.Core.MonoComponents
+namespace Game.Scripts.Game.Core.Sensors.TriggerSensor
 {
     [RequireComponent(typeof(Collider2D))]
     public class TriggerReceiver : MonoBehaviour, ITriggerReceiver

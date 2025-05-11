@@ -1,8 +1,4 @@
-using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Core.Impacts;
-using Game.Scripts.Game.Core.Impacts.Pusher;
-using Game.Scripts.Game.Core.Jump;
-using Game.Scripts.GameSystem.PlayerInput;
+
 using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;

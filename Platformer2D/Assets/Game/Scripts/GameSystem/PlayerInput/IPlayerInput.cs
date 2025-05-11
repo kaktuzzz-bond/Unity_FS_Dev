@@ -5,7 +5,7 @@ namespace Game.Scripts.GameSystem.PlayerInput
 {
     public interface IPlayerInput
     {
-        event Action<Vector3> OnMoved;
+        event Action<Vector2> OnMoved;
         event Action OnJumped;
         event Action OnPush;
         event Action OnToss;

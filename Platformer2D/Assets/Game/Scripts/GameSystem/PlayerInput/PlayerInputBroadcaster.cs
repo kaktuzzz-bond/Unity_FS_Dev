@@ -9,7 +9,7 @@ namespace Game.Scripts.GameSystem.PlayerInput
 {
     public class PlayerInputBroadcaster : IPlayerInput, IInitializable, IDisposable
     {
-        public event Action<Vector3> OnMoved;
+        public event Action<Vector2> OnMoved;
         public event Action OnJumped;
         public event Action OnPush;
         public event Action OnToss;
@@ -17,7 +17,7 @@ namespace Game.Scripts.GameSystem.PlayerInput
 
         private readonly PLayerInputMap _inputMap;
 
-        private Vector3 _direction;
+        private Vector2 _direction;
         private bool _isMoving;
 
         private readonly CancellationTokenSource _cts = new();

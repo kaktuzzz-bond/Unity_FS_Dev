@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 using Game.Scripts.Game.Core.Audio;
-using Game.Scripts.Game.Core.MonoComponents;
+using Game.Scripts.Game.Core.VFX;
 using Game.Scripts.GameSystem.Audio;
 using Game.Scripts.UI;
 using UnityEngine;

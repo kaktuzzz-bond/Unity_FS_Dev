@@ -25,20 +25,11 @@ namespace Game.Scripts.Game.Core.Movement
 
         private readonly CompositeCondition _condition = new();
 
-
-        [ShowInInspector, HideInEditorMode]
-        public Vector3 GetDirection => new(_scale.x, 0);
-
         [ShowInInspector, HideInEditorMode]
         public bool IsValid => _condition.IsValid;
 
-        public void MoveX(float xDirection)
-        {
-            Move(new Vector2(xDirection * speed, rigidbody.velocity.y));
-        }
 
-
-        public void Move(Vector3 direction)
+        public void Move(Vector2 direction)
         {
             if (!_condition.IsValid)
             {
@@ -47,7 +38,10 @@ namespace Game.Scripts.Game.Core.Movement
                 return;
             }
 
-            rigidbody.velocity = direction;
+            var x = Mathf.Approximately(direction.x, 0) ? rigidbody.velocity.x : direction.x * speed;
+            var y = Mathf.Approximately(direction.y, 0) ? rigidbody.velocity.y : direction.y * speed;
+
+            rigidbody.velocity = new Vector2(x, y);
 
             if (!isFlippable) return;
 
