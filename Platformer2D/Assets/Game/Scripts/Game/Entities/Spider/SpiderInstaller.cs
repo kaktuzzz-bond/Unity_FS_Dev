@@ -34,12 +34,12 @@ namespace Game.Scripts.Game.Entities.Spider
         [SerializeField, BoxGroup("Force", ShowLabel = false)]
         private ForceComponent forceComponent;
 
-        [SerializeField, BoxGroup("Force", ShowLabel = false)]
-        private ForceData forceData;
+        [SerializeField, BoxGroup("Push", ShowLabel = false)]
+        private ForceData pushForce;
 
         public override void InstallBindings()
         {
-            Container.BindInstance(forceData)
+            Container.BindInstance(pushForce)
                      .AsSingle();
 
             Container.BindInterfacesTo<HealthComponent>()

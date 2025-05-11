@@ -42,6 +42,12 @@ namespace Game.Scripts.Game.Entities.Player
             return blinkVFX.Play();
         }
 
+        public async UniTaskVoid PlayDeath()
+        {
+            await ShowTakenDamage(0f);
+            gameObject.SetActive(false);
+        }
+
         public void PlayJump()
         {
             audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Jump));
@@ -57,12 +63,6 @@ namespace Game.Scripts.Game.Entities.Player
         {
             audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Toss));
             tossVFX.Play();
-        }
-
-        public async UniTaskVoid PlayDeath()
-        {
-            await ShowTakenDamage(0f);
-            gameObject.SetActive(false);
         }
     }
 }

@@ -1,9 +1,85 @@
+using Game.Scripts.Game.Core.Attack;
+using Game.Scripts.Game.Core.Force;
+using Game.Scripts.Game.Core.Health;
+using Game.Scripts.Game.Core.Patrol;
+using Game.Scripts.Game.Core.Sensors.GroundRaycast;
+using Game.Scripts.Game.Core.Sensors.TriggerSensor;
+using Game.Scripts.GameSystem.Management;
+using Modules.Entity;
+using Sirenix.OdinInspector;
+using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Game.Entities.Snake
 {
     public class SnakeInstaller:MonoInstaller
     {
-        
+         [SerializeField, BoxGroup("View", ShowLabel = false)]
+        private SnakeView view;
+
+        [SerializeField, BoxGroup("Health", ShowLabel = false)]
+        private HealthComponent healthComponent;
+
+        [SerializeField, BoxGroup("Movement", ShowLabel = false)]
+        private PatrolComponent patrolComponent;
+
+        [SerializeField, BoxGroup("Attack", ShowLabel = false)]
+        private AttackComponent attackComponent;
+
+        [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
+        private TriggerReceiver triggerReceiver;
+
+        [SerializeField, BoxGroup("GroundSensor", ShowLabel = false)]
+        private GroundSensor groundSensor;
+
+        [SerializeField, BoxGroup("Force", ShowLabel = false)]
+        private ForceComponent forceComponent;
+
+        [SerializeField, BoxGroup("Push", ShowLabel = false)]
+        private ForceData pushForce;
+
+        public override void InstallBindings()
+        {
+            Container.BindInstance(pushForce)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<HealthComponent>()
+                     .FromInstance(healthComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<PatrolComponent>()
+                     .FromInstance(patrolComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<AttackComponent>()
+                     .FromInstance(attackComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<TriggerReceiver>()
+                     .FromInstance(triggerReceiver)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<GroundSensor>()
+                     .FromInstance(groundSensor)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<ForceComponent>()
+                     .FromInstance(forceComponent)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Spider.Spider>()
+                     .AsSingle();
+
+            Container.Bind<SnakeView>()
+                     .FromInstance(view)
+                     .AsSingle();
+
+            Container.BindInterfacesTo<SnakeHealthObserver>()
+                     .AsSingle()
+                     .NonLazy();
+        }
     }
 }

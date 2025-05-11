@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Game.Scripts.Game.Core.Force
 {
-    public class ForceProxy : MonoBehaviour, IForceComponent
+    public class ForceProxy : MonoBehaviour, IPushable
     {
         private IForceComponent _forceComponent;
 
@@ -13,11 +13,7 @@ namespace Game.Scripts.Game.Core.Force
         {
             _forceComponent = forceComponent;
         }
-
-
-        public event Action OnForceAdded;
-        public Vector2 Position => _forceComponent.Position;
-
+        
         public void AddForce(Vector2 force)
         {
             _forceComponent.AddForce(force);

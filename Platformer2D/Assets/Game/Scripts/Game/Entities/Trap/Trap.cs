@@ -25,13 +25,12 @@ namespace Game.Scripts.Game.Entities.Trap
         private void OnTriggerEnter(Collider2D other)
         {
             if (!other.TryGetComponent<IDamagable>(out var target)) return;
-            
+
             _entity.Get<IAttackComponent>().Attack(target);
-            
+
             _entity.Get<IHealthComponent>().TakeDamage(int.MaxValue);
-            _entity.Get<TrapView>().PlayDeath();
         }
-        
+
         public void Dispose()
         {
             _entity.Get<ITriggerReceiver>().OnTriggerEnter -= OnTriggerEnter;

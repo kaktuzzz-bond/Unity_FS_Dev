@@ -1,19 +1,19 @@
 using System;
 using Cysharp.Threading.Tasks;
 using Game.Scripts.Game.Core.Health;
-using Game.Scripts.Game.Entities.Player;
+using Game.Scripts.GameSystem.Management;
 using Zenject;
 
-namespace Game.Scripts.Game.Entities.Spider
+namespace Game.Scripts.Game.Entities.Player
 {
-    public class SpiderHealthObserver: IInitializable, IDisposable, IPlayerHealthObserver
+    public class PlayerHealthObserver : IInitializable, IDisposable, IHealthObserver
     {
-        private readonly SpiderView _view;
+        private readonly PlayerView _playerView;
         private readonly IHealthComponent _healthComponent;
 
-        public SpiderHealthObserver(SpiderView view, IHealthComponent healthComponent)
+        public PlayerHealthObserver(PlayerView playerView, IHealthComponent healthComponent)
         {
-            _view = view;
+            _playerView = playerView;
             _healthComponent = healthComponent;
         }
 
@@ -25,13 +25,13 @@ namespace Game.Scripts.Game.Entities.Spider
 
         public void OnDeath()
         {
-            _view.PlayDeath()
+            _playerView.PlayDeath()
                        .Forget();
         }
 
         public void OnHealthChanged(float healthValue)
         {
-            _view.ShowTakenDamage(healthValue)
+            _playerView.ShowTakenDamage(healthValue)
                        .Forget();
         }
 

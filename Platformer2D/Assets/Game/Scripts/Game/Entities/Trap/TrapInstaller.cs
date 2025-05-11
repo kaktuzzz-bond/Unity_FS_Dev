@@ -2,6 +2,7 @@ using Game.Scripts.Game.Core.Attack;
 using Game.Scripts.Game.Core.Force;
 using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Core.Sensors.TriggerSensor;
+using Game.Scripts.GameSystem.Management;
 using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -54,6 +55,10 @@ namespace Game.Scripts.Game.Entities.Trap
             Container.BindInterfacesTo<ForceComponent>()
                      .FromInstance(forceComponent)
                      .AsSingle();
+            
+            Container.BindInterfacesTo<TrapHealthObserver>()
+                     .AsSingle()
+                     .NonLazy();
         }
     }
 }

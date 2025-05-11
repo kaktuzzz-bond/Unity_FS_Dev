@@ -15,7 +15,7 @@ namespace Game.Scripts.Game.Core.Sensors.GroundRaycast
 
         private const float Distance = 0.1f;
 
-        [ShowInInspector, ReadOnly]
+        //[ShowInInspector, ReadOnly, HideInEditorMode]
         public bool IsGrounded =>
             Physics2D.Raycast(
                 origin.position, Vector2.down, Distance, groundLayer);

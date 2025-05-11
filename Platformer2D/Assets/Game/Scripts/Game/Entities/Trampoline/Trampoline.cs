@@ -23,7 +23,7 @@ namespace Game.Scripts.Game.Entities.Trampoline
 
         private void OnTriggerEnter(Collider2D other)
         {
-            if (!other.TryGetComponent<IForceComponent>(out var target)) return;
+            if (!other.TryGetComponent<IPushable>(out var target)) return;
 
             target.AddForce(_entity.Get<ForceData>().GetForce());
 

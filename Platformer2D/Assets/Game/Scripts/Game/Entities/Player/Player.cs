@@ -1,10 +1,12 @@
 using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Core.Jump;
 using Game.Scripts.Game.Core.Movement;
+using Game.Scripts.Game.Core.Sensors.EntityRaycast;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;
 using Modules.Entity;
+using Unity.VisualScripting;
 using UnityEngine;
-using Zenject;
+using IInitializable = Zenject.IInitializable;
 
 namespace Game.Scripts.Game.Entities.Player
 {
@@ -29,17 +31,15 @@ namespace Game.Scripts.Game.Entities.Player
 
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
-            // var healthComponent = _entity.Get<IHealthComponent>();
-            // var groundSensor = _entity.Get<IGroundRaycastSensor>();
 
-            // var moveComponent = _entity.Get<ICharacterMover>();
-            // var pusher = _entity.Get<ICharacterPusher>(ImpactKeys.Push);
-            // var tosser = _entity.Get<ICharacterPusher>(ImpactKeys.Toss);
+            _entity.Get<EntitySensor>("Push")
+                   .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            // pusher.AddCondition(() => healthComponent.IsAlive);
-            //
-            // tosser.AddCondition(() => healthComponent.IsAlive);
-            // tosser.AddCondition(() => groundSensor.IsGrounded);
+            _entity.Get<EntitySensor>("Toss")
+                   .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
+
+            _entity.Get<EntitySensor>("Toss")
+                   .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
         }
 
 
@@ -62,22 +62,22 @@ namespace Game.Scripts.Game.Entities.Player
 
         public void Push()
         {
-            Debug.Log($"Push");
-            // Impact(ImpactKeys.Push, () =>
-            // {
-            //     _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Push));
-            //     _view.PlayPush();
-            // });
+            if (!_entity.Get<EntitySensor>("Push")
+                        .Push(_entity.Get<IMoveComponent>().GetDirection))
+                return;
+
+            _entity.Get<PlayerView>()
+                   .PlayPush();
         }
 
         public void Toss()
         {
-            Debug.Log($"Toss");
-            // Impact(ImpactKeys.Toss, () =>
-            // {
-            //     _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Toss));
-            //     _view.PlayToss();
-            // });
+            if (!_entity.Get<EntitySensor>("Toss")
+                        .Push(_entity.Get<IMoveComponent>().GetDirection))
+                return;
+
+            _entity.Get<PlayerView>()
+                   .PlayToss();
         }
     }
 }

@@ -5,6 +5,6 @@ namespace Game.Scripts.Game.Core.Sensors.EntityRaycast
 {
     public interface IEntitySensor
     {
-        IEnumerable<T> Scan<T>(Vector2 direction) where T : class;
+        bool Push(Vector2 scanDirection);
     }
 }

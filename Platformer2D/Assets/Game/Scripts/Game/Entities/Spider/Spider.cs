@@ -26,13 +26,19 @@ namespace Game.Scripts.Game.Entities.Spider
         public void Initialize()
         {
             _entity.Get<ITriggerReceiver>().OnTriggerEnter += OnTriggerEnter;
-            _entity.Get<IForceComponent>().OnForceAdded += _entity.Get<IPatrolComponent>().Pause;
+            _entity.Get<IForceComponent>().OnForceAdded += OnForceAdded;
 
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
 
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
+        }
+
+        private void OnForceAdded()
+        {
+            Debug.Log($"Spider force added");
+            _entity.Get<IPatrolComponent>().Pause();
         }
 
 
@@ -43,7 +49,7 @@ namespace Game.Scripts.Game.Entities.Spider
 
             _entity.Get<IAttackComponent>().Attack(damagable);
 
-            if (!other.TryGetComponent<IForceComponent>(out var body)) return;
+            if (!other.TryGetComponent<IPushable>(out var body)) return;
 
             body.AddForce(_entity.Get<ForceData>().GetForce(), _entity.Get<IForceComponent>().Position);
         }
@@ -51,7 +57,7 @@ namespace Game.Scripts.Game.Entities.Spider
         public void Dispose()
         {
             _entity.Get<ITriggerReceiver>().OnTriggerEnter -= OnTriggerEnter;
-            _entity.Get<IForceComponent>().OnForceAdded -= _entity.Get<IPatrolComponent>().Pause;
+            _entity.Get<IForceComponent>().OnForceAdded -= OnForceAdded;
         }
     }
 }

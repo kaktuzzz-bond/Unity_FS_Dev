@@ -28,15 +28,11 @@ namespace Game.Scripts.Game.Core.Movement
         [ShowInInspector, HideInEditorMode]
         public bool IsValid => _condition.IsValid;
 
+        public Vector2 GetDirection => new(_scale.x, 0f);
 
         public void Move(Vector2 direction)
         {
-            if (!_condition.IsValid)
-            {
-                Debug.Log("Cannot MOVE because of conditions");
-
-                return;
-            }
+            if (!_condition.IsValid) return;
 
             var x = Mathf.Approximately(direction.x, 0) ? rigidbody.velocity.x : direction.x * speed;
             var y = Mathf.Approximately(direction.y, 0) ? rigidbody.velocity.y : direction.y * speed;
