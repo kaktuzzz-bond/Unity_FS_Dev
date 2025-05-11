@@ -1,3 +1,4 @@
+using Game.Scripts.Game.Core.Health;
 using UnityEngine;
 
 namespace Game.Scripts.Game.Entities.Player
@@ -11,7 +12,5 @@ namespace Game.Scripts.Game.Entities.Player
         void Push();
 
         void Toss();
-
-        void TakeDamage(int damage);
     }
 }

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2522846025528247568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d931a695a2f1450f8509f33de744aedf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f7952089a374a6d88e20134ea47d0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7991433871353049411
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2522846025528247568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6b8036908c4413873df82a2b66d6df, type: 3}
+  m_Script: {fileID: 11500000, guid: bab9cbae74c84325a881b482e83e1399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3211174718015759730
@@ -198,7 +198,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.75}
+  m_Size: {x: 1.032794, y: 0.7745955}
   m_EdgeRadius: 0
 --- !u!1 &2855727381596447034
 GameObject:
@@ -368,6 +368,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4895301797068830605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359820930646938272}
+  - component: {fileID: 3950447957044229172}
+  m_Layer: 0
+  m_Name: Vfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1359820930646938272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895301797068830605}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3105770917179402914}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3950447957044229172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895301797068830605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6531b5ba9bdb4e0293eed045d4a21f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkColor: {r: 1, g: 0.893163, b: 0.24056602, a: 1}
+  targetSprite: {fileID: 3123733364965956949}
+  blinkDuration: 2
+  blinkFrequency: 10
 --- !u!1 &5554046834176312192
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +429,7 @@ GameObject:
   - component: {fileID: 396580389517567999}
   - component: {fileID: 2726296812173048802}
   - component: {fileID: 8966137877301324480}
+  - component: {fileID: 2400201834632487814}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -418,39 +467,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3845b8033082461fb65e75e1f196c5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementData:
-    <Rigidbody>k__BackingField: {fileID: 1811217380092667554}
-    <Body>k__BackingField: {fileID: 3105770917179402914}
-    <Speed>k__BackingField: 1
-    <IsFlippable>k__BackingField: 1
-  groundData:
-    <Origin>k__BackingField: {fileID: 3105770917179402914}
-    <LayerMask>k__BackingField:
-      serializedVersion: 2
-      m_Bits: 8
-  patrolData:
-    <Body>k__BackingField: {fileID: 3105770917179402914}
+  view: {fileID: 2400201834632487814}
+  healthComponent:
+    maxHealth: 8
+  patrolComponent:
+    rigidbody: {fileID: 1811217380092667554}
+    body: {fileID: 3105770917179402914}
+    speed: 1
+    isFlippable: 1
+    target: {fileID: 3105770917179402914}
     waypoints:
     - {fileID: 3929516699554365295}
     - {fileID: 4629981065635871775}
-  healthData:
-    <GameObject>k__BackingField: {fileID: 5554046834176312192}
-    <DamagableBody>k__BackingField: {fileID: 2706304310932577866}
-    <MaxHealth>k__BackingField: 10
-  blinkableVFXData:
-    <Color>k__BackingField: {r: 1, g: 0.8585297, b: 0.0039215684, a: 1}
-    <Renderer>k__BackingField: {fileID: 3123733364965956949}
-    <Duration>k__BackingField: 2
-    <Frequency>k__BackingField: 10
-  triggerObserverData:
-    <TriggerObserver>k__BackingField: {fileID: 3211174718015759730}
-  impactTakerData:
-    <Rigidbody>k__BackingField: {fileID: 1811217380092667554}
-    <Body>k__BackingField: {fileID: 7991433871353049411}
-  pusherData:
-    <Force>k__BackingField: 5
-  attackData:
-    <Damage>k__BackingField: 1
+    cooldownTime: 1
+  attackComponent:
+    damage: 2
+  triggerReceiver: {fileID: 3211174718015759730}
+  groundSensor:
+    origin: {fileID: 3105770917179402914}
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 8
+  forceComponent:
+    rigidbody: {fileID: 1811217380092667554}
+  forceData:
+    direction: {x: 1, y: 0}
+    <Force>k__BackingField: 10
 --- !u!114 &396580389517567999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +535,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2b90d26c914135970590e6997a0015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2400201834632487814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554046834176312192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ddcc9ad898249bf802d76a39a956fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkVFX: {fileID: 3950447957044229172}
 --- !u!1 &7187152835411801990
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +730,7 @@ Transform:
   m_Children:
   - {fileID: 4814885345313188358}
   - {fileID: 797735510629636468}
+  - {fileID: 1359820930646938272}
   m_Father: {fileID: 1114773270552738056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1811217380092667554

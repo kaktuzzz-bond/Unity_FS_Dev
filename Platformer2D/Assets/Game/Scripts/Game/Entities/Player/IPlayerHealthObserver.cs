@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
-
-namespace Game.Scripts.GameSystem.PlayerManagement
+namespace Game.Scripts.Game.Entities.Player
 {
     public interface IPlayerHealthObserver
     {

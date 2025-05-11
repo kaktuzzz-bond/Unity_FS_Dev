@@ -1,9 +1,5 @@
-using Game.Scripts.Game.Core.Attack;
-using Game.Scripts.Game.Core.Audio;
 using Game.Scripts.Game.Core.Force;
-using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Core.Sensors.TriggerSensor;
-using Game.Scripts.Game.Entities.Trap;
 using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;

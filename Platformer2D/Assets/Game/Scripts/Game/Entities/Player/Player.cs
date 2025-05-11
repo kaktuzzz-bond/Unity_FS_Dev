@@ -1,23 +1,17 @@
-using System;
-using System.Linq;
-using Cysharp.Threading.Tasks;
-using Game.Scripts.Game.Core.Audio;
 using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Core.Jump;
 using Game.Scripts.Game.Core.Movement;
-using Game.Scripts.Game.Core.Sensors.EntityRaycast;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;
-using Game.Scripts.GameSystem.Audio;
 using Modules.Entity;
 using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Game.Entities.Player
 {
-    public class Player : IPlayer, IInitializable, IDisposable
+    public class Player : IPlayer, IInitializable
     {
         private readonly IEntity _entity;
-       
+
 
         public Player(IEntity entity)
         {
@@ -60,7 +54,8 @@ namespace Game.Scripts.Game.Entities.Player
             if (_entity.Get<IJumpComponent>()
                        .Jump())
             {
-                _entity.Get<PlayerView>().PlayJump();
+                _entity.Get<PlayerView>()
+                       .PlayJump();
             }
         }
 
@@ -83,50 +78,6 @@ namespace Game.Scripts.Game.Entities.Player
             //     _entity.Get<IAudioComponent>().Play(_audioProvider.GetClip(SoundKey.Toss));
             //     _view.PlayToss();
             // });
-        }
-
-        public void TakeDamage(int damage)
-        {
-            var healthComponent = _entity.Get<IHealthComponent>();
-
-            healthComponent.TakeDamage(damage);
-        }
-
-
-        private void TakeImpact(Vector3 force)
-        {
-            // _entity.Get<IPushable>().TakePush(force);
-        }
-
-        private void Impact(string id, Action callback)
-        {
-            // var pusher = _entity.Get<ICharacterPusher>(id);
-            //
-            // if (!pusher.IsValid) return;
-            //
-            // var forceDirection = _entity.Get<DirectionData>(id).NormalizedDirection;
-            // var bodyDirection = _entity.Get<IMoveComponent>().GetDirection;
-            // forceDirection.x *= bodyDirection.x;
-            //
-            // var bodies = _entity
-            //              .Get<IEntityRaycastSensor>()
-            //              .Scan<IPushableBody>(bodyDirection)
-            //              .ToHashSet();
-            //
-            // if (bodies.Any())
-            // {
-            //     pusher.Push(bodies, forceDirection);
-            // }
-            // else
-            // {
-            //     pusher.Push();
-            // }
-            //
-            // callback?.Invoke();
-        }
-
-        public void Dispose()
-        {
         }
     }
 }

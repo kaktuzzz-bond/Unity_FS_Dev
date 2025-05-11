@@ -1,10 +1,9 @@
 using System;
-using Game.Scripts.Game.Entities.Player;
 using Game.Scripts.GameSystem.PlayerInput;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.GameSystem.PlayerManagement
+namespace Game.Scripts.Game.Entities.Player
 {
     public class PlayerController : IInitializable, IDisposable
     {

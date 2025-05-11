@@ -311,6 +311,7 @@ MonoBehaviour:
     waypoints:
     - {fileID: 5434138037557620653}
     - {fileID: 7441270365842623162}
+    cooldownTime: 0
 --- !u!114 &783612559537060244
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ namespace Game.Scripts.Game.Core.VFX
     public class BlinkSpriteComponent : MonoBehaviour
     {
         [SerializeField]
-        private Color blinkColor;
+        private Color blinkColor = Color.white;
 
         [SerializeField]
         private SpriteRenderer targetSprite;

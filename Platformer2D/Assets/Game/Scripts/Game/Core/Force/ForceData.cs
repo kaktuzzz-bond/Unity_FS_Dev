@@ -7,11 +7,12 @@ namespace Game.Scripts.Game.Core.Force
     public class ForceData
     {
         [SerializeField]
-        public Vector2 direction = Vector2.up;
+        private Vector2 direction = Vector2.one;
 
-        [SerializeField, Min(0)]
-        public float force = 1;
+        [field: SerializeField, Min(0)]
+        public float Force { get; private set; } = 1;
 
-        public Vector2 Force => direction * force;
+        public Vector2 GetForce() => direction.normalized * Force;
+        public Vector2 GetForce(Vector2 ownDirection) => ownDirection.normalized * Force;
     }
 }

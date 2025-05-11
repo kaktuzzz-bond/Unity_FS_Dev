@@ -6,7 +6,6 @@ using Game.Scripts.Game.Core.Movement;
 using Game.Scripts.Game.Core.Sensors.EntityRaycast;
 using Game.Scripts.Game.Core.Sensors.GroundRaycast;
 using Game.Scripts.Game.Entities.Installers;
-using Game.Scripts.GameSystem.PlayerManagement;
 using Modules.Entity;
 using Sirenix.OdinInspector;
 using UnityEngine;

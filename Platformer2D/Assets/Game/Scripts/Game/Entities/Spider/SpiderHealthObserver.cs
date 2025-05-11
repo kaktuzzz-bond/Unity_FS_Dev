@@ -4,16 +4,16 @@ using Game.Scripts.Game.Core.Health;
 using Game.Scripts.Game.Entities.Player;
 using Zenject;
 
-namespace Game.Scripts.GameSystem.PlayerManagement
+namespace Game.Scripts.Game.Entities.Spider
 {
-    public class PlayerHealthObserver : IInitializable, IDisposable, IPlayerHealthObserver
+    public class SpiderHealthObserver: IInitializable, IDisposable, IPlayerHealthObserver
     {
-        private readonly PlayerView _playerView;
+        private readonly SpiderView _view;
         private readonly IHealthComponent _healthComponent;
 
-        public PlayerHealthObserver(PlayerView playerView, IHealthComponent healthComponent)
+        public SpiderHealthObserver(SpiderView view, IHealthComponent healthComponent)
         {
-            _playerView = playerView;
+            _view = view;
             _healthComponent = healthComponent;
         }
 
@@ -25,13 +25,13 @@ namespace Game.Scripts.GameSystem.PlayerManagement
 
         public void OnDeath()
         {
-            _playerView.PlayDeath()
+            _view.PlayDeath()
                        .Forget();
         }
 
         public void OnHealthChanged(float healthValue)
         {
-            _playerView.ShowTakenDamage(healthValue)
+            _view.ShowTakenDamage(healthValue)
                        .Forget();
         }
 

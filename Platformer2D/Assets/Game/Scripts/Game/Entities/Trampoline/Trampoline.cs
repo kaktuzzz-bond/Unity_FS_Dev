@@ -25,7 +25,7 @@ namespace Game.Scripts.Game.Entities.Trampoline
         {
             if (!other.TryGetComponent<IForceComponent>(out var target)) return;
 
-            target.AddForce(_entity.Get<ForceData>().Force);
+            target.AddForce(_entity.Get<ForceData>().GetForce());
 
             _entity.Get<TrampolineView>().PlayJump();
         }
