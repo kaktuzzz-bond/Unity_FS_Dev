@@ -1,7 +1,5 @@
 using System;
 using Modules;
-using Sirenix.OdinInspector;
-using UnityEngine;
 using Zenject;
 
 namespace Game.Entities
@@ -18,12 +16,12 @@ namespace Game.Entities
         public void Initialize()
         {
             _entity.Get<IEntityProxy>().OnTriggerEnter += OnTriggerEnter;
-            _entity.Get<IPushable>().OnForceAdded += _entity.Get<IPatrolComponent>().Pause;
+            _entity.Get<IPushableComponent>().OnForceAdded += _entity.Get<IPatrolComponent>().Pause;
 
-            _entity.Get<IMoveComponent>()
+            _entity.Get<IPatrolComponent>()
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
 
-            _entity.Get<IMoveComponent>()
+            _entity.Get<IPatrolComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
         }
 
@@ -33,16 +31,16 @@ namespace Game.Entities
 
             _entity.Get<IAttackComponent>().Attack(healthComponent);
 
-            if (!entity.TryGet<IPushable>(out var pushable)) return;
+            if (!entity.TryGet<IPushableComponent>(out var pushable)) return;
 
-            _entity.Get<IPushComponent>().Push(pushable);
+            _entity.Get<IPushComponent>().PushOpposite(pushable);
         }
 
 
         public void Dispose()
         {
             _entity.Get<IEntityProxy>().OnTriggerEnter -= OnTriggerEnter;
-            _entity.Get<IPushable>().OnForceAdded -= _entity.Get<IPatrolComponent>().Pause;
+            _entity.Get<IPushableComponent>().OnForceAdded -= _entity.Get<IPatrolComponent>().Pause;
         }
     }
 }

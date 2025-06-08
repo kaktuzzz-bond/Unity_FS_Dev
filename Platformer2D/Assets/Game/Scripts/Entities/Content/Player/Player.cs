@@ -1,3 +1,4 @@
+using System.Linq;
 using Modules;
 using UnityEngine;
 using Zenject;
@@ -56,8 +57,16 @@ namespace Game.Entities
 
         public void Push()
         {
-            if (!_entity.Get<PushComponent>(PushKey.Push).Push())
-                return;
+            var entities = _entity.Get<IEntitySensorComponent>()
+                                  .Scan<IEntityProxy>()
+                                  .Select(x => x.Entity);
+
+            foreach (var entity in entities)
+            {
+                if (!entity.TryGet<IPushableComponent>(out var pushable)) continue;
+
+                _entity.Get<PushComponent>(PushKey.Push).Push(pushable);
+            }
 
             _entity.Get<PlayerView>()
                    .PlayPush();
@@ -65,8 +74,16 @@ namespace Game.Entities
 
         public void Toss()
         {
-            if (!_entity.Get<PushComponent>(PushKey.Toss).Push())
-                return;
+            var entities = _entity.Get<IEntitySensorComponent>()
+                                  .Scan<IEntityProxy>()
+                                  .Select(x => x.Entity);
+
+            foreach (var entity in entities)
+            {
+                if (!entity.TryGet<IPushableComponent>(out var pushable)) continue;
+
+                _entity.Get<PushComponent>(PushKey.Toss).Push(pushable);
+            }
 
             _entity.Get<PlayerView>()
                    .PlayToss();

@@ -11,9 +11,6 @@ namespace Game.Entities
     public class PushComponent : IPushComponent, ICompositeCondition, IInitializable
     {
         [SerializeField]
-        public Transform origin;
-
-        [SerializeField]
         public Transform pushPoint;
 
         [SerializeField]
@@ -25,56 +22,50 @@ namespace Game.Entities
         [SerializeField]
         private float cooldownTime = -1;
 
-        [SerializeField]
-        private EntitySensorComponent entitySensor;
-
         public bool IsValid => _condition.IsValid;
 
         private ICompositeCondition _condition = new CompositeCondition();
         private ICooldownTimer _cooldown;
 
         private bool IgnoreCooldown => cooldownTime < 0;
-        private Vector2 Force => forceDirection.normalized * pushForce;
 
         public void Initialize()
         {
             AddCooldown();
         }
 
-
-        public void Push(IPushable pushable)
+        public void Push(IPushableComponent pushable)
         {
-            pushable.AddForce(Force);
-        }
+            if (!IsValid) return;
 
-        public bool Push()
-        {
-            if (!IsValid) return false;
-
-            var direction = new Vector2(pushPoint.position.x - origin.position.x, 0f);
-
-            var entities = entitySensor
-                           .Scan<IEntityProxy>()
-                           .Select(x => x.Entity)
-                           .ToHashSet();
-
-            foreach (var entity in entities)
-            {
-                if (!entity.TryGet<IPushable>(out var pushable)) continue;
-
-                pushable.AddForce(Force);
-            }
+            ApplyForce(pushable, forceDirection, pushForce);
 
             if (!IgnoreCooldown)
                 _cooldown.Launch();
+        }
 
-            return true;
+        public void PushOpposite(IPushableComponent pushable)
+        {
+            if (!IsValid) return;
+
+            var direction = pushable.GetPosition - (Vector2)pushPoint.position;
+
+            ApplyForce(pushable, direction, pushForce);
+
+            if (!IgnoreCooldown)
+                _cooldown.Launch();
         }
 
 
         public void AddCondition(Func<bool> condition) => _condition.AddCondition(condition);
 
         public void RemoveCondition(Func<bool> condition) => _condition.RemoveCondition(condition);
+
+        private void ApplyForce(IPushableComponent pushable, Vector2 direction, float force)
+        {
+            var calcForce = direction.normalized * force;
+            pushable.AddForce(calcForce);
+        }
 
 
         private void AddCooldown()

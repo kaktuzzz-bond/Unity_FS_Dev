@@ -1,6 +1,7 @@
 using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Game.Entities
@@ -21,9 +22,13 @@ namespace Game.Entities
 
         [SerializeField, BoxGroup("GroundSensor", ShowLabel = false)]
         private GroundSensor groundSensor;
-
-        [SerializeField, BoxGroup("Force", ShowLabel = false)]
-        private ForceComponent forceComponent;
+        
+        [SerializeField, BoxGroup("EntitySensor", ShowLabel = false)]
+        private EntitySensorComponent entitySensor;
+        
+        [FormerlySerializedAs("pushableComponentComponent")]
+        [SerializeField, BoxGroup("Impact", ShowLabel = false)]
+        private PushableComponent pushableComponent;
 
         [SerializeField, BoxGroup("Pusher", ShowLabel = false)]
         private PushComponent pusher;
@@ -47,10 +52,14 @@ namespace Game.Entities
 
             Container.BindInterfacesTo<GroundSensor>()
                      .FromInstance(groundSensor)
+                     .AsSingle();  
+            
+            Container.BindInterfacesTo<EntitySensorComponent>()
+                     .FromInstance(entitySensor)
                      .AsSingle();
 
-            Container.BindInterfacesTo<ForceComponent>()
-                     .FromInstance(forceComponent)
+            Container.BindInterfacesTo<PushableComponent>()
+                     .FromInstance(pushableComponent)
                      .AsSingle();
 
             BindPusher(PushKey.Push, pusher);

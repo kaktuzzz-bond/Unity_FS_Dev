@@ -26,9 +26,12 @@ namespace Game.Entities
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
         private EntityProxy entityProxy;
         
-        [SerializeField, BoxGroup("Force", ShowLabel = false)]
-        private ForceComponent forceComponent;
+        [SerializeField, BoxGroup("Impact", ShowLabel = false)]
+        private PushableComponent pushableComponent;
 
+        [SerializeField, BoxGroup("Pusher", ShowLabel = false)]
+        private PushComponent pushComponent;
+        
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Entity>()
@@ -57,8 +60,12 @@ namespace Game.Entities
                      .FromInstance(entityProxy)
                      .AsSingle();
 
-            Container.BindInterfacesTo<ForceComponent>()
-                     .FromInstance(forceComponent)
+            Container.BindInterfacesTo<PushableComponent>()
+                     .FromInstance(pushableComponent)
+                     .AsSingle();
+            
+            Container.BindInterfacesTo<PushComponent>()
+                     .FromInstance(pushComponent)
                      .AsSingle();
 
             Container.Bind<SpiderView>()

@@ -523,8 +523,13 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 8
   entityProxy: {fileID: 7595969193498619893}
-  forceComponent:
+  pushableComponent:
     rigidbody: {fileID: 1745589832700849}
+  pushComponent:
+    pushPoint: {fileID: 1819249752555060710}
+    forceDirection: {x: 1, y: 1}
+    pushForce: 20
+    cooldownTime: -1
 --- !u!114 &7063893242729626293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +694,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

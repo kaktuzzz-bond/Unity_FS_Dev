@@ -1,6 +1,7 @@
 using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Game.Entities
@@ -19,8 +20,9 @@ namespace Game.Entities
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
         private EntityProxy entityProxy;
         
+        [FormerlySerializedAs("forceComponent")]
         [SerializeField, BoxGroup("Force", ShowLabel = false)]
-        private ForceComponent forceComponent;
+        private PushableComponent pushableComponent;
         
 
         public override void InstallBindings()
@@ -43,8 +45,8 @@ namespace Game.Entities
                      .FromInstance(entityProxy)
                      .AsSingle();
 
-            Container.BindInterfacesTo<ForceComponent>()
-                     .FromInstance(forceComponent)
+            Container.BindInterfacesTo<PushableComponent>()
+                     .FromInstance(pushableComponent)
                      .AsSingle();
 
             Container.Bind<TrapView>()

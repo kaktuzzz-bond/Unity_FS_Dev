@@ -1,10 +1,9 @@
-using UnityEngine;
-
 namespace Game.Entities
 {
     public interface IPushComponent
     {
-        void Push(IPushable pushable);
-        bool Push();
+        void Push(IPushableComponent pushable);
+
+        void PushOpposite(IPushableComponent pushable);
     }
 }

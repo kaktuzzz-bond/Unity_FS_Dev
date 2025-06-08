@@ -941,7 +941,14 @@ MonoBehaviour:
     groundLayer:
       serializedVersion: 2
       m_Bits: 8
-  forceComponent:
+  entitySensor:
+    origin: {fileID: 8980892021632546839}
+    sensorPoint: {fileID: 3511145341736734193}
+    raycastDistance: 3
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 256
+  pushableComponent:
     rigidbody: {fileID: 8342082945872629457}
   pusher:
     origin: {fileID: 3511145341736734193}

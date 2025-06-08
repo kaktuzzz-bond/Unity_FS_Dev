@@ -6,7 +6,7 @@ using Zenject;
 namespace Game.Entities
 {
     [Serializable]
-    public class EntitySensorComponent : IInitializable
+    public class EntitySensorComponent : IEntitySensorComponent
     {
         [SerializeField]
         public Transform origin;
@@ -48,10 +48,6 @@ namespace Game.Entities
 
             return targets;
         }
-
-        public void Initialize()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

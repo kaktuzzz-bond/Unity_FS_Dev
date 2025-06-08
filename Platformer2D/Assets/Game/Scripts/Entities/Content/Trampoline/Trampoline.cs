@@ -20,7 +20,7 @@ namespace Game.Entities
 
         private void OnTriggerEnter(IEntity entity)
         {
-            if (!entity.TryGet<IPushable>(out var target)) return;
+            if (!entity.TryGet<IPushableComponent>(out var target)) return;
 
             _entity.Get<IPushComponent>().Push(target);
 

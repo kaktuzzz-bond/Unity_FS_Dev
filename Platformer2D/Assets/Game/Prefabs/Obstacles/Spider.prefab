@@ -373,8 +373,21 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 8
   entityProxy: {fileID: 8255488141228711515}
-  forceComponent:
+  pushableComponent:
     rigidbody: {fileID: 1811217380092667554}
+  pushComponent:
+    origin: {fileID: 797735510629636468}
+    pushPoint: {fileID: 797735510629636468}
+    forceDirection: {x: 0, y: 1}
+    pushForce: 20
+    cooldownTime: -1
+    entitySensor:
+      origin: {fileID: 797735510629636468}
+      sensorPoint: {fileID: 797735510629636468}
+      raycastDistance: 1
+      layerMask:
+        serializedVersion: 2
+        m_Bits: 0
 --- !u!114 &396580389517567999
 MonoBehaviour:
   m_ObjectHideFlags: 0
