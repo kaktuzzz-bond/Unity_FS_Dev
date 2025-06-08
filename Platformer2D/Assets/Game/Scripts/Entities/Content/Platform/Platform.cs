@@ -1,4 +1,4 @@
-using Modules.Entity;
+using Modules;
 using Sirenix.OdinInspector;
 using Zenject;
 
@@ -19,7 +19,7 @@ namespace Game.Entities
 
         public void Initialize()
         {
-            _entity.Get<IMoveComponent>().AddCondition(() => _isPatrol);
+            _entity.Get<IPatrolComponent>().AddCondition(() => _isPatrol);
             _isPatrol = true;
         }
     }

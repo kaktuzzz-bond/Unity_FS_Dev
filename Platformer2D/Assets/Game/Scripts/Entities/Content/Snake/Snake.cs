@@ -1,5 +1,5 @@
 using System;
-using Modules.Entity;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -18,7 +18,7 @@ namespace Game.Entities
         public void Initialize()
         {
             _entity.Get<ITriggerReceiver>().OnTriggerEnter += OnTriggerEnter;
-            _entity.Get<IForceComponent>().OnForceAdded += _entity.Get<IPatrolComponent>().Pause;
+            _entity.Get<IPushable>().OnForceAdded += _entity.Get<IPatrolComponent>().Pause;
 
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
@@ -31,19 +31,21 @@ namespace Game.Entities
         [Button]
         private void OnTriggerEnter(Collider2D other)
         {
-            if (!other.TryGetComponent<IDamagable>(out var damagable)) return;
+            if (!other.TryGetComponent<IEntityProxy>(out var proxy)) return;
+
+            if (!proxy.Entity.TryGet<IDamagable>(out var damagable)) return;
 
             _entity.Get<IAttackComponent>().Attack(damagable);
 
-            if (!other.TryGetComponent<IPushable>(out var body)) return;
-
-            body.AddForce(_entity.Get<ForceData>().GetForce(), _entity.Get<IForceComponent>().Position);
+            if (!proxy.Entity.TryGet<IPushable>(out var pushable)) return;
+            
+            _entity.Get<IPushComponent>().Push(pushable);
         }
 
         public void Dispose()
         {
             _entity.Get<ITriggerReceiver>().OnTriggerEnter -= OnTriggerEnter;
-            _entity.Get<IForceComponent>().OnForceAdded -= _entity.Get<IPatrolComponent>().Pause;
+            _entity.Get<IPushable>().OnForceAdded -= _entity.Get<IPatrolComponent>().Pause;
         }
     }
 }

@@ -1,5 +1,5 @@
 using System;
-using Modules.Cooldown;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -7,7 +7,7 @@ using Zenject;
 namespace Game.Entities
 {
     [Serializable]
-    public class PatrolComponent : MoveComponent, IInitializable, ITickable, IPatrolComponent
+    public class PatrolComponent : IInitializable, ITickable, IPatrolComponent
     {
         [SerializeField]
         private Transform target;
@@ -18,12 +18,12 @@ namespace Game.Entities
         [SerializeField, Min(0)]
         private float cooldownTime = 1f;
 
-        // [ShowInInspector]
+        [SerializeField]
+        private MoveComponent moveComponent;
+
         private Vector2 TargetPos => target.transform.localPosition;
 
-        // [ShowInInspector]
         private Vector2 PointPos => waypoints[_currentIndex].localPosition;
-
 
         private const float Threshold = 0.1f;
 
@@ -39,14 +39,14 @@ namespace Game.Entities
         {
             _cooldown = new CooldownTimer(cooldownTime);
 
-            AddCondition(() => !_cooldown.IsInProgress);
+            moveComponent.AddCondition(() => !_cooldown.IsInProgress);
         }
 
         public void Tick()
         {
             _currentDirection = (PointPos - TargetPos).normalized;
 
-            Move(_currentDirection);
+            moveComponent.Move(_currentDirection);
 
             if (Vector2.Distance(PointPos, TargetPos) <= Threshold)
             {
@@ -65,5 +65,11 @@ namespace Game.Entities
 
             _currentIndex = next < waypoints.Length ? next : 0;
         }
+
+        public bool IsValid => moveComponent.IsValid;
+
+        public void AddCondition(Func<bool> condition) => moveComponent.AddCondition(condition);
+
+        public void RemoveCondition(Func<bool> condition) => moveComponent.RemoveCondition(condition);
     }
 }

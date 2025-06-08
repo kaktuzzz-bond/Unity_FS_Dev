@@ -1,4 +1,4 @@
-using Modules.Entity;
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -26,13 +26,13 @@ namespace Game.Entities
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<EntitySensor>(PushKey.Push)
+            _entity.Get<PushComponent>(PushKey.Push)
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<EntitySensor>(PushKey.Toss)
+            _entity.Get<PushComponent>(PushKey.Toss)
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<EntitySensor>(PushKey.Toss)
+            _entity.Get<PushComponent>(PushKey.Toss)
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
         }
 
@@ -56,8 +56,7 @@ namespace Game.Entities
 
         public void Push()
         {
-            if (!_entity.Get<EntitySensor>(PushKey.Push)
-                        .Push(_entity.Get<IMoveComponent>().GetDirection))
+            if (!_entity.Get<PushComponent>(PushKey.Push).Push())
                 return;
 
             _entity.Get<PlayerView>()
@@ -66,8 +65,7 @@ namespace Game.Entities
 
         public void Toss()
         {
-            if (!_entity.Get<EntitySensor>(PushKey.Toss)
-                        .Push(_entity.Get<IMoveComponent>().GetDirection))
+            if (!_entity.Get<PushComponent>(PushKey.Toss).Push())
                 return;
 
             _entity.Get<PlayerView>()

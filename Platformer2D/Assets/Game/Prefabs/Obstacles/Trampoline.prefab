@@ -371,10 +371,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 4455964410497554856}
-  forceData:
-    direction: {x: 0, y: 1}
-    <Force>k__BackingField: 25
   triggerReceiver: {fileID: 3017475948549261902}
+  pushComponent:
+    origin: {fileID: 3438794874559525746}
+    pushPoint: {fileID: 3438794874559525746}
+    raycastDistance: 1
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 833
+    forceDirection: {x: 0, y: 1}
+    pushForce: 30
+    raycastLimit: 8
+    cooldownTime: -1
 --- !u!114 &1314224540784578732
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Scripts.UI
+namespace Game.UI
 {
     public class HealthBarView : MonoBehaviour
     {

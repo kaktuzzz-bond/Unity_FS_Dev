@@ -1,6 +1,6 @@
 using System;
 
-namespace Modules.Conditions
+namespace Modules
 {
     public interface ICompositeCondition
     {
@@ -9,6 +9,5 @@ namespace Modules.Conditions
         void AddCondition(Func<bool> condition);
 
         void RemoveCondition(Func<bool> condition);
-
     }
 }

@@ -1,4 +1,4 @@
-namespace Modules.Cooldown
+namespace Modules
 {
     public interface ICooldownTimer
     {

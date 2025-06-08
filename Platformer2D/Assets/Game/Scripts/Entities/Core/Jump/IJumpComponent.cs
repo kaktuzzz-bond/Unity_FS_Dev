@@ -1,4 +1,4 @@
-using Modules.Conditions;
+using Modules;
 
 namespace Game.Entities
 {

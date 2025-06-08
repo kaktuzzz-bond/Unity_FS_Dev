@@ -4,17 +4,16 @@ using UnityEngine;
 namespace Game.Entities
 {
     [Serializable]
-    public class ForceComponent : IForceComponent
+    public class ForceComponent : IPushable
     {
+        public event Action OnForceAdded;
+
         [SerializeField]
         private Rigidbody2D rigidbody;
 
-        public event Action OnForceAdded;
-        public Vector2 Position => rigidbody.transform.position;
-
         public void AddForce(Vector2 force, Vector2 otherPosition)
         {
-            var sign = Mathf.Sign((Position - otherPosition).x);
+            var sign = Mathf.Sign(((Vector2)rigidbody.transform.position - otherPosition).x);
 
             var newForce = new Vector2(sign * force.x, force.y);
 

@@ -1,4 +1,4 @@
-using Modules.Entity;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -10,33 +10,31 @@ namespace Game.Entities
         [SerializeField, BoxGroup("View", ShowLabel = false)]
         private TrampolineView view;
 
-        [SerializeField, BoxGroup("ForceData", ShowLabel = false)]
-        private ForceData forceData;
-
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
         private TriggerReceiver triggerReceiver;
 
+        [SerializeField, BoxGroup("Push", ShowLabel = false)]
+        private PushComponent pushComponent;
 
         public override void InstallBindings()
         {
-            
-            Container.BindInstance(forceData)
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Trampoline>()
                      .AsSingle();
 
             Container.BindInterfacesTo<TriggerReceiver>()
                      .FromInstance(triggerReceiver)
-                     .AsSingle();
+                     .AsSingle();  
             
-            Container.BindInterfacesTo<Entity>()
+            Container.BindInterfacesTo<PushComponent>()
+                     .FromInstance(pushComponent)
                      .AsSingle();
 
             Container.Bind<TrampolineView>()
                      .FromInstance(view)
                      .AsSingle();
-
-            Container.BindInterfacesAndSelfTo<Trampoline>()
-                     .AsSingle();
         }
-        
     }
 }

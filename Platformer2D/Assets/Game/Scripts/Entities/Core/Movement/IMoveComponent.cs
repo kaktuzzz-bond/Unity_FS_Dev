@@ -1,4 +1,4 @@
-using Modules.Conditions;
+using Modules;
 using UnityEngine;
 
 namespace Game.Entities

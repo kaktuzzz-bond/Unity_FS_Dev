@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3861428367970733972}
   - component: {fileID: 4695388499574527720}
-  - component: {fileID: 255782312555602920}
   - component: {fileID: 6068103282408105265}
-  - component: {fileID: 1684043917502993950}
+  - component: {fileID: 2740337697819044875}
   m_Layer: 8
   m_Name: <Body>
   m_TagString: Untagged
@@ -84,18 +83,6 @@ PolygonCollider2D:
       - {x: -0.54514545, y: -0.0012219399}
       - {x: 0.54670835, y: -0.00034102798}
   m_UseDelaunayMesh: 0
---- !u!114 &255782312555602920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254860857682096947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f7952089a374a6d88e20134ea47d0bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6068103282408105265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7d310875b843f5848da9a6659f690a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1684043917502993950
+--- !u!114 &2740337697819044875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +104,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 254860857682096947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab9cbae74c84325a881b482e83e1399, type: 3}
+  m_Script: {fileID: 11500000, guid: b1ce5c65a1b043e28b5ec869637df4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3976483565223223776

@@ -1,4 +1,4 @@
-using Modules.Entity;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -26,10 +26,10 @@ namespace Game.Entities
         private ForceComponent forceComponent;
 
         [SerializeField, BoxGroup("Pusher", ShowLabel = false)]
-        private EntitySensor pusher;
+        private PushComponent pusher;
 
         [SerializeField, BoxGroup("Tosser", ShowLabel = false)]
-        private EntitySensor tosser;
+        private PushComponent tosser;
 
         public override void InstallBindings()
         {
@@ -71,15 +71,15 @@ namespace Game.Entities
                      .NonLazy();
         }
 
-        private void BindPusher(PushKey id, EntitySensor instance)
+        private void BindPusher(PushKey id, PushComponent instance)
         {
-            Container.Bind<EntitySensor>()
+            Container.Bind<PushComponent>()
                      .WithId(id)
                      .FromInstance(instance)
                      .AsCached();
 
-            Container.BindInterfacesTo<EntitySensor>()
-                     .FromMethod(it => it.Container.ResolveId<EntitySensor>(id));
+            Container.BindInterfacesTo<PushComponent>()
+                     .FromMethod(it => it.Container.ResolveId<PushComponent>(id));
         }
     }
 }

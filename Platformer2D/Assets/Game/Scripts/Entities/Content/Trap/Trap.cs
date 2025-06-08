@@ -1,5 +1,5 @@
 using System;
-using Modules.Entity;
+using Modules;
 using UnityEngine;
 using Zenject;
 

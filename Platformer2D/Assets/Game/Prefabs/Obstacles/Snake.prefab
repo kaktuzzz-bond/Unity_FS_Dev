@@ -505,10 +505,6 @@ MonoBehaviour:
   healthComponent:
     maxHealth: 10
   patrolComponent:
-    rigidbody: {fileID: 1745589832700849}
-    body: {fileID: 7071622688570522326}
-    speed: 1
-    isFlippable: 1
     target: {fileID: 1819249752555060710}
     waypoints:
     - {fileID: 7836685165928915669}
@@ -524,9 +520,6 @@ MonoBehaviour:
       m_Bits: 8
   forceComponent:
     rigidbody: {fileID: 1745589832700849}
-  pushForce:
-    direction: {x: 1, y: 4}
-    <Force>k__BackingField: 10
 --- !u!114 &7063893242729626293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,7 +605,7 @@ GameObject:
   - component: {fileID: 1819249752555060710}
   - component: {fileID: 1745589832700849}
   - component: {fileID: 519640766865834813}
-  - component: {fileID: 5677228473148522426}
+  - component: {fileID: 8214909292896853992}
   m_Layer: 8
   m_Name: <Snake>
   m_TagString: Untagged
@@ -710,7 +703,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &5677228473148522426
+--- !u!114 &8214909292896853992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -719,7 +712,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8521204571576199944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab9cbae74c84325a881b482e83e1399, type: 3}
+  m_Script: {fileID: 11500000, guid: b1ce5c65a1b043e28b5ec869637df4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8804530545461324615
@@ -733,8 +726,7 @@ GameObject:
   - component: {fileID: 2701514471521491153}
   - component: {fileID: 4321360050967141497}
   - component: {fileID: 7523386405416937183}
-  - component: {fileID: 4978368266319576384}
-  - component: {fileID: 3487419627376864396}
+  - component: {fileID: 7358389804095613072}
   m_Layer: 8
   m_Name: <Sensors>
   m_TagString: Untagged
@@ -814,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7d310875b843f5848da9a6659f690a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4978368266319576384
+--- !u!114 &7358389804095613072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -823,19 +815,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8804530545461324615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f7952089a374a6d88e20134ea47d0bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3487419627376864396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8804530545461324615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab9cbae74c84325a881b482e83e1399, type: 3}
+  m_Script: {fileID: 11500000, guid: b1ce5c65a1b043e28b5ec869637df4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9168432786817898581

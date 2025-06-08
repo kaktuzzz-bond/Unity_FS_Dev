@@ -1,5 +1,5 @@
 using System;
-using Modules.Conditions;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

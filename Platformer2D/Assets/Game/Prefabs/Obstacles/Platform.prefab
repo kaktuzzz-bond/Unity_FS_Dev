@@ -322,15 +322,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolComponent:
-    rigidbody: {fileID: 1599025579162667576}
-    body: {fileID: 7845036276167105276}
-    speed: 2
-    isFlippable: 0
     target: {fileID: 7845036276167105276}
     waypoints:
     - {fileID: 5434138037557620653}
     - {fileID: 7441270365842623162}
-    cooldownTime: 0
+    cooldownTime: 0.5
+    moveComponent:
+      rigidbody: {fileID: 1599025579162667576}
+      body: {fileID: 7845036276167105276}
+      speed: 2
+      isFlippable: 0
 --- !u!114 &783612559537060244
 MonoBehaviour:
   m_ObjectHideFlags: 0

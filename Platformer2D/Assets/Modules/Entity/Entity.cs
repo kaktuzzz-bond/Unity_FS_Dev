@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Modules.Entity
+namespace Modules
 {
     public class Entity : IEntity
     {
@@ -12,11 +12,18 @@ namespace Modules.Entity
         }
 
         public T Get<T>() where T : class => _container.Resolve<T>();
-
-        public T TryGet<T>() where T : class => _container.TryResolve<T>();
-        
         public T Get<T>(object id) where T : class => _container.ResolveId<T>(id);
-
-        public T TryGet<T>(object id) where T : class => _container.TryResolveId<T>(id);
+        
+        public bool TryGet<T>(out T component) where T : class
+        {
+            component = _container.TryResolve<T>();
+            return component != null;
+        }
+        
+        public bool TryGet<T>(object id, out T component) where T : class
+        {
+            component = _container.TryResolveId<T>(id);
+            return component != null;
+        }
     }
 }

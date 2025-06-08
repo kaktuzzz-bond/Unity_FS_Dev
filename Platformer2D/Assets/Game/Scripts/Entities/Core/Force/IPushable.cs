@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace Game.Entities
 {
     public interface IPushable
     {
-        void AddForce(Vector2 force);
+        event Action OnForceAdded;
 
-        void AddForce(Vector2 force, Vector2 otherPosition);
+        void AddForce(Vector2 force);
     }
 }

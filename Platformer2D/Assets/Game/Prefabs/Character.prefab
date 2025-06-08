@@ -289,8 +289,7 @@ GameObject:
   - component: {fileID: 8980892021632546839}
   - component: {fileID: 3109106816392369252}
   - component: {fileID: 2234009592881848764}
-  - component: {fileID: 9086124540465266604}
-  - component: {fileID: 5755029142598937921}
+  - component: {fileID: 6403663686401058785}
   m_Layer: 9
   m_Name: <Body>
   m_TagString: Character
@@ -388,7 +387,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &9086124540465266604
+--- !u!114 &6403663686401058785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -397,19 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742679491460429038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f7952089a374a6d88e20134ea47d0bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5755029142598937921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742679491460429038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab9cbae74c84325a881b482e83e1399, type: 3}
+  m_Script: {fileID: 11500000, guid: b1ce5c65a1b043e28b5ec869637df4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2052054696943251309
@@ -958,22 +945,30 @@ MonoBehaviour:
     rigidbody: {fileID: 8342082945872629457}
   pusher:
     origin: {fileID: 3511145341736734193}
-    raycastDistance: 2
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    force: {x: 15, y: 1}
-    raycastLimit: 8
+    pushPoint: {fileID: 3511145341736734193}
+    forceDirection: {x: 10, y: 1}
+    pushForce: 20
     cooldownTime: 2
+    entitySensor:
+      origin: {fileID: 8980892021632546839}
+      sensorPoint: {fileID: 3511145341736734193}
+      raycastDistance: 3
+      layerMask:
+        serializedVersion: 2
+        m_Bits: 256
   tosser:
     origin: {fileID: 3511145341736734193}
-    raycastDistance: 2
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    force: {x: 1, y: 20}
-    raycastLimit: 8
+    pushPoint: {fileID: 3511145341736734193}
+    forceDirection: {x: 1, y: 10}
+    pushForce: 20
     cooldownTime: 2
+    entitySensor:
+      origin: {fileID: 8980892021632546839}
+      sensorPoint: {fileID: 3511145341736734193}
+      raycastDistance: 3
+      layerMask:
+        serializedVersion: 2
+        m_Bits: 256
 --- !u!50 &8342082945872629457
 Rigidbody2D:
   serializedVersion: 4

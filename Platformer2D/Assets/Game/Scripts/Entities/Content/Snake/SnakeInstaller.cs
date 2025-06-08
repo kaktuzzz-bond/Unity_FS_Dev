@@ -1,4 +1,4 @@
-using Modules.Entity;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -28,14 +28,8 @@ namespace Game.Entities
         [SerializeField, BoxGroup("Force", ShowLabel = false)]
         private ForceComponent forceComponent;
 
-        [SerializeField, BoxGroup("Push", ShowLabel = false)]
-        private ForceData pushForce;
-
         public override void InstallBindings()
         {
-            Container.BindInstance(pushForce)
-                     .AsSingle();
-
             Container.BindInterfacesTo<HealthComponent>()
                      .FromInstance(healthComponent)
                      .AsSingle();
@@ -63,7 +57,7 @@ namespace Game.Entities
             Container.BindInterfacesTo<Entity>()
                      .AsSingle();
 
-            Container.BindInterfacesAndSelfTo<Spider>()
+            Container.BindInterfacesAndSelfTo<Snake>()
                      .AsSingle();
 
             Container.Bind<SnakeView>()

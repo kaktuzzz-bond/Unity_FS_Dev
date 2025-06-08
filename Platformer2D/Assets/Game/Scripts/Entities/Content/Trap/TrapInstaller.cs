@@ -1,4 +1,4 @@
-using Modules.Entity;
+using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;

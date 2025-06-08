@@ -1,5 +1,5 @@
 using System;
-using Modules.Entity;
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -21,9 +21,11 @@ namespace Game.Entities
 
         private void OnTriggerEnter(Collider2D other)
         {
-            if (!other.TryGetComponent<IPushable>(out var target)) return;
+            if (!other.TryGetComponent<IEntityProxy>(out var proxy)) return;
+            
+            if (!proxy.Entity.TryGet<IPushable>(out var target)) return;
 
-            target.AddForce(_entity.Get<ForceData>().GetForce());
+            _entity.Get<IPushComponent>().Push(target);
 
             _entity.Get<TrampolineView>().PlayJump();
         }
