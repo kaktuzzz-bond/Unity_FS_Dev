@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3861428367970733972}
   - component: {fileID: 4695388499574527720}
   - component: {fileID: 6068103282408105265}
-  - component: {fileID: 2740337697819044875}
   m_Layer: 8
   m_Name: <Body>
   m_TagString: Untagged
@@ -93,18 +92,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd7d310875b843f5848da9a6659f690a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2740337697819044875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254860857682096947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ce5c65a1b043e28b5ec869637df4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3976483565223223776
@@ -246,7 +233,7 @@ MonoBehaviour:
     maxHealth: 1
   attackComponent:
     damage: 1
-  triggerReceiver: {fileID: 6068103282408105265}
+  entityProxy: {fileID: 6068103282408105265}
   forceComponent:
     rigidbody: {fileID: 2967571885436114290}
 --- !u!114 &497825731439939865

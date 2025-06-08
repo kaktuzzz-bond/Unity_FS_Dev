@@ -9,7 +9,7 @@ namespace Game.Entities
         [SerializeField, Min(0)]
         private int damage = 1;
         
-        public void Attack(IDamagable target)
+        public void Attack(IHealthComponent target)
         {
             target.TakeDamage(damage);
         }

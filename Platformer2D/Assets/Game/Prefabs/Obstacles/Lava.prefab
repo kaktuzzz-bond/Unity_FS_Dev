@@ -52,7 +52,7 @@ MonoBehaviour:
   view: {fileID: 3297460790599925675}
   attackComponent:
     damage: 10000
-  triggerReceiver: {fileID: 7360510982631947968}
+  entityProxy: {fileID: 7360510982631947968}
 --- !u!114 &4303157079115647472
 MonoBehaviour:
   m_ObjectHideFlags: 0

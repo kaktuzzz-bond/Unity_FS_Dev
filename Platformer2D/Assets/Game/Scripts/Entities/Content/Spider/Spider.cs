@@ -17,7 +17,7 @@ namespace Game.Entities
 
         public void Initialize()
         {
-            _entity.Get<ITriggerReceiver>().OnTriggerEnter += OnTriggerEnter;
+            _entity.Get<IEntityProxy>().OnTriggerEnter += OnTriggerEnter;
             _entity.Get<IPushable>().OnForceAdded += OnForceAdded;
 
             _entity.Get<IMoveComponent>()
@@ -27,29 +27,31 @@ namespace Game.Entities
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
         }
 
+
         private void OnForceAdded()
         {
             _entity.Get<IPatrolComponent>().Pause();
         }
 
+        private void OnTriggerEnter(IEntity entity)
+        {
+            if (!entity.TryGet<IHealthComponent>(out var healthComponent)) return;
+
+            _entity.Get<IAttackComponent>().Attack(healthComponent);
+
+            if (!entity.TryGet<IPushable>(out var pushable)) return;
+
+            _entity.Get<IPushComponent>().Push(pushable);
+        }
 
         [Button]
         private void OnTriggerEnter(Collider2D other)
         {
-            if (!other.TryGetComponent<IEntityProxy>(out var proxy)) return;
-
-            if (!proxy.Entity.TryGet<IDamagable>(out var damagable)) return;
-
-            _entity.Get<IAttackComponent>().Attack(damagable);
-
-            if (!proxy.Entity.TryGet<IPushable>(out var pushable)) return;
-            
-            _entity.Get<IPushComponent>().Push(pushable);
         }
 
         public void Dispose()
         {
-            _entity.Get<ITriggerReceiver>().OnTriggerEnter -= OnTriggerEnter;
+            _entity.Get<IEntityProxy>().OnTriggerEnter -= OnTriggerEnter;
             _entity.Get<IPushable>().OnForceAdded -= OnForceAdded;
         }
     }

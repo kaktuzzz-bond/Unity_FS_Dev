@@ -12,9 +12,9 @@ namespace Game.Entities
 
         [SerializeField, BoxGroup("Attack", ShowLabel = false)]
         private AttackComponent attackComponent;
-
+        
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
-        private TriggerReceiver triggerReceiver;
+        private EntityProxy entityProxy;
 
         public override void InstallBindings()
         {
@@ -32,8 +32,8 @@ namespace Game.Entities
                      .FromInstance(attackComponent)
                      .AsSingle();
 
-            Container.BindInterfacesTo<TriggerReceiver>()
-                     .FromInstance(triggerReceiver)
+            Container.BindInterfacesTo<EntityProxy>()
+                     .FromInstance(entityProxy)
                      .AsSingle();
         }
     }

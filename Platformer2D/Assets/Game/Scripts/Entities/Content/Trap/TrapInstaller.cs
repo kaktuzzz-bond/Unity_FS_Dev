@@ -17,7 +17,7 @@ namespace Game.Entities
         private AttackComponent attackComponent;
 
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
-        private TriggerReceiver triggerReceiver;
+        private EntityProxy entityProxy;
         
         [SerializeField, BoxGroup("Force", ShowLabel = false)]
         private ForceComponent forceComponent;
@@ -26,10 +26,6 @@ namespace Game.Entities
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Entity>()
-                     .AsSingle();
-
-            Container.Bind<TrapView>()
-                     .FromInstance(view)
                      .AsSingle();
 
             Container.BindInterfacesAndSelfTo<Trap>()
@@ -43,12 +39,16 @@ namespace Game.Entities
                      .FromInstance(attackComponent)
                      .AsSingle();
 
-            Container.BindInterfacesTo<TriggerReceiver>()
-                     .FromInstance(triggerReceiver)
+            Container.BindInterfacesTo<EntityProxy>()
+                     .FromInstance(entityProxy)
                      .AsSingle();
-            
+
             Container.BindInterfacesTo<ForceComponent>()
                      .FromInstance(forceComponent)
+                     .AsSingle();
+
+            Container.Bind<TrapView>()
+                     .FromInstance(view)
                      .AsSingle();
         }
     }

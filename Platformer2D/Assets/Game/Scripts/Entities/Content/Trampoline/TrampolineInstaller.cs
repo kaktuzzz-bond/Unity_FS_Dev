@@ -1,6 +1,7 @@
 using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Game.Entities
@@ -10,8 +11,9 @@ namespace Game.Entities
         [SerializeField, BoxGroup("View", ShowLabel = false)]
         private TrampolineView view;
 
+        [FormerlySerializedAs("triggerReceiver")]
         [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
-        private TriggerReceiver triggerReceiver;
+        private EntityProxy entityProxy;
 
         [SerializeField, BoxGroup("Push", ShowLabel = false)]
         private PushComponent pushComponent;
@@ -24,8 +26,8 @@ namespace Game.Entities
             Container.BindInterfacesAndSelfTo<Trampoline>()
                      .AsSingle();
 
-            Container.BindInterfacesTo<TriggerReceiver>()
-                     .FromInstance(triggerReceiver)
+            Container.BindInterfacesTo<EntityProxy>()
+                     .FromInstance(entityProxy)
                      .AsSingle();  
             
             Container.BindInterfacesTo<PushComponent>()

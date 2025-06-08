@@ -1,6 +1,5 @@
 using System;
 using Modules;
-using UnityEngine;
 using Zenject;
 
 namespace Game.Entities
@@ -16,21 +15,23 @@ namespace Game.Entities
 
         public void Initialize()
         {
-            _entity.Get<ITriggerReceiver>().OnTriggerEnter += OnTriggerEnter;
+            _entity.Get<IEntityProxy>().OnTriggerEnter += OnTriggerEnter;
         }
 
-        private void OnTriggerEnter(Collider2D other)
+        private void OnTriggerEnter(IEntity entity)
         {
-            if (!other.TryGetComponent<IDamagable>(out var target)) return;
+            if (!entity.TryGet<IHealthComponent>(out var target)) return;
 
             _entity.Get<IAttackComponent>().Attack(target);
 
             _entity.Get<IHealthComponent>().TakeDamage(int.MaxValue);
         }
 
+       
+
         public void Dispose()
         {
-            _entity.Get<ITriggerReceiver>().OnTriggerEnter -= OnTriggerEnter;
+            _entity.Get<IEntityProxy>().OnTriggerEnter -= OnTriggerEnter;
         }
     }
 }

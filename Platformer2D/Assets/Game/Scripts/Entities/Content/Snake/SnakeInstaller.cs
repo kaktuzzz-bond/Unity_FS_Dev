@@ -19,17 +19,23 @@ namespace Game.Entities
         [SerializeField, BoxGroup("Attack", ShowLabel = false)]
         private AttackComponent attackComponent;
 
-        [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
-        private TriggerReceiver triggerReceiver;
-
         [SerializeField, BoxGroup("GroundSensor", ShowLabel = false)]
         private GroundSensor groundSensor;
 
+        [SerializeField, BoxGroup("Trigger", ShowLabel = false)]
+        private EntityProxy entityProxy;
+        
         [SerializeField, BoxGroup("Force", ShowLabel = false)]
         private ForceComponent forceComponent;
 
         public override void InstallBindings()
         {
+            Container.BindInterfacesTo<Entity>()
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<Snake>()
+                     .AsSingle();
+
             Container.BindInterfacesTo<HealthComponent>()
                      .FromInstance(healthComponent)
                      .AsSingle();
@@ -42,24 +48,18 @@ namespace Game.Entities
                      .FromInstance(attackComponent)
                      .AsSingle();
 
-            Container.BindInterfacesTo<TriggerReceiver>()
-                     .FromInstance(triggerReceiver)
-                     .AsSingle();
-
             Container.BindInterfacesTo<GroundSensor>()
                      .FromInstance(groundSensor)
+                     .AsSingle();
+            
+            Container.BindInterfacesTo<EntityProxy>()
+                     .FromInstance(entityProxy)
                      .AsSingle();
 
             Container.BindInterfacesTo<ForceComponent>()
                      .FromInstance(forceComponent)
                      .AsSingle();
-
-            Container.BindInterfacesTo<Entity>()
-                     .AsSingle();
-
-            Container.BindInterfacesAndSelfTo<Snake>()
-                     .AsSingle();
-
+            
             Container.Bind<SnakeView>()
                      .FromInstance(view)
                      .AsSingle();
