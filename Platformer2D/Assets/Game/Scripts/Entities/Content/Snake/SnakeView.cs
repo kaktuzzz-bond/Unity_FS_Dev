@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-using Game.Entities.VFX;
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -10,24 +10,21 @@ namespace Game.Entities
         [SerializeField]
         private BlinkSpriteComponent blinkVFX;
 
-        private IHealthComponent _healthComponent;
+        private IEntity _entity;
 
         [Inject]
-        private void Construct(IHealthComponent healthComponent)
+        private void Construct(IEntity entity)
         {
-            _healthComponent = healthComponent;
+            _entity = entity;
+            _entity.Get<IHealthComponent>().OnDeath += OnDeath;
+            _entity.Get<IHealthComponent>().OnHealthChanged += OnHealthChanged;
         }
+        
 
-        private void OnEnable()
+        private void OnDestroy()
         {
-            _healthComponent.OnDeath += OnDeath;
-            _healthComponent.OnHealthChanged += OnHealthChanged;
-        }
-
-        private void OnDisable()
-        {
-            _healthComponent.OnDeath -= OnDeath;
-            _healthComponent.OnHealthChanged -= OnHealthChanged;
+            _entity.Get<IHealthComponent>().OnDeath -= OnDeath;
+            _entity.Get<IHealthComponent>().OnHealthChanged -= OnHealthChanged;
         }
 
         private void OnDeath() => PlayDeath().Forget();

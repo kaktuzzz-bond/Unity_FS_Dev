@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Modules;
 using UnityEngine;
@@ -7,6 +8,10 @@ namespace Game.Entities
 {
     public class Player : IInitializable
     {
+        public event Action OnJump;
+        public event Action OnPush;
+        public event Action OnToss;
+
         private readonly IEntity _entity;
 
 
@@ -49,8 +54,7 @@ namespace Game.Entities
             if (_entity.Get<IJumpComponent>()
                        .Jump())
             {
-                _entity.Get<PlayerView>()
-                       .PlayJump();
+                OnJump?.Invoke();
             }
         }
 
@@ -68,8 +72,7 @@ namespace Game.Entities
                 _entity.Get<PushComponent>(PushKey.Push).Push(pushable);
             }
 
-            _entity.Get<PlayerView>()
-                   .PlayPush();
+            OnPush?.Invoke();
         }
 
         public void Toss()
@@ -85,8 +88,7 @@ namespace Game.Entities
                 _entity.Get<PushComponent>(PushKey.Toss).Push(pushable);
             }
 
-            _entity.Get<PlayerView>()
-                   .PlayToss();
+            OnToss?.Invoke();
         }
     }
 }

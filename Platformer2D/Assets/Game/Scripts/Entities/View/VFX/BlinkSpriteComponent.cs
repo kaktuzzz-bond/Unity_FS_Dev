@@ -3,7 +3,7 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game.Entities.VFX
+namespace Game.Entities
 {
    
     public class BlinkSpriteComponent : MonoBehaviour

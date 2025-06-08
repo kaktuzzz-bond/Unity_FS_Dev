@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
-using Game.Entities.VFX;
 using Game.GameSystem;
 using Game.UI;
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -25,29 +25,33 @@ namespace Game.Entities
         private BlinkSpriteComponent blinkVFX;
 
         private AudioProvider _audioProvider;
-        private IHealthComponent _healthComponent;
+        private IEntity _entity;
 
         [Inject]
-        private void Construct(AudioProvider audioProvider, IHealthComponent healthComponent)
+        private void Construct(AudioProvider audioProvider, IEntity entity)
         {
             _audioProvider = audioProvider;
-            _healthComponent = healthComponent;
-        }
+            _entity = entity;
 
-        private void OnEnable()
-        {
-            _healthComponent.OnDeath += OnDeath;
-            _healthComponent.OnHealthChanged += OnHealthChanged;
+            _entity.Get<IHealthComponent>().OnDeath += OnDeath;
+            _entity.Get<IHealthComponent>().OnHealthChanged += OnHealthChanged;
+            _entity.Get<Player>().OnJump += PlayJump;
+            _entity.Get<Player>().OnPush += PlayPush;
+            _entity.Get<Player>().OnToss += PlayToss;
         }
+        
 
         private void OnDeath() => PlayDeath().Forget();
 
         private void OnHealthChanged(float healthValue) => ShowTakenDamage(healthValue).Forget();
 
-        private void OnDisable()
+        private void OnDestroy()
         {
-            _healthComponent.OnDeath -= OnDeath;
-            _healthComponent.OnHealthChanged -= OnHealthChanged;
+            _entity.Get<IHealthComponent>().OnDeath -= OnDeath;
+            _entity.Get<IHealthComponent>().OnHealthChanged -= OnHealthChanged;
+            _entity.Get<Player>().OnJump -= PlayJump;
+            _entity.Get<Player>().OnPush -= PlayPush;
+            _entity.Get<Player>().OnToss -= PlayToss;
         }
 
         private UniTask ShowTakenDamage(float healthValue)
@@ -64,18 +68,18 @@ namespace Game.Entities
             gameObject.SetActive(false);
         }
 
-        public void PlayJump()
+        private void PlayJump()
         {
             audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Jump));
         }
 
-        public void PlayPush()
+        private void PlayPush()
         {
             audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Push));
             pushVFX.Play();
         }
 
-        public void PlayToss()
+        private void PlayToss()
         {
             audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Toss));
             tossVFX.Play();

@@ -1,3 +1,4 @@
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -5,20 +6,17 @@ namespace Game.Entities
 {
     public class TrapView : MonoBehaviour
     {
-        private IHealthComponent _healthComponent;
+        private IEntity _entity;
 
         [Inject]
-        private void Construct(IHealthComponent healthComponent)
+        private void Construct(IEntity entity)
         {
-            _healthComponent = healthComponent;
+            _entity = entity;
+            _entity.Get<IHealthComponent>().OnDeath += PlayDeath;
         }
 
+        private void OnDestroy() => _entity.Get<IHealthComponent>().OnDeath -= PlayDeath;
 
-        private void OnEnable() => _healthComponent.OnDeath += PlayDeath;
-
-
-        private void OnDisable() => _healthComponent.OnDeath -= PlayDeath;
-
-        public void PlayDeath() => gameObject.SetActive(false);
+        private void PlayDeath() => gameObject.SetActive(false);
     }
 }

@@ -6,6 +6,7 @@ namespace Game.Entities
 {
     public class Lava : IInitializable, IDisposable
     {
+        public event Action OnTriggered;
         private readonly IEntity _entity;
 
 
@@ -24,7 +25,7 @@ namespace Game.Entities
             if (!entity.TryGet<IHealthComponent>(out var healthComponent)) return;
 
             _entity.Get<IAttackComponent>().Attack(healthComponent);
-            _entity.Get<LavaView>().PlayLava();
+            OnTriggered?.Invoke();
         }
 
 

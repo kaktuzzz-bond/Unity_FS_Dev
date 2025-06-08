@@ -1,4 +1,5 @@
 using Game.GameSystem;
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -13,9 +14,9 @@ namespace Game.Entities
 
 
         [Inject]
-        private void Construct(AudioProvider audioProvider)
+        private void Construct(IEntity entity)
         {
-            _audioProvider = audioProvider;
+            _audioProvider = entity.Get<AudioProvider>();
         }
 
         public void PlayJump()
