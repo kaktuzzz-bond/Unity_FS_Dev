@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts.GameSystem.Audio
+namespace Game.GameSystem
 {
     public class AudioProvider
     {

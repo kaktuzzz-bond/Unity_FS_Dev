@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Game.Scripts.GameSystem.PlayerInput
+namespace Game.GameSystem
 {
     public class PlayerInputInstaller : Installer<PlayerInputInstaller>
     {

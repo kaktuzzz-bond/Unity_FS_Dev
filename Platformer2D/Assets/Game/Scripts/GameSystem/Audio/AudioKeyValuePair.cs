@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Game.Scripts.GameSystem.Audio
+namespace Game.GameSystem
 {
     [Serializable]
     public class AudioKeyValuePair

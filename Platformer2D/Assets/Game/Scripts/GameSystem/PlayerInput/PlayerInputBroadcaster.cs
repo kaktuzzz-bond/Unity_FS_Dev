@@ -5,7 +5,7 @@ using UnityEngine;
 using Zenject;
 using static UnityEngine.InputSystem.InputAction;
 
-namespace Game.Scripts.GameSystem.PlayerInput
+namespace Game.GameSystem
 {
     public class PlayerInputBroadcaster : IPlayerInput, IInitializable, IDisposable
     {

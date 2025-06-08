@@ -1,8 +1,7 @@
-using Game.Scripts.GameSystem.PlayerInput;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.GameSystem
+namespace Game.GameSystem
 {
     [CreateAssetMenu(fileName = "NewGameInstaller", menuName = "Game/New Game Installer", order = 0)]
     public class GameInstaller : ScriptableObjectInstaller

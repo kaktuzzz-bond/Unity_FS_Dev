@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Scripts.GameSystem.Audio
+namespace Game.GameSystem
 {
     [CreateAssetMenu(fileName = "AudioInstaller", menuName = "Zenject/Audio Installer", order = 0)]
     public class AudioInstaller : ScriptableObjectInstaller

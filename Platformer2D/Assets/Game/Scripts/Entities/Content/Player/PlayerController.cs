@@ -1,0 +1,44 @@
+using System;
+using Game.GameSystem;
+using UnityEngine;
+using Zenject;
+
+namespace Game.Entities
+{
+    public class PlayerController : IInitializable, IDisposable
+    {
+        private readonly IPlayerInput _playerInput;
+        private readonly Player _player;
+
+        public PlayerController(IPlayerInput playerInput, Player player)
+        {
+            _playerInput = playerInput;
+            _player = player;
+        }
+
+        public void Initialize()
+        {
+            _playerInput.OnJumped += Jump;
+            _playerInput.OnMoved += Move;
+            _playerInput.OnPush += Push;
+            _playerInput.OnToss += Toss;
+        }
+
+        private void Jump() => _player.Jump();
+
+        private void Move(Vector2 direction) => _player.Move(direction);
+
+        private void Push() => _player.Push();
+
+        private void Toss() => _player.Toss();
+
+
+        public void Dispose()
+        {
+            _playerInput.OnJumped -= Jump;
+            _playerInput.OnMoved -= Move;
+            _playerInput.OnPush -= Push;
+            _playerInput.OnToss -= Toss;
+        }
+    }
+}

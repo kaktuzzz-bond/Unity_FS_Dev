@@ -1,4 +1,4 @@
-namespace Game.Scripts.GameSystem.Audio
+namespace Game.GameSystem
 {
     public enum SoundKey
     {
