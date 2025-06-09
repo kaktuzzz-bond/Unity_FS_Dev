@@ -39,7 +39,7 @@ namespace Game.Entities
 
             if (!entity.TryGet<IPushableComponent>(out var pushable)) return;
 
-            _entity.Get<IPushComponent>().PushOpposite(pushable);
+            _entity.Get<IPushComponent>().Push(pushable);
         }
 
 

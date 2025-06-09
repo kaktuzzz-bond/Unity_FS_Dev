@@ -527,7 +527,7 @@ MonoBehaviour:
     rigidbody: {fileID: 1745589832700849}
   pushComponent:
     pushPoint: {fileID: 1819249752555060710}
-    forceDirection: {x: 1, y: 1}
+    forceDirection: {x: 1, y: 10}
     pushForce: 20
     cooldownTime: -1
 --- !u!114 &7063893242729626293

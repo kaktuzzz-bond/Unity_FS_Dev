@@ -1,8 +1,11 @@
+using System;
+using Game.GameSystem;
 using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
+using CharacterController = Game.GameSystem.CharacterController;
 
 namespace Game.Entities
 {
@@ -22,10 +25,10 @@ namespace Game.Entities
 
         [SerializeField, BoxGroup("GroundSensor", ShowLabel = false)]
         private GroundSensor groundSensor;
-        
+
         [SerializeField, BoxGroup("EntitySensor", ShowLabel = false)]
         private EntitySensorComponent entitySensor;
-        
+
         [FormerlySerializedAs("pushableComponentComponent")]
         [SerializeField, BoxGroup("Impact", ShowLabel = false)]
         private PushableComponent pushableComponent;
@@ -38,6 +41,12 @@ namespace Game.Entities
 
         public override void InstallBindings()
         {
+            Container.BindInterfacesTo<Entity>()
+                     .AsCached();
+
+            Container.BindInterfacesAndSelfTo<Player>()
+                     .AsSingle();
+
             Container.BindInterfacesTo<MoveComponent>()
                      .FromInstance(moveComponent)
                      .AsSingle();
@@ -52,8 +61,8 @@ namespace Game.Entities
 
             Container.BindInterfacesTo<GroundSensor>()
                      .FromInstance(groundSensor)
-                     .AsSingle();  
-            
+                     .AsSingle();
+
             Container.BindInterfacesTo<EntitySensorComponent>()
                      .FromInstance(entitySensor)
                      .AsSingle();
@@ -62,25 +71,16 @@ namespace Game.Entities
                      .FromInstance(pushableComponent)
                      .AsSingle();
 
-            BindPusher(PushKey.Push, pusher);
-            BindPusher(PushKey.Toss, tosser);
+            BindPusher(typeof(IPushAdapter), pusher);
+            BindPusher(typeof(ITossAdapter), tosser);
 
-            Container.BindInterfacesTo<Entity>()
-                     .AsSingle();
-
-            Container.BindInterfacesAndSelfTo<Player>()
-                     .AsSingle();
-
-            Container.Bind<PlayerView>()
-                     .FromInstance(view)
-                     .AsSingle();
-
-            Container.BindInterfacesTo<PlayerController>()
+            /// :((((
+            Container.BindInterfacesTo<CharacterController>()
                      .AsSingle()
                      .NonLazy();
         }
 
-        private void BindPusher(PushKey id, PushComponent instance)
+        private void BindPusher(Type id, PushComponent instance)
         {
             Container.Bind<PushComponent>()
                      .WithId(id)

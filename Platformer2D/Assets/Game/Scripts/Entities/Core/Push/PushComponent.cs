@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Modules;
 using UnityEngine;
 using Zenject;
@@ -27,7 +25,7 @@ namespace Game.Entities
         private ICompositeCondition _condition = new CompositeCondition();
         private ICooldownTimer _cooldown;
 
-        private bool IgnoreCooldown => cooldownTime < 0;
+        private bool IgnoreCooldown => cooldownTime < 0f;
 
         public void Initialize()
         {
@@ -38,24 +36,15 @@ namespace Game.Entities
         {
             if (!IsValid) return;
 
-            ApplyForce(pushable, forceDirection, pushForce);
+            var sign = Mathf.Sign(pushable.GetPosition.x - pushPoint.position.x);
 
-            if (!IgnoreCooldown)
-                _cooldown.Launch();
-        }
-
-        public void PushOpposite(IPushableComponent pushable)
-        {
-            if (!IsValid) return;
-
-            var direction = pushable.GetPosition - (Vector2)pushPoint.position;
-
+            var direction = new Vector2(forceDirection.x * sign, forceDirection.y);
+            
             ApplyForce(pushable, direction, pushForce);
 
             if (!IgnoreCooldown)
                 _cooldown.Launch();
         }
-
 
         public void AddCondition(Func<bool> condition) => _condition.AddCondition(condition);
 

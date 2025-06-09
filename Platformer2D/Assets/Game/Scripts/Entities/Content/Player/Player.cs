@@ -29,13 +29,13 @@ namespace Game.Entities
             _entity.Get<IMoveComponent>()
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<PushComponent>(PushKey.Push)
+            _entity.Get<PushComponent>(typeof(IPushAdapter))
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<PushComponent>(PushKey.Toss)
+            _entity.Get<PushComponent>(typeof(ITossAdapter))
                    .AddCondition(() => _entity.Get<IHealthComponent>().IsAlive);
 
-            _entity.Get<PushComponent>(PushKey.Toss)
+            _entity.Get<PushComponent>(typeof(ITossAdapter))
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
         }
 
@@ -43,7 +43,7 @@ namespace Game.Entities
         public void Push()
         {
             _entity.Get<IEntitySensorComponent>()
-                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(PushKey.Push).Push);
+                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(typeof(IPushAdapter)).Push);
 
             OnPush?.Invoke();
         }
@@ -51,7 +51,7 @@ namespace Game.Entities
         public void Toss()
         {
             _entity.Get<IEntitySensorComponent>()
-                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(PushKey.Toss).Push);
+                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(typeof(ITossAdapter)).Push);
 
             OnToss?.Invoke();
         }

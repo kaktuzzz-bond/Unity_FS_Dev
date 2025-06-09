@@ -933,7 +933,7 @@ MonoBehaviour:
     isFlippable: 1
   jumpComponent:
     rigidbody: {fileID: 8342082945872629457}
-    jumpHeight: 5
+    jumpHeight: 6
     fallGravityScale: 3
     cooldownTime: 1
   groundSensor:
@@ -951,31 +951,15 @@ MonoBehaviour:
   pushableComponent:
     rigidbody: {fileID: 8342082945872629457}
   pusher:
-    origin: {fileID: 3511145341736734193}
     pushPoint: {fileID: 3511145341736734193}
     forceDirection: {x: 10, y: 1}
     pushForce: 20
     cooldownTime: 2
-    entitySensor:
-      origin: {fileID: 8980892021632546839}
-      sensorPoint: {fileID: 3511145341736734193}
-      raycastDistance: 3
-      layerMask:
-        serializedVersion: 2
-        m_Bits: 256
   tosser:
-    origin: {fileID: 3511145341736734193}
     pushPoint: {fileID: 3511145341736734193}
     forceDirection: {x: 1, y: 10}
     pushForce: 20
     cooldownTime: 2
-    entitySensor:
-      origin: {fileID: 8980892021632546839}
-      sensorPoint: {fileID: 3511145341736734193}
-      raycastDistance: 3
-      layerMask:
-        serializedVersion: 2
-        m_Bits: 256
 --- !u!50 &8342082945872629457
 Rigidbody2D:
   serializedVersion: 4

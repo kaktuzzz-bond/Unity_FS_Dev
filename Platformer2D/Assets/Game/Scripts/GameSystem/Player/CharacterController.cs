@@ -1,16 +1,16 @@
 using System;
-using Game.GameSystem;
+using Game.Entities;
 using Modules;
 using Zenject;
 
-namespace Game.Entities
+namespace Game.GameSystem
 {
-    public class PlayerController : IInitializable, IDisposable
+    public class CharacterController : IInitializable, IDisposable
     {
         private readonly IPlayerInput _playerInput;
         private readonly IEntity _player;
 
-        public PlayerController(IPlayerInput playerInput, IEntity player)
+        public CharacterController(IPlayerInput playerInput, IEntity player)
         {
             _playerInput = playerInput;
             _player = player;
