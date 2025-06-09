@@ -1,5 +1,6 @@
 using System;
 using Modules;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -24,7 +25,8 @@ namespace Game.Entities
 
         private float _defaultGravityScale;
         private float _jumpForce;
-
+        
+        [ShowInInspector, HideInEditorMode, ReadOnly]
         private ICooldownTimer _cooldown;
 
         private readonly CompositeCondition _condition = new();

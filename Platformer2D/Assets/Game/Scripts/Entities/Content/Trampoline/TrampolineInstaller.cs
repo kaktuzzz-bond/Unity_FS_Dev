@@ -28,9 +28,9 @@ namespace Game.Entities
 
             Container.BindInterfacesTo<EntityProxy>()
                      .FromInstance(entityProxy)
-                     .AsSingle();  
-            
-            Container.BindInterfacesTo<PushComponent>()
+                     .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<PushComponent>()
                      .FromInstance(pushComponent)
                      .AsSingle();
 

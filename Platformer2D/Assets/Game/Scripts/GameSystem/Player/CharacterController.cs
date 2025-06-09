@@ -1,36 +1,39 @@
 using System;
 using Game.Entities;
 using Modules;
-using Zenject;
+using UnityEngine;
 
 namespace Game.GameSystem
 {
-    public class CharacterController : IInitializable, IDisposable
+    public class CharacterController : IDisposable, ICharacterController
     {
         private readonly IPlayerInput _playerInput;
-        private readonly IEntity _player;
+        private IEntity _entity;
 
-        public CharacterController(IPlayerInput playerInput, IEntity player)
+        public CharacterController(IPlayerInput playerInput)
         {
             _playerInput = playerInput;
-            _player = player;
         }
 
-        public void Initialize()
+        public void SetEntity(IEntity entity)
         {
-            _playerInput.OnJumped += _player.Get<IJumpComponent>().Jump;
-            _playerInput.OnMoved += _player.Get<IMoveComponent>().Move;
-            _playerInput.OnPush += _player.Get<IPushAdapter>().Push;
-            _playerInput.OnToss += _player.Get<ITossAdapter>().Toss;
-        }
+            if (_entity != null)
+                Dispose();
 
+            _entity = entity;
+
+            _playerInput.OnJumped += _entity.Get<IJumpComponent>().Jump;
+            _playerInput.OnMoved += _entity.Get<IMoveComponent>().Move;
+            _playerInput.OnPush += _entity.Get<IPushAdapter>().Push;
+            _playerInput.OnToss += _entity.Get<ITossAdapter>().Toss;
+        }
 
         public void Dispose()
         {
-            _playerInput.OnJumped -= _player.Get<IJumpComponent>().Jump;
-            _playerInput.OnMoved -= _player.Get<IMoveComponent>().Move;
-            _playerInput.OnPush -= _player.Get<IPushAdapter>().Push;
-            _playerInput.OnToss -= _player.Get<ITossAdapter>().Toss;
+            _playerInput.OnJumped -= _entity.Get<IJumpComponent>().Jump;
+            _playerInput.OnMoved -= _entity.Get<IMoveComponent>().Move;
+            _playerInput.OnPush -= _entity.Get<IPushAdapter>().Push;
+            _playerInput.OnToss -= _entity.Get<ITossAdapter>().Toss;
         }
     }
 }

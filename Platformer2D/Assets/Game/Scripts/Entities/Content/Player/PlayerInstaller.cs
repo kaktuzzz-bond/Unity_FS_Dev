@@ -1,11 +1,9 @@
 using System;
-using Game.GameSystem;
 using Modules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
-using CharacterController = Game.GameSystem.CharacterController;
 
 namespace Game.Entities
 {
@@ -42,7 +40,7 @@ namespace Game.Entities
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Entity>()
-                     .AsCached();
+                     .AsSingle();
 
             Container.BindInterfacesAndSelfTo<Player>()
                      .AsSingle();
@@ -73,12 +71,8 @@ namespace Game.Entities
 
             BindPusher(typeof(IPushAdapter), pusher);
             BindPusher(typeof(ITossAdapter), tosser);
-
-            /// :((((
-            Container.BindInterfacesTo<CharacterController>()
-                     .AsSingle()
-                     .NonLazy();
         }
+
 
         private void BindPusher(Type id, PushComponent instance)
         {

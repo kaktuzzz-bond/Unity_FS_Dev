@@ -1,12 +1,13 @@
 using System;
 using Modules;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
 namespace Game.Entities
 {
     [Serializable]
-    public class PushComponent : IPushComponent, ICompositeCondition, IInitializable
+    public class PushComponent : ICompositeCondition, IInitializable
     {
         [SerializeField]
         public Transform pushPoint;
@@ -22,9 +23,13 @@ namespace Game.Entities
 
         public bool IsValid => _condition.IsValid;
 
+        [ShowInInspector, HideInEditorMode, ReadOnly]
         private ICompositeCondition _condition = new CompositeCondition();
+
+        [ShowInInspector, HideInEditorMode, ReadOnly]
         private ICooldownTimer _cooldown;
 
+        [ShowInInspector, HideInEditorMode, ReadOnly]
         private bool IgnoreCooldown => cooldownTime < 0f;
 
         public void Initialize()
@@ -32,19 +37,30 @@ namespace Game.Entities
             AddCooldown();
         }
 
-        public void Push(IPushableComponent pushable)
+        public bool Push(params IPushableComponent[] pushables)
         {
-            if (!IsValid) return;
+            if (!IsValid)
+            {
+                Debug.Log("Cannot PUSH because of conditions");
 
-            var sign = Mathf.Sign(pushable.GetPosition.x - pushPoint.position.x);
+                return false;
+            }
 
-            var direction = new Vector2(forceDirection.x * sign, forceDirection.y);
-            
-            ApplyForce(pushable, direction, pushForce);
+            foreach (var pushable in pushables)
+            {
+                var sign = Mathf.Sign(pushable.GetPosition.x - pushPoint.position.x);
+
+                var direction = new Vector2(forceDirection.x * sign, forceDirection.y);
+
+                ApplyForce(pushable, direction, pushForce);
+            }
 
             if (!IgnoreCooldown)
                 _cooldown.Launch();
+
+            return true;
         }
+
 
         public void AddCondition(Func<bool> condition) => _condition.AddCondition(condition);
 
@@ -55,7 +71,6 @@ namespace Game.Entities
             var calcForce = direction.normalized * force;
             pushable.AddForce(calcForce);
         }
-
 
         private void AddCooldown()
         {

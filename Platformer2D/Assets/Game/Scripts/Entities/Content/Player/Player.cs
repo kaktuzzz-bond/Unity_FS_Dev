@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Game.GameSystem;
 using Modules;
 using Zenject;
 
@@ -20,6 +22,8 @@ namespace Game.Entities
 
         public void Initialize()
         {
+            _entity.Get<ICharacterController>().SetEntity(_entity);
+
             _entity.Get<IJumpComponent>()
                    .AddCondition(() => _entity.Get<IGroundSensor>().IsGrounded);
 
@@ -42,18 +46,27 @@ namespace Game.Entities
 
         public void Push()
         {
-            _entity.Get<IEntitySensorComponent>()
-                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(typeof(IPushAdapter)).Push);
-
-            OnPush?.Invoke();
+            if (ScanAndPush(id: typeof(IPushAdapter)))
+            {
+                OnPush?.Invoke();
+            }
         }
 
         public void Toss()
         {
-            _entity.Get<IEntitySensorComponent>()
-                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(typeof(ITossAdapter)).Push);
+            if (ScanAndPush(id: typeof(ITossAdapter)))
+            {
+                OnToss?.Invoke();
+            }
+        }
 
-            OnToss?.Invoke();
+        private bool ScanAndPush(Type id)
+        {
+            var components = _entity.Get<IEntitySensorComponent>()
+                                    .ScanFor<IPushableComponent>()
+                                    .ToArray();
+
+            return _entity.Get<PushComponent>(id).Push(components);
         }
     }
 }

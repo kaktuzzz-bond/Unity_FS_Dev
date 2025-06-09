@@ -9,6 +9,10 @@ namespace Game.GameSystem
         public override void InstallBindings()
         {
             PlayerInputInstaller.Install(Container);
+
+            Container.BindInterfacesAndSelfTo<CharacterController>()
+                     .AsSingle()
+                     .NonLazy();
         }
     }
 }

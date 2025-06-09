@@ -22,7 +22,7 @@ namespace Game.Entities
         {
             if (!entity.TryGet<IPushableComponent>(out var target)) return;
 
-            _entity.Get<IPushComponent>().Push(target);
+            _entity.Get<PushComponent>().Push(target);
 
             _entity.Get<TrampolineView>().PlayJump();
         }
