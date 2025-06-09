@@ -1,6 +1,6 @@
 using System;
 using Game.GameSystem;
-using UnityEngine;
+using Modules;
 using Zenject;
 
 namespace Game.Entities
@@ -8,9 +8,9 @@ namespace Game.Entities
     public class PlayerController : IInitializable, IDisposable
     {
         private readonly IPlayerInput _playerInput;
-        private readonly Player _player;
+        private readonly IEntity _player;
 
-        public PlayerController(IPlayerInput playerInput, Player player)
+        public PlayerController(IPlayerInput playerInput, IEntity player)
         {
             _playerInput = playerInput;
             _player = player;
@@ -18,27 +18,19 @@ namespace Game.Entities
 
         public void Initialize()
         {
-            _playerInput.OnJumped += Jump;
-            _playerInput.OnMoved += Move;
-            _playerInput.OnPush += Push;
-            _playerInput.OnToss += Toss;
+            _playerInput.OnJumped += _player.Get<IJumpComponent>().Jump;
+            _playerInput.OnMoved += _player.Get<IMoveComponent>().Move;
+            _playerInput.OnPush += _player.Get<IPushAdapter>().Push;
+            _playerInput.OnToss += _player.Get<ITossAdapter>().Toss;
         }
-
-        private void Jump() => _player.Jump();
-
-        private void Move(Vector2 direction) => _player.Move(direction);
-
-        private void Push() => _player.Push();
-
-        private void Toss() => _player.Toss();
 
 
         public void Dispose()
         {
-            _playerInput.OnJumped -= Jump;
-            _playerInput.OnMoved -= Move;
-            _playerInput.OnPush -= Push;
-            _playerInput.OnToss -= Toss;
+            _playerInput.OnJumped -= _player.Get<IJumpComponent>().Jump;
+            _playerInput.OnMoved -= _player.Get<IMoveComponent>().Move;
+            _playerInput.OnPush -= _player.Get<IPushAdapter>().Push;
+            _playerInput.OnToss -= _player.Get<ITossAdapter>().Toss;
         }
     }
 }

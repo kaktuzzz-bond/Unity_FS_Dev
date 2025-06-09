@@ -24,40 +24,38 @@ namespace Game.Entities
         [SerializeField]
         private BlinkSpriteComponent blinkVFX;
 
-        private AudioProvider _audioProvider;
         private IEntity _entity;
 
         [Inject]
-        private void Construct(AudioProvider audioProvider, IEntity entity)
+        private void Construct(IEntity entity)
         {
-            _audioProvider = audioProvider;
             _entity = entity;
 
             _entity.Get<IHealthComponent>().OnDeath += OnDeath;
             _entity.Get<IHealthComponent>().OnHealthChanged += OnHealthChanged;
-            _entity.Get<Player>().OnJump += PlayJump;
-            _entity.Get<Player>().OnPush += PlayPush;
-            _entity.Get<Player>().OnToss += PlayToss;
+            _entity.Get<IJumpComponent>().OnJump += PlayJump;
+            _entity.Get<IPushAdapter>().OnPush += PlayPush;
+            _entity.Get<ITossAdapter>().OnToss += PlayToss;
         }
-        
 
-        private void OnDeath() => PlayDeath().Forget();
-
-        private void OnHealthChanged(float healthValue) => ShowTakenDamage(healthValue).Forget();
 
         private void OnDestroy()
         {
             _entity.Get<IHealthComponent>().OnDeath -= OnDeath;
             _entity.Get<IHealthComponent>().OnHealthChanged -= OnHealthChanged;
-            _entity.Get<Player>().OnJump -= PlayJump;
-            _entity.Get<Player>().OnPush -= PlayPush;
-            _entity.Get<Player>().OnToss -= PlayToss;
+            _entity.Get<IJumpComponent>().OnJump -= PlayJump;
+            _entity.Get<IPushAdapter>().OnPush -= PlayPush;
+            _entity.Get<ITossAdapter>().OnToss -= PlayToss;
         }
+
+        private void OnDeath() => PlayDeath().Forget();
+
+        private void OnHealthChanged(float healthValue) => ShowTakenDamage(healthValue).Forget();
 
         private UniTask ShowTakenDamage(float healthValue)
         {
             healthBarView.SetValue(healthValue);
-            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.TakeDamage));
+            audioSource.PlayOneShot(_entity.Get<AudioProvider>().GetClip(SoundKey.TakeDamage));
 
             return blinkVFX.Play();
         }
@@ -70,18 +68,18 @@ namespace Game.Entities
 
         private void PlayJump()
         {
-            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Jump));
+            audioSource.PlayOneShot(_entity.Get<AudioProvider>().GetClip(SoundKey.Jump));
         }
 
         private void PlayPush()
         {
-            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Push));
+            audioSource.PlayOneShot(_entity.Get<AudioProvider>().GetClip(SoundKey.Push));
             pushVFX.Play();
         }
 
         private void PlayToss()
         {
-            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Toss));
+            audioSource.PlayOneShot(_entity.Get<AudioProvider>().GetClip(SoundKey.Toss));
             tossVFX.Play();
         }
     }

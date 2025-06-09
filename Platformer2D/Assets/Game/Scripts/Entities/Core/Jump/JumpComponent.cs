@@ -8,6 +8,8 @@ namespace Game.Entities
     [Serializable]
     public class JumpComponent : IJumpComponent, IInitializable, ITickable
     {
+        public event Action OnJump;
+
         [SerializeField]
         private Rigidbody2D rigidbody;
 
@@ -24,7 +26,7 @@ namespace Game.Entities
         private float _jumpForce;
 
         private ICooldownTimer _cooldown;
-        
+
         private readonly CompositeCondition _condition = new();
         private bool IgnoreCooldown => cooldownTime < 0;
 
@@ -52,15 +54,16 @@ namespace Game.Entities
 
         public void RemoveCondition(Func<bool> condition) => _condition.RemoveCondition(condition);
 
-        public bool Jump() => Jump(Vector2.up, _jumpForce);
 
-        private bool Jump(Vector2 direction, float force)
+        public void Jump() => Jump(Vector2.up, _jumpForce);
+
+        private void Jump(Vector2 direction, float force)
         {
             if (!_condition.IsValid)
             {
                 Debug.Log("Cannot JUMP because of conditions");
 
-                return false;
+                return;
             }
 
             rigidbody.AddForce(direction * force, ForceMode2D.Impulse);
@@ -68,7 +71,7 @@ namespace Game.Entities
             if (!IgnoreCooldown)
                 _cooldown.Launch();
 
-            return true;
+            OnJump?.Invoke();
         }
 
 

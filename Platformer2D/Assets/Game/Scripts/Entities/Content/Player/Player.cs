@@ -1,14 +1,11 @@
 using System;
-using System.Linq;
 using Modules;
-using UnityEngine;
 using Zenject;
 
 namespace Game.Entities
 {
-    public class Player : IInitializable
+    public class Player : IInitializable, ITossAdapter, IPushAdapter
     {
-        public event Action OnJump;
         public event Action OnPush;
         public event Action OnToss;
 
@@ -43,50 +40,18 @@ namespace Game.Entities
         }
 
 
-        public void Move(Vector2 direction)
-        {
-            _entity.Get<IMoveComponent>()
-                   .Move(direction);
-        }
-
-        public void Jump()
-        {
-            if (_entity.Get<IJumpComponent>()
-                       .Jump())
-            {
-                OnJump?.Invoke();
-            }
-        }
-
-
         public void Push()
         {
-            var entities = _entity.Get<IEntitySensorComponent>()
-                                  .Scan<IEntityProxy>()
-                                  .Select(x => x.Entity);
-
-            foreach (var entity in entities)
-            {
-                if (!entity.TryGet<IPushableComponent>(out var pushable)) continue;
-
-                _entity.Get<PushComponent>(PushKey.Push).Push(pushable);
-            }
+            _entity.Get<IEntitySensorComponent>()
+                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(PushKey.Push).Push);
 
             OnPush?.Invoke();
         }
 
         public void Toss()
         {
-            var entities = _entity.Get<IEntitySensorComponent>()
-                                  .Scan<IEntityProxy>()
-                                  .Select(x => x.Entity);
-
-            foreach (var entity in entities)
-            {
-                if (!entity.TryGet<IPushableComponent>(out var pushable)) continue;
-
-                _entity.Get<PushComponent>(PushKey.Toss).Push(pushable);
-            }
+            _entity.Get<IEntitySensorComponent>()
+                   .ScanAndRun<IPushableComponent>(_entity.Get<PushComponent>(PushKey.Toss).Push);
 
             OnToss?.Invoke();
         }

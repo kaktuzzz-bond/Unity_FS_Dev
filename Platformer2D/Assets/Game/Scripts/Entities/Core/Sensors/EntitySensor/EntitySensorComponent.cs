@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Modules;
 using UnityEngine;
 using Zenject;
 
@@ -22,6 +24,33 @@ namespace Game.Entities
 
 
         private RaycastHit2D[] _hits = new RaycastHit2D[8];
+
+
+        public void ScanAndRun<T>(Action<T> callback) where T : class
+        {
+            var entities = Scan<IEntityProxy>().Select(x => x.Entity);
+
+            foreach (var entity in entities)
+            {
+                if (!entity.TryGet<T>(out var component)) continue;
+                callback?.Invoke(component);
+            }
+        }
+
+        public IEnumerable<T> ScanFor<T>() where T : class
+        {
+            var entities = Scan<IEntityProxy>().Select(x => x.Entity);
+
+            var components = new HashSet<T>();
+
+            foreach (var entity in entities)
+            {
+                if (!entity.TryGet<T>(out var component)) continue;
+                components.Add(component);
+            }
+
+            return components;
+        }
 
         public IEnumerable<T> Scan<T>() where T : class
         {
@@ -48,6 +77,5 @@ namespace Game.Entities
 
             return targets;
         }
-        
     }
 }

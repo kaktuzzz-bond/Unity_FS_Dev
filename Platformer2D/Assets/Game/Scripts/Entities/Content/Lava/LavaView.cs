@@ -10,21 +10,19 @@ namespace Game.Entities
         [SerializeField]
         private AudioSource audioSource;
 
-        private AudioProvider _audioProvider;
         private IEntity _entity;
 
 
         [Inject]
-        private void Construct(AudioProvider audioProvider, IEntity entity)
+        private void Construct(IEntity entity)
         {
-            _audioProvider = audioProvider;
             _entity = entity;
             _entity.Get<Lava>().OnTriggered += PlayLava;
         }
 
         private void PlayLava()
         {
-            audioSource.PlayOneShot(_audioProvider.GetClip(SoundKey.Lava));
+            audioSource.PlayOneShot(_entity.Get<AudioProvider>().GetClip(SoundKey.Lava));
         }
 
         private void OnDestroy()

@@ -7,9 +7,6 @@ namespace Game.Entities
 {
     public class LavaInstaller : MonoInstaller
     {
-        [SerializeField, BoxGroup("View", ShowLabel = false)]
-        private LavaView view;
-
         [SerializeField, BoxGroup("Attack", ShowLabel = false)]
         private AttackComponent attackComponent;
         
@@ -19,10 +16,6 @@ namespace Game.Entities
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Entity>()
-                     .AsSingle();
-
-            Container.Bind<LavaView>()
-                     .FromInstance(view)
                      .AsSingle();
 
             Container.BindInterfacesAndSelfTo<Lava>()
