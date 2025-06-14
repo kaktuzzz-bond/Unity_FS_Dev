@@ -1,0 +1,17 @@
+{
+    "name": "Game.App",
+    "rootNamespace": "",
+    "references": [
+        "Zenject",
+        "Modules.Encryption"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
