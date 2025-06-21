@@ -1,32 +1,24 @@
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 namespace Game.App
 {
-    public class ValueSerializer : IGameSerializer
+    public class ValueSerializer : GameSerializer<ValueProvider, ValueData>
     {
-        private readonly ValueProvider _valueProvider;
-
-        private const string Key = "Value";
-
-        public ValueSerializer(ValueProvider valueProvider)
-        {
-            _valueProvider = valueProvider;
-        }
-
         [Button]
-        public void Serialize(IDictionary<string, string> saveState)
+        protected override ValueData Serialize(ValueProvider service)
         {
-            saveState[Key] = _valueProvider.Value.ToString();
-        }
-
-        [Button]
-        public void Deserialize(IDictionary<string, string> loadState)
-        {
-            if (loadState.TryGetValue(Key, out var valueText))
+            return new ValueData
             {
-                _valueProvider.Value = int.Parse(valueText);
-            }
+                value1 = service.Value1,
+                value2 = service.Value2
+            };
+        }
+
+        [Button]
+        protected override void Deserialize(ValueProvider service, ValueData data)
+        {
+            service.Value1 = data.value1;
+            service.Value2 = data.value2;
         }
     }
 }

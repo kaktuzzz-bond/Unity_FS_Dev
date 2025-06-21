@@ -28,7 +28,9 @@ namespace Game.App
 
             var byteArray = File.ReadAllBytes(_filePath);
 
-            var bytes = _useEncryption ? Encrypt(byteArray) : byteArray;
+            var bytes = _useEncryption
+                ? Encrypt(byteArray)
+                : byteArray;
 
             var json = Encoding.UTF8.GetString(bytes);
 
@@ -43,7 +45,10 @@ namespace Game.App
 
             var byteArray = Encoding.UTF8.GetBytes(json);
 
-            var bytes = _useEncryption ? Decrypt(byteArray) : byteArray;
+            var bytes = _useEncryption
+                ? Decrypt(byteArray)
+                : byteArray;
+
             File.WriteAllBytes(_filePath, bytes);
         }
 

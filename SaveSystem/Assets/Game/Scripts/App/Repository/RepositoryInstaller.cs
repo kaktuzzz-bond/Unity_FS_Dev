@@ -9,7 +9,7 @@ namespace Game.App
     public class RepositoryInstaller : ScriptableObjectInstaller
     {
         [SerializeField]
-        private string fileName = "Value.txt";
+        private string fileName = "GameState.txt";
 
         [SerializeField]
         private string aesPassword = "123";
