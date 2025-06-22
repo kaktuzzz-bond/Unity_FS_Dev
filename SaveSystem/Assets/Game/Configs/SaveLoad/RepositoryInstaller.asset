@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d7dad482d84d91ae6030d687f0db7c, type: 3}
   m_Name: RepositoryInstaller
   m_EditorClassIdentifier: 
-  fileName: GameState.txt
+  fileName: GameState.json
   aesPassword: 123
   aesSalt: 5241167986649722

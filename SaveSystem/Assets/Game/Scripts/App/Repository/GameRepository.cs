@@ -11,32 +11,14 @@ namespace Game.App
         private readonly string _filePath;
         private readonly string _aesPassword;
         private readonly byte[] _aesSalt;
+        private readonly bool _useEncryption;
 
-        //for debug purposes
-        private readonly bool _useEncryption = false;
-
-        public GameRepository(string filePath, string aesPassword, byte[] aesSalt)
+        public GameRepository(string filePath, string aesPassword, byte[] aesSalt, bool useEncryption)
         {
             _filePath = filePath;
             _aesPassword = aesPassword;
             _aesSalt = aesSalt;
-        }
-
-        public Dictionary<string, string> GetState()
-        {
-            if (!File.Exists(_filePath)) return new Dictionary<string, string>();
-
-            var byteArray = File.ReadAllBytes(_filePath);
-
-            var bytes = _useEncryption
-                ? Encrypt(byteArray)
-                : byteArray;
-
-            var json = Encoding.UTF8.GetString(bytes);
-
-            var result = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-
-            return result ?? new Dictionary<string, string>();
+            _useEncryption = useEncryption;
         }
 
         public void SetState(Dictionary<string, string> gameState)
@@ -46,14 +28,27 @@ namespace Game.App
             var byteArray = Encoding.UTF8.GetBytes(json);
 
             var bytes = _useEncryption
-                ? Decrypt(byteArray)
+                ? AesEncryptor.Encrypt(byteArray, _aesPassword, _aesSalt)
                 : byteArray;
 
             File.WriteAllBytes(_filePath, bytes);
         }
 
-        private byte[] Encrypt(byte[] source) => AesEncryptor.Encrypt(source, _aesPassword, _aesSalt);
+        public Dictionary<string, string> GetState()
+        {
+            if (!File.Exists(_filePath)) return new Dictionary<string, string>();
 
-        private byte[] Decrypt(byte[] source) => AesEncryptor.Decrypt(source, _aesPassword, _aesSalt);
+            var byteArray = File.ReadAllBytes(_filePath);
+
+            var bytes = _useEncryption
+                ? AesEncryptor.Decrypt(byteArray, _aesPassword, _aesSalt)
+                : byteArray;
+
+            var json = Encoding.UTF8.GetString(bytes);
+
+            var result = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
+            return result ?? new Dictionary<string, string>();
+        }
     }
 }

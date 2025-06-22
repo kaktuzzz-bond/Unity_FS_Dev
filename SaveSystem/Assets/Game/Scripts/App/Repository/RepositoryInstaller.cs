@@ -15,6 +15,9 @@ namespace Game.App
         private string aesPassword = "123";
 
         [SerializeField]
+        private bool useEncryption;
+
+        [SerializeField]
         private byte[] aesSalt = { 0x52, 0x41, 0x16, 0x79, 0x86, 0x64, 0x97, 0x22 };
 
         private string FilePath => $"{Application.streamingAssetsPath}/{fileName}";
@@ -23,7 +26,7 @@ namespace Game.App
         {
             Container.BindInterfacesTo<GameRepository>()
                      .AsSingle()
-                     .WithArguments(FilePath, aesPassword, aesSalt);
+                     .WithArguments(FilePath, aesPassword, aesSalt, false);
         }
     }
 }
